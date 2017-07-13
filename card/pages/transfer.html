@@ -1,0 +1,39 @@
+<html lang="zh-CN">
+<head>
+<script src="/bsWeb/js/jquery-2.1.1.js"></script>
+<script src="/bsWeb/js/cookieUtils.js"></script>
+<script src="/resource/js/request.js"></script>
+<script type="text/javascript">
+	//会员系统跳转通行权益系统的跳转页面
+	var code = getUrlParam("code");
+	$.ajax({
+		url : "/rest/system/user/preset/transfer",
+		data : {'code' : code},
+		type : 'post',
+		dataType : 'json',
+		success : function(data) {
+			if(data['statusCode'] == 0){
+				setCookie('card.userinfo', JSON.stringify(data['jbody']['LoginUser']));
+				window.location.href = "main.html";
+			}
+			else{
+				window.location.href = "/login.html";
+			}
+		}
+	});
+	
+	//获取url中的参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null){
+        	return unescape(r[2]); 
+        }
+        
+        return "";
+    }
+</script>
+</head>
+<body>
+</body>
+</html>

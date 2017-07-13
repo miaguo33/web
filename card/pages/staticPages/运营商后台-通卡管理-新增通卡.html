@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="pjax-container">
+    <!-- iCheck -->
+    <link href="/resource/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <!-- Datapicker -->
+    <link href="/resource/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <!-- SUMMERNOTE -->
+    <link href="/resource/css/plugins/summernote/summernote.css" rel="stylesheet">
+    <!--<link href="/resource/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">-->
+    <!-- Gallery -->
+    <link href="/resource/css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="/resource/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+    <!-- DROPZONE -->
+    <link href="/resource/css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="/resource/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+
+    <style></style>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>新增通行权益 <small></small></h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益名称</label>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" placeholder="输入通行权益名称" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益别名</label>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" placeholder="输入通行权益别名" />
+                                </div>
+                            </div>
+                            <div class="form-group date">
+                                <label class="col-lg-2 control-label">通行权益有效期</label>
+                                <div class="col-lg-10">
+                                    <div class="input-daterange input-group date">
+                                        <input type="text" class="form-control" name="start" value="">
+                                        <span class="input-group-addon">to</span>
+                                        <input type="text" class="form-control" name="end" value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益中余额</label>
+                                <div class="col-lg-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="输入通行权益中余额" />
+                                        <span class="input-group-addon">元</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">品牌折扣</label>
+                                <div class="col-lg-10">
+                                    <button type="button" class="btn btn-white" data-toggle="modal" data-target="#modalShow_1">选择品牌折扣</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">含优惠券</label>
+                                <div class="col-lg-10">
+                                    <button type="button" class="btn btn-white" data-toggle="modal" data-target="#modalShow_2">选择优惠券</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">含门票</label>
+                                <div class="col-lg-10">
+                                    <button type="button" class="btn btn-white" data-toggle="modal" data-target="#modalShow_3">选择门票</button>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">标准售价</label>
+                                <div class="col-lg-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="输入标准售价" />
+                                        <span class="input-group-addon">元 / 张</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">发行数量</label>
+                                <div class="col-lg-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="输入发行数量" />
+                                        <span class="input-group-addon">张</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益说明</label>
+                                <div class="col-lg-10 ecommerce">
+                                    <div class="summernote">
+                                        <h3>Lorem Ipsum is simply</h3>
+                                        dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s,
+                                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                                        when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                                        <br/>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">需要实名认证</label>
+                                <div class="col-lg-10">
+                                    <div class="i-checks radio-inline">
+                                        <label> <input type="radio" value="1" name="123"> 是 </label>
+                                    </div>
+                                    <div class="i-checks radio-inline">
+                                        <label> <input type="radio" value="2" name="123" checked="" > 否 </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">客服电话</label>
+                                <div class="col-lg-4">
+                                    <input type="text" class="form-control" placeholder="输入客服电话" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益卡面</label>
+                                <div class="col-lg-10">
+                                    <div class="lightBoxGallery">
+                                        <a href="/resource/img/gallery/1.jpg" title="Image from Unsplash" data-gallery="">
+                                            <img src="/resource/img/gallery/2s.jpg">
+                                        </a>
+                                    </div>
+                                    <button type="button" class="btn btn-white"><i class="fa fa-file"></i>&nbsp;上传</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益卡面LOGO</label>
+                                <div class="col-lg-10">
+                                    <div class="lightBoxGallery">
+                                        <a href="/resource/img/gallery/1.jpg" title="Image from Unsplash" data-gallery="">
+                                            <img src="/resource/img/gallery/3s.jpg">
+                                        </a>
+                                    </div>
+                                    <button type="button" class="btn btn-white"><i class="fa fa-file"></i>&nbsp;上传</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">审核凭证</label>
+                                <div class="col-lg-10">
+                                    <div class="lightBoxGallery">
+                                        <a href="/resource/img/gallery/1.jpg" title="Image from Unsplash" data-gallery="">
+                                            <img src="/resource/img/gallery/1s.jpg">
+                                        </a>
+                                        <a href="/resource/img/gallery/2.jpg" title="Image from Unsplash" data-gallery="">
+                                            <img src="/resource/img/gallery/2s.jpg">
+                                        </a>
+                                        <a href="/resource/img/gallery/3.jpg" title="Image from Unsplash" data-gallery="">
+                                            <img src="/resource/img/gallery/3s.jpg">
+                                        </a>
+                                    </div>
+                                    <button type="button" class="btn btn-white"><i class="fa fa-file"></i>&nbsp;下载审核凭证模板</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <button class="btn btn-w-m btn-primary" type="button">提交审核</button>
+                                    <button class="btn btn-w-m btn-primary" type="button" id="save">保存</button>
+                                    <button class="btn btn-w-m btn-default" type="button">取消</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+
+    <!-- 通行权益折扣模态窗口 -->
+    <div class="modal inmodal" id="modalShow_1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">添加通行权益折扣</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div role="form" class="form-inline">
+                                <div class="form-group">
+                                    <label>关键字:</label>
+                                    <input type="text" placeholder="请输入关键字" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>-选择类型-</option>
+                                        <option>类型1</option>
+                                        <option>类型2</option>
+                                        <option>类型3</option>
+                                        <option>类型4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-w-m btn-primary" type="button">查询</button>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-w-m btn-warning step-force" type="buttom" data-model-this="modalShow_1" data-model-target="modalShow_1_step1">新增折扣</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>折扣</th>
+                                    <th>品牌</th>
+                                    <th>适用门店</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>9.5</td>
+                                    <td>品牌</td>
+                                    <td>门店1&nbsp;门店2&nbsp;门店3</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>9.5</td>
+                                    <td>品牌</td>
+                                    <td>门店1&nbsp;门店2&nbsp;门店3</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>9.5</td>
+                                    <td>品牌</td>
+                                    <td>门店1&nbsp;门店2&nbsp;门店3</td>
+                                </tr>
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="999" class="footable-visible">
+                                        <ul class="pagination pull-right">
+                                            <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
+                                            <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
+                                            <li class="footable-page active"><a data-page="0" href="#">1</a></li>
+                                            <li class="footable-page"><a data-page="1" href="#">2</a></li>
+                                            <li class="footable-page-arrow"><a data-page="next" href="#next">›</a>
+                                            </li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary model_confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 通行权益折扣 step1 -->
+    <div class="modal inmodal" id="modalShow_1_step1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">新增折扣</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">折扣</label>
+                                <div class="col-lg-9">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="" />
+                                        <span class="input-group-addon">元</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">折扣别名</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" placeholder="输入折扣别名" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">有效期</label>
+                                <div class="col-lg-3">
+                                    <select class="form-control">
+                                        <option>时间段</option>
+                                        <option>月份</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-daterange input-group date">
+                                        <input type="text" class="form-control" name="start" value="">
+                                        <span class="input-group-addon">to</span>
+                                        <input type="text" class="form-control" name="end" value="">
+                                    </div>
+                                </div>
+                                <!--<div class="col-lg-9">-->
+                                    <!--<input type="text" class="form-control" placeholder="输入月份" />-->
+                                <!--</div>-->
+                            </div>
+                            <div class="form-inline form-group">
+                                <label class="col-lg-2 control-label">使用条件</label>
+                                <div class="col-lg-9">
+                                    <div class="input-group">消费满</div>
+                                    <div class="input-group col-lg-4">
+                                        <input type="text" class="form-control" placeholder="" />
+                                        <span class="input-group-addon">元</span>
+                                    </div>
+                                    <div class="input-group">使用,最高抵扣</div>
+                                    <div class="input-group col-lg-4">
+                                        <input type="text" class="form-control" placeholder="" />
+                                        <span class="input-group-addon">元</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>-->
+                    <button type="button" class="btn btn-primary step-force" data-model-this="modalShow_1_step1" data-model-target="modalShow_1_step2">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 通行权益折扣 step2 -->
+    <div class="modal inmodal" id="modalShow_1_step2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">新增折扣适用门店</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div role="form" class="form-inline">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>地区</option>
+                                        <option>地区1</option>
+                                        <option>地区2</option>
+                                        <option>地区3</option>
+                                        <option>地区4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>业态</option>
+                                        <option>业态1</option>
+                                        <option>业态2</option>
+                                        <option>业态3</option>
+                                        <option>业态4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="请输入关键字" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-w-m btn-primary" type="button">查询</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>选择</th>
+                                        <th>品牌</th>
+                                        <th>门店</th>
+                                        <th>业态</th>
+                                        <th>所在地区</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                        <td>辣府</td>
+                                        <td>门店1</td>
+                                        <td>餐饮</td>
+                                        <td>南京</td>
+                                        <td><a>关联</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                        <td>辣府</td>
+                                        <td>门店1</td>
+                                        <td>餐饮</td>
+                                        <td>南京</td>
+                                        <td><a>关联</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                        <td>辣府</td>
+                                        <td>门店1</td>
+                                        <td>餐饮</td>
+                                        <td>南京</td>
+                                        <td><a>关联</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="9"><button type="button" class="btn btn-w-m btn-primary">关联勾选门店</button></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="999" class="footable-visible">
+                                        <ul class="pagination pull-right">
+                                            <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
+                                            <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
+                                            <li class="footable-page active"><a data-page="0" href="#">1</a></li>
+                                            <li class="footable-page"><a data-page="1" href="#">2</a></li>
+                                            <li class="footable-page-arrow"><a data-page="next" href="#next">›</a>
+                                            </li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>-->
+                    <button type="button" class="btn btn-primary step-force" data-model-this="modalShow_1_step2" data-model-target="modalShow_1_step1">上一步</button>
+                    <button type="button" class="btn btn-primary model_confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 通行权益优惠券模态窗口 -->
+    <div class="modal inmodal" id="modalShow_2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">添加通行权益优惠券</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div role="form" class="form-inline">
+                                <div class="form-group">
+                                    <label>关键字:</label>
+                                    <input type="text" placeholder="请输入关键字" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>-选择类型-</option>
+                                        <option>类型1</option>
+                                        <option>类型2</option>
+                                        <option>类型3</option>
+                                        <option>类型4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-w-m btn-primary" type="button">查询</button>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-w-m btn-warning step-force" type="buttom" data-model-this="modalShow_2" data-model-target="modalShow_2_step1">新增优惠券</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>券名</th>
+                                    <th>品牌</th>
+                                    <th>适用门店</th>
+                                    <th>折扣</th>
+                                    <th>使用条件</th>
+                                    <th>数量(张)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>优惠券</td>
+                                    <td>品牌</td>
+                                    <td>门店1</td>
+                                    <td>9.5</td>
+                                    <td>消费满100元使用</td>
+                                    <td><input type="text" value="" /></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>优惠券</td>
+                                    <td>品牌</td>
+                                    <td>门店1</td>
+                                    <td>9.5</td>
+                                    <td>消费满100元使用</td>
+                                    <td><input type="text" value="" /></td>
+                                </tr>
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="999" class="footable-visible">
+                                        <ul class="pagination pull-right">
+                                            <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
+                                            <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
+                                            <li class="footable-page active"><a data-page="0" href="#">1</a></li>
+                                            <li class="footable-page"><a data-page="1" href="#">2</a></li>
+                                            <li class="footable-page-arrow"><a data-page="next" href="#next">›</a>
+                                            </li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary model_confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 通行权益优惠券 step1 -->
+    <div class="modal inmodal" id="modalShow_2_step1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">新增优惠券</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">优惠券名称</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" placeholder="输入优惠券名称" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">优惠券别名</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" placeholder="输入优惠券别名" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">优惠券折扣</label>
+                                <div class="col-lg-9">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="" />
+                                        <span class="input-group-addon">折</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-inline form-group">
+                                <label class="col-lg-2 control-label">使用条件</label>
+                                <div class="col-lg-9">
+                                    <div class="input-group">消费满</div>
+                                    <div class="input-group col-lg-4">
+                                        <input type="text" class="form-control" placeholder="" />
+                                        <span class="input-group-addon">元</span>
+                                    </div>
+                                    <div class="input-group">使用,最高抵扣</div>
+                                    <div class="input-group col-lg-4">
+                                        <input type="text" class="form-control" placeholder="" />
+                                        <span class="input-group-addon">元</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">有效期</label>
+                                <div class="col-lg-3">
+                                    <select class="form-control">
+                                        <option>时间段</option>
+                                        <option>月份</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-daterange input-group date">
+                                        <input type="text" class="form-control" name="start" value="">
+                                        <span class="input-group-addon">to</span>
+                                        <input type="text" class="form-control" name="end" value="">
+                                    </div>
+                                </div>
+                                <!--<div class="col-lg-9">-->
+                                <!--<input type="text" class="form-control" placeholder="输入月份" />-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>-->
+                    <button type="button" class="btn btn-primary step-force" data-model-this="modalShow_2_step1" data-model-target="modalShow_2_step2">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 通行权益优惠券 step2 -->
+    <div class="modal inmodal" id="modalShow_2_step2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">新增优惠券适用门店</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div role="form" class="form-inline">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>地区</option>
+                                        <option>地区1</option>
+                                        <option>地区2</option>
+                                        <option>地区3</option>
+                                        <option>地区4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>业态</option>
+                                        <option>业态1</option>
+                                        <option>业态2</option>
+                                        <option>业态3</option>
+                                        <option>业态4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="请输入关键字" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-w-m btn-primary" type="button">查询</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>品牌</th>
+                                    <th>门店</th>
+                                    <th>业态</th>
+                                    <th>所在地区</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>辣府</td>
+                                    <td>门店1</td>
+                                    <td>餐饮</td>
+                                    <td>南京</td>
+                                    <td><a>关联</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>辣府</td>
+                                    <td>门店1</td>
+                                    <td>餐饮</td>
+                                    <td>南京</td>
+                                    <td><a>关联</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>辣府</td>
+                                    <td>门店1</td>
+                                    <td>餐饮</td>
+                                    <td>南京</td>
+                                    <td><a>关联</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9"><button type="button" class="btn btn-w-m btn-primary">关联勾选门店</button></td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="999" class="footable-visible">
+                                        <ul class="pagination pull-right">
+                                            <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
+                                            <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
+                                            <li class="footable-page active"><a data-page="0" href="#">1</a></li>
+                                            <li class="footable-page"><a data-page="1" href="#">2</a></li>
+                                            <li class="footable-page-arrow"><a data-page="next" href="#next">›</a>
+                                            </li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>-->
+                    <button type="button" class="btn btn-primary step-force" data-model-this="modalShow_2_step2" data-model-target="modalShow_2_step1">上一步</button>
+                    <button type="button" class="btn btn-primary model_confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 通行权益门票模态窗口 -->
+    <div class="modal inmodal" id="modalShow_3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">添加通行权益折扣</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div role="form" class="form-inline">
+                                <div class="form-group">
+                                    <label>关键字:</label>
+                                    <input type="text" placeholder="请输入关键字" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>-选择类型-</option>
+                                        <option>类型1</option>
+                                        <option>类型2</option>
+                                        <option>类型3</option>
+                                        <option>类型4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-w-m btn-primary" type="button">查询</button>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-w-m btn-warning step-force" type="buttom" data-model-this="modalShow_3" data-model-target="modalShow_3_step1">新增门票</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>门票</th>
+                                    <th>适用门店</th>
+                                    <th>品牌</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>123456</td>
+                                    <td>门店1&nbsp;门店2&nbsp;门店3</td>
+                                    <td>品牌</td>
+                                </tr>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>123456</td>
+                                    <td>门店1&nbsp;门店2&nbsp;门店3</td>
+                                    <td>品牌</td>
+                                </tr><tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>123456</td>
+                                    <td>门店1&nbsp;门店2&nbsp;门店3</td>
+                                    <td>品牌</td>
+                                </tr>
+
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="999" class="footable-visible">
+                                        <ul class="pagination pull-right">
+                                            <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
+                                            <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
+                                            <li class="footable-page active"><a data-page="0" href="#">1</a></li>
+                                            <li class="footable-page"><a data-page="1" href="#">2</a></li>
+                                            <li class="footable-page-arrow"><a data-page="next" href="#next">›</a>
+                                            </li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary model_confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 通行权益门票 step1 -->
+    <div class="modal inmodal" id="modalShow_3_step1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">新增门票</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">门票名称</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" placeholder="输入门票名称" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">门票别名</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" placeholder="输入门票别名" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">可用次数</label>
+                                <div class="col-lg-9">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="" />
+                                        <span class="input-group-addon">次</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">有效期</label>
+                                <div class="col-lg-3">
+                                    <select class="form-control">
+                                        <option>时间段</option>
+                                        <option>月份</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="input-daterange input-group date">
+                                        <input type="text" class="form-control" name="start" value="">
+                                        <span class="input-group-addon">to</span>
+                                        <input type="text" class="form-control" name="end" value="">
+                                    </div>
+                                </div>
+                                <!--<div class="col-lg-9">-->
+                                <!--<input type="text" class="form-control" placeholder="输入月份" />-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>-->
+                    <button type="button" class="btn btn-primary step-force" data-model-this="modalShow_3_step1" data-model-target="modalShow_3_step2">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 通行权益门票 step2 -->
+    <div class="modal inmodal" id="modalShow_3_step2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">关联门票适用品牌</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div role="form" class="form-inline">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>地区</option>
+                                        <option>地区1</option>
+                                        <option>地区2</option>
+                                        <option>地区3</option>
+                                        <option>地区4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>业态</option>
+                                        <option>业态1</option>
+                                        <option>业态2</option>
+                                        <option>业态3</option>
+                                        <option>业态4</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="请输入关键字" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-w-m btn-primary" type="button">查询</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>品牌</th>
+                                    <th>门店</th>
+                                    <th>业态</th>
+                                    <th>所在地区</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>辣府</td>
+                                    <td>门店1</td>
+                                    <td>餐饮</td>
+                                    <td>南京</td>
+                                    <td><a>关联</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>辣府</td>
+                                    <td>门店1</td>
+                                    <td>餐饮</td>
+                                    <td>南京</td>
+                                    <td><a>关联</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="i-checks"><label><input type="checkbox" value=""></label></div></td>
+                                    <td>辣府</td>
+                                    <td>门店1</td>
+                                    <td>餐饮</td>
+                                    <td>南京</td>
+                                    <td><a>关联</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="9"><button type="button" class="btn btn-w-m btn-primary">关联勾选门店</button></td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="999" class="footable-visible">
+                                        <ul class="pagination pull-right">
+                                            <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
+                                            <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
+                                            <li class="footable-page active"><a data-page="0" href="#">1</a></li>
+                                            <li class="footable-page"><a data-page="1" href="#">2</a></li>
+                                            <li class="footable-page-arrow"><a data-page="next" href="#next">›</a>
+                                            </li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-white" data-dismiss="modal">Close</button>-->
+                    <button type="button" class="btn btn-primary step-force" data-model-this="modalShow_3_step2" data-model-target="modalShow_3_step1">上一步</button>
+                    <button type="button" class="btn btn-primary model_confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form id="my-awesome-dropzone" class="dropzone" action="#">
+        <div class="dropzone-previews"></div>
+        <button type="submit" class="btn btn-primary pull-right" id="upload">Submit this form!</button>
+    </form>
+
+    <!-- iCheck -->
+    <script src="/resource/js/plugins/iCheck/icheck.min.js"></script>
+    <!-- Datepicker -->
+    <script src="/resource/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <!-- SUMMERNOTE -->
+    <script src="/resource/js/plugins/summernote/summernote.min.js"></script>
+    <!-- Gallery -->
+    <script src="/resource/js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
+    <!-- Sweet alert -->
+    <script src="/resource/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <!-- DROPZONE -->
+    <script src="/resource/js/plugins/dropzone/dropzone.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            Dropzone.options.myAwesomeDropzone = {
+                autoProcessQueue: false,
+                uploadMultiple: true,
+                parallelUploads: 100,
+                maxFiles: 100,
+
+                // Dropzone settings
+                init: function() {
+                    var myDropzone = this;
+
+                    this.element.querySelector("button[id=uploadFile]").addEventListener("click", function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        myDropzone.processQueue();
+                    });
+                    this.on("sendingmultiple", function() {
+                    });
+                    this.on("successmultiple", function(files, response) {
+                    });
+                    this.on("errormultiple", function(files, response) {
+                    });
+                }
+
+            }
+
+            //日期初始化
+            $('.input-group.date').datepicker({
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                format: "yyyy-mm-dd"
+            });
+
+            //单选框初始化
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+
+            //富文本初始化
+            $('.summernote').summernote();
+
+            //保存弹框
+            $('#save').click(function(){
+                swal({
+                    title: "创建成功",
+                    text: "",
+                    type: "success"
+                }, function(){
+                    tools.href( '运营商管理平台-通行权益管理-index.html' );
+                });
+            });
+
+
+
+        });
+
+        //模态窗口确定按钮
+        $(".model_confirm").click(function(){
+            //关闭所有模态窗口
+            //通行权益折扣所有窗口
+            $('#modalShow_1').modal('hide');
+            $('#modalShow_1_step1').modal('hide');
+            $('#modalShow_1_step2').modal('hide');
+            //通行权益优惠券窗口
+            $('#modalShow_2').modal('hide');
+            $('#modalShow_2_step1').modal('hide');
+            $('#modalShow_2_step2').modal('hide');
+            //通行权益门票窗口
+            $('#modalShow_3').modal('hide');
+            $('#modalShow_3_step1').modal('hide');
+            $('#modalShow_3_step2').modal('hide');
+        });
+
+        //打开
+        $(".step-force").click(function(){
+
+            var obj = {};
+            obj.modelThis   = $(this).attr( 'data-model-this' );
+            obj.modelTarget = $(this).attr( 'data-model-target' );
+
+            console.log( obj.modelThis );
+            console.log( obj.modelTarget );
+
+            //监控当前模态窗口完全关闭
+            $('#' + obj.modelThis ).on('hidden.bs.modal', function (e) {
+                if( obj.modelThis && obj.modelTarget ){
+                    $('#' + obj.modelTarget ).modal('show');
+                    //释放对象参数
+                    delete obj.modelThis;
+                    delete obj.modelTarget
+                }
+            });
+
+            //手动关闭模态窗口
+            $('#' + obj.modelThis ).modal('hide');
+
+        });
+
+    </script>
+</div>
+</body>
+</html>

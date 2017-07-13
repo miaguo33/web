@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="pjax-container">
+			<!--内容部分-->
+			<!-- Select2 -->
+			<link href="/resource/css/plugins/select2/select2.min.css" rel="stylesheet">
+    		<script src="/resource/js/plugins/select2/select2.full.min.js"></script>
+    		<!-- iCheck -->
+			<script src="/resource/js/plugins/iCheck/icheck.min.js"></script>
+			<link href="/resource/css/plugins/iCheck/custom.css" rel="stylesheet">
+			<!-- TouchSpin -->
+			<script src="/resource/js/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script>
+			
+			<div class="wrapper wrapper-content animated fadeInRight">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="ibox">
+							<div class="ibox-title">
+								通行权益发放
+							</div>
+							<div class="ibox-content">
+								<form class="form-horizontal">
+									<div class="form-group">
+										<label class="col-sm-3 control-label">通行权益名称</label>
+										<div class="col-sm-5">
+											<select class="form-control" id="card-name">
+		                                        <option></option>
+		                                        <option value="Bahamas">Bahamas</option>
+		                                        <option value="Bahrain">Bahrain</option>
+		                                        <option value="Bangladesh">Bangladesh</option>
+		                                        <option value="Barbados">Barbados</option>
+		                                        <option value="Belarus">Belarus</option>
+		                                        <option value="Belgium">Belgium</option>
+		                                        <option value="Belize">Belize</option>
+		                                        <option value="Benin">Benin</option>
+		                                    </select>
+	                                    </div>
+	                                </div>
+	                                <div class="hr-line-dashed"></div>
+	                                <div class="form-group clear"><label class="col-sm-3 control-label"></label>
+										<div class="col-sm-5">
+											<label class="checkbox-inline i-checks"> 
+												<input type="radio" value="0" checked="checked" name="type">&nbsp;导入手机号
+											</label>
+											<label class="checkbox-inline i-checks"> 
+												<input type="radio" value="1" name="type">&nbsp;生成激活连接
+											</label>
+										</div>
+									</div>
+									<div class="hr-line-dashed"></div>
+									<div class="type-0">
+										<div class="form-group"><label class="col-sm-3 control-label">导入手机号</label>
+											<div class="col-sm-5">
+												<button class="btn btn-primary" type="button"><i class="fa fa-upload"></i>&nbsp;&nbsp;<span class="bold">上传excel文件</span></button>
+											</div>
+										</div>
+										<div class="hr-line-dashed"></div>
+										<div class="form-group"><label class="col-sm-3 control-label">编辑短信内容</label>
+											<div class="col-sm-9">
+												<div class="row">
+													<div class="col-lg-5">
+														<textarea class="form-control" rows="3" style="resize: vertical;"></textarea> 
+													</div>
+													<div class="col-lg-1 m-t m-b text-center tooltip-demo">
+														<button class="btn btn-primary dim" type="button" data-toggle="tooltip" data-placement="top" title="短信效果预览"><i class="fa fa-eye"></i></button>
+													</div>
+													<div class="col-lg-5">
+														<textarea class="form-control" rows="3" style="resize: vertical;"></textarea> 
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="type-1 hide">
+										<div class="form-group"><label class="col-sm-3 control-label">链接数量</label>
+											<div class="col-sm-5 col-md-4 col-lg-3">
+												<input id="link-num" type="text" value="" name="">
+											</div>
+										</div>
+									</div>
+									<div class="hr-line-dashed"></div>
+									<div class="form-group"><label class="col-sm-3 control-label">备注</label>
+										<div class="col-sm-9 col-lg-5">
+											<textarea class="form-control" rows="3" style="resize: vertical;"></textarea>
+										</div>
+									</div>
+									<div class="hr-line-dashed"></div>
+									<div class="form-group">
+										<div class="col-sm-9 col-sm-offset-3">
+											<button class="btn btn-primary btn-w-m m-r type-0" type="button">发放</button>
+											<button class="btn btn-primary btn-w-m m-r type-1 hide" type="button">下载链接</button>
+											<button class="btn btn-default btn-w-m" type="button">取消</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				$("#card-name").select2({
+	                placeholder: "选择需要发放的通行权益",
+	                allowClear: true
+	            });
+	            $('.i-checks').iCheck({
+					checkboxClass: 'icheckbox_square-green',
+					radioClass: 'iradio_square-green',
+				});
+				$("[data-toggle='tooltip']").tooltip(); 
+				$("#link-num").TouchSpin({
+	                buttondown_class: 'btn btn-white',
+	                buttonup_class: 'btn btn-white'
+	            });
+	            $("input[name='type']").on('ifChanged',function(){
+					var value = $("input[name='type']:checked").val();
+					console.log(value);
+					if(value==1){
+						$(".type-0").hide();
+						$(".type-1").removeClass("hide");
+					}else if(value==0){
+						$(".type-0").show();
+						$(".type-1").addClass("hide");
+					}
+				})
+			</script>
+		</div>
+	</body>
+</html>

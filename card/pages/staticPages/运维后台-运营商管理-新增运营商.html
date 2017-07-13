@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="pjax-container">
+			<!--内容部分-->
+			<!-- iCheck -->
+			<script src="/resource/js/plugins/iCheck/icheck.min.js"></script>
+			<link href="/resource/css/plugins/iCheck/custom.css" rel="stylesheet">
+			<div class="wrapper wrapper-content animated fadeInRight">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="tabs-container">
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a data-toggle="tab" href="#tab-1">基本信息</a>
+								</li>
+								<li class="">
+									<a data-toggle="tab" href="#tab-2">品牌关联</a>
+								</li>
+								<li class="">
+									<a data-toggle="tab" href="#tab-3">运营帐号</a>
+								</li>
+								<li class="">
+									<a data-toggle="tab" href="#tab-4">支付账号配置</a>
+								</li>
+							</ul>
+							<div class="tab-content">
+								<div id="tab-1" class="tab-pane active">
+									<div class="panel-body">
+										<form class="form-horizontal">
+											<div class="form-group"><label class="col-sm-3 control-label"><small class="text-danger">*&nbsp;&nbsp;</small>运营商名称</label>
+												<div class="col-sm-5"><input type="text" class="form-control"></div>
+											</div>
+											<div class="form-group"><label class="col-sm-3 control-label"><small class="text-danger">*&nbsp;&nbsp;</small>公司名称</label>
+												<div class="col-sm-5"><input type="text" class="form-control"></div>
+											</div>
+											<div class="form-group"><label class="col-sm-3 control-label"><small class="text-danger">*&nbsp;&nbsp;</small>公司地址</label>
+												<div class="col-sm-5"><input type="text" class="form-control"></div>
+											</div>
+											<div class="form-group"><label class="col-sm-3 control-label"><small class="text-danger">*&nbsp;&nbsp;</small>联系人</label>
+												<div class="col-sm-5"><input type="text" class="form-control"></div>
+											</div>
+											<div class="form-group"><label class="col-sm-3 control-label"><small class="text-danger">*&nbsp;&nbsp;</small>联系电话</label>
+												<div class="col-sm-5"><input type="text" class="form-control"></div>
+											</div>
+											<div class="form-group"><label class="col-sm-3 control-label"><small class="text-danger">*&nbsp;&nbsp;</small>运营资质</label>
+												<div class="col-sm-5"><a class="btn btn-primary">上传运营资质</a></div>
+											</div>
+											<div class="hr-line-dashed"></div>
+											<div class="form-group">
+												<div class="col-sm-4 col-sm-offset-3"><a class="btn btn-primary">保存</a></div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div id="tab-2" class="tab-pane">
+									<div class="panel-body project-list">
+										<div class="row">
+											<div class="col-sm-10">
+												<div role="form" class="form-inline">
+													<div class="form-group">
+														<label>地区：</label>
+														<select class="form-control" name="account">
+															<option>南京</option>
+															<option>上海</option>
+														</select>
+													</div>
+													<div class="form-group">
+														<label>业态：</label>
+														<select class="form-control" name="account">
+															<option>餐饮</option>
+															<option>购物</option>
+														</select>
+													</div>
+													<div class="form-group">
+														<label>搜索：</label>
+														<input type="text" class="form-control" placeholder="品牌门店搜索">
+													</div>
+													<div class="form-group">
+														<button class="btn btn-w-m btn-primary" type="buttom">查询</button>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-2">
+												<a class="btn btn-block btn-warning" data-toggle="modal" data-target="#brand-store-link">关联品牌门店</a>
+											</div>
+										</div>
+										<div class="row">
+											<table class="table table-bordered table-hover">
+												<thead>
+												<tr>
+													<th>品牌</th>
+													<th>门店</th>
+													<th>业态</th>
+													<th>所在地区</th>
+													<th>操作</th>
+												</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>苏家</td>
+													<td>门店1</td>
+													<td>餐饮</td>
+													<td>南京</td>
+													<td>
+														<a href="#" class="btn btn-primary btn-sm">详情</a>
+														<a href="#" class="btn btn-primary btn-sm">删除</a>
+													</td>
+												</tr>
+												<tr>
+													<td>苏家</td>
+													<td>门店1</td>
+													<td>餐饮</td>
+													<td>南京</td>
+													<td>
+														<a href="#" class="btn btn-primary btn-sm">详情</a>
+														<a href="#" class="btn btn-primary btn-sm">删除</a>
+													</td>
+												</tr>
+												<tr>
+													<td>苏家</td>
+													<td>门店1</td>
+													<td>餐饮</td>
+													<td>南京</td>
+													<td>
+														<a href="#" class="btn btn-primary btn-sm">详情</a>
+														<a href="#" class="btn btn-primary btn-sm">删除</a>
+													</td>
+												</tr>
+												<tr>
+													<td>苏家</td>
+													<td>门店1</td>
+													<td>餐饮</td>
+													<td>南京</td>
+													<td>
+														<a href="#" class="btn btn-primary btn-sm">详情</a>
+														<a href="#" class="btn btn-primary btn-sm">删除</a>
+													</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="btn-group pull-right">
+													<a type="a" class="btn btn-white"><i class="fa fa-chevron-left"></i></a>
+													<a class="btn btn-white">1</a>
+													<a class="btn btn-white  active">2</a>
+													<a class="btn btn-white">3</a>
+													<a class="btn btn-white">4</a>
+													<a type="a" class="btn btn-white"><i class="fa fa-chevron-right"></i> </a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="tab-3" class="tab-pane">
+									<div class="panel-body">
+										<div class="form-group">
+											<form class="form-horizontal">
+												<div class="row">
+													<div class="col-sm-4">
+														<label class="control-label">搜索：</label>
+														<input type="text" class="form-control" placeholder="品牌门店搜索">
+													</div>
+													<div class="col-sm-8">
+														<label class="invisible control-label">占位对齐</label>
+														<div>
+															<a class="btn btn-primary">查询</a>
+															<a class="btn btn-primary pull-right">分配帐号</a>
+														</div>
+														
+													</div>
+												</div>
+											</form>
+										</div>
+										<table class="table table-bordered table-hover">
+											<thead>
+												<tr>
+													<th>帐号</th>
+													<th>操作</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>xiangpai1</td>
+													<td>
+														<a href="#" class="btn btn-primary btn-sm">可运营门店</a>
+														<a href="#" class="btn btn-primary btn-sm">密码重置</a>
+														<a href="#" class="btn btn-primary btn-sm">删除</a>
+													</td>
+												</tr>
+												<tr>
+													<td>xiangpai1</td>
+													<td>
+														<a href="#" class="btn btn-primary btn-sm">可运营门店</a>
+														<a href="#" class="btn btn-primary btn-sm">密码重置</a>
+														<a href="#" class="btn btn-primary btn-sm">删除</a>
+													</td>
+												</tr>
+												<tr>
+													<td>xiangpai1</td>
+													<td>
+														<a href="#" class="btn btn-primary btn-sm">可运营门店</a>
+														<a href="#" class="btn btn-primary btn-sm">密码重置</a>
+														<a href="#" class="btn btn-primary btn-sm">删除</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div id="tab-4" class="tab-pane">
+									<div class="panel-body">
+										<div class="tabs-container">
+					                        <div class="tabs-left">
+					                            <ul class="nav nav-tabs">
+					                                <li class="active"><a data-toggle="tab" href="#tab-5">微信支付</a></li>
+					                                <li class=""><a data-toggle="tab" href="#tab-6">支付宝支付</a></li>
+					                            </ul>
+					                            <div class="tab-content ">
+					                                <div id="tab-5" class="tab-pane active">
+					                                    <div class="panel-body">
+					                                    	<form class="form-horizontal">
+					                                    		<div class="form-group clear"><label class="col-sm-3 control-label">使用服务商模式</label>
+																	<div class="col-sm-5">
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="radio" value="1" name="serviceMode">&nbsp;是
+																		</label>
+																		<label class="checkbox-inline i-checks"> 
+																			<input type="radio" value="0" checked="checked" name="serviceMode">&nbsp;否
+																		</label>
+																	</div>
+																</div>
+																<div class="hr-line-dashed noProvider"></div>
+																<div class="form-group noProvider"><label class="col-sm-3 control-label">APP_ID</label>
+																	<div class="col-sm-5">
+																		<input type="text" class="form-control">
+																	</div>
+																</div>
+																<div class="hr-line-dashed noProvider"></div>
+																<div class="form-group noProvider"><label class="col-sm-3 control-label">APP_SECRET</label>
+																	<div class="col-sm-5">
+																		<input type="text" class="form-control">
+																	</div>
+																</div>
+																<div class="hr-line-dashed"></div>
+																<div class="form-group"><label class="col-sm-3 control-label">MCH_ID</label>
+																	<div class="col-sm-5">
+																		<input type="text" class="form-control">
+																		<span class="help-block m-b-none text-danger isProvider hide">*请至  <a href="http://jgpay.xpinfo.net" target="view_window" class="text-navy">http://jgpay.xpinfo.net</a>配置APP_ID、APP_SECRET、MCH_KEY</span>
+																	</div>
+																</div>
+																<div class="hr-line-dashed noProvider"></div>
+																<div class="form-group noProvider"><label class="col-sm-3 control-label">MCH_KEY</label>
+																	<div class="col-sm-5">
+																		<input type="text" class="form-control">
+																	</div>
+																</div>
+																<div class="form-group">
+																	<div class="col-sm-4 col-sm-offset-3"><a class="btn btn-primary">保存</a></div>
+																</div>
+					                                    	</form>
+					                                    </div>
+					                                </div>
+					                                <div id="tab-6" class="tab-pane">
+					                                	<div class="panel-body">
+					                                		暂不支持
+					                                    </div>
+					                                </div>
+					                            </div>
+					                        </div>
+					                    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="brand-store-link" class="modal fade" aria-hidden="true">
+				<div class="modal-dialog" style="width: 70%">
+					<div class="modal-content">
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-sm-10">
+									<form role="form" class="form-inline">
+										<div class="form-group">
+											<label>地区：</label>
+											<select class="form-control" name="account">
+												<option>南京</option>
+												<option>上海</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label>业态：</label>
+											<select class="form-control" name="account">
+												<option>餐饮</option>
+												<option>购物</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label>搜索：</label>
+											<input type="text" class="form-control" placeholder="品牌门店搜索">
+										</div>
+
+										<div class="form-group">
+											<button class="btn btn-w-m btn-primary" type="buttom">查询</button>
+										</div>
+									</form>
+								</div>
+								<div class="col-sm-2">
+									<a class="btn btn-block btn-primary">全部关联</a>
+								</div>
+							</div>
+							<div class="row">
+								<table class="table table-bordered table-hover">
+									<thead>
+									<tr>
+										<th width="30px"></th>
+										<th width="80px"><input type="checkbox" class="i-checks check-all" name="brand-store">&nbsp;全选</th>
+										<th>品牌</th>
+										<th>门店</th>
+										<th>业态</th>
+										<th>所在地区</th>
+										<th>操作</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr class="table-parent">
+										<td><i class="fa fa-plus"></i></td>
+										<td><input type="checkbox" class="i-checks" name="brand-store"></td>
+										<td>辣府</td>
+										<td></td>
+										<td></td>
+										<td>南京</td>
+										<td>
+											<a href="#" class="btn btn-primary btn-sm">关联</a>
+										</td>
+									</tr>
+									<tr class="table-child">
+										<td></td>
+										<td><input type="checkbox" class="i-checks" name="brand-store"></td>
+										<td>辣府</td>
+										<td>门店1</td>
+										<td>餐饮</td>
+										<td>上海</td>
+										<td>
+											<a href="#" class="btn btn-primary btn-sm">关联</a>
+										</td>
+									</tr>
+									<tr class="table-child">
+										<td></td>
+										<td><input type="checkbox" class="i-checks" name="brand-store"></td>
+										<td>辣府</td>
+										<td>门店1</td>
+										<td>餐饮</td>
+										<td>上海</td>
+										<td>
+											<a href="#" class="btn btn-primary btn-sm">关联</a>
+										</td>
+									</tr>
+									<tr class="table-parent">
+										<td><i class="fa fa-plus"></i></td>
+										<td><input type="checkbox" class="i-checks" name="brand-store"></td>
+										<td>辣府</td>
+										<td></td>
+										<td></td>
+										<td>南京</td>
+										<td>
+											<a href="#" class="btn btn-primary btn-sm">关联</a>
+										</td>
+									</tr>
+									<tr class="table-child">
+										<td></td>
+										<td><input type="checkbox" class="i-checks" name="brand-store"></td>
+										<td>辣府</td>
+										<td>门店1</td>
+										<td>餐饮</td>
+										<td>上海</td>
+										<td>
+											<a href="#" class="btn btn-primary btn-sm">关联</a>
+										</td>
+									</tr>
+									<tr class="table-parent">
+										<td><i class="fa fa-plus"></i></td>
+										<td><input type="checkbox" class="i-checks" name="brand-store"></td>
+										<td>辣府</td>
+										<td></td>
+										<td></td>
+										<td>南京</td>
+										<td>
+											<a href="#" class="btn btn-primary btn-sm">关联</a>
+										</td>
+									</tr>
+									<tr class="table-child">
+										<td></td>
+										<td><input type="checkbox" class="i-checks" name="brand-store"></td>
+										<td>辣府</td>
+										<td>门店1</td>
+										<td>餐饮</td>
+										<td>上海</td>
+										<td>
+											<a href="#" class="btn btn-primary btn-sm">关联</a>
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script>
+				$('.i-checks').iCheck({
+					checkboxClass: 'icheckbox_square-green',
+					radioClass: 'iradio_square-green',
+				});
+				check("brand-store");
+				function check(name){
+					var checkboxes = $("input[name="+name+"]:not(.check-all)");
+					var checkAll = $("input[name="+name+"].check-all");
+					checkboxes.on('ifChanged', function(event){
+						if(checkboxes.filter(':checked').length == checkboxes.length) {
+							checkAll.prop('checked', 'checked');
+						} else {
+							checkAll.removeAttr('checked');
+						}
+						checkAll.iCheck('update');
+					});
+					checkAll.on('ifChecked ifUnchecked', function(event) {
+						if (event.type == 'ifChecked') {
+							checkboxes.iCheck('check');
+						} else {
+							checkboxes.iCheck('uncheck');
+						}
+					});
+				}
+				tableFold();
+				function tableFold(){
+					$(".table-parent .fa-plus").parent().click(function(){
+						$(this).parent().nextUntil(".table-parent").toggle();
+					});
+				}
+				$("input[name='serviceMode']").on('ifChanged',function(){
+					var value = $("input[name='serviceMode']:checked").val();
+					console.log(value);
+					if(value==1){
+						$(".noProvider").hide();
+						$(".isProvider").removeClass("hide");
+					}else if(value==0){
+						$(".noProvider").show();
+						$(".isProvider").addClass("hide");
+					}
+				})
+				
+			</script>
+		</div>
+	</body>
+</html>

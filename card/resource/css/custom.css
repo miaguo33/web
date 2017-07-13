@@ -1,0 +1,139 @@
+
+body {
+    font-family: "Microsoft YaHei" !important;
+}
+input {
+    font-family: "Microsoft YaHei" !important;
+}
+
+@-webkit-keyframes rotation{
+    from {
+        -webkit-transform: rotate(0deg); /* Safari 和 Chrome */
+           -moz-transform: rotate(0deg); 	/* Firefox */
+            -ms-transform: rotate(0deg); 	/* IE 9 */
+             -o-transform: rotate(0deg); 	/* Opera */
+                transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg); /* Safari 和 Chrome */
+           -moz-transform: rotate(360deg); 	/* Firefox */
+            -ms-transform: rotate(360deg); 	/* IE 9 */
+             -o-transform: rotate(360deg); 	/* Opera */
+                transform: rotate(360deg);
+    }
+}
+
+.whirl{
+    -webkit-animation: rotation 1s linear infinite;
+       -moz-animation: rotation 1s linear infinite;
+         -o-animation: rotation 1s linear infinite;
+            animation: rotation 1s linear infinite;
+}
+.whirl-h:hover{
+    -webkit-animation: rotation 1s linear infinite;
+    -moz-animation: rotation 1s linear infinite;
+    -o-animation: rotation 1s linear infinite;
+    animation: rotation 1s linear infinite;
+}
+
+.icon-only{
+    padding: 0 10px;
+}
+.icon-only > i{
+    font-size: 14px;
+}
+
+
+#fileDiv i{
+    font-size: 16px;
+}
+
+.form-group img{
+    max-width: 40%;
+}
+
+.nav > li > a{
+    font-weight: inherit;
+    font-size: 15px;
+}
+.product-name{
+    font-weight: inherit;
+}
+.table-responsive{
+    overflow-x: hidden;
+}
+.modal-lg{
+    width: 85%;
+}
+
+
+
+/* 蒙版 */
+.masked{
+    cursor: default !important;
+}
+.masked .product-box {
+    padding: 0;
+    border: 1px solid #e7eaec;
+}
+.masked .product-box:hover,
+.masked .product-box.active {
+    border: 1px solid #e7eaec;
+    box-shadow: none;
+}
+.masked .product-name:hover,
+.masked .product-name:focus {
+    color: #676a6c;
+}
+.masked .product-desc:before{
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*margin-right: 30px;*/
+    z-index: 999;
+    background-color: rgba( 0, 0, 0, .2 );
+    top: 0;
+    left: 0;
+}
+
+/*.ibox-content{*/
+    /*border-style: none;*/
+/*}*/
+
+.note-editor{
+    min-height: auto;
+}
+
+.ladda-button[data-style=zoom-out] .ladda-spinner{
+    margin-left: auto;
+}
+
+.addPreviewImagePreviewMENU{
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin: 0 20px 20px 0;
+	position: relative;
+}
+.addPreviewImagePreviewMENU img{
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+}
+.addPreviewImagePreviewMENU span{
+	display: block;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.8);
+	top:-10px;
+	right: -10px;
+	text-align: center;
+    padding: 0;
+}
+.addPreviewImagePreviewMENU span i{
+	font-size: 28px;
+	line-height: 30px;
+}

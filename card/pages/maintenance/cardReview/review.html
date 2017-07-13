@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运维后台-通行权益审核-审核</title>
+</head>
+<body>
+
+<div class="pjax-container">
+
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-12">
+            <h2>通行权益审核</h2>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>通行权益审核 <small></small></h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益名称</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="cardName"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益别名</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="cardAliasName"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">运营截止日期</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="disusedDate"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益有效期</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="permanent"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益中余额</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="prestoreMoney"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">含优惠券</label>
+                                <div class="col-lg-10">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>券名</th>
+                                            <th>券别名</th>
+                                            <th>折扣</th>
+                                            <th>适用门店</th>
+                                            <th>使用条件</th>
+                                            <th>有效期</th>
+                                            <th>状态</th>
+                                            <th>说明</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="coupon-select">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">品牌折扣</label>
+                                <div class="col-lg-10">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>折扣名称</th>
+                                            <th>折扣别名</th>
+                                            <th>折扣</th>
+                                            <th>适用门店</th>
+                                            <th>有效期</th>
+                                            <th>状态</th>
+                                            <th>说明</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id='discount-select'>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">含门票</label>
+                                <div class="col-lg-10">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>门票</th>
+                                            <th>门票别名</th>
+                                            <th>适用门店</th>
+                                            <th>可使用次数</th>
+                                            <th>有效期</th>
+                                            <th>状态</th>
+                                            <th>说明</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="ticket-select">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">标准售价</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="price"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">发行数量</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="allCnt"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益说明</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="description"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">需要实名认证</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="realAuth"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">是否展示通卡已售数量</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="showSellCnt"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">是否在手机端展示</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="showInApp"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">客服电话</label>
+                                <div class="col-lg-10">
+                                    <p class="form-control-static" id="csTel"><i class="fa fa-spinner pagination-loading"></i></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益卡面</label>
+                                <div class="col-lg-10">
+                                    <i class="fa fa-spinner pagination-loading"></i>
+                                    <img id="image" src="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益卡面LOGO</label>
+                                <div class="col-lg-10">
+                                    <i class="fa fa-spinner pagination-loading"></i>
+                                    <img id="logo" src="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益详情图片</label>
+                                <div class="col-lg-10">
+                                    <i class="fa fa-spinner pagination-loading"></i>
+                                    <img id="detailImage" src="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">审核凭证</label>
+                                <div class="col-lg-10">
+                                	<a id="auditVoucher" class="" data-toggle="tooltip" data-original-title="下载附件">
+	                                    <i class="fa fa-spinner pagination-loading"></i>
+	                                    <span ></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!--<div class="form-group">-->
+                                <!--<label class="col-lg-2 control-label">审核状态</label>-->
+                                <!--<div class="col-lg-10 inspinia-timeline">-->
+                                    <!--&lt;!&ndash;待审核 &ndash;&gt;-->
+                                    <!--<div class="timeline-item">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-xs-4 date">-->
+                                                <!--<i class="fa fa-file-text"></i>-->
+                                                <!--2017.02.10 12：22-->
+                                                <!--<br/>-->
+                                                <!--<small class="text-navy">2017.02.10 12：22</small>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-xs-8 content no-top-border">-->
+                                                <!--<p class="m-b-xs"><strong>审核中</strong></p>-->
+                                                <!--<div>-->
+                                                    <!--<div class="alert alert alert-danger">-->
+                                                    <!--2017.02.10 12：22提交审核，待审核-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;待审核 &ndash;&gt;-->
+                                    <!--&lt;!&ndash;审核不通过&ndash;&gt;-->
+                                    <!--<div class="timeline-item">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-xs-4 date">-->
+                                                <!--<i class="fa fa-file-text"></i>-->
+                                                <!--2017.02.10 12：22-->
+                                                <!--<br/>-->
+                                                <!--<small class="text-navy">2017.02.10 12：22</small>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-xs-8 content no-top-border">-->
+                                                <!--<p class="m-b-xs"><strong>审核不通过</strong></p>-->
+                                                <!--<div>-->
+                                                    <!--<div class="alert alert alert-danger">-->
+                                                    <!--2017.02.10 15:21 审核不通过，操作账号：admin-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;审核不通过&ndash;&gt;-->
+                                    <!--&lt;!&ndash;审核通过&ndash;&gt;-->
+                                    <!--<div class="timeline-item">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-xs-4 date">-->
+                                                <!--<i class="fa fa-file-text"></i>-->
+                                                <!--2017.02.10 12：22-->
+                                                <!--<br/>-->
+                                                <!--<small class="text-navy">2017.02.10 12：22</small>-->
+                                            <!--</div>-->
+                                            <!--<div class="col-xs-8 content no-top-border">-->
+                                                <!--<p class="m-b-xs"><strong>审核通过</strong></p>-->
+                                                <!--<div>-->
+                                                    <!--<div class="alert alert alert-success">-->
+                                                    <!--2017.02.11 15:21 审核通过, 操作账号 admin-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;审核通过&ndash;&gt;-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <div class="form-group">
+                                <div class="col-sm-10 col-sm-offset-2">
+                                    <button class="ladda-button btn btn-w-m btn-primary btnDiv" type="button" onclick="card.updateAuditStatus(5)">审核通过</button>
+                                    <button class="btn btn-w-m btn-danger btnDiv" type="button" data-toggle="modal" data-target="#modalShow">审核不通过</button>
+                                    <button class="btn btn-w-m btn-default" type="button" onclick="tools.href( '/pages/maintenance/cardReview/list.html');">返 回</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+
+    <div class="modal inmodal" id="modalShow" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">填写审核不通过原因</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div class="form-group text-center">
+                        <textarea class="form-control" id="reason"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-w-m btn-white" data-dismiss="modal">关 闭</button>
+                    <button type="button" class="ladda-button btn btn-w-m btn-primary" onclick="card.updateAuditStatus(4)">确 定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/pageJs/maintenance/cardReview/review.js"></script>
+
+</div>
+
+</body>
+</html>

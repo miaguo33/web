@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>运营商管理平台-通行权益管理-通行权益发放</title>
+</head>
+<body>
+	<div class="pjax-container">
+
+		<div class="row wrapper border-bottom white-bg page-heading">
+			<div class="col-lg-12">
+				<h2>通行权益发放</h2>
+			</div>
+		</div>
+		<div class="wrapper wrapper-content">
+
+			<div class="row animated fadeInRight" id="release_list">
+				<div class="col-sm-12">
+					<div class="tabs-container">
+						<ul class="nav nav-tabs">
+							<li class="active"><a data-toggle="tab" href="#tab-1" aria-expanded="true"> 导入手机号发放</a></li>
+							<li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false"> 激活链接发放</a></li>
+						</ul>
+						<div class="tab-content">
+							<div id="tab-1" class="tab-pane active">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="ibox float-e-margins">
+												<div class="ibox-content no-borders">
+													<div class="row">
+														<div class="col-sm-4 m-b">
+															<div class="input-group">
+																<input type="text" placeholder="请输入通行权益名称" class="form-control" id="searchText">
+																<span class="input-group-btn">
+																	<button type="button" class="ladda-button btn btn-primary" onclick="list_tabs.loadQuery(1)"> 搜索</button>
+																</span>
+															</div>
+														</div>
+														<div class="col-sm-4 m-b">
+														</div>
+														<div class="col-sm-2 m-b">
+															<a class="ladda-button btn btn-block btn-primary" href="/uploadmodel/importSendUnionCardPhoneModel.xlsx" >下载模板</a>
+														</div>
+														<div class="col-sm-2 m-b">
+															<a class="ladda-button btn btn-block btn-primary" onclick="list_tabs.switch('phone');">导入手机号</a>
+														</div>
+													</div>
+													<div class="table-responsive">
+														<!--<table class="table table-bordered table-hover">-->
+														<table class="table table-striped table-hover">
+															<thead>
+															<tr>
+																<th>通行权益名称</th>
+																<th>发放数量（张）</th>
+																<th>发放成功张数（张）</th>
+																<th>发放失败张数（张）</th>
+																<th>状态</th>
+																<th>操作账号</th>
+																<th>操作时间</th>
+																<th>操作</th>
+															</tr>
+															</thead>
+															<tbody id="dataList"></tbody>
+														</table>
+														<div id="pageTab" class="page_num"></div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="tab-2" class="tab-pane">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="ibox float-e-margins">
+												<div class="ibox-content no-borders">
+													<div class="row">
+														<div class="col-sm-4 m-b">
+															<div class="input-group">
+																<input type="text" placeholder="请输入通行权益名称" class="form-control" id="searchText2">
+                                                            <span class="input-group-btn">
+                                                                <button type="button" class="ladda-button btn btn-primary" onclick="list_tabs.loadQuery2(1)"> 搜索</button>
+                                                            </span>
+															</div>
+														</div>
+														<div class="col-sm-6 m-b"></div>
+														<div class="col-sm-2 m-b">
+															<a class="ladda-button btn btn-block btn-primary" onclick="list_tabs.switch('link');">生成激活链接</a>
+														</div>
+													</div>
+													<div class="table-responsive">
+														<!--<table class="table table-bordered table-hover">-->
+														<table class="table table-striped table-hover">
+															<thead>
+															<tr>
+																<th>通行权益名称</th>
+																<th>生成链接数量</th>
+																<th>操作账号</th>
+																<th>操作时间</th>
+																<th>操作</th>
+															</tr>
+															</thead>
+															<tbody id="dataList2"></tbody>
+														</table>
+														<div id="pageTab2" class="page_num"></div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row animated fadeInRight hide" id="release_form">
+				<div class="col-sm-12">
+					<div class="ibox">
+						<div class="ibox-title">
+							通行权益发放
+						</div>
+						<div class="ibox-content">
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">通行权益名称</label>
+									<div class="col-sm-5">
+										<select class="form-control" id="cardSelect">
+											<option></option>
+
+										</select>
+									</div>
+								</div>
+								<!--<div class="form-group clear">-->
+									<!--<label class="col-sm-2 control-label"></label>-->
+									<!--<div class="col-sm-5">-->
+										<!--<label class="checkbox-inline i-checks">-->
+											<!--<input type="radio" value="0" name="type" checked="checked">&nbsp;导入手机号-->
+										<!--</label>-->
+										<!--<label class="checkbox-inline i-checks">-->
+											<!--<input type="radio" value="1" name="type">&nbsp;生成激活连接-->
+										<!--</label>-->
+									<!--</div>-->
+								<!--</div>-->
+								<div class="hr-line-dashed"></div>
+								<div class="type-0">
+									<div class="form-group">
+										<label class="col-sm-2 control-label">导入手机号</label>
+										<div class="col-sm-5">
+											<form class="m-b" id="fileupload" action="/rest/file/upload" method="POST" enctype="multipart/form-data">
+												<div>
+													<!-- The fileinput-button span is used to style the file input field as button -->
+													<span class="btn btn-white fileinput-button">
+														<i class="fa fa-file-text-o icon-white"></i> <span>上传</span> <input type="file" name="file" id="file" multiple>
+													</span>
+												</div>
+												<span class="help-block text-danger m-b-none">( 仅限 Excel 文件 )</span>
+												<input type="hidden" name="name" id="name" value=""/>
+												<input type="hidden" name="prefix" id="prefix" value=""/>
+												<input type="hidden" name="fileName" id="fileName" value=""/>
+												<input type="hidden" name="longEdge" id="longEdge" value=""/>
+											</form>
+
+											<div class="progress progress-striped active" id="progressBarDiv" style="width: 300px; display: none;">
+												<div id="progressBar" style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" role="progressbar" class="progress-bar progress-bar-default">
+													<span class="sr-only"></span>
+												</div>
+											</div>
+											<div id="fileDiv"></div>
+											<div>
+												<img id="addPreviewImagePreview" />
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">是否发送短信</label>
+										<div class="col-sm-5">
+											<label class="checkbox-inline i-checks">
+												<input type="radio" value="1" name="smsSendStatus">&nbsp;是
+											</label>
+											<label class="checkbox-inline i-checks">
+												<input type="radio" value="0" name="smsSendStatus" checked="checked">&nbsp;否
+											</label>
+										</div>
+									</div>
+									<div class="form-group hide" id="smsDiv">
+										<label class="col-sm-2 control-label">编辑短信内容</label>
+										<div class="col-sm-7">
+											<textarea class="form-control" rows="3" style="resize: vertical;" id="sms"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="type-1 hide">
+									<div class="form-group">
+										<label class="col-sm-2 control-label">链接数量</label>
+										<div class="col-sm-7">
+											<input id="link-num" type="text" value="" name="">
+											<span class="help-block text-danger">本次操作最多生成1000个链接，当前剩余通行权益数量约为<span id="restCnt">0</span>个</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">备注</label>
+									<div class="col-sm-7">
+										<textarea class="form-control" rows="3" style="resize: vertical;" id="remark"></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-9 col-sm-offset-2">
+										<button class="btn btn-primary btn-w-m m-r type-0" type="button" onclick="cardRelease.checkForm();">发放</button>
+										<button class="ladda-button btn btn-primary btn-w-m m-r type-1 hide" onclick="cardRelease.checkForm();" type="button">生成链接</button>
+										<button class="btn btn-default btn-w-m" type="button" onclick="list_tabs.switch( 'list' );">取消</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="modal inmodal" id="modalShow" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content animated fadeInDownBig">
+					<div class="modal-header">
+						<h4 class="modal-title" id="modalTitle">完善支付信息</h4>
+						<small class="font-bold">(可不填写)</small>
+					</div>
+					<div class="modal-body" style="background-color: #fff">
+
+						<div class="row">
+							<div class="ibox float-e-margins">
+								<div class="ibox-content no-borders">
+									<form class="form-horizontal">
+										<div class="form-group">
+											<label class="col-lg-3 control-label">支付类型</label>
+											<div class="col-lg-5">
+												<select class="form-control">
+													<option value="0">微信支付</option>
+													<option value="1">支付宝支付</option>
+													<option value="2">现金</option>
+													<option value="3">银行转账</option>
+													<option value="4">赠送</option>
+													<option value="5">其他</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-lg-3 control-label">实付金额</label>
+											<div class="col-lg-9">
+												<div class="input-group">
+													<input type="text" placeholder="输入实付金额（选填）" class="form-control" id="actualMoney">
+													<span class="input-group-addon">元</span>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-lg-3 control-label">交易订单号</label>
+											<div class="col-lg-9">
+												<input type="text" placeholder="输入交易订单号（选填）" class="form-control" id="tradeSerialNo">
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="ladda-button btn btn-primary" onclick="cardRelease.submitForm();">发 放</button>
+						<button type="button" class="btn btn-white" data-dismiss="modal">关 闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/pageJs/operator/cardManage/release.js"></script>
+
+	</div>
+</body>
+</html>

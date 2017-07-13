@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div class="pjax-container">
+
+    <div class="row wrapper border-bottom white-bg dashboard-header">
+        <div class="col-lg-10">
+            <form role="form" class="form-inline">
+
+                <div class="form-group">
+                    <select class="form-control">
+                        <option>待审核</option>
+                        <option>审核不通过</option>
+                        <option>审核通过</option>
+                        <option>全部</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>搜索:</label>
+                    <input type="email" placeholder="运营商、通行权益名称、品牌门店搜索" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-w-m btn-primary" type="submit">查询</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+    </div>
+
+
+    <div class="row wrapper wrapper-content animated fadeInRight">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>运营商</th>
+                            <th>通行权益名称</th>
+                            <th>标准售价(元)</th>
+                            <th>总发行量(张)</th>
+                            <th>提交审核日期</th>
+                            <th>审核日期</th>
+                            <th>审核状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>苏家</td>
+                            <td>苏家一卡通</td>
+                            <td>20000</td>
+                            <td>5000000</td>
+                            <td>2017-02-11</td>
+                            <td>-</td>
+                            <td>待审核</td>
+                            <td>
+                                <a class="icon-only" data-toggle="tooltip" title="预览">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a class="icon-only" data-toggle="tooltip" title="审核" data-pjax href="运维后台-通行权益审核-审核.html">
+                                    <i class="fa fa-tasks"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>苏家</td>
+                            <td>苏家一卡通</td>
+                            <td>20000</td>
+                            <td>5000000</td>
+                            <td>2017-02-11</td>
+                            <td>2017-02-10</td>
+                            <td>审核通过</td>
+                            <td>
+                                <a class="icon-only" data-toggle="tooltip" title="预览">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a class="icon-only" data-toggle="tooltip" title="审核" data-pjax href="运维后台-通行权益审核-审核.html">
+                                    <i class="fa fa-tasks"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>苏家</td>
+                            <td>苏家一卡通</td>
+                            <td>20000</td>
+                            <td>5000000</td>
+                            <td>2017-02-11</td>
+                            <td>2017-02-10</td>
+                            <td class="red">审核不通过</td>
+                            <td>
+                                <a class="icon-only" data-toggle="tooltip" title="预览">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a class="icon-only" data-toggle="tooltip" title="审核" data-pjax href="运维后台-通行权益审核-审核.html">
+                                    <i class="fa fa-tasks"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="999" class="footable-visible">
+                                <ul class="pagination pull-right">
+                                    <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
+                                    <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
+                                    <li class="footable-page active"><a data-page="0" href="#">1</a></li>
+                                    <li class="footable-page"><a data-page="1" href="#">2</a></li>
+                                    <li class="footable-page-arrow"><a data-page="next" href="#next">›</a>
+                                    </li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+
+
+
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>运营商</th>
+                            <th>通行权益名称</th>
+                            <th>标准售价(元)</th>
+                            <th>总发行量(张)</th>
+                            <th>提交审核日期</th>
+                            <th>审核日期</th>
+                            <th>审核状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="dataList">
+
+                        </tbody>
+                    </table>
+                    <div id="pageTab" class="page_num"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal inmodal" id="modalShow" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">扫描二维码展示效果</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div class="form-group text-center">
+                        <img src="/resource/img/a4.jpg" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">关 闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        /**
+         * 分页加载器
+         */
+        var query = (function() {
+            var pageBar = $("#pageTab");
+            var tableBody = $("#dataList");
+            var queryPageUtil = new PageUtils( pageBar, tableBody);
+            this.loadQuery = function(page, removeIfEmpty) {
+                var id = '1';
+                queryPageUtil.loadPage(page,
+                    'http://wx.xpinfo.net/index.php?s=/home/index/xb_list2',
+                    {
+                        'id':id
+                    },
+                    function(jsonResponse) {
+                        var pagination = jsonResponse['jbody']['pageInfo'];
+                        tableBody.html('');
+                        if (!pagination['list'] || pagination['list'].length == 0){
+//                            tools.toastr("无符合的搜索内容","提示信息", 'warning')
+                            return;
+                        }
+                        //pagination['list'].reverse();
+                        $(pagination['list']).each(function(index, item){
+                            var html = '<tr class="animated fadeIn">';
+                            html += '<td></td>';
+                            html += '<td></td>';
+                            html += '<td></td>';
+                            html += '<td></td>';
+                            html += '<td></td>';
+                            html += '<td></td>';
+                            html += '<td></td>';
+                            html += '<td></td>';
+                            html += '</tr>';
+                            $(html).appendTo(tableBody);
+                        });
+                        tableBody.parent().trimTextLength();
+                    },
+                    null,
+                    removeIfEmpty
+                );
+
+            };
+            return this;
+        })();
+
+        $(document).ready(function(){
+            /**
+             * tooltip监控
+             */
+            $('[data-toggle="tooltip"]').tooltip({
+                'placement':'top'
+            });
+
+            $(".icon-only").click(function(){
+                if( $(this).attr('data-original-title') == '预览' ){
+                    $("#modalShow").modal('show');
+                }
+            });
+
+            query.loadQuery(1);
+        });
+
+    </script>
+</div>
+
+</body>
+</html>

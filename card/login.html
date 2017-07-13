@@ -1,0 +1,204 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录</title>
+    <link href="bsWeb/css/bootstrap.css" rel="stylesheet">
+    <link href="bsWeb/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="login">
+        <div class="pic-left">
+            <img class="img-responsive pic-left-img" src="bsWeb/images/login-img.jpg">
+            <div class="pic-left-bottom">
+                <div class="title">
+                    <p class="lg">联合运营系统</p>
+                    <p class="sm">联合运营  流量互补</p>
+                </div>
+                <div class="qrcode">
+                    <img src="bsWeb/images/core.png">
+                </div>
+                <div class="text">
+                    扫一扫</br>
+                    更精彩
+                </div>
+            </div>
+        </div>
+        <div class="right-log">
+            <div class="login-logo">
+                <img src="bsWeb/images/logo.png">
+            </div>
+            <div class="login-header">
+                <div class="brand">欢迎使用联合运营系统</div>
+            </div>
+            <div class="login-content tab-content">
+                <div class="tab-pane fade in active" id="company_user">
+                    <form>
+                        <div class="form-group m-b-15">
+                            <input name="username" id="username" type="text" class="form-control input-lg" placeholder="请输入用户名" style="font-size: 16px">
+                            <p class='warn warningTipName'></p>
+                        </div>
+                        <div class="form-group m-b-15">
+                            <input name="password" type="password" id="password" class="form-control input-lg" placeholder="请输入密码" style="font-size: 16px">
+                            <p class='warn warningTipPsd'></p>
+                        </div>
+                        <div class="form-group m-b-15">
+                            <select class="form-control input-lg" id="loginType">
+                                <option value="1">运营商登录</option>
+                                <option value="0">管理员登录</option>
+                            </select>
+                            <p class='warn warningTipPsd'></p>
+                        </div>
+                        <div>
+                            <input id="remberPassword" type='checkbox'>
+                            <span style="line-height: 40px; height: 40px; font-size: 18px; color: #404344">记住密码</span>
+                        </div>
+                        <div class="warn warningTip">
+                        </div>
+                        <div class="login-buttons">
+                            <a href="javascript:void(0)" id="login_" class="btn btn-primary btn-block btn-lg btn-green">登录</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="bsWeb/js/jquery-2.1.1.js"></script>
+<script src="bsWeb/js/cookieUtils.js"></script>
+<script src="/resource/js/request.js"></script>
+<script src="/resource/js/plugins/pace/pace.min.js"></script>
+<script>
+var t_img; // 定时器
+var isLoad = true; // 控制变量
+
+//当点击回退时，用户信息还在，直接回到主页面
+var user_uuid = getCookie('uuid');
+if(user_uuid != null && user_uuid != ''){
+    window.history.forward();
+}
+
+$(document).ready(function(){
+
+        function asyncLogin()
+        {
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var loginType = $("#loginType option:selected").val();
+
+            if (!username)
+            {
+                $('.warningTipName').html('请输入用户名！');
+                $("#username").focus();
+                return false;
+            }
+
+            if (!password)
+            {
+                $('.warningTipPsd').html('请输入密码！');
+                $("#password").focus();
+                return false;
+            }
+            /********** 异步登录 **************/
+            var url = '/system/user/login';
+            var data = {'loginName':username,'verifyCode':password, 'loginType': loginType};
+            http.post( url, data, function (jsonResponse) {
+                    $("#loadingtip").hide();
+                    if (parseInt(jsonResponse['statusCode'])){
+                        $("#remberPassword").attr('checked', false);
+                        removeCookie('card.rememberPasswd');
+                        $('.warningTip').html(jsonResponse['msg']);
+                    } else {
+                        if ($('#remberPassword').prop('checked'))
+                        {
+                            setCookie('card.username', username);
+                            setCookie('card.password', encodeURI(password));
+                            setCookie('card.logintype', loginType);
+                        }
+                        else
+                        {
+                            removeCookie('card.username');
+                            removeCookie('card.password');
+                            removeCookie('card.logintype');
+                        }
+
+                        setCookie('card.userinfo', JSON.stringify(jsonResponse['jbody']['LoginUser']));
+                        var main_action = "/pages/main.html"; //主页action
+
+                        window.location.href = main_action;
+                    }
+                }, function (xhr, state, exception) {
+                    $("#loadingtip").hide();
+                    $('.warningTip').html('登录失败！')
+                }
+            );
+
+            /*********************************/
+        }
+
+
+
+        /** 增加键盘事件监听 */
+        $("#username").keydown(function(event){
+            var e = event || window.event;
+            var k = e.keyCode || e.which;
+            e.stopPropagation();
+            if (k == 13) // 回车键
+            {
+                $("#password").focus();
+            }
+        });
+
+        $("#password").keydown(function(event){
+            var e = event || window.event;
+            var k = e.keyCode || e.which;
+            e.stopPropagation();
+            if (k == 13) // 回车键
+            {
+                asyncLogin();
+            }
+        });
+
+        $("#login_").click(function(){
+            asyncLogin();
+        });
+
+
+        /********** 记住密码处理 ***********/
+        var cookieuser = getCookie('card.username');
+        var cookiepassword = getCookie('card.password') ? decodeURI(getCookie('card.password')) : null;
+        var rememberPasswdOption = getCookie('card.rememberPasswd');
+        var newVersion = getCookie('card.newVersion');
+
+        if (cookieuser)
+        {
+            $("#username").val(cookieuser);
+        }
+
+        if (cookiepassword)
+        {
+            $("#password").val(cookiepassword);
+        }
+
+        if (rememberPasswdOption && 'true' === rememberPasswdOption)
+        {
+            $('#remberPassword').attr('checked',true)
+        }
+
+
+        $("#remberPassword").change(function() {
+            if ($(this).prop('checked'))
+            {
+                setCookie('card.rememberPasswd', 'true');
+            }
+            else
+            {
+                removeCookie('card.rememberPasswd');
+            }
+        });
+
+
+});
+</script>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运维后台-开户</title>
+</head>
+<body>
+
+<div class="pjax-container">
+    <link href="/resource/css/plugins/iCheck/custom.css" rel="stylesheet">
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>开户 <small></small></h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">商户类型</label>
+                                <div class="col-md-10">
+                                    <div class="i-checks radio-inline">
+                                        <label> <input type="radio" value="1" name="merchantType" checked="" > 总店 </label>
+                                    </div>
+                                    <div class="i-checks radio-inline">
+                                        <label> <input type="radio" value="2" name="merchantType"> 分店 </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">业态</label>
+                                <div class="col-md-3">
+                                    <select class="form-control m-b" name="account">
+                                        <option>业态1</option>
+                                        <option>业态2</option>
+                                        <option>业态3</option>
+                                        <option>业态4</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-w-m btn-primary" data-toggle="modal" data-target="#modalShow">新增业态</button>
+                                </div>
+                            </div>
+                            <div class="form-group" id="city">
+                                <label class="col-md-2 control-label">地区</label>
+                                <div class="col-md-2">
+                                    <select class="prov form-control m-b">
+                                        <option>省</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <select class="city form-control m-b" disabled="disabled">
+                                        <option>市</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <select class="dist form-control m-b" disabled="disabled">
+                                        <option>区</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">商户名</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">路由URL</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">审核通过</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal inmodal" id="modalShow" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <!--<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>-->
+                    <!--<i class="fa fa-laptop modal-icon"></i>-->
+                    <!--<h4 class="modal-title">Modal title</h4>-->
+                    <!--<small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>-->
+                    <h4 class="modal-title">新增业态</h4>
+
+                </div>
+                <div class="modal-body">
+                    <!--<p><strong>Lorem Ipsum is simply dummy</strong> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown-->
+                    <!--printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,-->
+                    <!--remaining essentially unchanged.</p>-->
+                    <div class="form-group">
+                        <!--<label>Sample Input</label> -->
+                        <input type="text" placeholder="输入业态" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/resource/js/plugins/CitySelect/jquery.cityselect.js"></script>
+
+    <!-- iCheck -->
+    <script src="/resource/js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+
+        $("#city").citySelect({
+            nodata:"none",
+            required:false
+        });
+    </script>
+
+</div>
+
+</body>
+</html>

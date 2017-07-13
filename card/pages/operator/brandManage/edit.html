@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>运营商管理平台-品牌管理-编辑</title>
+	</head>
+
+	<body>
+		<div class="pjax-container">
+
+			<div class="row wrapper border-bottom white-bg page-heading">
+				<div class="col-lg-12">
+					<h2>品牌管理-编辑</h2>
+				</div>
+			</div>
+			<div class="wrapper wrapper-content animated fadeIn">
+				<div class="animated fadeInDown">
+					<div class="row">
+						<div class="col-sm-3">
+							<img src="/resource/img/example4.png" style="max-width: 100%;" id="showImg"/>
+						</div>
+						<div class="col-sm-9 cleanfix">
+							<div class="tabs-container">
+								<ul class="nav nav-tabs">
+									<li class="active" onclick="brandDetailInit.tabSwitch('AD')">
+										<a data-toggle="tab" href="#tab-1">品牌广告</a>
+									</li>
+									<li class=""  onclick="brandDetailInit.tabSwitch('MENU')">
+										<a data-toggle="tab" href="#tab-2">菜单配置</a>
+									</li>
+									<li class=""  onclick="brandDetailInit.tabSwitch('CATEGORY')">
+										<a data-toggle="tab" href="#tab-3">地域/商圈/其他</a>
+									</li>
+									<li class=""  onclick="brandDetailInit.tabSwitch('TAG')">
+										<a data-toggle="tab" href="#tab-4">展示标签</a>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div id="tab-1" class="tab-pane active">
+										<div class="panel-body inner">
+											<div class="form-horizontal">
+												<p class="alert alert-warning">配置首页广告图，可以添加跳转链接，指定跳转页面，最多可配置5个广告图</p>
+												<div class="col-sm-12 animated fadeInDown" id="elementAD1">
+													<h3>广告1</h3>
+													<div class="form-group">
+														<label class="col-sm-3 control-label">广告图</label>
+														<div class="col-sm-9">
+															<form class="m-b" id="fileuploadAD1" action="/rest/file/upload" method="POST" enctype="multipart/form-data">
+																<div>
+																	<span class="btn btn-white fileinput-button">
+                                                                        <i class="fa fa-file-text-o icon-white"></i> <span>上传</span>
+																	<input type="file" name="fileAD1" id="fileAD1" multiple>
+																	</span>
+																</div>
+																<input type="hidden" name="name" id="nameAD1" value="" />
+																<input type="hidden" name="prefix" id="prefixAD1" value="" />
+																<input type="hidden" name="fileName" id="fileNameAD1" value="" />
+																<input type="hidden" name="longEdge" id="longEdgeAD1" value="" />
+															</form>
+															<span class="help-block text-danger m-b">（图片建议尺寸750*450像素，比例5:3，大小500KB以内）</span>
+															<div class="progress progress-striped active" id="progressBarDivAD1" style="width: 300px; display: none;">
+																<div id="progressBarAD1" style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" role="progressbar" class="progress-bar progress-bar-default">
+																	<span class="sr-only"></span>
+																</div>
+															</div>
+															<div id="fileDivAD1"></div>
+															<div>
+																<img id="addPreviewImagePreviewAD1" />
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label">跳转链接</label>
+														<div class="col-sm-9">
+															<div class="input-group">
+																<span class="input-group-addon">http://</span>
+																<input type="text" placeholder="输入跳转链接" class="form-control" id="linkAD1">
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<div class="col-sm-offset-3 col-sm-9">
+															<button class="ladda-button btn btn-sm btn-w-m btn-danger" type="button" data-style="zoom-out" onclick="brandDetailADUpload.deleteElement(1)">
+																<span class="ladda-label">删除</span><span class="ladda-spinner"></span>
+															</button>
+														</div>
+													</div>
+													<div class="hr-line-dashed"></div>
+												</div>
+												<div class="col-sm-12 animated fadeInDown">
+													<div class="form-group" id="addAD">
+														<div class="col-sm-offset-3 col-sm-9">
+															<button class="ladda-button btn btn-sm btn-w-m btn-warning" type="button" onclick="brandDetailADUpload.addElement()">添加广告位</button>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="col-sm-offset-3 col-sm-9">
+															<button class="ladda-button btn btn-sm btn-w-m btn-primary" type="button" onclick="brandDetailADUpload.submitContent()">保 存</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="tab-2" class="tab-pane">
+										<div class="panel-body inner">
+											<div class="form-horizontal">
+												<p class="alert alert-warning">可更改菜单名称，添加每个菜单的内容，可勾选显示想要的菜单,拖动图片可更改排序</p>
+												<div class="row animated fadeInDown">
+													<div class="col-sm-12">
+														<div class="form-group">
+															<label class="col-sm-3 control-label">是否展示</label>
+															<div class="col-sm-9">
+																<input type="checkbox" class="i-checks" checked="checked" id="menuIsShow1">
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">菜单名称</label>
+															<div class="col-sm-9">
+																<input type="text" placeholder="输入菜单名称" class="form-control" id="menuName1">
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">图片</label>
+															<div class="col-sm-9">
+																<form class="m-b" id="fileuploadMENU1" action="/rest/file/upload" method="POST" enctype="multipart/form-data">
+																	<div>
+																		<span class="btn btn-white fileinput-button">
+	                                                                        <i class="fa fa-file-text-o icon-white"></i> <span>上传</span>
+																		<input type="file" name="fileMENU1" id="fileMENU1" multiple>
+																		</span>
+																	</div>
+																	<input type="hidden" name="name" id="nameMENU1" value="" />
+																	<input type="hidden" name="prefix" id="prefixMENU1" value="" />
+																	<input type="hidden" name="fileName" id="fileNameMENU1" value="" />
+																	<input type="hidden" name="longEdge" id="longEdgeMENU1" value="" />
+																</form>
+																<span class="help-block text-danger m-b">（图片建议宽度750像素，高度不限，尽量小）</span>
+																<div class="progress progress-striped active" id="progressBarDivMENU1" style="width: 300px; display: none;">
+																	<div id="progressBarMENU1" style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" role="progressbar" class="progress-bar progress-bar-default">
+																		<span class="sr-only"></span>
+																	</div>
+																</div>
+																<div id="fileDivMENU1"></div>
+																<div id = "addPreviewImagePreviewMENU1" class="connectList">
+																	
+																</div>
+															</div>
+														</div>
+														<div class="hr-line-dashed"></div>
+													</div>
+													<div class="col-sm-12">
+														<div class="form-group">
+															<label class="col-sm-3 control-label">是否展示</label>
+															<div class="col-sm-9">
+																<input type="checkbox" class="i-checks" checked="checked" id="menuIsShow2">
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">菜单名称</label>
+															<div class="col-sm-9">
+																<input type="text" placeholder="输入菜单名称" class="form-control" id="menuName2">
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">图片</label>
+															<div class="col-sm-9">
+																<form class="m-b" id="fileuploadMENU2" action="/rest/file/upload" method="POST" enctype="multipart/form-data">
+																	<div>
+																		<span class="btn btn-white fileinput-button">
+	                                                                        <i class="fa fa-file-text-o icon-white"></i> <span>上传</span>
+																		<input type="file" name="fileMENU2" id="fileMENU2" multiple>
+																		</span>
+																	</div>
+																	<input type="hidden" name="name" id="nameMENU2" value="" />
+																	<input type="hidden" name="prefix" id="prefixMENU2" value="" />
+																	<input type="hidden" name="fileName" id="fileNameMENU2" value="" />
+																	<input type="hidden" name="longEdge" id="longEdgeMENU2" value="" />
+																</form>
+																<span class="help-block text-danger m-b">（图片建议宽度750像素，高度不限，尽量小）</span>
+																<div class="progress progress-striped active" id="progressBarDivMENU2" style="width: 300px; display: none;">
+																	<div id="progressBarMENU2" style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" role="progressbar" class="progress-bar progress-bar-default">
+																		<span class="sr-only"></span>
+																	</div>
+																</div>
+																<div id="fileDivMENU2"></div>
+																<div id = "addPreviewImagePreviewMENU2" class="connectList">
+																	
+																</div>
+															</div>
+														</div>
+														<div class="hr-line-dashed"></div>
+													</div>
+													<div class="col-sm-12">
+														<div class="form-group">
+															<label class="col-sm-3 control-label">是否展示</label>
+															<div class="col-sm-9">
+																<input type="checkbox" class="i-checks" checked="checked" id="menuIsShow3">
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">菜单名称</label>
+															<div class="col-sm-9">
+																<input type="text" placeholder="输入菜单名称" class="form-control" id="menuName3">
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">图片</label>
+															<div class="col-sm-9">
+																<form class="m-b" id="fileuploadMENU3" action="/rest/file/upload" method="POST" enctype="multipart/form-data">
+																	<div>
+																		<span class="btn btn-white fileinput-button">
+	                                                                        <i class="fa fa-file-text-o icon-white"></i> <span>上传</span>
+																		<input type="file" name="fileMENU3" id="fileMENU3" multiple>
+																		</span>
+																	</div>
+																	<input type="hidden" name="name" id="nameMENU3" value="" />
+																	<input type="hidden" name="prefix" id="prefixMENU3" value="" />
+																	<input type="hidden" name="fileName" id="fileNameMENU3" value="" />
+																	<input type="hidden" name="longEdge" id="longEdgeMENU3" value="" />
+																</form>
+																<span class="help-block text-danger m-b">（图片建议宽度750像素，高度不限，尽量小）</span>
+																<div class="progress progress-striped active" id="progressBarDivMENU3" style="width: 300px; display: none;">
+																	<div id="progressBarMENU3" style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" role="progressbar" class="progress-bar progress-bar-default">
+																		<span class="sr-only"></span>
+																	</div>
+																</div>
+																<div id="fileDivMENU3"></div>
+																<div id = "addPreviewImagePreviewMENU3" class="connectList">
+																	
+																</div>
+															</div>
+														</div>
+														<div class="hr-line-dashed"></div>
+													</div>
+													<div class="col-sm-12">
+														<div class="form-group">
+															<label class="col-sm-3 control-label">是否展示</label>
+															<div class="col-sm-9">
+																<input type="checkbox" class="i-checks" checked="checked" id="menuIsShow4">
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">菜单名称</label>
+															<div class="col-sm-9">
+																<input type="text" placeholder="输入菜单名称" class="form-control" id="menuName4" value="权益购买" disabled="disabled">
+															</div>
+														</div>
+														<!--<div class="form-group">
+															<label class="col-sm-3 control-label">图片</label>
+															<div class="col-sm-9">
+																<form class="m-b" id="fileuploadMENU4" action="/rest/file/upload" method="POST" enctype="multipart/form-data">
+																	<div>
+																		<span class="btn btn-white fileinput-button">
+	                                                                        <i class="fa fa-file-text-o icon-white"></i> <span>上传</span>
+																		<input type="file" name="fileMENU4" id="fileMENU4" multiple>
+																		</span>
+																	</div>
+																	<input type="hidden" name="name" id="nameMENU4" value="" />
+																	<input type="hidden" name="prefix" id="prefixMENU4" value="" />
+																	<input type="hidden" name="fileName" id="fileNameMENU4" value="" />
+																	<input type="hidden" name="longEdge" id="longEdgeMENU4" value="" />
+																</form>
+																<span class="help-block text-danger m-b">（图片建议宽度750像素，高度不限，尽量小）</span>
+																<div class="progress progress-striped active" id="progressBarDivMENU4" style="width: 300px; display: none;">
+																	<div id="progressBarMENU4" style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" role="progressbar" class="progress-bar progress-bar-default">
+																		<span class="sr-only"></span>
+																	</div>
+																</div>
+																<div id="fileDivMENU4"></div>
+																<div id = "addPreviewImagePreviewMENU4" class="connectList">
+																	
+																</div>
+															</div>
+														</div>-->
+														<div class="hr-line-dashed"></div>
+													</div>
+													<div class="col-sm-12">
+														<div class="form-group">
+															<div class="col-sm-offset-3 col-sm-9">
+																<button class="ladda-button btn btn-sm btn-w-m btn-primary" type="button" onclick="brandDetailMENUUpload.submitContent();">保 存</button>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<div id="tab-3" class="tab-pane">
+										<div class="panel-body inner">
+											<div class="form-horizontal">
+												<p class="alert alert-warning">给当前品牌门店关联自定义标签后，用户可通过关联的标签筛选出当前品牌门店</p>
+												<div class="row animated fadeInDown">
+													<div class="col-sm-12">
+														<div class="form-group">
+															<label class="col-sm-3 control-label">是否展示</label>
+															<div class="col-sm-9">
+																<input type="checkbox" class="i-checks" checked="checked" id="categoryIsShow">
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">名称</label>
+															<div class="col-sm-9" id = "categorys">
+															</div>
+														</div>
+														<div class="hr-line-dashed"></div>
+														<div class="form-group">
+															<div class="col-sm-offset-3 col-sm-9">
+																<button class="ladda-button btn btn-sm btn-w-m btn-primary" type="button" onclick="brandDetailCATEGORYUpload.submitContent();">保 存</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="tab-4" class="tab-pane">
+										<div class="panel-body inner">
+											<div class="form-horizontal">
+												<p class="alert alert-warning">在品牌列表页展示标签，每个品牌最多可添加4个标签，每个标签字数不超过四个字</p>
+												<div class="row animated fadeInDown">
+													<div class="col-sm-12">
+														<div class="form-group">
+															<label class="col-sm-3 control-label">是否展示</label>
+															<div class="col-sm-9">
+																<input type="checkbox" class="i-checks" checked="checked" id="tagIsShow">
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">标签1</label>
+															<div class="col-md-6 col-lg-4">
+																<div class="input-group">
+																	<input type="text" placeholder="" class="form-control" maxlength="4" id="tag1">
+																	<span class="input-group-addon text-danger">≤4个字</span>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">标签2</label>
+															<div class="col-md-6 col-lg-4">
+																<div class="input-group">
+																	<input type="text" placeholder="" class="form-control" maxlength="4" id="tag2">
+																	<span class="input-group-addon text-danger">≤4个字</span>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">标签3</label>
+															<div class="col-md-6 col-lg-4">
+																<div class="input-group">
+																	<input type="text" placeholder="" class="form-control" maxlength="4" id="tag3">
+																	<span class="input-group-addon text-danger">≤4个字</span>
+																</div>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-3 control-label">标签4</label>
+															<div class="col-md-6 col-lg-4">
+																<div class="input-group">
+																	<input type="text" placeholder="" class="form-control" maxlength="4" id="tag4">
+																	<span class="input-group-addon text-danger">≤4个字</span>
+																</div>
+															</div>
+														</div>
+														<div class="hr-line-dashed"></div>
+														<div class="form-group">
+															<div class="col-sm-offset-3 col-sm-9">
+																<button class="ladda-button btn btn-sm btn-w-m btn-primary" type="button" onclick="brandDetailTAGUpload.submitContent();">保 存</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<script src="/pageJs/operator/brandManage/edit.js"></script>
+			<script>
+				var userinfo = JSON.parse(getCookie('card.userinfo'));
+				var operatorsId;
+				if(userinfo) {
+					operatorsId = userinfo.operatorsId;
+				} else {
+					window.location.href = "/index.html";
+				}
+			</script>
+		</div>
+	</body>
+
+</html>

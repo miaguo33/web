@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运营商管理平台-通行权益管理-运营数据</title>
+</head>
+<body>
+
+<div class="pjax-container">
+
+    <style>
+        .panel{
+            cursor: pointer;
+            border-width: 2px;
+        }
+        .panel .panel-body{
+            height: 133px;
+            vertical-align: middle;
+        }
+
+        /*.count-panel div{*/
+            /*padding: 0;*/
+        /*}*/
+        .count-panel div:first-child{
+            text-align: right;
+            padding: 0;
+        }
+        .count-panel div:first-child span{
+            line-height: 1.7;
+        }
+        .count-panel div:last-child span{
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .count-panel.big div:first-child span{
+            line-height: 2.5;
+        }
+        .count-panel.big div:last-child span{
+            font-size: 25px;
+        }
+
+        .panel-default .text-danger{
+            color: inherit;
+        }
+
+
+    </style>
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>运营数据</h2>
+
+        </div>
+        <div class="col-lg-2">
+            <a class="btn btn-block btn-primary m-t" data-toggle="modal" data-target="#downloadModal">下载运营数据</a>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="tabs-container">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="#tab-1">售卖数据</a></li>
+                                        <li class="" id="newTab"><a data-toggle="tab" href="#tab-2">使用数据</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="tab-1" class="tab-pane active">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="alert alert-success alert-dismissable">
+                                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                                        本页面数据仅供经营状况参考，不计退款，不代表账单信息，请勿用作对账。
+                                                        <p class="text-warning">每日10：00前完成数据更新，当前数据更新至 <span class="lastTime"></span></p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="col-sm-4 m-b input-group1">
+                                                            <div class="input-daterange input-group date" >
+                                                                <input type="text" class="form-control" value="" id="beginDate">
+                                                                <span class="input-group-addon">到</span>
+                                                                <input type="text" class="form-control" value="" id="endDate">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 col-lg-5">
+                                                            <div data-toggle="buttons" class="btn-group"  id="dateRange">
+                                                                <!--<label class="btn btn-white" onclick=""> <input type="radio" name="dateRange" value="1"> 昨天 </label>-->
+                                                                <label class="btn btn-white active" onclick=""> <input type="radio" name="dateRange" value="2" checked="checked"> 最近3天 </label>
+                                                                <label class="btn btn-white" onclick=""> <input type="radio" name="dateRange" value="3"> 最近一周 </label>
+                                                                <label class="btn btn-white" onclick=""> <input type="radio" name="dateRange" value="5"> 最近30天 </label>
+                                                                <label class="btn btn-white" onclick=""> <input type="radio" name="dateRange" value="4"> 本月 </label>
+                                                            </div>
+                                                            <!--<select class="form-control" id="dateRange">
+                                                                <option value="1">昨日</option>
+                                                                <option value="2" selected>最近3天</option>
+                                                                <option value="3">最近7天</option>
+                                                                <option value="4">本月</option>
+                                                                <option value="5">最近30天</option>
+                                                            </select>-->
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <button type="button" class="ladda-button btn btn-primary" onclick="dataSell.loadData();"> 搜索</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="ibox float-e-margins">
+                                                            <div class="ibox-title no-borders">
+                                                                <h5>累计数据和趋势<small class="m-l-sm"></small></h5>
+                                                            </div>
+                                                            <div class="ibox-content no-borders">
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <div class="panel panel-primary panel-list-1" data-index="0">
+                                                                            <div class="panel-body">
+                                                                                <div class="row count-panel big">
+                                                                                    <div class="col-sm-6"><span>售出总数(张)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="sellAllCnt"></span></div>
+                                                                                </div>
+                                                                                <div class="row count-panel">
+                                                                                    <div class="col-sm-6"><span>在线售出总数(张)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="sellOnlineCnt"></span></div>
+                                                                                </div>
+                                                                                <div class="row count-panel">
+                                                                                    <div class="col-sm-6"><span>线下转账售出总数(张)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="sellOfflineCnt"></span></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-6">
+                                                                        <div class="panel panel-default panel-list-1" data-index="1">
+                                                                            <div class="panel-body">
+                                                                                <div class="row count-panel big">
+                                                                                    <div class="col-sm-6"><span>售出总额(元)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="sellAllMoney"></span></div>
+                                                                                </div>
+                                                                                <div class="row count-panel">
+                                                                                    <div class="col-sm-6"><span>在线售出总额(元)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="sellOnlineMoney"></span></div>
+                                                                                </div>
+                                                                                <div class="row count-panel">
+                                                                                    <div class="col-sm-6"><span>线下转账售出总额(元)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="sellOfflineMoney"></span></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div id="lineChart" style="width: 100%;height:400px;">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="ibox float-e-margins">
+                                                            <div class="ibox-title no-borders">
+                                                                <h5>详细数据</h5>
+                                                                <div class="ibox-content no-borders">
+                                                                    <div class="table-responsive" id="tableData">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="tab-2" class="tab-pane">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="alert alert-success alert-dismissable">
+                                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                                        本页面数据仅供经营状况参考，不计退款，不代表账单信息，请勿用作对账。
+                                                        <p class="text-warning">每日10：00前完成数据更新，当前数据更新至 <span class="lastTime"></span></p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="col-sm-4 m-b input-group1">
+                                                            <div class="input-daterange input-group date" >
+                                                                <input type="text" class="form-control" value="" id="beginDate2">
+                                                                <span class="input-group-addon">到</span>
+                                                                <input type="text" class="form-control" value="" id="endDate2">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6 col-lg-5">
+                                                            <div data-toggle="buttons" class="btn-group"  id="dateRange2">
+                                                                <!--<label class="btn btn-white" onclick=""> <input type="radio" name="dateRange" value="1"> 昨天 </label>-->
+                                                                <label class="btn btn-white active" onclick=""> <input type="radio" name="dateRange2" value="2" checked="checked"> 最近3天 </label>
+                                                                <label class="btn btn-white" onclick=""> <input type="radio" name="dateRange2" value="3"> 最近一周 </label>
+                                                                <label class="btn btn-white" onclick=""> <input type="radio" name="dateRange2" value="5"> 最近30天 </label>
+                                                                <label class="btn btn-white" onclick=""> <input type="radio" name="dateRange2" value="4"> 本月 </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2">
+                                                            <button type="button" class="ladda-button btn btn-primary" onclick="dataUse.loadData();"> 搜索</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="ibox float-e-margins">
+                                                            <div class="ibox-title no-borders">
+                                                                <h5>累计数据和趋势<small class="m-l-sm"></small></h5>
+                                                            </div>
+                                                            <div class="ibox-content no-borders">
+                                                                <div class="row">
+                                                                    <div class="col-sm-3">
+                                                                        <div class="panel panel-default panel-list-2" data-index="0">
+                                                                            <div class="panel-body">
+                                                                                <div class="row count-panel big">
+                                                                                    <div class="col-sm-6"><span>余额使用总额(元)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="actualBalanceMoney"></span></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-3">
+                                                                        <div class="panel panel-default panel-list-2" data-index="1">
+                                                                            <div class="panel-body">
+                                                                                <div class="row count-panel big">
+                                                                                    <div class="col-sm-6"><span>折扣券使用总数(张)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="discountCTimes"></span></div>
+                                                                                </div>
+                                                                                <div class="row count-panel">
+                                                                                    <div class="col-sm-6"><span>折扣券抵扣总额(元)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="discountCMoney"></span></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-3">
+                                                                        <div class="panel panel-default panel-list-2" data-index="2">
+                                                                            <div class="panel-body">
+                                                                                <div class="row count-panel big">
+                                                                                    <div class="col-sm-6"><span>折扣使用总次数(次)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="discountDTimes"></span></div>
+                                                                                </div>
+                                                                                <div class="row count-panel">
+                                                                                    <div class="col-sm-6"><span>折扣抵扣总金额(元)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="discountDMoney"></span></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-3">
+                                                                        <div class="panel panel-default panel-list-2"  data-index="3">
+                                                                            <div class="panel-body">
+                                                                                <div class="row count-panel big">
+                                                                                    <div class="col-sm-6"><span>门票使用总次数(次)</span></div>
+                                                                                    <div class="col-sm-6"><span class="text-danger" id="discountTTimes"></span></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div id="lineChart2" style="width: 100%;height:400px;">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="ibox float-e-margins">
+                                                            <div class="ibox-title no-borders">
+                                                                <h5>详细数据</h5>
+                                                                <div class="ibox-content no-borders">
+                                                                    <div class="table-responsive" id="tableData2">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal inmodal fade" id="downloadModal" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="merchantViewTitle">下载运营数据</h4>
+                </div>
+                <div class="modal-body" style="background-color: #FFFFFF;">
+                    <div class="row">
+                    	<p class="text-warning">数据可能有1小时的延迟</p>
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-content no-borders">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">通行权益名称</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" id="cardSelect">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">数据类型</label>
+                                        <div class="col-sm-9">
+                                            <label class="checkbox-inline i-checks">
+                                                <input type="radio" value="1" name="dataType" checked="checked">&nbsp;售卖数据
+                                            </label>
+                                            <label class="checkbox-inline i-checks">
+                                                <input type="radio" value="0" name="dataType">&nbsp;使用数据
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <labe class="col-sm-3 control-label">日期</labe>
+                                        <div class="col-sm-8 input-group2">
+                                            <div class="input-daterange input-group date" >
+                                                <input type="text" class="form-control" value="" id="beginDateExport">
+                                                <span class="input-group-addon">到</span>
+                                                <input type="text" class="form-control" value="" id="endDateExport">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">取  消</button>
+                    <button type="button" class="btn btn-primary" onclick="exportData.export();">打包下载</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/pageJs/operator/cardManage/data_operator.js"></script>
+
+</div>
+</body>
+</html>

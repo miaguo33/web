@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title></title>
+    
+    <link rel="shortcut icon" href="/bsWeb/images/logo.png" type="image/x-icon">
+
+    <link href="/resource/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resource/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="/resource/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <!-- iCheck -->
+    <link href="/resource/css/plugins/iCheck/custom.css" rel="stylesheet">
+
+    <!-- Sweet Alert -->
+    <link href="/resource/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+    <!-- Ladda style -->
+    <link href="/resource/css/plugins/ladda/ladda-themeless.min.css" rel="stylesheet">
+
+    <!-- FooTable -->
+    <link href="/resource/css/plugins/footable/footable.core.css" rel="stylesheet">
+
+    <!-- Datapicker -->
+    <link href="/resource/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
+    <!-- SUMMERNOTE -->
+    <link href="/resource/css/plugins/summernote/summernote.css" rel="stylesheet">
+
+    <!-- Gallery -->
+    <link href="/resource/css/plugins/blueimp/css/blueimp-gallery.min.css" rel="stylesheet">
+
+    <!-- Steps -->
+    <link href="../resource/css/plugins/steps/jquery.steps.css" rel="stylesheet">
+
+    <!-- FileUpload -->
+    <link href="/resource/js/plugins/fileupload/css/jquery.fileupload.css" rel="stylesheet" type="text/css" />
+    <link href="/resource/js/plugins/fileupload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css" />
+
+    <!-- Select2 -->
+    <link href="/resource/css/plugins/select2/select2.min.css" rel="stylesheet">
+
+    <link href="/resource/css/animate.css" rel="stylesheet">
+    <link href="/resource/css/style.css" rel="stylesheet">
+
+    <!-- customize scripts -->
+    <link href="/resource/css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation" style="position: fixed;">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element text-center">
+                        <span>
+                            <img alt="image" class="img-circle" src="/bsWeb/images/logo.png" style="max-width: 50%;"/>
+                        </span>
+                        <!--<a data-toggle="dropdown" class="dropdown-toggle" href="#">-->
+                            <!--<span class="clear">-->
+                                <!--<span class="block m-t-xs">-->
+                                    <!--<strong class="font-bold">David Williams</strong>-->
+                                <!--</span>-->
+                                <!--<span class="text-muted text-xs block">Art Director <b class="caret"></b></span>-->
+                            <!--</span>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu animated fadeInRight m-t-xs">-->
+                            <!--<li><a href="profile.html">Profile</a></li>-->
+                            <!--<li><a href="contacts.html">Contacts</a></li>-->
+                            <!--<li><a href="mailbox.html">Mailbox</a></li>-->
+                            <!--<li class="divider"></li>-->
+                            <!--<li><a href="login.html">Logout</a></li>-->
+                        <!--</ul>-->
+                    </div>
+                    <div class="logo-element">
+                        <img alt="image" src="/bsWeb/images/logo.png" style="max-width: 50%;"/>
+                    </div>
+                </li>
+            </ul>
+
+
+            <ul class="nav metismenu" id="side-menu">
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0;">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <!--<form role="search" class="navbar-form-custom" action="search_results.html">-->
+                        <!--<div class="form-group">-->
+                            <!--<input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">-->
+                        <!--</div>-->
+                    <!--</form>-->
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <!--<li>-->
+                        <!--<span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>-->
+                    <!--</li>-->
+                    <!--<li class="dropdown">-->
+                        <!--<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">-->
+                            <!--<i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu dropdown-messages">-->
+                            <!--<li>-->
+                                <!--<div class="dropdown-messages-box">-->
+                                    <!--<a href="profile.html" class="pull-left">-->
+                                        <!--<img alt="image" class="img-circle" src="/resource/img/a7.jpg">-->
+                                    <!--</a>-->
+                                    <!--<div class="media-body">-->
+                                        <!--<small class="pull-right">46h ago</small>-->
+                                        <!--<strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>-->
+                                        <!--<small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li class="divider"></li>-->
+                            <!--<li>-->
+                                <!--<div class="dropdown-messages-box">-->
+                                    <!--<a href="profile.html" class="pull-left">-->
+                                        <!--<img alt="image" class="img-circle" src="/resource/img/a4.jpg">-->
+                                    <!--</a>-->
+                                    <!--<div class="media-body ">-->
+                                        <!--<small class="pull-right text-navy">5h ago</small>-->
+                                        <!--<strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>-->
+                                        <!--<small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li class="divider"></li>-->
+                            <!--<li>-->
+                                <!--<div class="dropdown-messages-box">-->
+                                    <!--<a href="profile.html" class="pull-left">-->
+                                        <!--<img alt="image" class="img-circle" src="/resource/img/profile.jpg">-->
+                                    <!--</a>-->
+                                    <!--<div class="media-body ">-->
+                                        <!--<small class="pull-right">23h ago</small>-->
+                                        <!--<strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>-->
+                                        <!--<small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                            <!--<li class="divider"></li>-->
+                            <!--<li>-->
+                                <!--<div class="text-center link-block">-->
+                                    <!--<a href="mailbox.html">-->
+                                        <!--<i class="fa fa-envelope"></i> <strong>Read All Messages</strong>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <!--<li class="dropdown">-->
+                        <!--<a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">-->
+                            <!--<i class="fa fa-bell"></i>  <span class="label label-primary">8</span>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu dropdown-alerts">-->
+                            <!--<li>-->
+                                <!--<a href="mailbox.html">-->
+                                    <!--<div>-->
+                                        <!--<i class="fa fa-envelope fa-fw"></i> You have 16 messages-->
+                                        <!--<span class="pull-right text-muted small">4 minutes ago</span>-->
+                                    <!--</div>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li class="divider"></li>-->
+                            <!--<li>-->
+                                <!--<a href="profile.html">-->
+                                    <!--<div>-->
+                                        <!--<i class="fa fa-twitter fa-fw"></i> 3 New Followers-->
+                                        <!--<span class="pull-right text-muted small">12 minutes ago</span>-->
+                                    <!--</div>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li class="divider"></li>-->
+                            <!--<li>-->
+                                <!--<a href="grid_options.html">-->
+                                    <!--<div>-->
+                                        <!--<i class="fa fa-upload fa-fw"></i> Server Rebooted-->
+                                        <!--<span class="pull-right text-muted small">4 minutes ago</span>-->
+                                    <!--</div>-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li class="divider"></li>-->
+                            <!--<li>-->
+                                <!--<div class="text-center link-block">-->
+                                    <!--<a href="notifications.html">-->
+                                        <!--<strong>See All Alerts</strong>-->
+                                        <!--<i class="fa fa-angle-right"></i>-->
+                                    <!--</a>-->
+                                <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                    <li id="userName">
+
+                    </li>
+                    <li>
+                        <a name="logout"><i class="fa fa-sign-out"></i> 退 出 </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+
+        <!-- 内容 -->
+        <div class="pjax-container">
+
+        </div>
+
+        <div class="footer text-center">
+            <div>
+                <strong>Copyright</strong> &copy; 2016-2017 上海宿派信息技术有限公司版权所有. All Rights Reserved
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal inmodal fade" id="merchantView" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="merchantViewTitle">可使用门店</h4>
+            </div>
+            <div class="modal-body text-center" id="merchantViewBody" style="background-color: #FFFFFF; padding-bottom: 0;">
+                <!--<div class="ibox float-e-margins">-->
+                    <!--<div class="ibox-content no-borders">-->
+                        <!--<input type="text" class="form-control input-sm m-b-xs" id="filter" placeholder="搜索">-->
+                        <!--<table class="footable table table-stripped table-hover" data-page-size="10" data-filter=#filter>-->
+                            <!--<thead>-->
+                                <!--<tr>-->
+                                    <!--<th style="text-align: center;">商户名</th>-->
+                                <!--</tr>-->
+                            <!--</thead>-->
+                            <!--<tbody id="merchantViewData"></tbody>-->
+                            <!--<tfoot>-->
+                                <!--<tr>-->
+                                    <!--<td>-->
+                                        <!--<ul class="pagination pull-right"></ul>-->
+                                    <!--</td>-->
+                                <!--</tr>-->
+                            <!--</tfoot>-->
+                        <!--</table>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">关 闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Mainly scripts -->
+    <script src="/resource/js/jquery-2.1.1.js"></script><!-- 基础jquery -->
+    <script src="/resource/js/jquery-ui-1.10.4.min.js"></script>
+    <script src="/resource/js/bootstrap.min.js"></script><!-- bootstrap -->
+    <script src="/resource/js/jquery.pjax.js"></script><!-- pjax实现无刷页面 -->
+    <script src="/resource/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/resource/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Toastr script -->
+    <script src="/resource/js/plugins/toastr/toastr.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="/resource/js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- Sweet alert -->
+    <script src="/resource/js/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Cookie -->
+    <script src="/bsWeb/js/cookieUtils.js"></script>
+
+    <!-- Ladda -->
+    <script src="/resource/js/plugins/ladda/spin.min.js"></script>
+    <script src="/resource/js/plugins/ladda/ladda.min.js"></script>
+    <script src="/resource/js/plugins/ladda/ladda.jquery.min.js"></script>
+
+    <!-- FooTable -->
+    <script src="/resource/js/plugins/footable/footable.all.min.js"></script>
+
+    <!-- Datepicker -->
+    <script src="/resource/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+    <!-- SUMMERNOTE -->
+    <script src="/resource/js/plugins/summernote/summernote.min.js"></script>
+
+    <!-- Gallery -->
+    <script src="/resource/js/plugins/blueimp/jquery.blueimp-gallery.min.js"></script>
+
+    <!-- Steps -->
+    <script src="../resource/js/plugins/staps/jquery.steps.min.js"></script>
+
+    <!-- FileUpload -->
+    <script src="/resource/js/plugins/fileupload/js/load-image.all.min.js"></script>
+    <script src="/resource/js/plugins/fileupload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="/resource/js/plugins/fileupload/js/jquery.iframe-transport.js"></script>
+    <script src="/resource/js/plugins/fileupload/js/jquery.fileupload.js"></script>
+    <script src="/resource/js/plugins/fileupload/js/jquery.fileupload-ui.js"></script>
+
+    <!-- Select2 -->
+    <script src="/resource/js/plugins/select2/select2.full.min.js"></script>
+
+    <!-- Jquery Validate -->
+    <script src="/resource/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/resource/js/plugins/validate/messages_zh.js"></script>
+
+    <script src="/resource/js/plugins/CitySelect/jquery.cityselect.js"></script>
+
+    <!-- TouchSpin -->
+    <script src="/resource/js/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+    <!-- Clipboard -->
+    <script src="/resource/js/plugins/clipboard/clipboard.min.js"></script>
+
+    <!-- Echarts -->
+    <script src="/resource/js/plugins/echarts/echarts.min.js"></script>
+
+    <!-- QRcode -->
+    <script src="/resource/js/plugins/qrcode/jquery.qrcode.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="/resource/js/inspinia.js"></script>
+    <script src="/resource/js/plugins/pace/pace.min.js"></script>
+
+    <!-- customize scripts -->
+    <script src="/resource/js/request.js"></script><!-- ajax等封装类js -->
+    <script src="/resource/js/tools.js"></script><!--工具封装类js -->
+
+    <script src="/resource/js/pagination.js"></script>
+    <script src="/resource/js/citys.js"></script>
+    <script src="/pageJs/main.js"></script><!-- 对应html js -->
+
+</body>
+</html>

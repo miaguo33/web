@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运营商管理平台-通行权益管理-新增通行权益</title>
+</head>
+<body>
+<div class="pjax-container">
+
+    <style>
+		.wizard> .content> .body {
+			position: relative;
+		}
+		
+		.wizard> .content {
+			width: 100%;
+			background: inherit;
+		}
+		.form-control[readonly]{
+			background-color:inherit;
+		}
+		.form-control[disabled]{
+			background-color:#eee;
+		}
+	</style>
+
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-12">
+            <h2></h2>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <div method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">通行权益名称</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" placeholder="输入通行权益名称" id="cardName" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">通行权益别名</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" placeholder="输入通行权益别名" id="cardAliasName" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">售卖截止日期</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control" value="" id="disusedDate">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">通行权益有效期</label>
+                                <div class="col-lg-3">
+                                    <select class="form-control" id="permanentSelect">
+                                        <option value="0">时间段</option>
+                                        <option value="1">天数</option>
+                                        <option value="2">永久有效</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-7 permanentOption">
+                                    <div class="input-daterange input-group date" >
+                                        <input type="text" class="form-control" id="beginDate" readonly="true" value="">
+                                        <span class="input-group-addon">到</span>
+                                        <input type="text" class="form-control" id="endDate" readonly="true" value="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 hide permanentOption">
+                                    <input type="text" class="form-control" id="period" name="period" placeholder="输入天数">
+                                </div>
+                                <div class="col-lg-7 hide permanentOption"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">通行权益中余额</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="输入通行权益中余额" id="prestoreMoney" />
+                                        <span class="input-group-addon">元</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">含优惠券</label>
+                                <div class="col-sm-10">
+                                    <button type="button" class="btn btn-white" data-toggle="modal" data-target="#modalShow_2">选择优惠券</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"></label>
+                                <div class="col-sm-10">
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>券名</th>
+                                            <th>券别名</th>
+                                            <th>适用门店</th>
+                                            <th>使用条件</th>
+                                            <th>数量</th>
+                                            <th>有效期</th>
+                                            <th>状态</th>
+                                            <th>说明</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="coupon-select">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">品牌折扣</label>
+                                <div class="col-sm-10">
+                                    <button type="button" class="btn btn-white" data-toggle="modal" data-target="#modalShow_1">选择品牌折扣</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"></label>
+                                <div class="col-sm-10">
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>折扣名称</th>
+                                            <th>折扣别名</th>
+                                            <th>适用门店</th>
+                                            <th>使用条件</th>
+                                            <th>有效期</th>
+                                            <th>状态</th>
+                                            <th>说明</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id='discount-select'>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">含门票</label>
+                                <div class="col-sm-10">
+                                    <button type="button" class="btn btn-white" data-toggle="modal" data-target="#modalShow_3">选择门票</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"></label>
+                                <div class="col-sm-10">
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>门票</th>
+                                            <th>门票别名</th>
+                                            <th>适用门店</th>
+                                            <th>可使用次数</th>
+                                            <th>有效期</th>
+                                            <th>状态</th>
+                                            <th>说明</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="ticket-select">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">标准售价</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="输入标准售价" id="price" />
+                                        <span class="input-group-addon">元 / 张</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">发行数量</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="输入发行数量" id="allCnt" />
+                                        <span class="input-group-addon">张</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">通行权益说明</label>
+                                <div class="col-sm-10 ecommerce">
+                                    <div class="summernote" id="description">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">需要实名认证</label>
+                                <div class="col-sm-10">
+                                    <div class="i-checks radio-inline">
+                                        <label> <input type="radio" value="true" name="realAuth"> 是 </label>
+                                    </div>
+                                    <div class="i-checks radio-inline">
+                                        <label> <input type="radio" value="false" name="realAuth" checked="" > 否 </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">是否展示通卡已售数量</label>
+                                <div class="col-sm-10">
+                                    <div class="i-checks radio-inline">
+                                        <label> <input type="radio" value="1" name="showSellCnt" checked=""> 是 </label>
+                                    </div>
+                                    <div class="i-checks radio-inline">
+                                        <label> <input type="radio" value="0" name="showSellCnt" > 否 </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">是否在手机端展示</label>
+                                <div class="col-sm-10">
+                                    <div class="i-checks radio-inline">
+                                        <label> <input type="radio" value="1" name="showInApp" checked="" > 是 </label>
+                                    </div>
+                                    <div class="i-checks radio-inline">
+                                        <label> <input type="radio" value="0" name="showInApp" > 否 </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label class="col-sm-2 control-label">客服电话</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" placeholder="输入客服电话" id="csTel" />
+                                </div>
+                            </div> -->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">通行权益卡面</label>
+                                <div class="col-sm-10">
+                                    <!--<div class="lightBoxGallery">-->
+                                        <!--<a href="/resource/img/gallery/1.jpg" title="Image from Unsplash" data-gallery="">-->
+                                            <!--<img src="/resource/img/gallery/2s.jpg">-->
+                                        <!--</a>-->
+                                    <!--</div>-->
+                                    <form class="m-b" id="fileuploadImage" action="/rest/file/upload" method="POST" enctype="multipart/form-data">
+
+                                        <div>
+                                            <!-- The fileinput-button span is used to style the file input field as button -->
+                                            <span class="btn btn-white fileinput-button">
+                                                <i class="fa fa-file-text-o icon-white"></i> <span>上传</span> <input type="file" name="fileImage" id="fileImage" multiple>
+                                            </span>
+                                        </div>
+                                        <input type="hidden" name="name" id="nameImage" value=""/>
+                                        <input type="hidden" name="prefix" id="prefixImage" value=""/>
+                                        <input type="hidden" name="fileName" id="fileNameImage" value=""/>
+                                        <input type="hidden" name="longEdge" id="longEdgeImage" value=""/>
+                                    </form>
+
+                                    <span class="help-block text-danger m-b">（图片建议比例2:1，大小150KB以内）</span>
+
+                                    <div class="progress progress-striped active" id="progressBarDivImage" style="width: 300px; display: none;">
+                                        <div id="progressBarImage" style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" role="progressbar" class="progress-bar progress-bar-default">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                    </div>
+                                    <div id="fileDivImage"></div>
+                                    <div>
+                                        <img id="addPreviewImagePreviewImage" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="form-group">-->
+                                <!--<label class="col-sm-2 control-label">通行权益卡面LOGO</label>-->
+                                <!--<div class="col-sm-10">-->
+                                    <!--<form class="m-b" id="fileuploadLogo" action="/rest/file/upload" method="POST" enctype="multipart/form-data">-->
+
+                                        <!--<div>-->
+                                            <!--<span class="btn btn-white fileinput-button">-->
+                                                <!--<i class="fa fa-file-text-o icon-white"></i> <span>上传</span> <input type="file" name="fileLogo" id="fileLogo" multiple>-->
+                                            <!--</span>-->
+                                        <!--</div>-->
+                                        <!--<input type="hidden" name="name" id="nameLogo" value=""/>-->
+                                        <!--<input type="hidden" name="prefix" id="prefixLogo" value=""/>-->
+                                        <!--<input type="hidden" name="fileName" id="fileNameLogo" value=""/>-->
+                                        <!--<input type="hidden" name="longEdge" id="longEdgeLogo" value=""/>-->
+                                    <!--</form>-->
+
+                                    <!--<div class="progress progress-striped active" id="progressBarDivLogo" style="width: 300px; display: none;">-->
+                                        <!--<div id="progressBarLogo" style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" role="progressbar" class="progress-bar progress-bar-default">-->
+                                            <!--<span class="sr-only"></span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div id="fileDivLogo"></div>-->
+                                    <!--<div>-->
+                                        <!--<img id="addPreviewImagePreviewLogo" />-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">通行权益详情图片</label>
+                                <div class="col-sm-10">
+                                    <!--<div class="lightBoxGallery">-->
+                                        <!--<a href="/resource/img/gallery/1.jpg" title="Image from Unsplash" data-gallery="">-->
+                                            <!--<img src="/resource/img/gallery/3s.jpg">-->
+                                        <!--</a>-->
+                                    <!--</div>-->
+                                    <form class="m-b" id="fileuploadDetail" action="/rest/file/upload" method="POST" enctype="multipart/form-data">
+
+                                        <div>
+                                            <!-- The fileinput-button span is used to style the file input field as button -->
+                                            <span class="btn btn-white fileinput-button">
+                                                <i class="fa fa-file-text-o icon-white"></i> <span>上传</span> <input type="file" name="fileDetail" id="fileDetail" multiple>
+                                            </span>
+                                        </div>
+                                        <input type="hidden" name="name" id="nameDetail" value=""/>
+                                        <input type="hidden" name="prefix" id="prefixDetail" value=""/>
+                                        <input type="hidden" name="fileName" id="fileNameDetail" value=""/>
+                                        <input type="hidden" name="longEdge" id="longEdgeDetail" value=""/>
+                                    </form>
+
+                                    <span class="help-block text-danger m-b">（图片建议宽度750像素，高度不限，大小500KB以内）</span>
+
+                                    <div class="progress progress-striped active" id="progressBarDivDetail" style="width: 300px; display: none;">
+                                        <div id="progressBarDetail" style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" role="progressbar" class="progress-bar progress-bar-default">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                    </div>
+                                    <div id="fileDivDetail"></div>
+                                    <div>
+                                        <img id="addPreviewImagePreviewDetail" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">审核凭证</label>
+                                <div class="col-sm-10">
+                                    <form class="m-b" id="fileuploadVoucher" action="/rest/file/upload" method="POST" enctype="multipart/form-data">
+
+                                        <div>
+                                            <!-- The fileinput-button span is used to style the file input field as button -->
+                                            <span class="btn btn-white fileinput-button">
+                                                <i class="fa fa-file-text-o icon-white"></i> <span>上传</span> <input type="file" name="fileVoucher" id="fileVoucher" multiple>
+                                            </span>
+                                        </div>
+                                        <span class="help-block text-danger m-b-none">(仅限.zip文件)</span>
+                                        <input type="hidden" name="name" id="nameVoucher" value=""/>
+                                        <input type="hidden" name="prefix" id="prefixVoucher" value=""/>
+                                        <input type="hidden" name="fileName" id="fileNameVoucher" value=""/>
+                                        <input type="hidden" name="longEdge" id="longEdgeVoucher" value=""/>
+                                    </form>
+                                    <div class="progress progress-striped active" id="progressBarDivVoucher" style="width: 300px; display: none;">
+                                        <div id="progressBarVoucher" style="width: 0%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" role="progressbar" class="progress-bar progress-bar-default">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                    </div>
+                                    <div id="fileDivVoucher"></div>
+                                    <div>
+                                        <img id="addPreviewImagePreviewVoucher" />
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group" id="auditStatusContainer" style="display: none;">
+                                <label class="col-lg-2 control-label">审核状态</label>
+                                <div class="col-lg-10 inspinia-timeline">
+                                    <!--待审核 -->
+                                    <div class="timeline-item">
+                                        <div class="row">
+                                            <div class="col-xs-4 date">
+                                                <small class="text-navy" id="commitTime"></small>
+                                            </div>
+                                            <div class="col-xs-8 content no-top-border">
+                                                <p class="m-b-xs"><strong>审核中</strong></p>
+                                                <div>
+                                                    <div class="alert alert alert-danger">
+                                                        提交审核，待审核
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--待审核 -->
+                                    <!--审核不通过-->
+                                    <div class="timeline-item">
+                                        <div class="row">
+                                            <div class="col-xs-4 date">
+                                                <small class="text-navy" id="auditTime"></small>
+                                            </div>
+                                            <div class="col-xs-8 content no-top-border">
+                                                <p class="m-b-xs"><strong>审核不通过</strong></p>
+                                                <div>
+                                                    <div class="alert alert alert-danger" id="auditReasion">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--审核不通过-->
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <button class="ladda-button btn btn-w-m btn-primary" type="button" onclick="addCard.submitForm(2);">提交审核</button>
+                                    <button class="ladda-button btn btn-w-m btn-primary" type="button" onclick="addCard.submitForm(1);">保存</button>
+                                    <button class="btn btn-w-m btn-default" type="button" onclick="tools.href( '/pages/operator/cardManage/index.html');">取消</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+
+    <!-- 通行权益折扣模态窗口 -->
+    <div class="modal fade" id="modalShow_1" tabindex="-1" role="dialog" aria-hidden="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">添加通行权益折扣</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-4 m-b">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="请输入关键字" class="form-control" id="searchText_1">
+											<span class="input-group-btn">
+												<button type="button" class="ladda-button btn btn-primary" id="search_1"> 搜索</button>
+											</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 m-b">
+
+                                        </div>
+                                        <div class="col-sm-2 m-b">
+                                            <button class="btn btn-w-m btn-warning step-force" type="buttom" data-toggle="modal" href="./operator/discount/add.html" data-target="#project-add" id="discountAdd">新增折扣</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <!--<table class="table table-bordered table-hover">-->
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>选择</th>
+                                                <th>折扣名称</th>
+                                                <th>折扣别名</th>
+                                                <th>适用门店</th>
+                                                <th>使用条件</th>
+                                                <th>有效期</th>
+                                                <!--<th>状态</th>-->
+                                                <th>说明</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="dataList-discount">
+
+                                            </tbody>
+                                        </table>
+                                        <div id="pageBar-discount" class="page_num"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white btn-w-m" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary btn-w-m" data-dismiss="modal" onclick="selectDCT.selectD()">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 通行权益优惠券模态窗口 -->
+    <div class="modal" id="modalShow_2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">添加通行权益优惠券</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-4 m-b">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="请输入关键字" class="form-control" id="searchText_2">
+											<span class="input-group-btn">
+												<button type="button" class="ladda-button btn btn-primary" id="search_2"> 搜索</button>
+											</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 m-b">
+
+                                        </div>
+                                        <div class="col-sm-2 m-b">
+                                            <button class="btn btn-w-m btn-warning step-force" type="buttom" data-toggle="modal" href="./operator/coupon/add.html" data-target="#project-add" id="couponAdd">新增优惠券</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <!--<table class="table table-bordered table-hover">-->
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>选择</th>
+                                                <th>券名</th>
+                                                <th>券别名</th>
+                                                <th>适用门店</th>
+                                                <th>使用条件</th>
+                                                <th>有效期</th>
+                                                <!--<th>状态</th>-->
+                                                <th>说明</th>
+                                                <th>数量(张)</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="dataList-coupon">
+
+                                            </tbody>
+                                        </table>
+                                        <div id="pageBar-coupon" class="page_num"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white btn-w-m" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary btn-w-m" data-dismiss="modal" onclick="selectDCT.selectC()">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 通行权益门票模态窗口 -->
+    <div class="modal" id="modalShow_3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">添加通行权益门票</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-content">
+                                    <div class="row">
+                                        <div class="col-sm-4 m-b">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="请输入关键字" class="form-control" id="searchText_3">
+											<span class="input-group-btn">
+												<button type="button" class="ladda-button btn btn-primary" id="search_3"> 搜索</button>
+											</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 m-b">
+
+                                        </div>
+                                        <div class="col-sm-2 m-b">
+                                            <button class="btn btn-w-m btn-warning step-force" type="buttom" data-toggle="modal" href="./operator/ticket/add.html" data-target="#project-add" id="ticketAdd">新增门票</button>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <!--<table class="table table-bordered table-hover">-->
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                            <tr>
+                                                <th>选择</th>
+                                                <th>门票</th>
+                                                <th>门票别名</th>
+                                                <th>适用门店</th>
+                                                <th>可使用次数</th>
+                                                <th>有效期</th>
+                                                <!--<th>状态</th>-->
+                                                <th>说明</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="dataList-ticket">
+                                            </tbody>
+                                        </table>
+                                        <div id="pageBar-ticket" class="page_num"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white btn-w-m" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary btn-w-m" data-dismiss="modal" onclick="selectDCT.selectT()">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 新增折扣、优惠券、门票模态框 -->
+    <div id="project-add" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+	<script src="/pageJs/operator/operator.js"></script>
+    <script src="/pageJs/operator/cardManage/add.js"></script>
+</div>
+</body>
+</html>

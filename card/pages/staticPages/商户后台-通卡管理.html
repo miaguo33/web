@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="pjax-container">
+    <div class="row wrapper border-bottom white-bg dashboard-header">
+        <div class="col-lg-12">
+            <form role="form" class="form-inline">
+                <div class="form-group">
+                    <label>搜索:</label>
+                    <input type="email" placeholder="通行权益名称或品牌门店搜索" class="form-control">
+                </div>
+                <div class="form-group">
+
+                    <button class="btn btn-w-m btn-primary" type="buttom">查询</button>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-w-m btn-primary" type="buttom">下载通行权益数据</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row wrapper wrapper-content animated fadeInRight">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>通行权益名称</th>
+                            <th>发行运营商</th>
+                            <th>标准售价</th>
+                            <th>发行总量</th>
+                            <th>已发放量</th>
+                            <th>已激活张数</th>
+                            <th>未激活张数</th>
+                            <th>待激活张数</th>
+                            <th>发行日期</th>
+                            <th>有效期</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>苏家一卡通</td>
+                            <td>运营商1</td>
+                            <td>2000</td>
+                            <td>5000000</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>2017.01.17 20:11</td>
+                            <td>-</td>
+                            <td><a class="icon-only" data-toggle="tooltip" title="预览"><i class="fa fa-eye"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>苏家一卡通</td>
+                            <td>运营商2</td>
+                            <td>2000</td>
+                            <td>5000000</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>2017.01.17 20:11</td>
+                            <td>-</td>
+                            <td><a class="icon-only" data-toggle="tooltip" title="预览"><i class="fa fa-eye"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>苏家一卡通</td>
+                            <td>运营商3</td>
+                            <td>2000</td>
+                            <td>5000000</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>300</td>
+                            <td>2017.01.17 20:11</td>
+                            <td>-</td>
+                            <td><a class="icon-only" data-toggle="tooltip" title="预览"><i class="fa fa-eye"></i></a></td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="999" class="footable-visible">
+                                <ul class="pagination pull-right">
+                                    <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
+                                    <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
+                                    <li class="footable-page active"><a data-page="0" href="#">1</a></li>
+                                    <li class="footable-page"><a data-page="1" href="#">2</a></li>
+                                    <li class="footable-page-arrow"><a data-page="next" href="#next">›</a>
+                                    </li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal inmodal" id="modalShow" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content animated fadeInDownBig">
+                <div class="modal-header">
+                    <h4 class="modal-title">扫描二维码预览</h4>
+
+                </div>
+                <div class="modal-body">
+                    <div class="form-group text-center">
+                        <img src="/resource/img/a4.jpg" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" data-dismiss="modal">关 闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /**
+         * tooltip监控
+         */
+        $('[data-toggle="tooltip"]').tooltip({
+            'placement':'top'
+        });
+
+        $(".icon-only").click(function(){
+            if( $(this).attr('data-original-title') == '预览' ){
+                $("#modalShow").modal('show');
+            }
+        });
+    </script>
+
+</div>
+
+</body>
+</html>

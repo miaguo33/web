@@ -1,0 +1,207 @@
+<div class="modal-body">
+	<form id="wizard" action="#" class="wizard-big">
+		<h1><span>新增</span>优惠券</h1>
+		<fieldset>
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="col-md-2 control-label">优惠券名称</label>
+					<div class="col-md-10">
+						<div class="">
+							<input type="text" name="couponName" class="form-control required" placeholder="" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">优惠券别名</label>
+					<div class="col-md-10">
+						<div class="">
+							<input type="text" name="couponAliasName" class="form-control required" placeholder="" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">发行张数</label>
+					<div class="col-md-10">
+						<div class="input-group">
+							<input type="text" name="allCnt" class="form-control required" digits="true" placeholder="" />
+							<span class="input-group-addon">张</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">有效期</label>
+					<div class="col-md-3">
+						<select class="form-control" id="timerange-type">
+							<option value="0">时间段</option>
+							<option value="1">天数</option>
+							<option value="2">永久有效</option>
+						</select>
+					</div>
+					<div class="col-md-7" id="data">
+						<div class="input-daterange input-group" id="datepicker">
+	                        <input type="text" class="form-control" id="start" name="start" readonly="true" value="">
+	                        <span class="input-group-addon">到</span>
+	                        <input type="text" class="form-control" id="end" name="end" readonly="true" value="">
+	                    </div>
+					</div>
+					<div class="col-md-7 hide" id="period">
+						<input type="text" class="form-control" name="period" placeholder="输入天数" />
+					</div>
+				</div>
+				<div class="form-group clear">
+					<label class="col-md-2 control-label">优惠类型</label>
+					<div class="col-md-10 discountType">
+						<label class="checkbox-inline i-checks">
+							<input type="radio" value="3" name="discountType" checked="checked">&nbsp;满减
+						</label>
+						<label class="checkbox-inline i-checks">
+							<input type="radio" value="4" name="discountType">&nbsp;每满减
+						</label>
+						<label class="checkbox-inline i-checks">
+							<input type="radio" value="2" name="discountType">&nbsp;打折
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">使用条件</label>
+					<div class="col-md-10">
+						<div class="col-sm-5 no-padding">
+							<div class="input-group">
+								<span class="input-group-addon">消费<span class="discountValueShow4" style="display:none">每</span>满</span>
+								<input type="text" class="form-control" name="minimum" range="[0,99999]" digits="true" placeholder="" />
+							</div>
+						</div>
+						<div class="col-sm-7 no-padding discountValueShow2" id="" style="display:none">
+							<div class="input-group">
+								<span class="input-group-addon">元，可打</span>
+								<input type="text" name="discountValue2" class="form-control required" range="[0,100]" digits="true" placeholder="输入0~100之间的整数，例如98表示9.8折" />
+								<span class="input-group-addon">折</span>
+							</div>
+						</div>
+						
+						<div class="col-sm-7 no-padding discountValueShow1" id="">
+							<div class="input-group">
+								<span class="input-group-addon">元，可抵扣</span>
+								<input type="text" name="discountValue1" class="form-control required" range="[0,99999]" digits="true" placeholder="输入0~99999之间的整数" />
+								<span class="input-group-addon">元</span>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="form-group" id="maxDiscount" style="display:none">
+					<label class="col-md-2 control-label">最高抵扣</label>
+					<div class="col-md-10">
+						<div class="input-group">
+							<input type="text" class="form-control" name="maxDiscount" range="[0,99999]" digits="true" placeholder="" />
+							<span class="input-group-addon">元</span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+                    <label class="col-sm-2 control-label">适用范围</label>
+                    <div class="col-sm-10">
+                        <div class="i-checks checkbox-inline">
+                            <label><input type="checkbox"  id="checkAllapplyScene" value="all" checked="checked" >&nbsp;全部</label>
+                        </div>
+                        <div class="i-checks checkbox-inline">
+                            <label><input type="checkbox"  name="applyScene" value="1" checked="checked" >&nbsp;会员卡在线支付</label>
+                        </div>
+                        <div class="i-checks checkbox-inline">
+                            <label><input type="checkbox"  name="applyScene" value="2" checked="checked">&nbsp; 序列号直接消券</label>
+                        </div>
+                    </div>
+                </div>
+                
+				<div class="form-group">
+                    <label class="col-md-2 control-label">优惠券说明</label>
+                    <div class="col-md-10">
+	                    <textarea class="form-control" id="description" rows="3" style="resize: vertical;"></textarea>
+	                </div>
+                </div>
+			</div>
+		</fieldset>
+		<h1>适用门店</h1>
+		<fieldset>
+			<div class="row">
+				<div class="col-sm-6 no-padding m-b">
+					<div class="input-group" id="city">
+						<span class="input-group-addon">省</span>
+						<select class="form-control prov" id="area_province">
+							<option value=''>请选择</option>
+	                    </select>
+	                    <span class="input-group-addon">市</span>
+	                    <select class="form-control city" id="area_city">
+	                    	<option value=''>请选择</option>
+	                    </select>
+	                    <span class="input-group-addon">区</span>
+	                    <select class="form-control dist" id="area">
+	                    	<option value=''>请选择</option>
+	                    </select>
+					</div>
+					
+				</div>
+				<div class="col-sm-3 m-b">
+					<div class="input-group">
+						<span class="input-group-addon">业态</span>
+						<select class="form-control" id="industry">
+                    	</select>
+					</div>
+				</div>
+				<div class="col-sm-3 no-padding m-b">
+					<div class="input-group">
+						<input type="text" placeholder="品牌门店搜索" class="form-control" id="searchText">
+						<span class="input-group-btn">
+                            <button type="button" class="btn btn-primary" id="searchBtn"> 搜索</button>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<table class="table table-bordered table-hover">
+					<thead>
+					<tr>
+						<!--<th width="30px"></th>-->
+						<th width="80px"><input type="checkbox" class="i-checks check-all" name="brand-store">&nbsp;全选</th>
+						<th>品牌</th>
+						<th>门店</th>
+						<th>业态</th>
+						<th>所在地区</th>
+						<th>操作</th>
+					</tr>
+					</thead>
+					<tbody id="dataList_1">
+						<!--第一格td是折叠符号，不需要时删掉-->
+					<!--<tr class="table-parent">
+						<td><i class="fa fa-chevron-down"></i></td>
+						<td><input type="checkbox" class="i-checks" name="brand-store" data-brand='1'></td>
+						<td>辣府</td>
+						<td></td>
+						<td></td>
+						<td>南京</td>
+						<td>
+							<a href="#" class="btn btn-primary btn-sm">关联</a>
+						</td>
+					</tr>
+					<tr class="table-child">
+						<td></td>
+						<td><input type="checkbox" class="i-checks" name="brand-store" data-brand='1' data-merchantId='100' data-merchantName='门店1'></td>
+						<td>辣府</td>
+						<td>门店1</td>
+						<td>餐饮</td>
+						<td>上海</td>
+						<td>
+							<a href="#" class="btn btn-primary btn-sm">关联</a>
+						</td>
+					</tr>-->
+					</tbody>
+				</table>
+				<div id="pageBar_1" class="page_num"></div>
+				<div>
+					<button type="button" class="btn btn-w-m btn-primary pull-right" id="insertDiscountScenic">关联勾选门店</button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>

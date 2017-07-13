@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="pjax-container">
+			<!--内容部分-->
+			<!-- Data picker -->
+    		<link href="/resource/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    		<script src="/resource/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+
+			<div class="row wrapper border-bottom white-bg dashboard-header">
+				<div class="col-sm-10">
+					<form role="form" class="form-inline">
+
+						<div class="form-group">
+							<label>审核状态：</label>
+							<select class="form-control" name="">
+								<option>全部</option>
+								<option>未提交审核</option>
+								<option>审核中</option>
+								<option>审核通过</option>
+								<option>审核不通过</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>售卖状态：</label>
+							<select class="form-control" name="">
+								<option>全部</option>
+								<option>未上线</option>
+								<option>已上线</option>
+								<option>暂售</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>地区：</label>
+							<select class="form-control" name="">
+								<option>南京</option>
+								<option>上海</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>业态：</label>
+							<select class="form-control" name="account">
+								<option>餐饮</option>
+								<option>购物</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label>通行权益名称：</label>
+							<input class="form-control" type="email" placeholder="请输入通行权益名称">
+						</div>
+						<div class="form-group date">
+							<label>创建时间：</label>
+							<div class="input-daterange input-group" id="datepicker">
+								<input type="text" class="form-control" name="start" value=""/>
+								<span class="input-group-addon">to</span>
+								<input type="text" class="form-control" name="end" value="" />
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<button class="btn btn-w-m btn-primary" type="buttom">查询</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-2">
+					<a type="button" class="btn btn-block btn-primary">创建通行权益</a>
+					<a type="button" class="btn btn-block btn-primary">发放通行权益</a>
+					<a type="button" class="btn btn-block btn-primary">下载通行权益购买链接</a>
+				</div>
+			</div>
+
+			<div class="wrapper wrapper-content animated fadeInRight">
+
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="ibox">
+							<!--<div class="ibox-title">
+								<h5>运营商</h5>
+							</div>-->
+							<div class="ibox-content project-list">
+								<table class="table table-bordered table-hover">
+									<thead>
+										<tr>
+											<th>通行权益名称</th>
+											<th>标准售价</th>
+											<th>总发行量</th>
+											<th>已发放量</th>
+											<th>已激活张数</th>
+											<th>未激活张数</th>
+
+
+											<th>待激活张数</th>
+											<th>发行日期</th>
+											<th>有效期</th>
+											<th>审核状态</th>
+											<th>售卖状态</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>苏家一卡通</td>
+											<td>20000</td>
+											<td>5000000</td>
+											<td>300</td>
+											<td>300</td>
+											<td>300</td>
+											<td>300</td>
+											<td>2017.01.17 20：1</td>
+											<td>年/月</td>
+											<td>未提交审核</td>
+											<td>已上线</td>
+											<td>
+
+												<!--<a href="#" class="btn btn-primary btn-sm">预览</a>-->
+												<!--<a href="#" class="btn btn-primary btn-sm">编辑</a>-->
+												<!--<a href="#" class="btn btn-primary btn-sm">购买链接</a>-->
+												<!--<a href="#" class="btn btn-primary btn-sm">暂停售卖</a>-->
+												<!--<a href="#" class="btn btn-primary btn-sm">上线</a>-->
+												<!--<a href="#" class="btn btn-primary btn-sm">提交审核</a>-->
+												<a class="icon-only" data-toggle="tooltip" title="预览"><i class="fa fa-eye"></i></a>
+												<a class="icon-only" data-toggle="tooltip" title="编辑"><i class="fa fa-edit"></i></a>
+												<a class="icon-only" data-toggle="tooltip" title="购买链接"><i class="fa fa-cny"></i></a>
+												<a class="icon-only" data-toggle="tooltip" title="暂停售卖"><i class="fa fa-cny"></i></a>
+												<a class="icon-only" data-toggle="tooltip" title="上线"><i class="fa fa-cloud-upload"></i></a>
+												<a class="icon-only" data-toggle="tooltip" title="提交审核"><i class="fa fa-tasks"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运维后台-运营商管理-通行权益会员管理</title>
+</head>
+<body>
+<div class="pjax-container">
+
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-12">
+            <h2>通行权益会员管理</h2>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-3 m-b input-group pull-left">
+                                <span class="input-group-addon no-borders"></span>
+                                <div class="input-daterange input-group" id="datepicker">
+                                    <input type="text" class="form-control" placeholder="激活开始时间" id="searchStartTime">
+                                    <span class="input-group-addon">到</span>
+                                    <input type="text" class="form-control" placeholder="激活结束时间" id="searchEndTime">
+                                </div>
+                            </div>
+                            <div class="col-sm-3 m-b input-group pull-left">
+                                <span class="input-group-addon no-borders"></span>
+                                <select class="form-control" id="operators">
+                                    <option></option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4 m-b">
+                                <div class="input-group">
+                                    <div class="input-group-btn">
+                                        <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">
+                                            <span id="innerShow">手机号 </span><span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a onclick="membershipQuery.changeShow( this, 'phone' );">手机号 </a></li>
+                                            <li><a onclick="membershipQuery.changeShow( this, 'cardNumber'  );">通行权益卡号 </a></li>
+                                        </ul>
+                                    </div>
+                                    <input type="text" placeholder="" class="form-control" id="searchText">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="ladda-button btn btn-primary" onclick="membershipQuery.loadQuery(1)"> 搜索</button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 m-b pull-left">
+                                <a class="btn btn-block btn-primary">导出excel</a>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                <tr>
+                                    <th>通行权益卡号</th>
+                                    <th>通行权益名称</th>
+                                    <th>手机号</th>
+                                    <th>姓名昵称</th>
+                                    <th>卡片激活时间</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody id="dataList"></tbody>
+                            </table>
+                            <div id="pageBar" class="page_num"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/pageJs/maintenance/members/list.js"></script>
+
+</div>
+</body>
+</html>

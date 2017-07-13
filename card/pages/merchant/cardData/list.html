@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商户后台-通行权益用户数据</title>
+
+</head>
+<body>
+<div class="pjax-container">
+
+    <style>
+        .form-group{
+            margin-right: 10px !important;
+            margin-bottom: 10px !important;
+        }
+    </style>
+
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-12">
+            <h2>通行权益用户数据</h2>
+        </div>
+    </div>
+    <div class="row wrapper border-bottom white-bg dashboard-header">
+        <div class="col-lg-10">
+            <p class="text-info">截止统计日期：2017-01-18 16:00:20 星期三</p>
+
+            <form role="form" class="form-inline">
+                <div class="form-group">
+                    <label>最近:</label>
+                    <div class="btn-group">
+                        <button class="btn             btn-primary btn-radio" type="button">7天</button>
+                        <button class="btn btn-outline btn-primary btn-radio" type="button">14天</button>
+                        <button class="btn btn-outline btn-primary btn-radio" type="button">30天</button>
+                    </div>
+                </div>
+                <div class="form-group" id="data">
+                    <label>创建时间:</label>
+                    <div class="input-daterange input-group" id="datepicker">
+                        <input type="text" class="form-control" name="start" value="05/14/2014">
+                        <span class="input-group-addon">到</span>
+                        <input type="text" class="form-control" name="end" value="05/22/2014">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>支付方式:</label>
+                    <select class="form-control">
+                        <option>全部</option>
+                        <option>微信</option>
+                        <option>支付宝</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>门店:</label>
+                    <select class="form-control">
+                        <option>全部</option>
+                        <option>商户1</option>
+                        <option>商户2</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="email" placeholder="通行权益卡号、手机号、订单号搜索">
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-w-m btn-primary" type="buttom">查询</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-block btn-success">导出Excel</button>
+            <button type="button" class="btn btn-block btn-success">导出今日Excel</button>
+            <button type="button" class="btn btn-block btn-success">下载微信帐单</button>
+        </div>
+    </div>
+
+    <div class="row wrapper wrapper-content animated fadeInRight">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>通行权益名称</th>
+                            <th>通行权益卡号</th>
+                            <th>用户手机号</th>
+                            <th>订单号</th>
+                            <th>订单时间</th>
+                            <th>消费门店</th>
+                            <th>消费品牌</th>
+                            <th>优惠券核销（张）</th>
+                            <th>门票核销（次）</th>
+                            <th>使用折扣（次）</th>
+                            <th>优惠券抵扣金额（元）</th>
+                            <th>折扣抵扣金额（元）</th>
+                            <th>应付金额（元）</th>
+                            <th>抵扣合计（元）</th>
+                            <th>通行权益余额支付（元）</th>
+                            <th>微信支付</th>
+                            <th>支付方式</th>
+                            <th>商户进账金额（元）</th>
+                            <th>收款帐号</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>苏家联盟卡</td>
+                            <td>25252525</td>
+                            <td>18088888888</td>
+                            <td>123456123456</td>
+                            <td>2017-2-15 16:30</td>
+                            <td>门店1</td>
+                            <td>辣府</td>
+                            <td>辣府7.5折扣券（1张）</td>
+                            <td>银杏湖乐园（1次）</td>
+                            <td>楚翘城7.2折（1次）</td>
+                            <td>200</td>
+                            <td>0</td>
+                            <td>500</td>
+                            <td>200</td>
+                            <td>0</td>
+                            <td>300</td>
+                            <td>微信支付</td>
+                            <td>300</td>
+                            <td>sfafeafeaefae</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>苏家联盟卡</td>
+                            <td>25252525</td>
+                            <td>18088888888</td>
+                            <td>123456123456</td>
+                            <td>2017-2-15 16:30</td>
+                            <td>门店1</td>
+                            <td>辣府</td>
+                            <td>辣府7.5折扣券（1张）</td>
+                            <td>银杏湖乐园（1次）</td>
+                            <td>楚翘城7.2折（1次）</td>
+                            <td>200</td>
+                            <td>0</td>
+                            <td>500</td>
+                            <td>200</td>
+                            <td>0</td>
+                            <td>300</td>
+                            <td>微信支付</td>
+                            <td>300</td>
+                            <td>sfafeafeaefae</td>
+                        </tr><tr>
+                            <td>1</td>
+                            <td>苏家联盟卡</td>
+                            <td>25252525</td>
+                            <td>18088888888</td>
+                            <td>123456123456</td>
+                            <td>2017-2-15 16:30</td>
+                            <td>门店1</td>
+                            <td>辣府</td>
+                            <td>辣府7.5折扣券（1张）</td>
+                            <td>银杏湖乐园（1次）</td>
+                            <td>楚翘城7.2折（1次）</td>
+                            <td>200</td>
+                            <td>0</td>
+                            <td>500</td>
+                            <td>200</td>
+                            <td>0</td>
+                            <td>300</td>
+                            <td>微信支付</td>
+                            <td>300</td>
+                            <td>sfafeafeaefae</td>
+                        </tr>
+
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="999" class="footable-visible">
+                                <ul class="pagination pull-right">
+                                    <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
+                                    <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
+                                    <li class="footable-page active"><a data-page="0" href="#">1</a></li>
+                                    <li class="footable-page"><a data-page="1" href="#">2</a></li>
+                                    <li class="footable-page-arrow"><a data-page="next" href="#next">›</a>
+                                    </li><li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#data .input-daterange').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            format: "yyyy-mm-dd"
+        });
+
+        $(".btn-radio").click(function() {
+            $(".btn-radio").addClass("btn-outline");
+            $(this).removeClass("btn-outline");
+        });
+    </script>
+</div>
+</body>
+</html>
