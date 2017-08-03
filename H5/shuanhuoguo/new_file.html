@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+   <!-- <base href="http://h5img.1paiclub.com/lightapp/shuanhuoguo/" />-->
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/main.css" rel="stylesheet">
+    <style>
+    	.page_2{
+    		background-image: url(images/zhuo.jpg);
+    	}
+    	.qipao{
+		    width: 320px;
+		    height: 300px;
+		    position: fixed;
+		    left: 50%;
+		    margin-left: -160px;
+		    top: 28%;
+		}
+    	.pao{
+    		background-color: #FFFFFF;
+    		width: 28px;
+    		height: 28px;
+    		position: absolute;
+    		border-radius:50% ;
+    	}
+    	.pao:nth-child(1){
+    		top: 20%;
+    		left: 50%;
+    		animation:pao 1s cubic-bezier(0.5, 0.8,1, 0) infinite both ;
+		    -moz-animation:pao 1s cubic-bezier(0.8, 1,1, 0) infinite both ;	/* Firefox */
+			-webkit-animation:pao 1s cubic-bezier(0.8, 1,1, 0) infinite both ;	/* Safari 和 Chrome */
+			-o-animation:pao 1s cubic-bezier(0.8, 1,1, 0) infinite both ;
+    	}
+    	.pao:nth-child(2){
+    		top: 24%;
+    		left: 28%;
+    		animation:pao 1s cubic-bezier(0.5, 0.8,1, 0) 0.2s infinite both ;
+		    -moz-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.2s infinite both ;	/* Firefox */
+			-webkit-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.2s infinite both ;	/* Safari 和 Chrome */
+			-o-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.2s infinite both ;
+    	}
+    	.pao:nth-child(3){
+    		top: 38%;
+    		left: 32%;
+    		animation:pao 1s cubic-bezier(0.5, 0.8,1, 0) 0.5s infinite both ;
+		    -moz-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.5s infinite both ;	/* Firefox */
+			-webkit-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.5s infinite both ;	/* Safari 和 Chrome */
+			-o-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.5s infinite both ;
+    	}
+    	.pao:nth-child(4){
+    		top: 34%;
+    		left: 60%;
+    		animation:pao 1s cubic-bezier(0.5, 0.8,1, 0) 1.2s infinite both ;
+		    -moz-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 1.2s infinite both ;	/* Firefox */
+			-webkit-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 1.2s infinite both ;	/* Safari 和 Chrome */
+			-o-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 1.2s infinite both ;
+    	}
+    	.pao:nth-child(5){
+    		top: 42%;
+    		left: 47%;
+    		animation:pao 1s cubic-bezier(0.5, 0.8,1, 0) 0.8s infinite both ;
+		    -moz-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.8s infinite both ;	/* Firefox */
+			-webkit-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.8s infinite both ;	/* Safari 和 Chrome */
+			-o-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.8s infinite both ;
+    	}
+    	.pao:nth-child(6){
+    		top: 48%;
+    		left: 20%;
+    		animation:pao 1s cubic-bezier(0.5, 0.8,1, 0) 1.6s infinite both ;
+		    -moz-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 1.6s infinite both ;	/* Firefox */
+			-webkit-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 1.6s infinite both ;	/* Safari 和 Chrome */
+			-o-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 1.6s infinite both ;
+    	}
+    	.pao:nth-child(7){
+    		top: 60%;
+    		left: 34%;
+    		animation:pao 1s cubic-bezier(0.5, 0.8,1, 0) 0.4s infinite both ;
+		    -moz-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.4s infinite both ;	/* Firefox */
+			-webkit-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.4s infinite both ;	/* Safari 和 Chrome */
+			-o-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 0.4s infinite both ;
+    	}
+    	.pao:nth-child(8){
+    		top: 56%;
+    		left: 54%;
+    		animation:pao 1s cubic-bezier(0.5, 0.8,1, 0) 1.3s infinite both ;
+		    -moz-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 1.3s infinite both ;	/* Firefox */
+			-webkit-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 1.3s infinite both ;	/* Safari 和 Chrome */
+			-o-animation:pao 1s cubic-bezier(0.8, 1,1, 0) 1.3s infinite both ;
+    	}
+    	@keyframes pao{
+			0% {
+		   		transform:scale(0,0);
+		   		-ms-transform:scale(0,0); /* Internet Explorer */
+				-moz-transform:scale(0,0); /* Firefox */
+				-webkit-transform:scale(0,0); /* Safari 和 Chrome */
+				-o-transform:scale(0,0); /* Opera */
+				opacity: 0.8;
+		  	}
+		  	20% {
+		   		transform:scale(0,0);
+		   		-ms-transform:scale(0,0); /* Internet Explorer */
+				-moz-transform:scale(0,0); /* Firefox */
+				-webkit-transform:scale(0,0); /* Safari 和 Chrome */
+				-o-transform:scale(0,0); /* Opera */
+				opacity: 0.8;
+		  	}
+			100% {
+		   		transform:scale(1,1);
+		   		-ms-transform:scale(1,1); /* Internet Explorer */
+				-moz-transform:scale(1,1); /* Firefox */
+				-webkit-transform:scale(1,1); /* Safari 和 Chrome */
+				-o-transform:scale(1,1); /* Opera */
+		   		opacity: 0;
+		  	}
+		}
+    	@-webkit-keyframes pao{
+			0% {
+		   		transform:scale(0,0);
+		   		-ms-transform:scale(0,0); /* Internet Explorer */
+				-moz-transform:scale(0,0); /* Firefox */
+				-webkit-transform:scale(0,0); /* Safari 和 Chrome */
+				-o-transform:scale(0,0); /* Opera */
+				opacity: 0.8;
+		  	}
+		  	20% {
+		   		transform:scale(0,0);
+		   		-ms-transform:scale(0,0); /* Internet Explorer */
+				-moz-transform:scale(0,0); /* Firefox */
+				-webkit-transform:scale(0,0); /* Safari 和 Chrome */
+				-o-transform:scale(0,0); /* Opera */
+				opacity: 0.8;
+		  	}
+			100% {
+		   		transform:scale(1,1);
+		   		-ms-transform:scale(1,1); /* Internet Explorer */
+				-moz-transform:scale(1,1); /* Firefox */
+				-webkit-transform:scale(1,1); /* Safari 和 Chrome */
+				-o-transform:scale(1,1); /* Opera */
+		   		opacity: 0;
+		  	}
+		}
+		@-moz-keyframes pao{
+			0% {
+		   		transform:scale(0,0);
+		   		-ms-transform:scale(0,0); /* Internet Explorer */
+				-moz-transform:scale(0,0); /* Firefox */
+				-webkit-transform:scale(0,0); /* Safari 和 Chrome */
+				-o-transform:scale(0,0); /* Opera */
+				opacity: 0.8;
+		  	}
+		  	20% {
+		   		transform:scale(0,0);
+		   		-ms-transform:scale(0,0); /* Internet Explorer */
+				-moz-transform:scale(0,0); /* Firefox */
+				-webkit-transform:scale(0,0); /* Safari 和 Chrome */
+				-o-transform:scale(0,0); /* Opera */
+				opacity: 0.8;
+		  	}
+			100% {
+		   		transform:scale(1,1);
+		   		-ms-transform:scale(1,1); /* Internet Explorer */
+				-moz-transform:scale(1,1); /* Firefox */
+				-webkit-transform:scale(1,1); /* Safari 和 Chrome */
+				-o-transform:scale(1,1); /* Opera */
+		   		opacity: 0;
+		  	}
+		}
+		@-o-keyframes pao{
+			0% {
+		   		transform:scale(0,0);
+		   		-ms-transform:scale(0,0); /* Internet Explorer */
+				-moz-transform:scale(0,0); /* Firefox */
+				-webkit-transform:scale(0,0); /* Safari 和 Chrome */
+				-o-transform:scale(0,0); /* Opera */
+				opacity: 0.8;
+		  	}
+		  	20% {
+		   		transform:scale(0,0);
+		   		-ms-transform:scale(0,0); /* Internet Explorer */
+				-moz-transform:scale(0,0); /* Firefox */
+				-webkit-transform:scale(0,0); /* Safari 和 Chrome */
+				-o-transform:scale(0,0); /* Opera */
+				opacity: 0.8;
+		  	}
+			100% {
+		   		transform:scale(1,1);
+		   		-ms-transform:scale(1,1); /* Internet Explorer */
+				-moz-transform:scale(1,1); /* Firefox */
+				-webkit-transform:scale(1,1); /* Safari 和 Chrome */
+				-o-transform:scale(1,1); /* Opera */
+		   		opacity: 0;
+		  	}
+		}
+    </style>
+</head>
+<body>
+	<div class="page page_2">
+		<div class="qipao">
+			<div class="pao"></div>
+			<div class="pao"></div>
+			<div class="pao"></div>
+			<div class="pao"></div>
+			<div class="pao"></div>
+			<div class="pao"></div>
+			<div class="pao"></div>
+			<div class="pao"></div>
+		</div>
+		<img id="guogif" src="">
+		<img id="kuaizi" src="">
+		<img class="yan yan4" src="images/yan.png">
+		<img class="yan yan3" src="images/yan.png">
+		<img class="yan yan2" src="images/yan.png">
+		<img class="yan" src="images/yan.png">
+		<div class="action text-center">
+			<div id="merchantLogo"></div>
+			<button id="start"><img src="images/start.png"></button>
+			<button id="end" class="hide"><img src="images/end.png"></button>
+			<div id="toRule" class="margin-center"><img src="images/toRule.png"></div>
+		</div>
+		
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/jquery.cookies.2.2.0.min.js"></script>
+<script type="text/javascript" src="js/layer.js"></script>
+<script type="text/javascript" src="js/resLoader.js"></script>
+<script type="text/javascript" src="/resource/js/collections.js"></script>
+</html>

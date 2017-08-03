@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- <base href="http://h5img.1paiclub.com/lightapp/shuanhuoguo/" />-->
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="page page_1">
+			<div class="startGame">
+				<div class="text-center">
+					<input id="phone" type="text" class="text-center" placeholder="" />
+				</div>
+				<div class="text-center">
+					<button id="phoneSubmit"></button>
+				</div>
+			</div>
+			<img class="paiLogo" src="images/1paiLogo.png">
+		</div>
+		<div class="page page_2 hide">
+			<div class="qipao">
+				<div class="pao"></div>
+				<div class="pao"></div>
+				<div class="pao"></div>
+				<div class="pao"></div>
+				<div class="pao"></div>
+				<div class="pao"></div>
+				<div class="pao"></div>
+				<div class="pao"></div>
+			</div>
+			<div id="guogif"></div>
+			<img id="kuaizi" src="">
+			<img class="yan yan4" src="images/yan.png">
+			<img class="yan yan3" src="images/yan.png">
+			<img class="yan yan2" src="images/yan.png">
+			<img class="yan" src="images/yan.png">
+			<div class="action text-center">
+				<div id="merchantLogo"></div>
+				<button id="start"><img src="images/start.png"></button>
+				<button id="end" class="hide"><img src="images/end.png"></button>
+				<div id="toRule" class="margin-center"><img src="images/toRule.png"></div>
+			</div>
+
+		</div>
+		<div class="blackLine">
+			<img src="images/blackLine.png" />
+		</div>
+		<div class="page page_3 hide">
+			<div class="close">
+				<img src="images/close.png" />
+			</div>
+			<div id="rule">
+			</div>
+			<div id="award" class="hide">
+				<div class="userInfo">
+					<p id="userName"></p>
+					<div id="noCoupon" class="hide">
+						<p>很遗憾~</p>
+						<p>您还没有优惠券，赶快去玩游戏吧！</p>
+					</div>
+					<div id="haveCoupon">
+						<p>恭喜您！</p>
+						<p>成功领取<span id="couponNum">x</span>张优惠券，请至德庄公众号查看</p>
+					</div>
+
+				</div>
+				<ul>
+
+				</ul>
+				<div id="merchantQRcode">
+					<img src="" />
+				</div>
+			</div>
+			<div class="tab text-center">
+				<button id="ruleBtn"><img src="images/rule_1.png"></button>
+				<button id="awardBtn"><img src="images/award.png"></button>
+			</div>
+		</div>
+		<div class="page loading">
+			
+		</div>
+
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="js/jquery.cookies.2.2.0.min.js"></script>
+	<script type="text/javascript" src="js/layer.js"></script>
+	<script type="text/javascript" src="js/resLoader.js"></script>
+	<script type="text/javascript" src="/resource/js/collections.js"></script>
+
+	<script>
+		var timestamp = new Date().getTime(),
+			openId;
+		timestamp = parseInt(timestamp / 1000);
+		var headimgurl, nickname;
+		var nonceStr = 'Wm3WZYTPz0wzccmW',
+			url = location.href.split('#')[0],
+			signature = '',
+			appId;
+		var url = escape(url),
+			activityId = getUrlParam('aid');
+		var hitType = getUrlParam('hitType');
+		var merchantId = 1018;
+		var responseData = $.ajax({
+			url: "http://liveapp.1paiclub.com/rest/lightApp/config",
+			async: false,
+			type: "GET",
+			dataType: "json",
+			data: {
+				"activityId": activityId,
+				"hitType": hitType
+			}
+		}).responseText;
+		responseData = eval("(" + responseData + ")");
+		responseData = responseData.data;
+		$("#rule").html(responseData.description);
+		$("#merchantQRcode img").attr("src", responseData.param_QRcode);
+		if(responseData.param_merchantLogo){
+			$("#merchantLogo").css("background-image", "url(" + responseData.param_merchantLogo + ")");
+		}
+		$("title").html(responseData.title);
+		var token = responseData.token;
+		var mintime = responseData.param_mintime * 1000;
+		var maxtime = responseData.param_maxtime * 1000;
+		var param_share = responseData.param_share?'http://liveapp.1paiclub.com/'+responseData.param_share:'images/share.jpg';
+		var param_homeBg = responseData.param_homeBg?'http://liveapp.1paiclub.com/'+responseData.param_homeBg:'images/homeBg.jpg';
+		var param_gameBg = responseData.param_gameBg?'http://liveapp.1paiclub.com/'+responseData.param_gameBg:'images/zhuo.jpg';
+		var param_guo = responseData.param_guo?'http://liveapp.1paiclub.com/'+responseData.param_guo:'images/guo.png';
+		var param_downfirst = responseData.param_downfirst?'http://liveapp.1paiclub.com/'+responseData.param_downfirst:'images/down.png';
+		var param_down = responseData.param_down?'http://liveapp.1paiclub.com/'+responseData.param_down:'images/down.gif';
+		var param_shuan = responseData.param_shuan?'http://liveapp.1paiclub.com/'+responseData.param_shuan:'images/shuan.gif';
+		var param_up = responseData.param_up?'http://liveapp.1paiclub.com/'+responseData.param_up:'images/up.gif';
+		
+		loadImage(param_share,function(){});
+		loadImage(param_homeBg,function(){});
+		loadImage(param_gameBg,function(){});
+		loadImage(param_guo,function(){});
+		loadImage(param_downfirst,function(){});
+		loadImage(param_down,function(){});
+		loadImage(param_shuan,function(){});
+		loadImage(param_up,function(){});
+		loadImage('images/popBg.jpg',function(){});
+		loadImage('images/yan.png',function(){});
+		loadImage('images/blackLine.png',function(){
+			$(".loading").fadeOut();
+		});
+		
+		
+//		var loader = new resLoader({
+//			resources: [
+//				param_share,
+//				param_homeBg,
+//				param_gameBg,
+//				param_guo,
+//				param_downfirst,
+//				param_down,
+//				param_shuan,
+//				param_up,
+//				'images/popBg.jpg',
+//				'images/yan.png',
+//				'images/blackLine.png',
+//			],
+//			onStart: function(total) {
+//
+//			},
+//			onProgress: function(current, total) {
+//
+//			},
+//			onComplete: function(total) {
+//				$(".loading").fadeOut();
+//			}
+//		});
+//		loader.start();
+		$(".page_1").css("background-image", "url(" + param_homeBg + ")");
+		$(".page_2").css("background-image", "url(" + param_gameBg + ")");
+		$("#guogif").css("background-image", "url(" + param_guo + ")");
+		$("#kuaizi").attr("src", param_downfirst);
+
+		var phone = $.cookies.get(activityId + 'phone');
+		var openId = $.cookies.get('openId');
+		var remainANum, remainDNum;
+
+		$.ajax({
+			type: 'GET',
+			async: 'false',
+			url: 'http://www.higoin.com/wechat/getWechatConfig.action?merchantId=' + merchantId + '&timestamp=' + timestamp + '&nonceStr=' + nonceStr + '&url=' + url,
+			dataType: 'jsonp',
+			data: '',
+			jsonp: 'callback',
+			success: function(result) {
+				console.log(result);
+				appId = result.appId;
+				//            appId = 'wx799c7916b43b4282';
+				signature = result.signature;
+				wx.config({
+					debug: false,
+					appId: appId,
+					timestamp: timestamp,
+					nonceStr: nonceStr,
+					signature: signature,
+					jsApiList: ['checkJsApi', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo']
+				});
+				wx.ready(function() {
+					var nickname_ = encodeURI(encodeURI(nickname));
+					headimgurl = encodeURI(headimgurl);
+					var mix_url = 'http://liveapp.1paiclub.com/rest/lightApp/redirect?aid=' + activityId + '&hitType=2';
+					var shareData = {
+						title: responseData.param_sharetitle,
+						desc: responseData.param_sharecontent,
+						link: mix_url,
+						imgUrl: param_share,
+						trigger: function() {},
+						success: function(res) {
+
+						}
+					};
+					wx.onMenuShareAppMessage(shareData);
+					wx.onMenuShareTimeline(shareData);
+					wx.onMenuShareQQ(shareData);
+					wx.onMenuShareWeibo(shareData)
+				})
+				if(phone) {
+					playGames();
+				} else {
+					if(openId == undefined || openId == '') {
+						var code = getUrlParam('code');
+						if(code == '') {
+							var re_url = 'http://www.1paionline.com/index.php?s=/home/index/gtWxCode&appid=' + appId + '&redirect_uri=' + encodeURIComponent(location.href);
+							location.replace(re_url)
+						} else {
+							$.ajax({
+								type: 'GET',
+								async: 'false',
+								url: 'http://www.1paionline.com/index.php?s=/home/index/getUserinfo&merchantId=' + merchantId + '&appid=' + appId + '&code=' + code + '&scope=snsapi_userinfo',
+								dataType: 'json',
+								data: '',
+								success: function(result) {
+									openId = result.openid;
+									$.cookies.set('openId', openId);
+									if(openId == null || openId == '') {
+										reloadPage();
+									} else {
+										openIdTophone();
+									}
+								}
+							})
+						}
+					} else {
+						openIdTophone();
+					}
+				}
+
+			}
+		});
+
+		function openIdTophone() {
+			$.ajax({
+				type: "POST",
+				url: "http://liveapp.1paiclub.com/rest/lightApp/data/one ",
+				dataType: "json",
+				data: {
+					'activityId': activityId,
+					'phone': phone,
+					'openId': openId
+				},
+				success: function(result) {
+					phone = result.data.phone;
+					$.cookies.set(activityId + 'phone', phone);
+					if(phone) {
+						playGames();
+					} else {
+						submitPhone();
+					}
+				}
+			})
+		}
+
+		function submitPhone() {
+			$("#phone").focus(function() {
+				$("#phone").css("background-image", "none");
+			});
+			$("#phone").blur(function() {
+				if(!$("#phone").val()) {
+					$("#phone").css("background-image", "url(images/phoneBg.jpg)");
+				}
+			});
+			$("#phoneSubmit").bind("click", function() {
+				phone = $('#phone').val();
+				if(phone == '') {
+					alert('手机号不能为空!');
+					return false;
+				}
+				if(!validatemobile(phone)) return false;
+				$.cookies.set(activityId + 'phone', phone);
+				$.ajax({
+					type: "POST",
+					url: "/rest/lightApp/data/submit",
+					dataType: "json",
+					data: {
+						"activityId": activityId,
+						"phone": phone,
+						"openId": openId,
+					},
+					success: function(result) {
+
+					}
+				});
+				setTimeout(function() {
+					playGames();
+				}, 200);
+			});
+		}
+
+		function playGames() {
+			responseData = $.ajax({
+				url: "http://liveapp.1paiclub.com/rest/lightApp/config",
+				async: false,
+				type: "GET",
+				dataType: "json",
+				data: {
+					"activityId": activityId,
+					"hitType": hitType,
+					"phone": phone,
+					"openId": openId
+				}
+			}).responseText;
+			
+			responseData = eval("(" + responseData + ")");
+			responseData = responseData.data;
+			if(responseData.dayNumber) {
+				remainDNum = responseData.dayNumber - responseData.awardDNum;
+			}
+			if(responseData.totalNumber) {
+				remainANum = responseData.totalNumber - responseData.awardANum;
+			}
+			$("#userName").html(phone);
+			$(".page_1").hide();
+			$(".page_2").show();
+			$("#toRule").bind("click", function() {
+				loadCoupon();
+				$(".page_3").show();
+			});
+			$("#ruleBtn").bind("click", function() {
+				$("#rule").show();
+				$("#award").hide();
+				$("#ruleBtn img").attr("src", "images/rule_1.png");
+				$("#awardBtn img").attr("src", "images/award.png");
+			});
+			$("#awardBtn").bind("click", function() {
+				$("#award").show();
+				$("#rule").hide();
+				$("#ruleBtn img").attr("src", "images/rule.png");
+				$("#awardBtn img").attr("src", "images/award_1.png");
+			});
+			$(".close").bind("click", function() {
+				$(".page_3").hide();
+			});
+			//开始计时
+			var start, time;
+			$("#start").click(function() {
+				start = new Date().getTime();
+				$("#toRule").hide();
+				$("#kuaizi").attr("src", param_down);
+				setTimeout(function() {
+					$("#kuaizi").attr("src", param_shuan);
+				}, 500);
+				
+				setTimeout(function() {
+					$("#start").hide();
+					$("#end").show();
+				}, 200);
+			});
+			$("#end").click(function() {
+				$("#kuaizi").attr("src", param_up);
+				time = new Date().getTime() - start;
+				var m = parseInt(time / 1000 / 60);
+				var s = parseInt((time / 1000) % 60);
+				var ms = parseInt(time % 1000);
+				$(".page_2").removeClass("jujiao");
+				setTimeout(function() {
+					$(".page_2").addClass("jujiao");
+					$(".blackLine").show();
+				}, 200);
+
+				var html = '<p>您本次用时</p>';
+				html += '<p id="time">' + toDub(m) + ":" + toDub(s) + "." + toThree(ms) + '</p>';
+				if(time < mintime) {
+					html += '<p>' + responseData.param_info1 + '</p>';
+				} else if(time > maxtime) {
+					html += '<p>' + responseData.param_info3 + '</p>';
+				} else {
+					html += '<p>' + responseData.param_info2 + '</p>';
+				}
+				html += '<button id="again"><img src="images/again.png"></button><br>';
+				html += '<button id="toAward"><img src="images/toAward.png"></button>';
+				if(remainANum && remainDNum && remainANum < remainDNum) {
+					html += '<p>你还有<span>' + remainANum + '</span>次兑奖机会</p>';
+				} else if(responseData.dayNumber) {
+					html += '<p>你今天还有<span>' + remainDNum + '</span>次兑奖机会</p>';
+				} else if(responseData.totalNumber) {
+					html += '<p>你还有<span>' + remainANum + '</span>次兑奖机会</p>';
+				}
+				setTimeout(function() {
+					layer.open({
+						className: 'popup',
+						content: html,
+						success: function(elem) {
+							$("#again").click(function() {
+								setTimeout(function() {
+									layer.closeAll();
+									again();
+								}, 200);
+							});
+							var toAward = 1; //防止快速点多次提交奖品
+							$("#toAward").click(function() {
+								if(remainANum <= 0) {
+									alert("您的兑奖机会已用完！");
+									layer.closeAll();
+									return false;
+								} else if(remainDNum <= 0) {
+									alert("您今日的兑奖机会已用完！");
+									layer.closeAll();
+									return false;
+								}
+								if(toAward) {
+									toAward = 0;
+									var prizename;
+									if(time >= mintime && time <= maxtime) {
+										var responseAwardData = $.ajax({
+											url: "http://liveapp.1paiclub.com/rest/lightApp/award/lottery",
+											async: false,
+											type: "POST",
+											dataType: "json",
+											data: {
+												"activityId": activityId,
+												"token": token
+											}
+										}).responseText;
+										var temp = JSON.parse(responseAwardData);
+										prizename = temp.data.name;
+
+									} else {
+										var score = parseInt(2000 + Math.random() * 1000);
+										$.ajax({
+											async: false,
+											type: "POST",
+											url: "http://liveapp.1paiclub.com/rest/lightApp/award/scoreLottery",
+											dataType: "json",
+											data: {
+												"activityId": activityId,
+												"token": token,
+												"score": score,
+											},
+											success: function(result) {
+												prizename = result.data.name;
+											}
+										});
+									}
+									$.ajax({
+										type: "POST",
+										url: "http://liveapp.1paiclub.com/rest/lightApp/award/submit",
+										dataType: 'json',
+										data: {
+											"activityId": activityId,
+											"token": token,
+											"phone": phone,
+											"openId": openId,
+											"prizeName": prizename,
+											"monitor": true,
+										},
+										success: function(result) {
+											remainDNum = remainDNum - 1;
+											remainANum = remainANum - 1;
+											var html = '<p>兑奖成功，么么哒！</p>';
+											html += '<p>获得<span>' + prizename + '</span></p>';
+											layer.open({
+												className: 'popup',
+												content: html,
+												time: 3,
+												success: function(elem) {
+
+												},
+												end: function(elem) {
+													again();
+												}
+											})
+										}
+									});
+								}
+							});
+						},
+						end: function(elem) {
+							again();
+						}
+					});
+				}, 3000);
+			});
+
+		}
+
+		function loadCoupon() {
+			$.ajax({
+				type: "POST",
+				async: false,
+				url: "http://liveapp.1paiclub.com/rest/lightApp/award/personal/list",
+				dataType: "json",
+				data: {
+					'activityId': activityId,
+					'pageNo': 1,
+					'limit': 50,
+					'searchText': phone
+				},
+				success: function(result) {
+					if(result.code == 0) {
+						if(!result.data.length) {
+							$("#noCoupon").show();
+							$("#haveCoupon").hide();
+						} else {
+							$("#noCoupon").hide();
+							$("#haveCoupon").show();
+							$("#couponNum").html(result.data.length);
+							var couponhtml = '';
+							for(i = 0; i < result.data.length; i++) {
+								couponhtml += '<li>';
+								couponhtml += '	<div class="coupon">';
+								couponhtml += '		<p>' + result.data[i].prizeName.replace(/[^0-9]/ig, "") + '<span>' + result.data[i].prizeName.replace(/[0-9]/ig, ""); + '</span></p>';
+								var createTime = result.data[i].param1.split(' ');
+								var endTime = result.data[i].param2.split(' ');
+								couponhtml += '		<p>使用期限:' + createTime[0] + '-' + endTime[0] + '</p>';
+								couponhtml += '	</div>';
+								couponhtml += '</li>';
+							}
+							$("#award ul").html(couponhtml);
+						}
+					}
+				}
+			});
+		}
+
+		function reloadPage() {
+			var baseUrl = 'http://liveapp.1paiclub.com/rest/lightApp/redirect?aid=' + activityId + '&hitType=2';
+			window.location.replace(baseUrl)
+		}
+
+		function again() {
+			$("#kuaizi").attr("src", param_downfirst);
+			$("#end").hide();
+			$("#start").show();
+			$(".blackLine").hide();
+			$("#toRule").show();
+		};
+		//补零
+		function toDub(n) {
+			return n < 10 ? "0" + n : "" + n;
+		}
+		//三位数补零
+		function toThree(n) {
+			if(n < 10) {
+				return "00" + n;
+			} else if(10 <= n && n < 100) {
+				return "0" + n;
+			} else {
+				return n;
+			}
+		}
+		function loadImage(url, callback) {
+		    var img = new Image(); //创建一个Image对象，实现图片的预下载     
+		    img.onload = function(){
+		        img.onload = null;
+		        callback(img);
+		    }
+		    img.src = url;
+		};
+		function validatemobile(inputString) {
+			var partten = /^1[3,5,7,8]\d{9}$/;
+			if(partten.test(inputString)) {
+				return true;
+			} else {
+				alert('请输入正确的手机号码');
+				return false;
+			}
+		}
+
+		function getUrlParam(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if(r != null) {
+				return unescape(r[2]);
+			}
+			return "";
+		}
+	</script>
+
+</html>

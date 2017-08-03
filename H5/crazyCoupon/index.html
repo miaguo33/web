@@ -170,7 +170,7 @@
         		merchantIdB = element.merchantId;
         	}
         });
-        var prizeList;
+        var prizeList,openIdCoupon = 1;
         
         //首页顶部图
         $("#maintopimg").attr("src",responseData.param_maintopimg);
@@ -259,7 +259,6 @@
 	                            if (openId == null || openId == '') {
 	                                reloadPage();
 	                            } else {
-	                            	myPhone= getUrlParam('myPhone');
 	                            	nickname = result.nickname;
 	                                headimgurl = result.headimgurl;
 	                                $.cookies.set('nickname', nickname);
@@ -327,9 +326,19 @@
 					success: function(result) {
 						if(result.code==0){
 							myPhone = result.data.phone;
+							if(!myPhone){//openId没查到手机号
+								openIdCoupon = 0;
+							}
+						}else if(result.code==1){
+							if(!myPhone){//openId没查到手机号
+								openIdCoupon = 0;
+							}
 						}
 					}
 				})
+	    	}
+	    	if(!myPhone){
+	    		myPhone= getUrlParam('myPhone');
 	    	}
 	    	if(myPhone){
     			$.ajax({
@@ -346,9 +355,15 @@
 					success:function(result) {
 						if(result.code == 0) {
 							if(result.data.length>0){
-								prizeList = result.data;
-								//跳转第二页
-								loadActivityInfo();
+								console.log(openIdCoupon);
+								if(openIdCoupon){
+									prizeList = result.data;
+									//跳转第二页
+									loadActivityInfo();
+								}else{//openId与手机号没绑定，但手机号下有券时认定这种情况是错误的，重新输手机号
+									action();
+								}
+								
 							}else{
 								if(friendPhone&&responseData.param_vCode==1){//要短信验证码
 	    							action();
