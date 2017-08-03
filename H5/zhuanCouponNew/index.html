@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/event.css" />
+	</head>
+	<body>
+		<div class ="page_1" style="display: none;">
+			<div class='container'>
+				<div id="login">
+					<div class="action">
+						<div class="phone">
+							<input id="phone" placeholder="手机号" />
+						</div>
+						<div class="verifyCode">
+							<input id="verifyCode" placeholder="验证码" />
+							<button id="getverifyCode">获取验证码</button>
+						</div>
+						<button id="getCoupon">领取</button>
+						<!--<p>收不到验证码？使用<span class="orange">语音验证码</span></p>-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class ="page_2" style="display: none;">
+			<div class='container'>
+				<div id='getcouponsuccess'>
+					<h3 class="brown" id="phoneShow"></h3>
+					<div class="coupon">
+						<span id="couponNO">NO.sdvsdvdsv</span>
+						<h1 class="brown" id="couponName">大家非常棒的</h1>
+						<p class="brown" id="couponTime">2017.03.27-2017.04.25</p>
+						<p class="font10">使用时出示券号即可</p>
+					</div>
+					<div>
+						<div class="QR_code">
+							<img class="QR_codeImg" src="" />
+						</div>
+						<p class="font10">长按识别此二维码，查看福利</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="page_share" style="display: none;">
+			<div class="avatar">
+				<img src="" />
+			</div>
+			<div class="share_container">
+				<h2>~ 优惠券还剩<span class="black" id="restCouponNum"></span>张啦！~</h2>
+			</div>
+			<img id="shareGet" src="images/button_1.png" />
+			<img id="rule" src="images/rule.jpg" />
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript" src="js/jweixin-1.0.0.js" ></script>
+	<script type="text/javascript" src="js/jquery.cookies.2.2.0.min.js"></script>
+	<script>
+		var timestamp = new Date().getTime(),
+		openId;
+	    timestamp = parseInt(timestamp / 1000);
+	    var headimgurl;
+	    var nonceStr = 'Wm3WZYTPz0wzccmW',
+            url = location.href.split('#')[0],
+            signature = '';
+	    var url = escape(url),
+        	activityId = getUrlParam('aid');
+    	var inviteCode = getUrlParam('invitecode');
+        var hitType = getUrlParam('hitType');
+        var responseData = $.ajax({
+            url: "/rest/lightApp/config",
+            async: false,
+            type: "GET",
+            dataType: "json",
+            data: {
+                "activityId": activityId,
+                "hitType": hitType
+            }
+        }).responseText;
+        
+        responseData = eval("(" + responseData + ")");
+        responseData = responseData.data;
+        var time=60;
+        var token = responseData.token;
+        var merchantId = responseData.merchantId;
+        var appId = responseData.param_appid;
+        var friendPhone = getUrlParam('friendPhone');
+	    var friendHeadImgUrl = getUrlParam('friendHeadImgUrl');
+	    friendHeadImgUrl=decodeURI(friendHeadImgUrl);
+		
+	    var myPhone= $.cookies.get(activityId+'myPhone'),verifyCode;
+        $(".QR_codeImg").attr("src",responseData.param_QRcode);
+        if(responseData.param_lightcolor){
+        	$(".share_container h2").css("color",responseData.param_lightcolor);
+        	$("#getcouponsuccess .coupon span").css("background-color",responseData.param_lightcolor);
+        	$("#getcouponsuccess .coupon h1").css("color",responseData.param_lightcolor);
+        	$("#getcouponsuccess #couponTime").css("color",responseData.param_lightcolor);
+        };
+        if(inviteCode){
+        	if(responseData.param_bg1_2){
+	        	$(".page_1").css("background-image","url("+responseData.param_bg1_2+")");
+	        };
+        }else{
+        	if(responseData.param_bg1_1){
+	        	$(".page_1").css("background-image","url("+responseData.param_bg1_1+")");
+	        };
+        }
+        
+        if(responseData.param_bg2){
+        	$(".page_2").css("background-image","url("+responseData.param_bg2+")");
+        };
+        if(responseData.param_bg3){
+        	$(".page_share").css("background-image","url("+responseData.param_bg3+")");
+        };
+        if(responseData.param_bg4){
+        	$(".share_container").css("background-image","url("+responseData.param_bg4+")");
+        };
+        if(responseData.param_button){
+        	$("#shareGet").attr("src",responseData.param_button);
+        };
+        if(responseData.param_rule){
+        	$("#rule").attr("src",responseData.param_rule);
+        };
+        if(responseData.param_addImg1){
+        	$(".page_1").append('<img class="addimg" src="'+responseData.param_addImg1+'">')
+        };
+        if(responseData.param_addImg2){
+        	$(".page_2").append('<img class="addimg" src="'+responseData.param_addImg2+'">')
+        };
+        if(responseData.param_addImg3){
+        	$(".page_share").append('<img class="addimg" src="'+responseData.param_addImg3+'">')
+        };
+//      var imgArry = [];
+//      if(responseData.param_bg5){
+//      	imgArry.push(responseData.param_bg5);
+//      };
+//      preloadimages(imgArry).done(function(){
+			$.ajax({
+		        type: 'GET',
+		        async: 'false',
+		        url: 'http://wx.xpinfo.com/index.php?s=/home/index/getWechatConfig&appid=' + appId + '&timestamp=' + timestamp + '&nonceStr=' + nonceStr + '&url=' + url,
+		        dataType: 'json',
+		        data: '',
+		        jsonp: 'callback',
+		        success: function(result) {
+//		            appId = result.appId;
+		            signature = result.signature;
+		            wx.config({
+		                debug: false,
+		                appId: appId,
+		                timestamp: timestamp,
+		                nonceStr: nonceStr,
+		                signature: signature,
+		                jsApiList: ['checkJsApi', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo']
+		            });
+		            wx.error(function(res){
+		            	console.log(res);
+		            });
+		            headimgurl = $.cookies.get('headimgurl');
+		            openId = $.cookies.get('openId');
+		            if (headimgurl == undefined || headimgurl == '' || openId == undefined || openId == '') {
+		                var code = getUrlParam('code');
+		                console.log(code);
+		                if (code == '') {
+		                    var re_url = 'http://wx.xpinfo.com/index.php?s=/home/index/gtWxCode&appid=' + appId + '&redirect_uri=' + encodeURIComponent(location.href);
+		                    location.replace(re_url);
+		                } else {
+		                    $.ajax({
+		                        type: 'GET',
+		                        async: 'false',
+		                        url: 'http://wx.xpinfo.com/index.php?s=/home/index/getUserinfo&appid=' + appId + '&code=' + code+'&scope=snsapi_userinfo',
+		                        dataType: 'json',
+		                        data: '',
+		                        success: function(result) {
+		                            openId = result.openid;
+		                            $.cookies.set('openId', openId);
+		                            if (openId == null || openId == '') {
+		                                reloadPage();
+		                            } else {
+		                                headimgurl = result.headimgurl;
+		                                $.cookies.set('headimgurl', headimgurl);
+		                                if (headimgurl == '' || headimgurl == ' '||headimgurl == undefined) {
+		                                    headimgurl = responseData.param_logo;
+		                                }
+		                                action();
+		                            }
+		                        }
+		                    })
+		                }
+		            } else {
+		                action();
+		            }
+		        }
+		    });
+//      });
+	    
+	    function action(){
+	    	if(inviteCode){
+		    	loadshare();
+		    	var invited = 0;
+		    	$(".avatar img").attr("src",friendHeadImgUrl);
+		    	$.ajax({
+					type: "POST",
+					url: "/rest/lightApp/check/forwardRight",
+					dataType: "json",
+					data: {
+						'activityId': activityId,
+				        'phone': friendPhone
+					},
+					success:function(result) {
+						if(result.code==0){
+							invited=1;
+						}
+						if(invited==1){
+							loadCoupon();
+						}else{
+				    		
+				    		shixiao();
+				    		$(".page_share").show();
+				    		$("#shareGet").bind("click",function(){
+				    			alert('该链接已失效');
+				    		});
+						}
+					}
+				});
+	    	}else{
+	    		loadshare();
+	    		loadCoupon();
+	    	}
+	    }
+	    
+	    function active(){
+	    	$(".page_1").show();
+    		$("#getverifyCode").bind("click",function(){
+    			myPhone = $("#phone").val();
+				if(!myPhone){
+					alert("手机号不能为空");
+					return false
+				}
+				if(!validatemobile(myPhone)) return false;
+				$("#getverifyCode").attr("disabled","disabled");
+    			$.ajax({
+					type: "POST",
+					url: "/rest/lightApp/send/verifyCode",
+					dataType: "json",
+					data: {
+						'merchantId': merchantId,
+		              	'phone': myPhone
+					},
+					success:function(result) {
+						if(result.code==0){
+							alert("验证码发送成功");
+							time=60;
+    						countDown();
+						}else{
+							alert(result.msg);
+							$("#getverifyCode").removeAttr("disabled");
+						}
+					}
+				});
+    		});
+    		$("#getCoupon").bind("click",function(){
+    			myPhone = $("#phone").val();
+    			verifyCode = $("#verifyCode").val();
+    			var invited = 0;
+				if(!myPhone){
+					alert("手机号不能为空");
+					return false
+				}
+				if(!validatemobile(myPhone)) return false;
+				if(!verifyCode){
+					alert("请输入验证码");
+					return false
+				}
+				if(inviteCode){
+					$.ajax({
+						type: "POST",
+						url: "/rest/lightApp/get/forwards/coupon",
+						dataType: "json",
+						data: {
+							'merchantId': merchantId,
+			              	'phone': myPhone,
+							'verifyCode': verifyCode,
+							'activityId': activityId,
+							'recommend': friendPhone,
+							'code': inviteCode
+						},
+						success:function(result) {
+							if(result.code==0){
+								$.cookies.set(activityId + 'myPhone', myPhone);
+								loadCoupon();
+							}else if(result.code==2){
+								$.cookies.set(activityId + 'myPhone', myPhone);
+								loadCoupon();
+							}else{
+								alert(result.msg);
+							}
+						}
+					});
+				}else{
+					$.ajax({
+						type: "POST",
+						url: "/rest/lightApp/check/forwardRight",
+						dataType: "json",
+						data: {
+							'activityId': activityId,
+					        'phone': myPhone
+						},
+						success:function(result) {
+							if(result.code==0){
+								invited=1;
+							}
+							if(invited==1){
+								$.ajax({
+									type: "POST",
+									url: "/rest/lightApp/check/verifyCode",
+									dataType: "json",
+									data: {
+										'merchantId': merchantId,
+								        'phone': myPhone,
+										'verifyCode': verifyCode
+									},
+									success:function(result) {
+										if(result.code==0){
+											$.cookies.set(activityId + 'myPhone', myPhone);
+											loadCoupon();
+										}else{
+											alert(result.msg);
+										}
+									}
+								});
+							}else{
+								alert("抱歉，您不能创建本次活动哦~");
+							}
+						}
+					});
+				}
+			})
+	    }
+	    function loadshare(){
+	    	var phone = friendPhone||myPhone;
+	    	var Himgurl = friendHeadImgUrl||headimgurl;
+	    	if(inviteCode){
+	    		wx.ready(function() {
+		            var mix_url = 'http://liveapp.xpinfo.net/rest/lightApp/redirect?aid=' + activityId + '&hitType=2&friendPhone=' + phone+'&friendHeadImgUrl='+Himgurl+'&invitecode=' + inviteCode;
+		            var shareData = {
+		                title: responseData.param_sharetitle,
+	                	desc: responseData.param_sharecontent,
+		                link: mix_url,
+		                imgUrl: 'http://h5img.xpinfo.net/'+responseData.param_share,
+		                success: function(res) {
+		                	reloadPage();
+		                }
+		            };
+		            console.log(shareData);
+		            wx.onMenuShareAppMessage(shareData);
+		            wx.onMenuShareTimeline(shareData);
+		            wx.onMenuShareQQ(shareData);
+		            wx.onMenuShareWeibo(shareData)
+		       	});
+	    	}else{
+	    		wx.ready(function() {
+		            var mix_url = 'http://liveapp.xpinfo.net/rest/lightApp/redirect?aid=' + activityId + '&hitType=2';
+		            var shareData = {
+		                title: responseData.param_sharetitle_original,
+	                	desc: responseData.param_sharecontent_original,
+		                link: mix_url,
+		                imgUrl: 'http://h5img.xpinfo.net/'+responseData.param_share_original,
+		                success: function(res) {
+		                }
+		            };
+		            wx.onMenuShareAppMessage(shareData);
+		            wx.onMenuShareTimeline(shareData);
+		            wx.onMenuShareQQ(shareData);
+		            wx.onMenuShareWeibo(shareData)
+		       	});
+	    	}
+	    }
+	    function loadCoupon(){
+	    	if(inviteCode){
+	    		if(myPhone){
+	    			$.ajax({
+						type: "POST",
+						url: "/rest/lightApp/award/personal/list",
+						dataType: "json",
+						data: {
+							'activityId': activityId,
+							'pageNo': 1,
+							'limit': 50,
+							'searchText': myPhone
+						},
+						success:function(result) {
+							if(result.code == 0) {
+								if(result.data.length>0){
+									$("#couponName").html(result.data[0].prizeName);
+									$("#couponNO").html('NO.'+result.data[0].param3);
+									if(result.data[0].param1&&result.data[0].param2){
+										var createTime = result.data[0].param1.split(' ');
+										var endTime = result.data[0].param2.split(' ');
+										$("#couponTime").html(createTime[0].replace(/\-/g, '.') + '-' + endTime[0].replace(/\-/g, '.'));
+									}
+									$(".page_1").hide();
+									$(".page_2").show();
+								}else{
+									$.ajax({
+										type: "POST",
+										url: "/rest/lightApp/query/getCouponNum",
+										dataType: "json",
+										data: {
+											'activityId': activityId,
+							              	'recommend': friendPhone,
+							              	'code': inviteCode
+										},
+										success:function(result) {
+											if(result.code==0){
+									    		var restCouponNum_TOTLE = parseInt(result.data.T_total)-parseInt(result.data.total);
+									    		var restCouponNum_link = parseInt(result.data.T_number)-parseInt(result.data.number);
+									    		var restCouponNum = restCouponNum_TOTLE<=restCouponNum_link?restCouponNum_TOTLE:restCouponNum_link;
+									    		if(restCouponNum>0){
+									    			$("#restCouponNum").html(restCouponNum);
+										    		$(".page_share").show();
+										    		$("#shareGet").bind("click",function(){
+										    			$(".page_share").hide();
+										    			active();
+										    		})
+									    		}else{
+									    			shixiao();
+									    		}
+											}else{
+												alert(result.msg);
+											}
+										}
+									});
+									
+								}
+								
+							}else{
+								alert(result.msg);
+							}
+						}
+					});
+	    		}else{
+	    			$.ajax({
+						type: "POST",
+						url: "/rest/lightApp/query/getCouponNum",
+						dataType: "json",
+						data: {
+							'activityId': activityId,
+			              	'recommend': friendPhone,
+			              	'code': inviteCode
+						},
+						success:function(result) {
+							if(result.code==0){
+					    		var restCouponNum_TOTLE = parseInt(result.data.T_total)-parseInt(result.data.total);
+					    		var restCouponNum_link = parseInt(result.data.T_number)-parseInt(result.data.number);
+					    		var restCouponNum = restCouponNum_TOTLE<=restCouponNum_link?restCouponNum_TOTLE:restCouponNum_link;
+					    		if(restCouponNum>0){
+					    			$("#restCouponNum").html(restCouponNum);
+						    		$(".page_share").show();
+						    		$("#shareGet").bind("click",function(){
+						    			$(".page_share").hide();
+						    			active();
+						    		})
+					    		}else{
+					    			shixiao();
+					    		}
+							}else{
+								alert(result.msg);
+							}
+						}
+					});
+	    		}
+	    	}else{
+	    		if(myPhone){
+	    			$.ajax({
+						type: "POST",
+						url: "/rest/lightApp/query/getCouponNum",
+						dataType: "json",
+						data: {
+							'activityId': activityId,
+			              	'recommend': myPhone
+						},
+						success:function(result) {
+							if(result.code==0){
+					    		$(".avatar img").attr("src",headimgurl);
+					    		var restCouponNum_TOTLE = parseInt(result.data.T_total)-parseInt(result.data.total);
+//					    		var restCouponNum_link = parseInt(result.data.T_number)-parseInt(result.data.number);
+//					    		var restCouponNum = restCouponNum_TOTLE<=restCouponNum_link?restCouponNum_TOTLE:restCouponNum_link;
+					    		if(restCouponNum_TOTLE>0){
+					    			$("#restCouponNum").html(restCouponNum_TOTLE);
+					    			$.ajax({
+										type: "POST",
+										url: "/rest/lightApp/get/forward/code",
+										dataType: "json",
+										data: {
+											'activityId': activityId,
+									        'phone': myPhone
+										},
+										success:function(result) {
+											if(result.code==0){
+												inviteCode = result.data.code;
+												$("#shareGet").hide();
+												$(".page_1").hide();
+									    		$(".page_share").show();
+												loadshare();
+											}else{
+												alert(result.msg);
+											}
+										}
+									});
+					    		}else{
+					    			shixiao();
+					    		}
+							}else{
+								alert(result.msg);
+							}
+						}
+					});
+	    		}else{
+	    			active();
+	    		}
+	    		
+	    	}
+	    }
+	    function shixiao(){
+    		if(responseData.param_bg5){
+    			$(".share_container").css("background-image","url("+responseData.param_bg5+")");
+    		}else{
+    			$(".share_container").css("background-image","url(./images/bg_2.png)");
+    		};
+    		$(".share_container h2").hide();
+    		$("#shareGet").hide();
+			$(".page_1").hide();
+    		$(".page_share").show();
+	    }
+	    function countDown(){
+	        time = parseInt(time);
+	        time = time-1;
+	        if(time<0){
+	        	return false;
+	        }
+	        if(time==0){
+	        	 $("#getverifyCode").html('获取验证码');
+	        	 $("#getverifyCode").removeAttr("disabled");
+	        }else{
+	        	$("#getverifyCode").html(time + "秒");
+	        	setTimeout(countDown,1000);
+			}
+		}
+	    function reloadPage() {
+	        var baseUrl = '/rest/lightApp/redirect?aid=' + activityId + '&hitType=2';
+	        if (friendPhone != null && friendPhone != '') {//好友链接
+	            window.location.replace(baseUrl + '&friendPhone=' + friendPhone + '&friendHeadImgUrl=' + friendHeadImgUrl +'&invitecode=' + inviteCode);
+	        } else {
+	            window.location.replace(baseUrl);
+	        }
+	    }
+	    function getUrlParam(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if(r != null) {
+				return unescape(r[2]);
+			}
+			return "";
+		}
+		function validatemobile(inputString){
+		    var partten = /^1[3,4,5,7,8]\d{9}$/;
+		    if(partten.test(inputString))
+		    {
+		        return true;
+		    }
+		    else
+		    {
+		        alert('请输入正确的手机号码');
+		        return false;
+		    }
+		}
+		function preloadimages(arr){   
+		    var newimages=[], loadedimages=0
+		    var postaction=function(){}  //此处增加了一个postaction函数
+		    var arr=(typeof arr!="object")? [arr] : arr
+		    function imageloadpost(){
+		        loadedimages++
+		        if (loadedimages==arr.length){
+		            postaction(newimages) //加载完成用我们调用postaction函数并将newimages数组做为参数传递进去
+		        }
+		    }
+		    for (var i=0; i<arr.length; i++){
+		        newimages[i]=new Image()
+		        newimages[i].src=arr[i]
+		        newimages[i].onload=function(){
+		            imageloadpost()
+		        }
+		        newimages[i].onerror=function(){
+		            imageloadpost()
+		        }
+		    }
+		    return { //此处返回一个空白对象的done方法
+		        done:function(f){
+		            postaction=f || postaction
+		        }
+		    }
+		}
+	</script>
+</html>

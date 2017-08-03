@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title></title>
+    <base href="http://h5img.1paiclub.com/lightapp/bawangcanmoban/" />
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/unslider.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="js/jquery.cookies.2.2.0.min.js"></script>
+	<script type="text/javascript" src="/resource/js/collections.js"></script>
+	<script type="text/javascript" src="js/layer.js"></script>
+	<script type="text/javascript" src="js/unslider-min.js"></script>
+	<script>
+		var timestamp = new Date().getTime(),
+            openId, helped = 0;
+	    timestamp = parseInt(timestamp / 1000);
+	    var headimgurl, nickname;
+	    var nonceStr = 'Wm3WZYTPz0wzccmW',
+            url = location.href.split('#')[0],
+            signature = '',
+            appId;
+	    var url = escape(url),
+        	activityId = getUrlParam('aid');
+        var hitType = getUrlParam('hitType');
+        
+        var responseData = $.ajax({
+            url: "http://www.sunpms.com:8888/rest/lightApp/config",
+            async: false,
+            type: "GET",
+            dataType: "json",
+            data: {
+                "activityId": activityId,
+                "hitType": hitType
+            }
+        }).responseText;
+        responseData = eval("(" + responseData + ")");
+        responseData = responseData.data;
+        var token = responseData.token;
+        var merchantId = responseData.merchantId;
+        
+        var jumpUrl='http://www.sunpms.com:8888/rest/lightApp/redirect?aid=' + activityId + '&hitType=' + hitType;
+        
+	    var friendOpenID = getUrlParam('friendOpenId');
+	    var friendPhone = getUrlParam('friendPhone');
+	    if(friendPhone=='null'){
+	        alert('您的好友未报名,报名才可以帮TA助力哦~');
+	        window.location.replace(jumpUrl);
+	    }
+	    var friendNickName = getUrlParam('friendNickName');
+	    friendNickName=decodeURI(decodeURI(friendNickName));
+	    console.log(friendNickName);
+	    var friendHeadImgUrl = getUrlParam('friendHeadImgUrl');
+	    friendHeadImgUrl=decodeURI(friendHeadImgUrl);
+		var isHelped=$.cookies.get(activityId + friendOpenID+'isHelped');
+		
+	    var myPhone= $.cookies.get(activityId+'myPhone');
+    	var openId = $.cookies.get('openId');
+		$.ajax({
+	        type: 'GET',
+	        async: 'false',
+	        url: 'http://www.higoin.com/wechat/getWechatConfig.action?merchantId='+merchantId+'&timestamp=' + timestamp + '&nonceStr=' + nonceStr + '&url=' + url,
+	        dataType: 'jsonp',
+	        data: '',
+	        jsonp: 'callback',
+	        success: function(result) {
+	            console.log(result);
+	            appId = result.appId;
+	//            appId = 'wx799c7916b43b4282';
+	            signature = result.signature;
+	            wx.config({
+	                debug: false,
+	                appId: appId,
+	                timestamp: timestamp,
+	                nonceStr: nonceStr,
+	                signature: signature,
+	                jsApiList: ['checkJsApi', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo']
+	            });
+	            nickname = $.cookies.get('nickname');
+	            headimgurl = $.cookies.get('headimgurl');
+	            openId = $.cookies.get('openId');
+	            if (nickname == undefined || nickname == '' || headimgurl == undefined || headimgurl == '' || openId == undefined || openId == '') {
+	                var code = getUrlParam('code');
+	                if (code == '') {
+	                    var re_url = 'http://www.sunpms.com:8888/index.php?s=/home/index/gtWxCode&appid=' + appId + '&redirect_uri=' + encodeURIComponent(location.href);
+	                    location.replace(re_url)
+	                } else {
+	                    $.ajax({
+	                        type: 'GET',
+	                        async: 'false',
+	                        url: 'http://www.sunpms.com:8888/index.php?s=/home/index/getUserinfo&merchantId=521&appid=' + appId + '&code=' + code+'&scope=snsapi_userinfo',
+	                        dataType: 'json',
+	                        data: '',
+	                        success: function(result) {
+	                            openId = result.openid;
+	                            $.cookies.set('openId', openId);
+	                            if (openId == null || openId == '') {
+	                                reloadPage()
+	                            } else {
+	                                loadShare(openId);
+	                                nickname = result.nickname;
+	                                headimgurl = result.headimgurl;
+	                                $.cookies.set('nickname', nickname);
+	                                $.cookies.set('headimgurl', headimgurl);
+	                                if (headimgurl == '' || headimgurl == ' '||headimgurl == undefined) {
+	                                    headimgurl = 'http://www.sunpms.com:8888/lightapp/2016MidAutumn/images/avatar.jpg'
+	                                }
+	                                if (nickname == undefined || nickname == '') {
+	                                    nickname = '神秘小伙伴'
+	                                }
+	                                loadPage(openId)
+	                            }
+	                        }
+	                    })
+	                }
+	            } else {
+	                loadShare(openId);
+	                loadPage(openId)
+	            }
+	        }
+	    });
+        
+		function loadPage(openId){
+	        if(friendOpenID == "" || friendOpenID == openId) {
+	        	$("#avatar").attr("src",headimgurl);
+	        	$("#help").hide();
+	        	playself();
+	        	helpList(openId);
+	        }else{
+	        	$("#avatar").attr("src",friendHeadImgUrl);
+	        	$("#myscore").attr("src","images/friendscore.png");
+	        	loadRanklist(friendPhone);
+	        	helpList(friendOpenID);
+	        	playself(1);
+	        }
+	    }
+		function help(){
+			$("#help").bind("click",function(){
+				if(isHelped==1){//助力过
+					alert('您已经为该好友助力过了!查看自己的助力吧!');
+				}else{
+					//点击助力按钮 缓存是否助力 为了容错
+					isHelped=1;
+					//按抽奖结果决定助力情况
+					var responseAwardData = $.ajax({
+			            url: "http://www.sunpms.com:8888/rest/lightApp/award/lottery",
+			            async: false,
+			            type : "POST",
+			            dataType : "json",
+			            data: {"activityId": activityId, "token":token}
+			        }).responseText;
+			        var temp = JSON.parse(responseAwardData);
+			        var prizename=temp.data.name;
+			        var getscore=parseInt(temp.data.description);
+			        $.ajax({//该接口仅仅用于统计助力信息
+	                    type: 'POST',
+	                    url: "http://www.sunpms.com:8888/rest/lightApp/data/submit",
+	                    dataType: 'json',
+	                    data: {
+	                        'headImgUrl': headimgurl,
+	                        'nickName': nickname,
+	                        'activityId': activityId,
+	                        'phone': friendPhone,
+	                        'param1': friendOpenID,
+	                        'param3': openId,
+	                        'help': true,
+	                        'ranking':2,
+	                        'param2': 1,
+	                        'remark':prizename+';'+getscore
+	                    },
+	                    success: function(result) {
+	                    	if (result.code != 0) {
+	                    		isHelped=0;
+	                            alert('提交失败!');
+	                            return false
+	                        } else {
+	                        	$.cookies.set(activityId + friendOpenID+'isHelped',isHelped);
+								var html ='<p>助力成功</p>';
+								layer.open({
+								    content: html,
+								    time: 1,
+								    className:'pop-up pullCenter',
+								    shadeClose:true,
+								    end:function(elem){
+								    	$("#help").hide();
+								    	helpList(friendOpenID);
+								    }
+								});
+	                        }
+	                    }
+	                })
+				}
+			})
+		}
+		function playself(friend){//如果是分享链接，在friend里随便加个值
+			if(myPhone==undefined||myPhone==null){
+				$.ajax({
+	                type: 'POST',
+	                url: "http://www.sunpms.com:8888/rest/lightApp/data/simple/list",
+	                dataType: 'json',
+	                async: false,
+	                data: {
+	                    'activityId': activityId,
+	                    'pageNo': 1,
+	                    'limit': 500,
+	                    'openId': openId
+	                },
+	                success: function(result) {
+	                    if (result.code != 0) {
+	                        alert(result.msg);
+	                        return false
+	                    }
+	                    var dataList = result.data.results;
+	                    var dataListLength = dataList.length;
+	                    for (var i = 0; i < dataListLength; i++) {
+	                        if (dataList[i].phone != null || dataList[i].phone != ''){
+	                            myPhone = dataList[i].phone;
+	                            $.cookies.set(activityId + 'myPhone', myPhone);
+	                        }
+	                    }
+	                    if(myPhone){
+	                    	$("#attend").hide();
+	                    	if(friend){
+			            		$("#see").show();
+			            		reloadmyinfo(myPhone);
+			            	}else{
+			            		$("#callhelp").show();
+			            		loadRanklist(myPhone);
+			            	};
+			            	loadShare(openId);
+	                    }else{
+	                    	loadRanklist(myPhone);
+	                    	$("#attend").bind("click",function(){
+								//电话弹窗
+								var	html ='<input id="phone" placeholder="" />';
+									html+='<button id="submit"></button>';
+									html+='<img class="avatar close" src="images/close.png"/>';
+								layer.open({
+								    content: html,
+								    className:'pop-up pullCenter',
+								    shadeClose:false,
+								    success:function(elem){
+								    	$("#phone").focus(function(){
+								    		$("#phone").css("background-image","none");
+								    	});
+							    		$("#phone").blur(function(){
+							    			if(!$("#phone").val()){
+									    		$("#phone").css("background-image","url(images/phone.png)");
+									    	}
+								    	});
+								    	$(".close").click(function(){
+											layer.closeAll();
+										});
+										$("#submit").click(function(){
+											myPhone=$('#phone').val();
+								            if(myPhone==''){
+								                alert('手机号不能为空!');
+								                return false;
+								            }
+											if(!validatemobile(myPhone)) return false;
+											$.ajax({//提交报名信息
+							                    type: 'POST',
+							                    url: "http://www.sunpms.com:8888/rest/lightApp/data/submit",
+							                    dataType: 'json',
+							                    data: {
+							                        'activityId': activityId,
+								                    'phone': myPhone,
+								                    'openId': openId,
+								                    'param2':0,
+								                    'ranking':2,
+								                    'headImgUrl':headimgurl,
+								                    'nickName':nickname
+							                    },
+							                    success: function(result) {
+							                    	if(result.code==0){
+							                    		loadShare(openId);
+							                    		layer.closeAll();
+							                    		$(".unslider-nav li:first-child").click();
+							                    		$("#avatar").attr("src",headimgurl);
+							                    		$("#myscore").attr("src","images/myscore.png");
+							                    		$("#attend").hide();
+							                    		$("#help").hide();
+							                    		$("#callhelp").show();
+							                    		helpList(openId);
+							                    		loadRanklist(myPhone);
+							                    	}else{
+							                    		alert(result.msg);
+							                    	}
+							                    }
+						                 	});
+										})
+								    }
+								});
+							})
+	                    }
+	                }
+	            });
+			}else{
+				$("#attend").hide();
+				if(friend){
+            		$("#see").show();
+            		reloadmyinfo(myPhone);
+            	}else{
+            		$("#callhelp").show();
+            		loadRanklist(myPhone);
+            	}
+			}
+		}
+		function reloadmyinfo(myPhone){
+			$("#see").bind("click",function(){
+				$(".unslider-nav li:first-child").click();
+				$("#avatar").attr("src",headimgurl);
+	        	$("#help").hide();
+	        	$("#see").hide();
+	        	$("#myscore").attr("src","images/myscore.png");
+	        	$("#callhelp").show();
+	        	helpList(openId);
+	        	loadRanklist(myPhone);
+			});
+		}
+		function helpList(openid){
+			$.ajax({
+                type: 'GET',
+                url: "http://www.sunpms.com:8888/rest/lightApp/data/help",
+                dataType: 'json',
+                async: false,
+                data: {
+                    'activityId': activityId,
+                    'hrd': openid
+                },
+                success: function(result) {
+                    if (result.code != 0) {
+                        alert(result.msg);
+                        return false
+                    }
+                    dataHelpList = result.data.help_me;
+                    dataHelpListLength = dataHelpList.length;
+                    $("#friend").empty();
+                    var score=0;
+                    for (var i = 0; i < dataHelpListLength; i++) {
+                        if (dataHelpList[i].openId== (openId)) {//如果助力过，就把助力按钮隐藏
+                            $("#help").hide();
+                        }
+                        var getscore=1,prizename;
+                        if(dataHelpList[i].remark){//兼容有些数据没有remark
+                        	var dataHelpremark=dataHelpList[i].remark.split(";");
+	                        prizename=dataHelpremark[0];
+	                        getscore=parseInt(dataHelpremark[1]);
+	                        score = score+getscore;
+//	                      	getscore=getscore>0?'+'+getscore:getscore;//有些情况下得分要加正负号
+                        }else{
+                        	score = score+getscore;
+                        }
+                    	var html='<li>';   
+							html+='<div class="friendAvatar fl">';
+							html+='<img class="avatar" src='+dataHelpList[i].headImgUrl+'/>';
+							html+='</div>';
+							html+='<div class="friendName fr">';
+							html+='<div>';
+							html+='<h4 class="fl">'+dataHelpList[i].nickName+'</h4>';
+							html+='<span class="fr">'+dataHelpList[i].createTime+'</span>';
+							html+='<div class="clear"></div>';
+							html+='</div>';
+							html+='<div>成功助力了<span>'+getscore+'</span>点</div>';
+							html+='</div>';
+							html+='</li>';
+						$("#friend").append(html);
+                    };
+                    loadScore(score);
+                    help();
+                }
+            });
+		}
+		function loadScore(score){
+			var scorearry = score.toString().split("");
+			var scorelength = scorearry.length;
+			var lilength = $("#score li").length;
+			if(scorelength!=lilength){
+				var lengthdisparity=scorelength-lilength;
+				lengthdisparity=lengthdisparity>0?lengthdisparity:-lengthdisparity;
+				if(scorelength>lilength){
+					for(i=0;i<lengthdisparity;i++){
+						$("#score li:nth-child(1)").before('<li class="score_0"></li>');
+					}
+				}else{
+					for(i=0;i<lengthdisparity;i++){
+						$("#score li:nth-child(1)").remove();
+					}
+				}
+				
+			};
+			for(i=0;i<scorearry.length;i++){
+				$("#score li:nth-child("+(i+1)+")").removeClass().addClass("score_"+scorearry[i]);
+			}
+		}
+		function loadRanklist(rankphone){
+			$.ajax({
+                type: 'POST',
+                url:"http://www.sunpms.com:8888/rest/lightApp/data/ranking",
+                dataType:'json',
+                data: {
+                    'activityId':activityId,
+                    'type': 0,
+                    'phone': rankphone,
+                    'start': 0,
+                    'limit': 30,
+                    'min':1
+                },
+                success:function(result){
+                	if(result.code==0){
+                		if(result.data.rank!=-1&&result.data.rank!=0){
+                			$("#rank").html(result.data.rank+'位');
+                		}else{
+                			$("#rank").html("没有排行");
+                		}
+                		$("#rankingList").empty();
+                		var rankList = result.data.list;
+                		for (var i = 0; i < rankList.length; i++) {
+                			var html = '<li>';
+                				html+= '<div class="percent20"><div class="medal">'+(i+1)+'</div></div>';
+                				html+= '<div class="percent20"><img class="avatar" src='+rankList[i].headImgUrl+'></div>';
+								html+= '<div class="percent40">'+rankList[i].nickName+'</div>';
+								html+= '<div class="percent20"><span>'+rankList[i].param2+'</span>点</div>';
+								html+= '</li>';
+							$("#rankingList").append(html);
+	                    }
+                	}else{
+                		alert(result.msg);
+                	}
+                }
+            });
+		}
+		function loadShare(openId) {
+	        if (openId == null) {
+	            alert('分享有误,请刷新重试试!')
+	        }
+	
+	        wx.ready(function() {
+	            var nickname_=encodeURI(encodeURI(nickname));
+	            headimgurl=encodeURI(headimgurl);
+	            var mix_url = 'http://www.sunpms.com:8888/rest/lightApp/redirect?aid=' + activityId + '&hitType=2&friendOpenId=' + openId+'&friendPhone=' + myPhone+'&friendNickName='+nickname_+'&friendHeadImgUrl='+headimgurl;
+	            var shareData = {
+	                title: responseData.param_sharetitle,
+	                desc: responseData.param_sharecontent,
+	                link: mix_url,
+	                imgUrl: 'http://h5img.1paiclub.com/'+responseData.param_share,
+	                trigger:function(){
+	                    if(myPhone==null){
+	                        alert('请先报名再分享给好友!');
+	                        return false;
+	                    }
+	                },
+	                success: function(res) {
+//	                    reloadPage(openId);
+	                }
+	            };
+	            wx.onMenuShareAppMessage(shareData);
+	            wx.onMenuShareTimeline(shareData);
+	            wx.onMenuShareQQ(shareData);
+	            wx.onMenuShareWeibo(shareData)
+	        })
+	    }
+		function reloadPage() {
+	        var baseUrl = 'http://www.sunpms.com:8888/rest/lightApp/redirect?aid=' + activityId + '&hitType=2';
+	        if (friendOpenID != null && friendOpenID != '') {//好友链接
+	            window.location.replace(baseUrl + '&friendOpenId='+friendOpenID+'&friendPhone=' + friendPhone+'&friendNickName='+friendNickName+'&friendHeadImgUrl='+friendHeadImgUrl)
+	        } else {
+	            window.location.replace(baseUrl)
+	        }
+	    }
+		function validatemobile(inputString){
+		    var partten = /^1[3,5,7,8]\d{9}$/;
+		    if(partten.test(inputString))
+		    {
+		        return true;
+		    }
+		    else
+		    {
+		        alert('请输入正确的手机号码');
+		        return false;
+		    }
+		}
+		function getUrlParam(name){
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null){
+		        return unescape(r[2]);
+		    }
+		    return "";
+		}
+		 
+	</script>
+</head>
+<body>
+	<div class="loading"></div>
+	<div class="main pullCenter">
+		<img src="images/guasheng.png">
+		<div class="bannerWindow">
+			<div id="banner" class="banner">
+				<ul>
+					
+				</ul>
+			</div>
+		</div>
+		<div class="paihang">
+			<div class="fl"><img id="avatar" class="avatar" src="images/avatar.jpg"></div>
+			<h4 class="fl">当前排名：<span id="rank">没有排行</span></h4>
+			<div class="clear"></div>
+		</div>
+		<div class="myscore"><img id="myscore" src="images/myscore.png"></div>
+		<div class="score pullCenter">
+			<ul id="score">
+				<li class="score_0"></li>
+			</ul>
+		</div>
+		<div class="action" id="action">
+			<div class="btn fl" id="help"><img src="images/help.png"></div>
+			<div class="btn fr" id="attend"><img src="images/attend.png"></div>
+			<div class="btn fr" id="see"><img src="images/see.png"></div>
+			<img class="callhelp" id="callhelp" src="images/callhelp.png">
+		</div>
+	</div>
+	<div id="detail">
+		<ul class="detailBg">
+			<li data-nav="<img src=&apos;images/paihangbang.png&apos;>" class="padding page">
+				<ul id="rankingListTitle">
+					<li>
+						<div class="percent20"><img src="images/paiming.png"></div>
+						<div class="percent20"><img src="images/nicheng.png"></div>
+						<div class=""><img src="images/fenshu.png"></div>
+					</li>
+				</ul>
+				<ul id="rankingList">
+					<!--<li>
+                		<div class="percent20"><div class="medal">1</div></div>
+                		<div class="percent20"><img class="avatar" src='images/avatar.jpg'></div>
+						<div class="percent40">mia果33</div>
+						<div class="percent20"><span>440</span>分</div>
+					</li>-->
+				</ul>
+			</li>
+			<li data-nav="<img src=&apos;images/jiangpinguize.png&apos;>" class="padding page">
+				<ul>
+					<li class="prizeImgTitle">
+						<img src="images/huodongjiangpin.png"/>
+					</li>
+					<li class="prizeTitle">
+						<div class="fl">参与商户</div>
+						<div class="fl">奖品名称</div>
+					</li>
+					<li class="prize" id="prize">
+						
+					</li>
+					<li class="prizeImgTitle">
+						<img src="images/huodongshijian.png"/>
+					</li>
+					<li class="prizeTitle">
+						<div>
+							<span id="startTime"></span>——<span id="endTime"></span>
+						</div>
+					</li>
+					<div class="prizeImgTitle">
+						<img src="images/huodongguize.png"/>
+					</div>
+					<div class="rule">
+						
+					</div>
+				</ul>
+			</li>
+			<li data-nav="<img src=&apos;images/geilihaoyou.png&apos;>" class="padding page">
+				<ul class="friend" id="friend">
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="bottom">
+		<img src="images/logo.png">
+	</div>
+<script type="text/javascript">
+	window.onload = function () {
+		var windowHeight=$(window).height();
+		$("#detail .page").height(windowHeight-80);
+		var rule=$.parseHTML(responseData.description);
+        $(".rule").html(rule);
+        $("title").html(responseData.title);
+        function formattime(n){
+        	var time=n.split(" ");
+        	var timeDateArry=time[0].split("-");
+        	var timeHourArry=time[1].split(":");
+        	return timeDateArry[0]+"年"+timeDateArry[1]+"月"+timeDateArry[2]+"日 "+timeHourArry[0]+":"+timeHourArry[1];
+        }
+        $("#startTime").html(formattime(responseData.startTime));
+        $("#endTime").html(formattime(responseData.endTime));
+        var banner={};
+        var award=[];
+        var bannerHtml='';
+        var awardShowHtml='';
+        for(key in responseData){
+        	if(key.indexOf('param_banner_')!=-1){
+        		banner[key]=responseData[key];
+        	};
+        	if(key.indexOf('param_award_')!=-1){
+        		var keyArry=key.split("_");
+        		var num=keyArry[keyArry.length-1];
+        		if(!award[num]){
+        			award[num]={};
+        		}
+        		award[num][keyArry[0]+"_"+keyArry[1]+"_"+keyArry[2]]=responseData[key];
+        	}
+        }
+        
+        for(key in banner){
+        	if(banner[key]){
+        		bannerHtml+='<li><img src="'+banner[key]+'"></li>';
+        	}
+        }
+        $("#banner ul").html(bannerHtml);
+        for(i=0;i<award.length;i++){
+        	if(award[i].param_award_img&&award[i].param_award_name){
+        		awardShowHtml+='<div>'+
+									'<div class="merchantAvatar fl">'+
+										'<div>'+
+											'<img class="avatar" src="'+award[i].param_award_img+'" />'+
+										'</div>'+
+									'</div>'+
+									'<h4 class="fl">'+award[i].param_award_number;
+				if(award[i].param_award_number){
+					awardShowHtml+='<br>';
+				}
+				awardShowHtml+=award[i].param_award_name+
+									'</h4>'+
+									'<div class="clear"></div>'+
+								'</div>';
+        	}
+        	
+        }
+        $("#prize").html(awardShowHtml);
+        $('#banner').unslider({
+			delay: 3000,  
+			arrows: false,
+			nav: false,
+			autoplay: true,
+			infinite: true
+		});
+		$('#detail').unslider({
+			speed:200,
+			arrows: false,
+			nav: true,
+			animateHeight: true,
+		});
+		$(".loading").fadeOut();
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>配置页</title>
+
+</head>
+<body>
+	<div class="col-md-8">
+		<div class="form-container">
+			<h4>填写配置项</h4>
+			<form class="form-horizontal">
+				<div class="anchor">
+					<h5>基础设置</h5>
+					<hr>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">商户</label>
+					<div class="col-sm-6">
+						<select class="form-control" id='merchant'>
+							<option value=''>请选择商户</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">商户appid</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" name="param_appid"
+							placeholder="商户appid" value="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">活动名称</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="title"
+							placeholder="请输入活动名称" value="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">活动开始时间</label>
+					<div class="col-sm-6">
+						<input id="startTime" class="form-control dates" type="text" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'%y-%M-%d %H-%m-%s',maxDate:'#F{$dp.$D(\'endTime\')}'})">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">活动结束时间</label>
+					<div class="col-sm-6">
+						<input id="endTime" class="form-control dates" type="text" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'startTime\')||\'%y-%M-%d %H-%m-%s\'}'})">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">兑奖截止日期</label>
+					<div class="col-sm-6">
+						<label class="radio-inline">
+							<input type="radio" name="ticket" value="0" checked="checked">无截止日期
+						</label>
+						<label class="radio-inline"> 
+							<input type="radio" name="ticket" value="1">当天有效
+						</label>
+						<label class="radio-inline"> 
+							<input type="radio" name="ticket" value="2">选择截止日期
+						</label>
+					</div>
+				</div>
+				<div style="display:none" id="ticketDateDiv" class="form-group">
+					<label class="col-sm-2 control-label"></label>
+					<div class="col-sm-6">
+						<input id="endTicketTime" class="form-control dates" type="text" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'endTime\')||\'%y-%M-%d\'}'})">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">活动规则</label>
+					<div class="col-sm-6">
+						<textarea id="description" class="form-control" placeholder="请输入活动规则"></textarea>
+					</div>
+				</div>
+				<div class="anchor">
+                    <h5>分享设置</h5>
+                    <hr>
+                </div>
+                <div class="form-group">
+					<label class="col-sm-2 control-label">分享图</label>
+					<div class="col-sm-6">
+						<input name="param_share" type="file">
+						<p class="help-block">上传分享图，图片比例：1:1 不小于200*200，限制png或者jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">分享标题</label>
+					<div class="col-sm-6">
+						<input name="param_sharetitle" type="text" class="form-control" value="">
+						<p class="help-block">微信朋友圈分享标题</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">分享标题</label>
+					<div class="col-sm-6">
+						<input name="param_sharecontent" type="text" class="form-control" value="">
+						<p class="help-block">微信朋友圈分享内容</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">原始链接分享图</label>
+					<div class="col-sm-6">
+						<input name="param_share_original" type="file">
+						<p class="help-block">上传分享图，图片比例：1:1 不小于200*200，限制png或者jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">原始链接分享标题</label>
+					<div class="col-sm-6">
+						<input name="param_sharetitle_original" type="text" class="form-control" value="">
+						<p class="help-block">微信朋友圈分享标题</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">原始链接分享标题</label>
+					<div class="col-sm-6">
+						<input name="param_sharecontent_original" type="text" class="form-control" value="">
+						<p class="help-block">微信朋友圈分享内容</p>
+					</div>
+				</div>
+				<div class="anchor">
+					<h5>券设置</h5>
+					<hr>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">推荐人手机号</label>
+					<div class="col-sm-6">
+						<textarea class="form-control" rows="6" id="recommend"></textarea>
+						<p class="help-block">多个手机号用英文逗号分隔</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">优惠券</label>
+					<div class="col-sm-6">
+						<input type="hidden" class="form-control" id="merchantId">
+						<input type="hidden" class="form-control" id="merchantCode">
+						<input type="hidden" class="form-control" id="merchantName">
+						<input type="hidden" class="form-control" id="couponId">
+						<input type="text" class="form-control" id="couponName">
+						<p class="help-block">一次只能选择一张券</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">限额</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="count" placeholder="0" value="0">
+						<p class="help-block">最多可被领取数量，0表示无限制（此时为券本身数量）</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">链接失效限额</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="number" placeholder="0" value="0">
+						<p class="help-block">转发链接被领取限额数量后失效，0表示无限制（最大值为券限额）</p>
+					</div>
+				</div>
+				<div class="anchor">
+					<h5>其他设置</h5>
+					<hr>
+				</div>
+				<!--<div class="form-group">
+					<label class="col-sm-2 control-label">appid</label>
+					<div class="row">
+						<div class="col-sm-6 ">
+							<input type="text" class="form-control" name="param_appid">
+						</div>
+					</div>
+				</div>-->
+				<div class="form-group">
+					<label class="col-sm-2 control-label">亮点色</label>
+					<div class="col-sm-6">
+						<input name="param_lightcolor" type="text" class="form-control">
+						<p class="help-block">请输入色号</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">登录页背景图(原始链接)</label>
+					<div class="col-sm-6">
+						<input name="param_bg1_1" type="file">
+						<p class="help-block">图片宽度为750px，限制jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">登录页背景图(转发链接)</label>
+					<div class="col-sm-6">
+						<input name="param_bg1_2" type="file">
+						<p class="help-block">图片宽度为750px，限制jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">领券成功页背景图</label>
+					<div class="col-sm-6">
+						<input name="param_bg2" type="file">
+						<p class="help-block">图片宽度为750px，限制jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">分享页背景图</label>
+					<div class="col-sm-6">
+						<input name="param_bg3" type="file">
+						<p class="help-block">图片宽度为750px，限制jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">分享页-有效背景图</label>
+					<div class="col-sm-6">
+						<input name="param_bg4" type="file">
+						<p class="help-block">图片600px*760px,限制jpg或png，在高度434px~486px之间留有显示文字的空白区域</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">分享页-失效背景图</label>
+					<div class="col-sm-6">
+						<input name="param_bg5" type="file">
+						<p class="help-block">图片600px*760px,限制jpg或png</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">分享页-按钮</label>
+					<div class="col-sm-6">
+						<input name="param_button" type="file">
+						<p class="help-block">图片宽度300px,限制jpg或png</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">规则图片</label>
+					<div class="col-sm-6">
+						<input name="param_rule" type="file">
+						<p class="help-block">图片宽度750px,限制jpg或png</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">登录页附加图片</label>
+					<div class="col-sm-6">
+						<input name="param_addImg1" type="file">
+						<p class="help-block">图片宽度750px,限制jpg或png</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">领券成功页附加图片</label>
+					<div class="col-sm-6">
+						<input name="param_addImg2" type="file">
+						<p class="help-block">图片宽度750px,限制jpg或png</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">分享页附加图片</label>
+					<div class="col-sm-6">
+						<input name="param_addImg3" type="file">
+						<p class="help-block">图片宽度750px,限制jpg或png</p>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-2 control-label">QRcode</label>
+					<div class="col-sm-6">
+						<input name="param_QRcode" type="file">
+						<p class="help-block">上传二维码，图片比例：1:1 不小于200*200，限制png或者jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">每人可参与的总次数</label>
+					<div class="row">
+						<div class="col-sm-6 ">
+							<input type="text" class="form-control" id="totalNumber" placeholder="0" value="1">
+							<p class="help-block">每人总共可参与游戏的次数，0表示无限制</p>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-sm-2 col-sm-offset-1">
+							<a href="javascript:void(0);" class="btn btn-success btn-sm" id="submitBtn" role="button" onclick="return false;">确定</a>
+						</div>
+						<div class="col-sm-2">
+							<a href="javascript:void(0);" class="btn btn-success btn-sm" id="cancelBtn" role="button" onclick="return false;">取消</a>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$("#couponName").focus(function(){
+				$(this).blur();
+				coupon_container();
+			});
+			initFileUpload();
+		});
+	</script>
+</body>
+</html>

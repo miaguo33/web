@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title></title>
+<script type="text/javascript">
+	$(document).ready(function(){
+        $('#input').change(function(){
+            var value=$("#input").find("option:selected").val();
+            if(value=='1'){
+                $('#total').removeClass('hide');
+                $('#day').addClass('hide');
+				$('#dayNumber').val(0)
+            }
+            if(value=='2'){
+                $('#day').removeClass('hide');
+                $('#total').addClass('hide');
+				$('#totalNumber').val(0)
+            }
+        });
+
+        $('#submitBtn').click(function(){
+            if($("#totalNumber").val()==''){
+                if($("#dayNumber").val()==''){
+                    alert('请输入可参与次数');
+                    return false;
+                }
+            }
+        })
+	});
+</script>
+</head>
+<body>
+	<div class="col-md-8">
+		<div class="form-container">
+			<h4>填写配置项</h4>
+			<form class="form-horizontal">
+				<div class="anchor">
+					<h5>基础设置</h5>
+					<hr>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">商户</label>
+					<div class="col-sm-6">
+						<select class="form-control" id='merchant'>
+							<option value=''>请选择商户</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">指派给</label>
+					<div class="col-sm-6">
+						<select class="form-control" id='user'>
+							<option value=''>请选择用户</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">活动名称</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="title"
+							placeholder="请输入活动名称" value="">
+					</div>
+				</div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">活动开始时间</label>
+                    <div class="col-sm-6">
+                        <input id="startTime" class="form-control dates" type="text" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'%y-%M-%d %H-%m-%s',maxDate:'#F{$dp.$D(\'endTime\')}'})">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">活动结束时间</label>
+                    <div class="col-sm-6">
+                        <input id="endTime" class="form-control dates" type="text" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'startTime\')||\'%y-%M-%d %H-%m-%s\'}'})">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">兑奖截止日期</label>
+                    <div class="col-sm-6">
+                        <label class="radio-inline">
+                            <input type="radio" name="ticket" value="0" checked="checked">无截止日期
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="ticket" value="1" >当天有效
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="ticket" value="2">选择截止日期
+                        </label>
+                    </div>
+                </div>
+                <div style="display:none" id="ticketDateDiv" class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-6">
+                        <input id="endTicketTime" class="form-control dates" type="text" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'endTime\')||\'%y-%M-%d\'}'})">
+                    </div>
+                </div>
+                <div class="anchor">
+                    <h5>奖项设置</h5>
+                    <hr>
+                </div>
+                <div class="col-sm-12" id="prizeContent">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th class="text-center">奖品名称</th>
+                            <th class="text-center">奖品总数量</th>
+                            <th class="text-center">中奖率下限值</th>
+                            <th class="text-center">中奖率上限值</th>
+                            <th class="text-center">奖品描述</th>
+                            <th class="text-center">是否默认奖品</th>
+                            <th class="text-center">奖品类型</th>
+                            <th class="text-center">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <input type="text" class="form-control" name="prize_name">
+                            </td>
+                            <td class="text-center">
+                                <input type="text" class="form-control" name="prize_totalNumber">
+                            </td>
+                            <td class="text-center">
+                                <input type="text" class="form-control" name="prize_lowerLimit" placeholder="0">
+                            </td>
+                            <td class="text-center">
+                                <input type="text" class="form-control" name="prize_upperLimit" placeholder="1000">
+                            </td>
+                            <td class="text-center">
+                                <input type="text" class="form-control" name="prize_description">
+                            </td>
+
+                            <td class="text-center">
+                                <input type="checkbox" class="form-control" style="margin:0px;" value="false" name="prize_defaultPrize">
+                            </td>
+                            <td class="text-center">
+                                <select class="form-control" name="prize_type">
+                                    <option value="1" selected="selected">普通奖品</option>
+                                    <option value="2">积分奖品</option>
+                                    <option value="3">优惠券奖品</option>
+                                    <option value="4">派币奖品</option>
+                                </select>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-info" name="add_prize">添加</button>
+                                <button type="button" class="btn btn-info" name="delete_prize" style="display: none;">删除</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2 col-sm-offset-1">
+                            <a href="javascript:void(0);" class="btn btn-success btn-sm" id="submitBtn" role="button" onclick="return false;">确定</a>
+                        </div>
+                        <div class="col-sm-2">
+                            <a href="javascript:void(0);" class="btn btn-success btn-sm" id="cancelBtn" role="button" onclick="return false;">取消</a>
+                        </div>
+                    </div>
+                </div>
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>

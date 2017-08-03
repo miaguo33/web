@@ -1,0 +1,316 @@
+html{
+	height: 100%;
+}
+body{
+	background-color: #FFFFFF;
+	margin: 0;
+	font-family: PingFang-SC-Regular, "Helvetica Neue", Helvetica, "microsoft yahei", sans-serif;
+	font-size: 18px;
+	height: 100%;
+	color: #333;
+}
+button{
+	font-family: PingFang-SC-Regular, "Helvetica Neue", Helvetica, "microsoft yahei", sans-serif;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+h4{
+	font-weight: normal;
+	margin: 0;
+}
+.pullCenter{
+	text-align: center;
+}
+.pullRight{
+	text-align: right;
+}
+.page{
+	max-width: 414px;
+	margin: 0 auto;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clear{
+	clear: both;
+}
+.inlineBlock{
+	display: inline-block;
+}
+img{
+	width: 100%;
+	display: block;
+}
+
+.nomargin{
+	margin: 0 !important;
+}
+.clearWeight{
+	font-weight: normal;
+}
+.lightTxt{
+	color: #be905f;
+}
+.loading{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: url(../images/loadings.gif) no-repeat;
+	background-size: 100px auto;
+	background-position: center;
+	background-color: #161820;
+	z-index: 99;
+}
+.page{
+	box-sizing: border-box;
+	min-height: 100%;
+}
+.page1{
+	background-image: url(../images/bg2.png);
+	background-size: 100% auto;
+	background-color: #fdfcfb;
+}
+.alert{
+	width: 20rem;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	padding: 5px;
+	box-sizing: border-box;
+	margin-top: -1.75rem;
+	box-shadow: 0px 5px 20px #e6e5e4;
+	position: relative;
+}
+.alert h2{
+	color: #be905f;
+	font-size: 2rem;
+	letter-spacing: 4px;
+	margin: 1.2rem 0;
+}
+.alert p{
+	font-size: 0.875rem;
+	letter-spacing: 1px;
+}
+.alert .inputBox{
+	width: 85%;
+    height: 2.2rem;
+    margin: 0 auto 0.56rem;
+    background-color: #edeff2;
+    border-radius: 1.1rem;
+    padding: 0.3rem 0 0.1rem 1.2rem;
+    box-sizing: border-box;
+    text-align: left;
+}
+.alert .inputBox input,.alert .inputBox button{
+	float: left;
+    width: 50%;
+	line-height: 1.8rem;
+    border: 0;
+    padding: 0;
+    outline: 0;
+    background-color: inherit;
+    font-size: 0.8rem;
+    color: #333;
+}
+.alert .inputBox button{
+	width: 40%;
+	border-left: 1px solid #b2b3b5;
+	line-height: 0.9rem;
+	float: right;
+	margin: 0.45rem 1rem 0.45rem 0;
+	padding-left: 0.5rem;
+}
+.alert .get{
+	outline: 0;
+	border: 0;
+	border-radius: 1.1rem;
+	width: 85%;
+	margin: 0.4rem auto 0.98rem;
+	line-height: 2.2rem;
+	background-color: #000000;
+	color: #FFFFFF;
+	font-size: 1rem;
+	letter-spacing: 4px;
+}
+::-moz-placeholder { color: #6a6a6a; font-family: PingFang-SC-Regular, "Helvetica Neue", Helvetica, "microsoft yahei", sans-serif;}
+::-webkit-input-placeholder { color:#6a6a6a; font-family: PingFang-SC-Regular, "Helvetica Neue", Helvetica, "microsoft yahei", sans-serif;}
+:-ms-input-placeholder { color:#6a6a6a; font-family: PingFang-SC-Regular, "Helvetica Neue", Helvetica, "microsoft yahei", sans-serif;}
+.logo img{
+	width: 13%;
+	margin: 0.5rem auto;
+}
+
+.page2 .top{
+	background: url(../images/bg4.jpg);
+	background-size: cover;
+	padding: 0.5rem 0.5rem 1rem 0.5rem;
+}
+.page2 .top .me{
+	background-color: rgba(255,255,255,0.91);
+	margin: 2.8rem 0.5rem 0;
+	padding:1px 0 1.3rem 0;
+}
+.page2 .top .me .avatar{
+	width: 4.7rem;
+	height: 4.7rem;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: -1.9rem auto 0;
+	border: 1px solid #be905f;
+}
+.page2 .top .me p{
+	font-size: 1rem;
+	padding: 0 1rem;
+	letter-spacing: 1px;
+	margin: 0.5rem 0;
+}
+.page2 .top .me p:nth-of-type(2){
+	font-size: 0.8rem;
+}
+.page2 .top .me h2{
+	margin: 0.3rem;
+}
+.page2 .top .me h2 span:nth-child(1){
+	font-size:2.9rem
+}
+.page2 .top .me h2 span:nth-child(2){
+	font-size:2.4rem
+}
+.page2 .top .me h2 span:nth-child(3){
+	font-size:1.88rem
+}
+#detail{
+	padding-top: 2.96rem;
+	background: url(../images/bg2.png) center 40px /100% no-repeat ;
+}
+.unslider{
+	position: relative;
+	overflow: auto;
+}
+.unslider-nav{
+	position: absolute;
+    top: 0;
+    width: 100%;
+}
+.unslider-nav li{
+	float: left;
+	width: 50%;
+	background-color: #e4e4e4;
+	text-align: center;
+	font-size: 1rem;
+	line-height: 2.96rem;
+}
+.unslider-nav li.unslider-active{
+	background-color: #333333;
+	color: #FFFFFF;
+}
+.awardAndRule{
+	padding: 1.29rem 1.29rem 0;
+}
+.awardAndRule h3{
+	font-size: 1.08rem;
+	margin: 0;
+}
+.awardAndRule .time{
+	font-size: 0.875rem;
+	margin: 0.92rem 0;
+}
+.awardAndRule .line1{
+	margin-bottom: 0.92rem;
+}
+.unslider li.award{
+	margin: 0;
+    padding: 0.5rem 0;
+	position: relative;
+	overflow: hidden;
+}
+.unslider li.award img{
+	width: 2.6rem;
+	float: left;
+}
+.unslider li.award h4{
+	float: left;
+	font-size: 1rem;
+	line-height: 2.4rem;
+	padding-left: 0.5rem;
+	width: 8.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.unslider li.award button{
+	width: 5.6rem;
+	font-size: 0.83rem;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	background-color: #b5b5b5;
+	color: #FFFFFF;
+	line-height: 1.71rem;
+	border-radius: 0.6rem;
+	float: right;
+    margin-top: 0.4rem;
+    text-align: center;
+}
+.unslider li.award .get{
+    position: absolute;
+    left: 1.4rem;
+    top: 0.2rem;
+    z-index: 99;
+    width: 2.8rem;
+    display: none;
+}
+.unslider li.active .get{
+	display: block;
+}
+.unslider li.active button{
+	background: #be905f;
+}
+.unslider ul.friend{
+	padding: 0 1.71rem;
+}
+.unslider ul.friend li{
+	overflow: hidden;
+}
+.friend .friendAvatar{
+	float: left;
+	border-radius: 50%;
+	padding: 2px;
+	background: -webkit-linear-gradient(#fac713, #fffa99); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#fac713, #fffa99); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#fac713, #fffa99); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#fac713, #fffa99); /* 标准的语法 */
+   	margin: 15px 9px;
+   	-moz-box-shadow: 0 3px 2px #7d7d7d; /* 老的 Firefox */
+	box-shadow: 0 3px 2px #7d7d7d;
+}
+.friend .friendAvatar div{
+	width: 3.2rem;
+	height: 3.2rem;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.friend .friendInfo{
+	width: 72%;
+}
+.friend .friendName{
+	font-size: 1.125rem;
+	font-weight: normal;
+    color: #000;
+    margin: 1rem 0 0.4rem 0;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.friend .friendGetTime{
+	font-size: 0.875rem;
+	margin: 0;
+}

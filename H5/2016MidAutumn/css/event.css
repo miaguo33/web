@@ -1,0 +1,368 @@
+body{
+	background-color: #FFFFFF;
+	margin: 0;
+	color: #292929;
+	font-family: PingFang-SC-Regular, "Helvetica Neue", Helvetica, "microsoft yahei", sans-serif;
+	font-size: 18px;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+h4{
+	font-weight: normal;
+	margin: 0;
+}
+.pullCenter{
+	text-align: center;
+}
+.pullRight{
+	text-align: right;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clear{
+	clear: both;
+}
+.inlineBlock{
+	display: inline-block;
+}
+img{
+	width: 100%;
+	display: block;
+}
+.padding{
+	padding: 0 10px !important;
+}
+.percent20{
+	width: 20%;
+}
+.percent40{
+	width: 40%;
+}
+.avatar{
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+}
+.loading{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: url(../images/loadings.gif) no-repeat;
+	background-size: 100px auto;
+	background-position: center;
+	background-color: #161820;
+	z-index: 99;
+}
+.main{
+	background: url(../images/main_BG.jpg) no-repeat;
+	background-size: 100%;
+}
+.bannerWindow{
+	padding: 2%;
+    background: url(../images/banner_BG.jpg) no-repeat;
+    background-size: 100%;
+    margin: -3% 3%;
+}
+.banner{
+	overflow: hidden;
+	-moz-box-shadow: 0 2px 5px #000; /* 老的 Firefox */
+	box-shadow: 0 2px 5px #000;
+}
+.icon img{
+    width: 29%;
+    float: right;
+    margin-top: 7%;
+}
+.paihang{
+	display: inline-block;
+	margin-top: -24px;
+}
+
+.paihang h4{
+	color: #fff;
+    line-height: 46px;
+    letter-spacing: 0.5px;
+    margin: 0 0 0 5px;
+}
+.myscore img{
+	width: 22%;
+    margin: -3px auto 10px;
+}
+.score ul{
+	overflow: hidden;
+	display: inline-block;
+	margin: 10px 0 50px;
+}
+.score li{
+	float: left;
+	width: 70px;
+	background: url(../images/number.png) no-repeat;
+	background-size:110%;
+	height: 100px;
+	background-position: 50% -0.2%;
+	transition:background-position 0.5s;
+	-moz-transition:background-position 0.5s; /* Firefox 4 */
+	-webkit-transition:background-position 0.5s; /* Safari and Chrome */
+	-o-transition:background-position 0.5s; /* Opera */
+}
+.score_-{
+	background-image: url(../images/fushu.png) !important;
+	background-position: 50% 0% !important;
+}
+.score li.score_0{
+	background-position: 50% -0.2%;
+}
+.score li.score_1{
+	background-position: 50% 10.7%;
+}
+.score li.score_2{
+	background-position: 50% 22.2%;
+}
+.score li.score_3{
+	background-position: 50% 33.3%;
+}
+.score li.score_4{
+	background-position: 50% 44.3%;
+}
+.score li.score_5{
+	background-position: 50% 55.4%;
+}
+.score li.score_6{
+	background-position: 50% 66.45%;
+}
+.score li.score_7{
+	background-position: 50% 77.6%;
+}
+.score li.score_8{
+	background-position: 50% 88.7%;
+}
+.score li.score_9{
+	background-position: 50% 99.8%;
+}
+.action{
+	display: inline-block;
+	overflow: hidden;
+	margin: 0 0 20px 0;
+}
+.action .btn{
+    width: 130px;
+    margin: 0 10px;
+}
+.callhelp{
+	display: none;
+	width: 260px;
+}
+#see{
+	display: none;
+}
+.unslider{
+	position: relative;
+	overflow: auto;
+}
+.unslider-nav{
+	position: absolute;
+    top: 0;
+    width: 100%;
+}
+.unslider-nav li{
+	float: left;
+	background-color: #FFCC3D;
+}
+.unslider-nav li:nth-child(1){
+	width: 25%;
+}
+.unslider-nav li:nth-child(2){
+	width: 40%;
+}
+.unslider-nav li:nth-child(3){
+	width: 35%;
+}
+.unslider-nav li img{
+	height: 20px;
+	width: auto;
+	margin: 10px auto;
+}
+.unslider-nav li.unslider-active{
+	background-color: #4B2966;
+}
+#detail{
+	padding-top: 40px;
+	background: url(../images/detail_BG.jpg) center 40px /cover no-repeat ;
+}
+#detail .page{
+	box-sizing: border-box;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#detail .page::-webkit-scrollbar{width:0;height:0}
+#detail .page li{
+	overflow: hidden;
+	background: url(../images/line.png) center bottom /105% no-repeat
+}
+#rankingListTitle div,#rankingList div{
+	float: left;
+	text-align: center;
+}
+#rankingListTitle div{
+	height: 40px;
+}
+#rankingListTitle div img{
+	height: 20px;
+	width: auto;
+	margin: 10px auto;
+}
+#rankingList div{
+	height: 70px;
+	line-height: 70px;
+}
+#rankingList div img{
+	margin: 10px auto;
+	border: 2px solid #00CCC9;
+}
+#rankingList li div:nth-child(3){
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#rankingList li:nth-child(1) div:first-child{
+	color: #FFFFFF;
+	background: url(../images/mooncake_1.png) center /44px no-repeat;
+}
+#rankingList li:nth-child(2) div:first-child{
+	color: #FFFFFF;
+	background: url(../images/mooncake_2.png) center /44px no-repeat;
+}
+#rankingList li:nth-child(3) div:first-child{
+	color: #FFFFFF;
+	background: url(../images/mooncake_3.png) center /44px no-repeat;
+}
+.bottom{
+	padding: 5px 0;
+	background: url(../images/detail_BG.jpg) bottom /100% no-repeat;
+}
+.bottom img{
+	height: 30px;
+	width: auto;
+	margin: 0 auto;
+}
+.friend .friendAvatar{
+	border-radius: 50%;
+	padding: 2px;
+	background: -webkit-linear-gradient(#fac713, #fffa99); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#fac713, #fffa99); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#fac713, #fffa99); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#fac713, #fffa99); /* 标准的语法 */
+   	margin: 10px 5px;
+   	-moz-box-shadow: 0 3px 2px #7d7d7d; /* 老的 Firefox */
+	box-shadow: 0 3px 2px #7d7d7d;
+}
+.friend .friendName{
+	width: 77%;
+    padding-top: 12px;
+    margin-right: 3%;
+}
+.friend .friendName div:first-child h4{
+	width: 44%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: normal;
+}
+.friend .friendName div:first-child span{
+	margin: 4px 0 0 10px;
+    font-size: 14px;
+}
+.friend .friendName div:last-child span{
+	color: #E3493D;
+	margin-left: 10px;
+}
+.prizeImgTitle img{
+	height: 20px;
+	width: auto;
+	margin: 10px 0;
+}
+.prizeTitle div{
+	margin: 8px 0;
+}
+.prizeTitle div.fl:first-child,.prize .merchantAvatar{
+	width: 34%;
+}
+.prizeTitle div.fl:last-child,.prize h4{
+	width: 66%;
+}
+.prize .merchantAvatar div{
+	display: inline-block;
+	border-radius: 50%;
+	padding: 2px;
+	background: -webkit-linear-gradient(#fac713, #fffa99); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#fac713, #fffa99); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#fac713, #fffa99); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#fac713, #fffa99); /* 标准的语法 */
+   	margin: 5px 10px;
+   	-moz-box-shadow: 0 3px 2px #7d7d7d; /* 老的 Firefox */
+	box-shadow: 0 3px 2px #7d7d7d;
+}
+.prize h4{
+	margin: 18px 0;
+}
+.rule{
+	line-height: 1.8;
+}
+.rule li{
+	text-align: justify;
+    list-style: decimal inside !important;
+    background: none !important;
+}
+.pop-up{
+	background: url(../images/flower.jpg) no-repeat;
+	background-size: 95% auto;
+	background-position: center;
+	border: 3px solid #D3BBEB;
+	border-radius:10px;
+	width: 300px;
+	margin: 0 auto;
+	padding: 0 !important;
+}
+.pop-up input{
+	width: 240px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	outline: 0;
+	font-size: 20px;
+	padding: 0 20px;
+	box-sizing: border-box;
+	border: 1px solid #722618;
+	background: url(../images/phone.png) no-repeat;
+	background-size: auto 48%;
+	background-position: center;
+	border-radius: 5px;
+	margin: 50px 0 30px;
+}
+.pop-up button{
+	width: 240px;
+	height: 44px;
+	outline: 0;
+	border: 0;
+	background: url(../images/phone_submit.png) no-repeat;
+	background-size: auto 43%;
+	background-position: center;
+	background-color: #880A1F;
+	border-radius: 5px;
+	margin: 0 0 50px;
+}
+.pop-up .close{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+    top: -16px;
+    right: -10px;
+}

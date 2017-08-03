@@ -1,0 +1,217 @@
+body,html{
+	width: 100%;
+	height: 100%;
+}
+*{
+	font-family: "微软雅黑", "宋体", Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+.page_1{
+    width: 100%;
+    min-height: 100%;
+    max-width: 414px;
+    margin: 0 auto;
+    padding: 90% 0 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    background-image: url(../images/pageBg_1.jpg);
+    background-size: 100% auto;
+}
+.page_2{
+    width: 100%;
+    min-height: 100%;
+    max-width: 414px;
+    margin: 0 auto;
+    padding: 60% 0 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    background-image: url(../images/pageBg_2.jpg);
+    background-size: 100% auto;
+}
+.orange{
+	color:#ff9c2a;
+}
+.black{
+	color: #2e3244;
+}
+.font10{
+	font-size: 10px !important;
+}
+.container{
+	text-align: center;
+}
+.container .lace1{
+	width:80%;
+    margin-top: 18px;
+}
+.container .ad_img img{
+    height: 104px;
+}
+#login .title{
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin: 12px auto 30px;
+}
+#login .action .phone,#login .action .verifyCode{
+	width: 80%;
+    box-sizing: border-box;
+    margin: 0 auto 12px;
+    text-align: left;
+    padding: 4px 0 4px 12%;
+    border-bottom: 1px solid #94929a;
+    overflow: hidden;
+    background-size: auto 46%;
+    background-position: 4% center;
+    background-repeat: no-repeat;
+}
+#login .action .phone{
+	background-image: url(../images/icon_phone.png);
+}
+#login .action .verifyCode{
+	background-image: url(../images/icon_password.png);
+}
+#login .action input{
+	font-size: 14px;
+    line-height: 2;
+    border: 0;
+    outline: 0;
+    float: left;
+    width: 50%;
+    color: #575757;
+    background: transparent;
+}
+#login .action .phone input{
+	width: 100%;
+}
+#login .action #getverifyCode{
+	width: 50%;
+	color: #575757;
+	font-size: 14px;
+	line-height: 2;
+	border: 0;
+	outline: 0;
+	float: left;
+	background: none;
+}
+#login .action #getCoupon{
+	width: 80%;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 2;
+    border: 0;
+    outline: 0;
+    background-color: #4e4d50;
+    border-radius: 3px;
+    padding: 3px 0;
+    margin: 24px 0 0 0;
+}
+#login .action p{
+	font-size: 12px;
+    color: #999999;
+    margin-top: 6px;
+}
+#getcouponsuccess{
+	color: #333333;
+}
+#getcouponsuccess h3{
+	font-weight: 100;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin: 10px 0;
+}
+#getcouponsuccess .description{
+    font-size: 14px;
+    margin: 0 0 14px 0;
+}
+#getcouponsuccess .brown{
+	color: #af7f46;
+}
+#getcouponsuccess .coupon{
+    background: url(../images/lace2.png) no-repeat center;
+    background-size: auto 100%;
+    padding: 12px 0 5px;
+    letter-spacing: 1px;
+}
+#getcouponsuccess .coupon span{
+    background: #af7f46;
+    color: #FFFFFF;
+    font-size: 12px;
+}
+#getcouponsuccess .coupon h1{
+    margin: 4px auto;
+    font-size: 20px;
+    width: 250px;
+}
+#getcouponsuccess .coupon p{
+    margin: 6px 0;
+    font-size: 12px;
+}
+#getcouponsuccess .QR_code{
+    width: 36%;
+    display: inline-block;
+    padding: 3%;
+    margin: 16px auto 4px;
+    background: url(../images/lace3.png) no-repeat center;
+    background-size: 100% 100%;
+}
+#getcouponsuccess .QR_code img{
+	width: 100%;
+}
+.page_success{
+	padding-top: 22%;
+}
+.page_share{
+	width: 100%;
+	min-height: 100%;
+	background: url(../images/BG.jpg);
+	background-size: 100% auto;
+	text-align: center;
+}
+.page_share .avatar{
+	display: inline-block;
+    margin: 16% auto 0;
+    width: 76px;
+    height: 76px;
+    border: 2px solid #e4c175;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 99;
+}
+.page_share .avatar img{
+	width: 100%;
+}
+.page_share .share_container{
+    letter-spacing: 1px;
+    width: 300px;
+    height: 380px;
+    background: url(../images/bg_1.png);
+    background-size: 100% auto;
+    margin: -38px auto 20px;
+    box-sizing: border-box;
+    padding: 212px 0 0 0;
+    z-index: 98;
+}
+.page_share .share_container h2{
+	font-size: 14px;
+    font-weight: 100;
+    color: #af7f46;
+    margin: 5px 0 10px 0;
+}
+.page_share .share_container h2 #restCouponNum{
+	font-size: 20px;
+}
+.page_share #shareGet{
+	margin: 0 0 20px 0;
+	width: 150px;
+}
+.page_share #rule{
+	width: 100%;
+	display: block;
+}
+.addimg{
+	width: 100%;
+	display: block;
+}

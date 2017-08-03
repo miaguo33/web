@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title></title>
+    <!--<base href="http://h5img.1paiclub.com/lightapp/bawangcanmoban/" />-->
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/unslider.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript" src="js/jquery.cookies.2.2.0.min.js"></script>
+	<script type="text/javascript" src="/resource/js/collections.js"></script>
+	<script type="text/javascript" src="js/layer.js"></script>
+	<script type="text/javascript" src="js/unslider-min.js"></script>
+	<!--<script>
+		
+		 
+	</script>-->
+</head>
+<body>
+	<div class="loading"></div>
+	<div class="page page1" style="display: none;">
+		<div>
+			<img src="" id="maintopimg"/>
+		</div>
+		<div class="alert pullCenter">
+			<h2 class="clearWeight prizeA"></h2>
+			<img src="images/bg3.png"/>
+			<p class="">填写手机号码立即领取优惠券</p>
+			<div class="inputBox phone">
+				<input placeholder="填写手机号码" id="phone"/>
+			</div>
+			<div class="inputBox vCode" id="vCodeBox" style="display: none;">
+				<input placeholder="填写验证码" id="vCode"/>
+				<button id="getVCode">获取验证码</button>
+			</div>
+			<button class="get" id="getCoupon">立即领取</button>
+		</div>
+		<div class="logo">
+			<img src=""/>
+		</div>
+	</div>
+	<div class="page page2" style="display: none;">
+		<div class="top">
+			<div class="bannerWindow">
+				<div id="banner" class="banner">
+					<ul>
+					</ul>
+				</div>
+			</div>
+			<div class="me pullCenter">
+				<div class="avatar">
+					<img src="" id="myAvatar"/>
+				</div>
+				<p>右上角分享活动，邀请<span class="lightTxt neednum">0</span>个好友成功领券即可获得“<span class="lightTxt prizeB"></span>”哦！</p>
+				<h2><span class="lightTxt isHelped">0</span><span>/</span><span class="neednum">0</span></h2>
+				<p class="lightTxt nomargin">已有<span class="isHelped">0</span>个好友领取</p>
+			</div>
+			
+		</div>
+		<div class="bottom" id="detail">
+			<ul class="detailBg">
+				<li data-nav="奖品和规则">
+					<div class="awardAndRule">
+						<h3>活动时间</h3>
+						<p class="time"><span id="startTime"></span>~<span id="endTime"></span></p>
+						<div class="line1">
+							<img  src="images/line1.png"/>
+						</div>
+						<h3>活动奖品</h3>
+						<ul>
+							<!--加active表示已获取-->
+							<li class="award" id="listPrizeA">
+								<img class="get" src="images/get.png" />
+								<img src="images/ca.png" />
+								<h4 class="prizeA"></h4>
+								<button>满足条件获取</button>
+							</li>
+							<li class="award" id="listPrizeB">
+								<img class="get" src="images/get.png" />
+								<img src="images/cb.png" />
+								<h4 class="prizeB"></h4>
+								<button>满足条件获取</button>
+							</li>
+						</ul>
+						<div class="line1">
+							<img  src="images/line1.png"/>
+						</div>
+						<h3>规则说明</h3>
+						<img src="" id="rule"/>
+						<img src="" id="QRcode"/>
+					</div>
+					
+				</li>
+				<li data-nav="给力好友" class="padding">
+					<ul class="friend" id="friend">
+						<!--<li>
+							<div class="line1">
+								<img  src="images/line1.png"/>
+							</div>
+							<div>
+								<div class="friendAvatar">
+									<div>
+										<img src="images/bg1.jpg" />
+									</div>
+								</div>
+								<div class="fl friendInfo">
+									<h3 class="friendName">mia果33</h3>
+									<p class="friendGetTime">领券时间：2017.07.13.16:54:33</p>
+								</div>
+							</div>
+						</li>-->
+					</ul>
+					<div class="logo">
+						<img src=""/>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+<script type="text/javascript">
+	window.onload = function () {
+		var timestamp = new Date().getTime(),openId;
+	    timestamp = parseInt(timestamp / 1000);
+	    var headimgurl,nickname;
+	    var nonceStr = 'Wm3WZYTPz0wzccmW',
+            url = location.href.split('#')[0],
+            signature = '';
+	    var url = escape(url),
+        	activityId = getUrlParam('aid');
+        var hitType = getUrlParam('hitType');
+        var time=60;
+        
+        var responseData;
+        $.ajax({
+            url: "http://liveapp.xpinfo.net/rest/lightApp/config",
+            async: false,
+            type: "GET",
+            dataType: "json",
+            data: {
+                "activityId": activityId,
+                "hitType": hitType
+            },
+			success:function(result) {
+				if(result.code==0){
+					responseData = result.data;
+				}else{
+					window.location.href="/rest/lightApp/open/error?msg="+encodeURI(encodeURI(result.msg));
+				}
+			}
+        });
+        var token = responseData.token;
+        var merchantId = responseData.merchantId;
+        var appId = responseData.param_appid;
+        var prizeA,prizeB,merchantIdA,merchantIdB;
+        $(responseData.prize).each(function(index,element){
+        	if(element.param3!="HELP_COUPON"){
+        		prizeA = element.name;
+        		merchantIdA = element.merchantId;
+        	}else if(element.param3=="HELP_COUPON"){
+        		prizeB = element.name;
+        		merchantIdB = element.merchantId;
+        	}
+        });
+        var prizeList;
+        
+        //首页顶部图
+        $("#maintopimg").attr("src",responseData.param_maintopimg);
+        //logo
+        $(".logo img").attr("src",responseData.param_logo);
+        //AB券名称
+    	$(".prizeA").html(prizeA);
+    	$(".prizeB").html(prizeB);
+        var banner={};
+        var bannerHtml='';
+        var awardShowHtml='';
+        for(key in responseData){
+        	if(key.indexOf('param_banner_')!=-1){
+        		banner[key]=responseData[key];
+        	};
+        }
+        for(key in banner){
+        	if(banner[key]){
+        		bannerHtml+='<li><img src="'+banner[key]+'"></li>';
+        	}
+        }
+        $("#banner ul").html(bannerHtml);
+        $('#banner').unslider({
+			delay: 3000,  
+			arrows: false,
+			nav: false,
+			autoplay: true,
+			infinite: true
+		});
+    	
+    	//需要好友数量
+    	$(".neednum").html(responseData.param_neednum);
+    	
+    	//活动时间
+    	$("#startTime").html(formattime(responseData.startTime));
+    	$("#endTime").html(formattime(responseData.endTime));
+    	
+    	//规则和二维码
+    	$("#rule").attr("src",responseData.param_rule);
+    	$("#QRcode").attr("src",responseData.param_QRcode);
+		
+        
+	    var friendOpenId = getUrlParam('friendOpenId'),friendPhone;
+	    var myPhone= $.cookies.get(activityId+'myPhone');
+    	var openId = $.cookies.get('openId');
+		$.ajax({
+	        type: 'GET',
+	        async: 'false',
+	        url: 'http://wx.xpinfo.com/index.php?s=/home/index/getWechatConfig&appid=' + appId + '&timestamp=' + timestamp + '&nonceStr=' + nonceStr + '&url=' + url,
+	        dataType: 'json',
+	        data: '',
+	        jsonp: 'callback',
+	        success: function(result) {
+//		            appId = result.appId;
+	            signature = result.signature;
+	            wx.config({
+	                debug: false,
+	                appId: appId,
+	                timestamp: timestamp,
+	                nonceStr: nonceStr,
+	                signature: signature,
+	                jsApiList: ['checkJsApi', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo']
+	            });
+	            wx.error(function(res){
+	            	console.log(res);
+	            });
+	            headimgurl = $.cookies.get('headimgurl');
+	            openId = $.cookies.get('openId');
+	            nickname = $.cookies.get('nickname');
+	            if (nickname == undefined || nickname == '' || headimgurl == undefined || headimgurl == '' || openId == undefined || openId == '') {
+	                var code = getUrlParam('code');
+	                console.log(code);
+	                if (code == '') {
+	                    var re_url = 'http://wx.xpinfo.com/index.php?s=/home/index/gtWxCode&appid=' + appId + '&redirect_uri=' + encodeURIComponent(location.href);
+	                    location.replace(re_url);
+	                } else {
+	                    $.ajax({
+	                        type: 'GET',
+	                        async: 'false',
+	                        url: 'http://wx.xpinfo.com/index.php?s=/home/index/getUserinfo&appid=' + appId + '&code=' + code+'&scope=snsapi_userinfo',
+	                        dataType: 'json',
+	                        data: '',
+	                        success: function(result) {
+	                            openId = result.openid;
+	                            $.cookies.set('openId', openId);
+	                            if (openId == null || openId == '') {
+	                                reloadPage();
+	                            } else {
+	                            	myPhone= getUrlParam('myPhone');
+	                            	nickname = result.nickname;
+	                                headimgurl = result.headimgurl;
+	                                $.cookies.set('nickname', nickname);
+	                                $.cookies.set('headimgurl', headimgurl);
+	                                if (headimgurl == '' || headimgurl == ' '||headimgurl == undefined) {
+	                                    headimgurl = 'http://liveapp.xpinfo.net/lightapp/crazyCoupon/images/avatar.jpg';
+	                                }
+	                                if (nickname == undefined || nickname == '') {
+	                                    nickname = '神秘小伙伴';
+	                                }
+	                                active();
+	                            }
+	                        }
+	                    })
+	                }
+	            } else {
+	                active();
+	            }
+	        }
+	    });
+	    
+	    function active(){
+        	wx.ready(function() {
+	            var mix_url = 'http://liveapp.xpinfo.net/rest/lightApp/redirect?aid=' + activityId + '&hitType=2&friendOpenId=' + openId;
+	            var shareData = {
+	                title: responseData.param_sharetitle,
+	                desc: responseData.param_sharecontent,
+	                link: mix_url,
+	                imgUrl: "http://liveapp.xpinfo.net/"+responseData.param_share,
+	                success: function(res) {
+	                }
+	            };
+	            wx.onMenuShareAppMessage(shareData);
+	            wx.onMenuShareTimeline(shareData);
+	            wx.onMenuShareQQ(shareData);
+	            wx.onMenuShareWeibo(shareData)
+	        });
+	    	if(friendOpenId){
+	    		$.ajax({
+					type: "POST",
+					url: "http://liveapp.xpinfo.net/rest/lightApp/data/one",
+					dataType: "json",
+					async: false,
+					data: {
+						'activityId': activityId,
+						'openId': friendOpenId
+					},
+					success: function(result) {
+						if(result.code==0){
+							friendPhone = result.data.phone;
+						}
+					}
+				})
+	    	};
+	    	if(!myPhone){
+	    		$.ajax({
+					type: "POST",
+					url: "http://liveapp.xpinfo.net/rest/lightApp/data/one",
+					dataType: "json",
+					async: false,
+					data: {
+						'activityId': activityId,
+						'openId': openId
+					},
+					success: function(result) {
+						if(result.code==0){
+							myPhone = result.data.phone;
+						}
+					}
+				})
+	    	}
+	    	if(myPhone){
+    			$.ajax({
+					type: "POST",
+					url: "http://liveapp.xpinfo.net/rest/lightApp/award/personal/list",
+					dataType: "json",
+					data: {
+						'activityId': activityId,
+						'merchantId': merchantId,
+						'pageNo': 1,
+						'limit': 50,
+						'searchText': myPhone
+					},
+					success:function(result) {
+						if(result.code == 0) {
+							if(result.data.length>0){
+								prizeList = result.data;
+								//跳转第二页
+								loadActivityInfo();
+							}else{
+								if(friendPhone&&responseData.param_vCode==1){//要短信验证码
+	    							action();
+						    	}else{//不要短信验证码
+						    		getCoupon();
+						    	}
+							}
+						}else{
+							alert(result.msg);
+						}
+					}
+				});
+    		}else{
+    			action();
+    		}
+	    }
+        function action(){//无电话时的操作
+        	$(".loading").fadeOut();
+        	$(".page1").show();
+        	if(friendPhone&&responseData.param_vCode==1){//要短信验证码
+        		$("#vCodeBox").show();
+        		$("#getVCode").bind("click",function(){
+	    			myPhone = $("#phone").val();
+					if(!myPhone){
+						alert("手机号不能为空");
+						return false
+					}
+					if(!validatemobile(myPhone)) return false;
+					$("#getVCode").attr("disabled","disabled");
+	    			$.ajax({
+						type: "POST",
+						url: "http://liveapp.xpinfo.net/rest/lightApp/send/verifyCode",
+						dataType: "json",
+						data: {
+							'merchantId': merchantId,
+			              	'phone': myPhone
+						},
+						success:function(result) {
+							if(result.code==0){
+								alert("验证码发送成功");
+								time=60;
+	    						countDown();
+							}else{
+								alert(result.msg);
+								$("#getverifyCode").removeAttr("disabled");
+							}
+						}
+					});
+	    		});
+	    		$("#getCoupon").bind("click",function(){
+	    			myPhone = $("#phone").val();
+	    			verifyCode = $("#vCode").val();
+					if(!myPhone){
+						alert("手机号不能为空");
+						return false
+					}
+					if(!validatemobile(myPhone)) return false;
+					if(!verifyCode){
+						alert("请输入验证码");
+						return false
+					}
+					$.ajax({
+						type: "POST",
+						url: "http://liveapp.xpinfo.net/rest/lightApp/check/verifyCode",
+						dataType: "json",
+						data: {
+							'merchantId': merchantId,
+					        'phone': myPhone,
+							'verifyCode': verifyCode
+						},
+						success:function(result) {
+							if(result.code==0){
+								$.cookies.set(activityId + 'myPhone', myPhone);
+								getCoupon();
+							}else{
+								alert(result.msg);
+							}
+						}
+					});
+				});
+    		}else{//不要短信验证码
+	    		$("#getCoupon").bind("click",function(){
+	    			myPhone = $("#phone").val();
+					if(!myPhone){
+						alert("手机号不能为空");
+						return false
+					}
+					if(!validatemobile(myPhone)) return false;
+					$.cookies.set(activityId + 'myPhone', myPhone);
+					getCoupon();
+				});
+	    	}
+        }
+        function getCoupon(){//获取奖品
+        	if(myPhone){
+        		var responseAwardData = $.ajax({
+					url: "http://liveapp.xpinfo.net/rest/lightApp/award/lottery",
+					async: false,
+					type: "POST",
+					dataType: "json",
+					data: {
+						"activityId": activityId,
+						"token": token
+					}
+				}).responseText;
+				var temp = JSON.parse(responseAwardData);
+				prizename = temp.data.name;
+        		$.ajax({
+					type: "POST",
+					url: "http://liveapp.xpinfo.net/rest/lightApp/award/submit",
+					dataType: 'json',
+					data: {
+						"activityId": activityId,
+						"token": token,
+						"phone": myPhone,
+						"openId": openId,
+						"prizeName": prizename,
+						"monitor": true,
+					},
+					success: function(result) {
+						if(result.code == 0){
+							if(friendPhone){
+								//如果存在转券关系
+								$.ajax({
+									type: "POST",
+									url: "http://liveapp.xpinfo.net/rest/lightApp/data/submit",
+									dataType: "json",
+									data: {
+										"activityId":activityId,
+										'headImgUrl': headimgurl,
+			                        	'nickName': nickname,
+										"phone": myPhone,
+										"openId": openId,
+										"help": true,
+							           	"param1": friendPhone,
+										"param2": 1,
+										"param3": myPhone,
+										"branch":"HELP_COUPON",
+										"monitor": true
+									},
+									success:function(result) {
+										//跳转第二页
+										loadActivityInfo();
+									}
+								});
+							}else{
+								$.ajax({
+									type: "POST",
+									url: "http://liveapp.xpinfo.net/rest/lightApp/data/submit",
+									dataType: "json",
+									data: {
+										"activityId":activityId,
+										'headImgUrl': headimgurl,
+			                        	'nickName': nickname,
+										"phone": myPhone,
+										"openId": openId,
+										"monitor": true,
+									},
+									success:function(result) {
+										//跳转第二页
+										loadActivityInfo();
+									}
+								});
+							}
+						}else{
+							alert(result.msg);
+						}
+					}
+				});
+        	}else{
+        		alert("未获取到手机号")
+        	}
+        }
+        
+        function loadActivityInfo(){//即跳转第二页
+        	
+        	//我的头像
+        	$("#myAvatar").attr("src",headimgurl);
+        	
+        	//已助力好友列表
+        	$.ajax({
+                type: 'GET',
+                url: "http://liveapp.xpinfo.net/rest/lightApp/data/help",
+                dataType: 'json',
+                async: false,
+                data: {
+                    'activityId': activityId,
+                    'hrd': myPhone
+                },
+                success: function(result) {
+                    if (result.code != 0) {
+                        alert(result.msg);
+                        return false
+                    }
+                    dataHelpList = result.data.help_me;
+                    dataHelpListLength = dataHelpList.length;
+                    //已助力好友数量
+                    $(".isHelped").html(dataHelpListLength);
+                    $("#friend").empty();
+                    for (var i = 0; i < dataHelpListLength; i++) {
+                    	var html='<li>';
+                    	if(i>0){
+	                    	html+='	<div class="line1">';
+							html+='		<img  src="images/line1.png"/>';
+							html+='	</div>';
+                    	};
+							html+='	<div>';
+							html+='		<div class="friendAvatar">';
+							html+='			<div>';
+							html+='				<img src="'+dataHelpList[i].headImgUrl+'" />';
+							html+='			</div>';
+							html+='		</div>';
+							html+='		<div class="fl friendInfo">';
+							html+='			<h3 class="friendName">'+dataHelpList[i].nickName+'</h3>';
+							html+='			<p class="friendGetTime">领券时间：'+dataHelpList[i].createTime+'</p>';
+							html+='		</div>';
+							html+='	</div>';
+							html+='</li>';
+						
+						$("#friend").append(html);
+                    };
+                }
+            });
+        	
+        	//AB券获取情况
+        	if(!prizeList){
+        		$.ajax({
+					type: "POST",
+					url: "http://liveapp.xpinfo.net/rest/lightApp/award/personal/list",
+					dataType: "json",
+					async: false,
+					data: {
+						'activityId': activityId,
+						'merchantId': merchantId,
+						'pageNo': 1,
+						'limit': 50,
+						'searchText': myPhone
+					},
+					success:function(result) {
+						if(result.code == 0) {
+							if(result.data.length>0){
+								prizeList = result.data;
+							}
+						}else{
+							alert(result.msg);
+						}
+					}
+				});
+        	};
+        	$(prizeList).each(function(index,element){
+	        	if(element.prize.param3!="HELP_COUPON"){//A券
+	        		$("#listPrizeA").addClass("active");
+	        		$("#listPrizeA button").html("查看详情");
+	        		$("#listPrizeA button").unbind().bind('click',function(){
+	        			window.location.replace("http://www.xpinfo.com/webapp/membercard/index.html?appid="+merchantIdA+"&mid="+merchantIdA);
+	        		});
+	        	}else if(element.prize.param3=="HELP_COUPON"){//B券
+	        		$("#listPrizeB").addClass("active");
+	        		$("#listPrizeB button").html("查看详情");
+	        		$("#listPrizeB button").unbind().bind('click',function(){
+	        			window.location.replace("http://www.xpinfo.com/webapp/membercard/index.html?appid="+merchantIdB+"&mid="+merchantIdB);
+	        		});
+	        	}
+	        });
+        	
+			$(".loading").fadeOut();
+			$(".page1").hide();
+			$(".page2").show();
+			$('#detail').unslider({
+				speed:200,
+				arrows: false,
+				nav: true,
+				animateHeight: true,
+			});
+        }
+        
+
+		function countDown(){
+	        time = parseInt(time);
+	        time = time-1;
+	        if(time<0){
+	        	return false;
+	        }
+	        if(time==0){
+	        	 $("#getVCode").html('获取验证码');
+	        	 $("#getVCode").removeAttr("disabled");
+	        }else{
+	        	$("#getVCode").html(time + "秒");
+	        	setTimeout(countDown,1000);
+			}
+		}
+		function reloadPage() {
+	        var baseUrl = 'http://liveapp.xpinfo.net/rest/lightApp/redirect?aid=' + activityId + '&hitType=2';
+	        if (friendOpenID != null && friendOpenID != '') {//好友链接
+	            window.location.replace(baseUrl + '&friendOpenId='+friendOpenID+'&friendPhone=' + friendPhone+'&friendNickName='+friendNickName+'&friendHeadImgUrl='+friendHeadImgUrl)
+	        } else {
+	            window.location.replace(baseUrl)
+	        }
+	    }
+		function validatemobile(inputString){
+		    var partten = /^1[3,4,5,7,8]\d{9}$/;
+		    if(partten.test(inputString))
+		    {
+		        return true;
+		    }
+		    else
+		    {
+		        alert('请输入正确的手机号码');
+		        return false;
+		    }
+		}
+		function getUrlParam(name){
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null){
+		        return unescape(r[2]);
+		    }
+		    return "";
+		}
+		function formattime(n){
+        	var time=n.split(" ");
+        	var timeDateArry=time[0].split("-");
+        	var timeHourArry=time[1].split(":");
+        	return timeDateArry[0]+"年"+timeDateArry[1]+"月"+timeDateArry[2]+"日 "+timeHourArry[0]+":"+timeHourArry[1];
+        }
+	}
+</script>
+</body>
+</html>

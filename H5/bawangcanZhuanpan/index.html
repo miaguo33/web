@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title></title>
+    <!--<base href="http://h5img.1paiclub.com/lightapp/bawangcanZhuanpan/" />-->
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="css/event.css" rel="stylesheet">
+    <link href="css/unslider.css" rel="stylesheet">
+</head>
+<body>
+	<div class="loading"></div>
+	<div class="page1">
+		<div class="title pullCenter">
+			<div class="bannerWindow">
+				<div id="banner" class="banner">
+					<ul>
+						<li><img src="images/banner_1.jpg" /></li>
+					</ul>
+				</div>
+			</div>
+			<img class="chuozheli" src="images/chuozheli.png" />
+			<!--<h6>你还有<span id="remainchance" class="orange"></span>次机会</h6>-->
+			<div id="myawardBtn"><img class="" src="images/myaward.png" /></div>
+		</div>
+		<div id="lottery">
+			<table border="0" cellpadding="0" cellspacing="4">
+				<tr class="lottery-group">
+					<td id="lattice_0" class="lottery-unit td_1" ><img src="images/lattice_back.png" />
+						<div class="award">
+							<img src="images/type_1.png" />
+							<h6 class="pullCenter">266元霸王餐</h6>
+						</div>
+					</td>
+					<td id="lattice_1" class="lottery-unit td_2"><img src="images/lattice_back.png" />
+						<div class="award">
+							<img src="images/type_5.png" />
+							<h6 class="pullCenter">谢谢参与</h6>
+						</div>
+					</td>
+					<td id="lattice_2" class="lottery-unit td_3"><img src="images/lattice_back.png" />
+						<div class="award">
+							<img src="images/type_3.png" />
+							<h6 class="pullCenter">50元代金券</h6>
+						</div>
+					</td>
+				</tr>
+				<tr class="lottery-group">
+					<td id="lattice_7" class="lottery-unit td_4"><img src="images/lattice_back.png" />
+						<div class="award">
+							<img src="images/type_3.png" />
+							<h6 class="pullCenter">10元代金券</h6>
+						</div>
+					</td>
+					<td class="td_5"><a href="#"><img src="images/start_light.png" /></a></td>
+					<td id="lattice_3" class="lottery-unit td_6"><img src="images/lattice_back.png" />
+						<div class="award">
+							<img src="images/type_5.png" />
+							<h6 class="pullCenter">谢谢参与</h6>
+						</div>
+					</td>
+				</tr>
+		        <tr class="lottery-group">
+					<td id="lattice_6" class="lottery-unit td_7"><img src="images/lattice_back.png" />
+						<div class="award">
+							<img src="images/type_1.png" />
+							<h6 class="pullCenter">100元霸王餐</h6>
+						</div>
+					</td>
+					<td id="lattice_5" class="lottery-unit td_8"><img src="images/lattice_back.png" />
+						<div class="award">
+							<img src="images/type_5.png" />
+							<h6 class="pullCenter">谢谢参与</h6>
+						</div>
+					</td>
+					<td id="lattice_4" class="lottery-unit td_9"><img src="images/lattice_back.png" />
+						<div class="award">
+							<img src="images/type_1.png" />
+							<h6 class="pullCenter">148元礼券包</h6>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="winningList">
+			<div class="titleBar">中奖名单</div>
+			<img src="images/winlist_top.png" />
+			<div class="winningUl">
+				<ul>
+					<li>恭喜 182****3190 获得148元霸王餐券包</li>
+					<li>恭喜 138****6258 获得10元代金券</li>
+					<li>恭喜 189****2334 获得10元代金券</li>
+					<li>恭喜 139****3800 获得100元霸王餐</li>
+					<li>恭喜 182****7201 获得双人霸王餐</li>
+				</ul>
+			</div>
+		</div>
+		<div class="rule">
+			<div class="titleBar">活动规则</div>
+			<ul>
+			</ul>
+		</div>
+		<div class="logo-bottom">
+			<img src="images/LOGO_bottom.png" />
+		</div>
+	</div>
+	<div class="page2" style="display: none;">
+		<div class="close">
+			<img src="images/close.png" />
+		</div>
+		<div class="result_container">
+			<div class="result_tip">
+                <h3 id="phoneShow"></h3>
+                <p id="noCoupon" class="hide">还没有优惠券哦，赶快去玩游戏吧！</p>
+                <p id="haveCoupon">恭喜您，已成功领取<span id="couponsCount"></span>张优惠券</p>
+            </div>
+            <div class="coupons_list"> 
+            	<ul>
+            	</ul>
+        	</div>
+		</div>
+	</div>
+	<div class="page3" style="display: none;">
+		<div class="close">
+			<img src="images/close.png">
+		</div>
+		<div class="merchantInfo">
+			<div class="merchantInfo_title">
+				<div class="merchantInfo_logo fl">
+					<img src="images/store_info/logo/logo.jpg" class="fl">
+				</div>
+				<div class="merchantInfo_name fl">
+					<h4>一派</h4>
+					<p>
+						"生活服务行业会员营销管理专业品牌"
+					</p>
+					<p>
+						地址:上海市徐汇区虹梅路2071号远中产业园四期2号楼6楼
+					</p>
+				</div>
+			</div>
+			<div class="merchantInfo_description">
+				<img src="images/description_1.jpg" />
+				<p>
+					一派于2014年5月成立，由全球最大的私募基金之一柯罗尼基金(Colony Capital)投资，主要为服务行业提供专业的会员管理、营销策划、战略决策与品牌构建服务，同时为商户提供专业的数据支持和数据分析，从而帮助商户实现更精准的营销和更高效的管理。
+截至2016年三季度，一派服务的知名商户超过5000家， 会员总量超过400万，日均活跃会员达到10万，全面覆盖上海知名连锁品牌。一派的会员管理、营销策划等服务在业内得到合作伙伴及商户的一致好评。
+				</p>
+				<img class="QRcode" src="images/store_info/QRcode/QR.jpg" />
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/jquery.cookies.2.2.0.min.js"></script>
+<script type="text/javascript" src="/resource/js/collections.js"></script>
+<script type="text/javascript" src="js/layer.js"></script>
+<script type="text/javascript" src="js/lottery.js"></script>
+<script type="text/javascript" src="js/unslider-min.js"></script>
+<script type="text/javascript">
+	window.onload = function () {
+		$('#banner').unslider({
+			delay: 3000,  
+			arrows: false,
+			nav: false,
+			autoplay: true,
+			infinite: true
+		});
+		$(".loading").fadeOut();
+		var activityId=getUrlParam('aid');
+	    var hitType=getUrlParam('hitType');
+		var timestamp=new Date().getTime();
+	    timestamp=parseInt(timestamp/1000);
+	    var nonceStr='Wm3WZYTPz0wzccmW',
+	            url=location.href.split('#')[0],
+	            signature='',appId;
+	    var url=escape(url);
+	    var merchantId=1018;
+	    var phone= $.cookies.get(activityId+'phone');
+    	var token,responseData,remainchance;
+		$.ajax({
+			type: "POST",
+			url: "http://liveapp.1paiclub.com/rest/lightApp/load/lately",
+			dataType: "json",
+			data: {
+				'activityId': activityId,
+	          	'limit': 10
+			},
+			success:function(result) {
+				var html='';
+				for(var i=0;i<result.data.length;i++){
+					html+='<li>恭喜'+result.data[i].phone+' 获得'+result.data[i].remark+'</li>';
+				}
+				if(result.data.length>5){
+					$(".winningUl ul").html(html);
+				}else{
+					$(".winningUl ul").append(html);
+				}
+				
+			}
+		});
+		setInterval('autoScroll(".winningList")',4000);
+		$.ajax({
+	        type:'GET',
+	        async:'true',
+	        url:'http://www.higoin.com/wechat/getWechatConfig.action?merchantId='+merchantId+'&timestamp='+timestamp+'&nonceStr='+nonceStr+'&url='+url,
+	        dataType:'jsonp',
+	        data:'',
+	        jsonp:'callback',
+	        success:function(result) {
+	            appId=result.appId;
+	            signature=result.signature;
+	            wx.config({
+	                debug: false,
+	                appId:appId,
+	                timestamp: timestamp,
+	                nonceStr: nonceStr,
+	                signature: signature,
+	                jsApiList: ['checkJsApi', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo']
+	            });
+	            wx.ready(function(){
+	                /****************/
+	                /****************/
+	                var mix_url='http://liveapp.1paiclub.com/rest/lightApp/redirect?aid='+activityId+'&hitType=2';
+	                var shareData = {
+	                    title: "欧×非血统之战！一不小心就抽中了霸王餐！",
+	                    desc: "吃喝有理  免费万岁",
+	                    link: mix_url,
+	                    imgUrl: 'http://liveapp.1paiclub.com/lightapp/bawangcanZhuanpan/images/share_img.jpg',
+	                    success: function (res) {
+	
+	                    }
+	                };
+	                wx.onMenuShareAppMessage(shareData);
+	                wx.onMenuShareTimeline(shareData);
+	                wx.onMenuShareQQ(shareData);
+	                wx.onMenuShareWeibo(shareData);
+	            });
+	            if(phone){
+	            	config();
+		    	}else{
+		    		config();
+		    		var html='<img src="images/border_top.jpg" />';
+						html+='<input id="phone" placeholder="请输入手机号"/>';
+						html+='<button class="brown" id="phoneSubmit">确认</button>';
+                	layer.open({
+				    	content: html,
+					    className:'result-window',
+					    shadeClose:false,
+					    success:function(elem){
+					    	$("#phoneSubmit").click(function(){
+					    		phone = $("#phone").val();
+					    		if(phone == '') {
+									alert('手机号不能为空!');
+									return false;
+								}
+								if(!validatemobile(phone)) return false;
+					    		$.cookies.set(activityId+'phone',phone);
+								layer.closeAll();
+								config();
+							});
+					    }
+					});
+		    	}
+	        }
+	    });
+    	
+		function active(){
+			if(remainchance>0){
+				lottery.lottery({
+					selector:     '#lottery',
+					width:        3,
+					height:       3,
+					index:        7,    // 初始位置
+					initSpeed:    300,  // 初始转动速度
+					target:5,
+					price:'谢谢参与',
+					remainchance:remainchance,
+					resultinfo:'',
+					waiting:      1000, // 匀速转动时长
+					downStep:     40,   // 减速滚动步长
+					downMax:      300,  // 减速上限
+					beforeRoll: function () { // 重写滚动前事件：beforeRoll
+						$(".td_5 img").attr('src',"images/start_grey.png");
+					},
+					beforeDown:function(){
+						var _this = lottery;
+						//获取抽奖结果
+						var responseAwardData = $.ajax({
+				            url: "http://liveapp.1paiclub.com/rest/lightApp/award/lottery",
+				            async: false,
+				            type : "POST",
+				            dataType : "json",
+				            data: {"activityId": activityId, "token":token}
+				        }).responseText;
+				        var awardlist = $.ajax({
+							type: "POST",
+							async: false,
+							url: "http://liveapp.1paiclub.com/rest/lightApp/award/personal/list",
+							dataType: "json",
+							data: {
+								'activityId': activityId,
+								'pageNo': 1,
+								'limit': 50,
+								'searchText': phone
+							}
+						}).responseText;
+						awardlist=JSON.parse(awardlist);
+				        var temp = JSON.parse(responseAwardData);
+				        var prizeName = temp.data.name;
+				        var receive = 0;
+				        for(var i=0;i<awardlist.data.length;i++){
+				        	if(prizeName==awardlist.data[i].prizeName){
+				        		receive=1;
+				        		break;
+				        	}
+				        }
+				        _this.options.target = temp.data.description;
+				        if(temp.data.remainNumber<0||receive){
+				        	prizeName='谢谢参与';
+				        	_this.options.target = 5;
+				        }
+				        _this.options.price=prizeName;
+				        _this.options.resultinfo=temp.data;
+				        //提交数据
+				        $.ajax({
+				    		type: "POST",
+							url: "http://liveapp.1paiclub.com/rest/lightApp/data/submit",
+							dataType: "json",
+							data: {
+								"activityId":activityId,
+								"phone": phone,
+								'monitor': true
+							},
+							success:function(result){
+								if(result.code==0){
+									remainchance=remainchance-1;
+									_this.options.remainchance=remainchance;
+									$("#remainchance").html(remainchance);
+									//提交奖品
+									if(prizeName!=="谢谢参与"){
+										$.ajax({
+											type: "POST",
+											url: "http://liveapp.1paiclub.com/rest/lightApp/award/submit",
+											dataType:"json",
+											data: {
+												"activityId":activityId,
+												"token": token,
+												"phone": phone,
+												"test": false,
+												"prizeName": prizeName,
+												"merchantId": temp.data.merchantId,
+												'monitor': true,
+												"lately": true,
+											},
+											success:function(result) {
+												if(result.code==0){
+												}else{
+													alert("奖品提交失败");
+												}
+											}
+										});
+									}
+								}else{
+									alert("数据提交失败");
+								}
+							}
+						})
+					},
+					aim: function () {
+						this.options.target;
+					}
+				});
+			}else{
+				$("#lottery .td_5").click(function(){
+					alert("您今天的抽奖次数已经用完了！");
+				});
+			}
+			
+		}
+		$("#myawardBtn").click(function(){
+			if(phone){
+				$.ajax({
+					type: "POST",
+					async: false,
+					url: "http://liveapp.1paiclub.com/rest/lightApp/award/personal/list",
+					dataType: "json",
+					data: {
+						'activityId': activityId,
+						'pageNo': 1,
+						'limit': 50,
+						'searchText': phone
+					},
+					success: function(result) {
+						if(result.code == 0) {
+							$(".page1").hide();
+							$(".page2").show();
+							if(!result.data.length) {
+								$("#noCoupon").show();
+								$("#haveCoupon").hide();
+							} else {
+								$("#noCoupon").hide();
+								$("#haveCoupon").show();
+								$("#couponsCount").html(result.data.length);
+								var couponhtml = '';
+								for(i = 0; i < result.data.length; i++) {
+									var createTime=[],endTime=[];
+									couponhtml += '<li>';
+									couponhtml += '	<div class="left_logo fl">';
+									couponhtml += '		<div class="coupons_logo"> ';
+									couponhtml += '			<img class="" src="images/store_info/logo/'+result.data[i].merchantCode+'.jpg"> ';
+									couponhtml += '		</div> ';
+									couponhtml += '	</div> ';
+									couponhtml += '	<div class="middle_coupons fl"> ';
+									couponhtml += '		<h3><span class="text_lg">'+result.data[i].prizeName+'</span></h3> ';
+									couponhtml += '		<p>使用期限：';
+									if(result.data[i].param2){
+										endTime = result.data[i].param2.split(' ');
+										couponhtml += '		<span>'+endTime[0]+'前</span>';
+									}else{
+										couponhtml += '		<span>无限制</span>';
+									}
+									couponhtml += '		</p> ';
+									if(result.data[i].param1){
+										createTime = result.data[i].param1.split(' ');
+									}
+									couponhtml += '	</div>';
+									couponhtml += '	<div class="right_btn fl">'; 
+									couponhtml += '		<h3 data_createTime="'+createTime[0]+'" data_endTime="'+endTime[0]+'" data_value="'+result.data[i].prizeName+'" data_src="'+result.data[i].merchantCode+'">立即查看</h3> ';
+									couponhtml += '	</div> ';
+									couponhtml += '	<div class="clear">';
+									couponhtml += '	</div> ';
+									couponhtml += '</li>';
+								}
+								$(".coupons_list ul").html(couponhtml);
+								$(".coupons_list .right_btn h3").bind("click",function(){
+									var src=$(this).attr("data_src");
+									var priceName=$(this).attr("data_value");
+									var createTime=$(this).attr("data_createTime");
+									var endTime=$(this).attr("data_endTime");
+									var merchantinfo='<img class="logo" src="images/store_info/logo/'+src+'.jpg"> ';
+									merchantinfo+='<h4 class="pullCenter brown pricename">'+priceName+'</h4>';
+									if(createTime&&endTime&&createTime!='undefined'&&endTime!='undefined'){
+										merchantinfo+='<p class="brown">使用期限：'+createTime + '-' + endTime+'</p>';
+									}else if(endTime&&(!createTime)){
+										merchantinfo += '<p class="brown">使用期限：'+endTime+'前</p>';
+									}else if(createTime&&(!endTime)){
+										merchantinfo += '<p class="brown">使用期限：'+createTime+'之后</p>';
+									};
+									merchantinfo+='<img class="QRcode" src="images/store_info/QRcode/'+src+'.jpg"> ';
+									merchantinfo+='<p class="black">长按关注公众号注册会员领取</p>';
+									layer.open({
+										className:'result-window',
+										content: merchantinfo,
+									});
+								});
+							}
+						}
+					}
+				});
+			}else{
+				alert("您还没有输入手机号，刷新一下吧！")
+			}
+		});
+		$("#banner").click(function(){
+			$(".page1").hide();
+			$(".page3").show();
+		})
+		$(".close").click(function(){
+			$(".page2").hide();
+			$(".page3").hide();
+			$(".page1").show();
+		});
+		function config(){
+    		responseData = $.ajax({
+		        url: "http://liveapp.1paiclub.com/rest/lightApp/config",
+		        async: false,
+		        type : "GET",
+		        dataType : "json",
+		        data: { 
+		        	"activityId":activityId,
+			        "hitType":hitType,
+			        "phone": phone,
+		        }
+		    }).responseText;
+		    responseData=eval("("+responseData+")");
+		    responseData = responseData.data;
+		    if(phone){
+		    	$("#phoneShow").html(phone);
+		    	dataDNum = responseData.dataDNum;
+			    dataDNumLimit = responseData.dayNumber;
+			    remainchance=dataDNumLimit-dataDNum;
+			    $("#remainchance").html(remainchance);
+				active();
+		    }
+		    token= responseData.token;
+		    for(i=0;i<8;i++){
+//		    	$("#lattice_"+responseData.prize[i].description+" .award h6").html(responseData.prize[i].name);
+//		    	if(responseData.prize[i].name=="谢谢参与"){
+//		    		$("#lattice_"+responseData.prize[i].description+" .award img").attr('src','images/type_5.png');
+//		    	}else{
+//		    		$("#lattice_"+responseData.prize[i].description+" .award img").attr('src','images/'+responseData.prize[i].merchantCode+'.png');
+//		    	}
+		    };
+		    var rule=$.parseHTML(responseData.description);
+		    $(".rule ul").html(rule);
+		    $("title").html(responseData.title);
+    	}
+		function validatemobile(inputString){
+		    var partten = /^1[3,5,7,8]\d{9}$/;
+		    if(partten.test(inputString))
+		    {
+		        return true;
+		    }
+		    else
+		    {
+		        alert('请输入正确的手机号码');
+		        return false;
+		    }
+		}
+		function getUrlParam(name){
+		    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		    var r = window.location.search.substr(1).match(reg);
+		    if (r != null){
+		        return unescape(r[2]);
+		    }
+		    return "";
+		}
+	}
+	function autoScroll(obj){
+		$(obj).find("ul").animate({  
+			marginTop : "-64px"  
+		},1000,function(){  
+			$(this).find("li:first").appendTo(this);
+			$(this).find("li:first").appendTo(this);
+			$(this).css({marginTop : "0px"})
+		});
+	};
+</script>
+</body>
+</html>

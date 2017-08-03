@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title></title>
+<script type="text/javascript">
+	$(document).ready(function(){
+		initFileUpload();
+        $('#input').change(function(){
+            var value=$("#input").find("option:selected").val();
+            if(value=='1'){
+                $('#total').removeClass('hide');
+                $('#day').addClass('hide');
+				$('#dayNumber').val(0)
+            }
+            if(value=='2'){
+                $('#day').removeClass('hide');
+                $('#total').addClass('hide');
+				$('#totalNumber').val(0)
+            }
+        });
+
+        $('#submitBtn').click(function(){
+            if($("#totalNumber").val()==''){
+                if($("#dayNumber").val()==''){
+                    alert('请输入可参与次数');
+                    return false;
+                }
+            }
+        })
+	});
+</script>
+</head>
+<body>
+	<div class="col-md-8">
+		<div class="form-container">
+			<h4>填写配置项</h4>
+			<form class="form-horizontal">
+				<div class="anchor">
+					<h5>基础设置</h5>
+					<hr>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">商户</label>
+					<div class="col-sm-6">
+						<select class="form-control" id='merchant'>
+							<option value=''>请选择商户</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">商户appid</label>
+					<div class="col-sm-6">
+						<input name="param_appid" type="text" class="form-control" value="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">指派给</label>
+					<div class="col-sm-6">
+						<select class="form-control" id='user'>
+							<option value=''>请选择用户</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">活动名称</label>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="title"
+							placeholder="请输入活动名称" value="">
+					</div>
+				</div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">活动开始时间</label>
+                    <div class="col-sm-6">
+                        <input id="startTime" class="form-control dates" type="text" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'%y-%M-%d %H-%m-%s',maxDate:'#F{$dp.$D(\'endTime\')}'})">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">活动结束时间</label>
+                    <div class="col-sm-6">
+                        <input id="endTime" class="form-control dates" type="text" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'startTime\')||\'%y-%M-%d %H-%m-%s\'}'})">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">兑奖截止日期</label>
+                    <div class="col-sm-6">
+                        <label class="radio-inline">
+                            <input type="radio" name="ticket" value="0" checked="checked">无截止日期
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="ticket" value="1" >当天有效
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="ticket" value="2">选择截止日期
+                        </label>
+                    </div>
+                </div>
+                <div style="display:none" id="ticketDateDiv" class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-6">
+                        <input id="endTicketTime" class="form-control dates" type="text" readonly onClick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'endTime\')||\'%y-%M-%d\'}'})">
+                    </div>
+                </div>
+				<div class="anchor">
+                    <h5>分享设置</h5>
+                    <hr>
+                </div>
+                <div class="form-group">
+					<label class="col-sm-2 control-label">分享图</label>
+					<div class="col-sm-6">
+						<input name="param_share" type="file">
+						<p class="help-block">上传分享图，图片比例：1:1 不小于200*200，限制png或者jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">分享标题</label>
+					<div class="col-sm-6">
+						<input name="param_sharetitle" type="text" class="form-control" value="">
+						<p class="help-block">微信朋友圈分享标题</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">分享内容</label>
+					<div class="col-sm-6">
+						<input name="param_sharecontent" type="text" class="form-control" value="">
+						<p class="help-block">微信朋友圈分享内容</p>
+					</div>
+				</div>
+				<div class="anchor">
+                    <h5>自定义设置</h5>
+                    <hr>
+                </div>
+                <div class="form-group" id="bannerImg">
+	                <div>
+	                	<div class="form-group banner">
+							<label class="col-sm-2 control-label">轮播图</label>
+							<div class="col-sm-6">
+								<input name="param_banner_0" type="file">
+							</div>
+							<div class="col-sm-2">
+								<button type="button" class="btn btn-info" name="add_banner">添加</button>
+								<button type="button" class="btn btn-info" name="del_banner" style="display: none;">删除</button>
+							</div>
+						</div>
+	                </div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label"></label>
+					<p class="help-block col-sm-10">上传轮播图，图片尺寸：750*490，限制png或者jpg</p>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-2 control-label">首页顶部图</label>
+					<div class="col-sm-6">
+						<input name="param_maintopimg" type="file">
+						<p class="help-block">上传首页顶部图，图片大小：750*622，限制png或者jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">商户logo</label>
+					<div class="col-sm-6">
+						<input name="param_logo" type="file">
+						<p class="help-block">上传商户logo，限制png或者jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">需要转发次数设置</label>
+					<div class="col-sm-6">
+						<input name="param_neednum" type="text" class="form-control" value="">
+						<p class="help-block">需要转发几次券，才能领取B券</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">活动规则</label>
+					<div class="col-sm-6">
+						<input name="param_rule" type="file">
+						<p class="help-block">上传活动规则，图片宽度：750,高度不限，限制png或者jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">二维码</label>
+					<div class="col-sm-6">
+						<input name="param_QRcode" type="file">
+						<p class="help-block">上传含二维码的图片，图片宽度：750,高度不限，限制png或者jpg</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">是否需要短信验证码</label>
+					<div class="col-sm-6">
+                        <label class="radio-inline">
+                            <input type="radio" name="param_vCode" value="0" checked="checked">不要
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="param_vCode" value="1" >要
+                        </label>
+                    </div>
+				</div>
+				
+				<div class="anchor">
+                    <h5>其他设置</h5>
+                    <hr>
+                </div>
+               <div class="form-group">
+                    <label class="col-sm-2 control-label">次数设置</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" id="input" class="direction" onchange="var this_value=$(this).children('option:selected').val();
+                        $(this).prev().val(this_value);">
+                            <option value="1">每人可参与的总次数</option>
+                            <option value="2">每人每天可参与的次数</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" id="total">
+                    <label class="col-sm-2 control-label">每人可参与的总次数</label>
+                    <div class="row">
+                        <div class="col-sm-6 ">
+                            <input type="text" class="form-control cs" id="totalNumber" placeholder="请输入每人可参与的总次数" value="">
+                            <p class="help-block">每人总共可参与次数，最小值为1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group hide" id="day">
+                    <label class="col-sm-2 control-label">每人每天可参与的次数</label>
+                    <div class="row">
+                        <div class="col-sm-6 ">
+                            <input type="text" class="form-control cs" id="dayNumber" placeholder="请输入每人每天可参与次数" value="">
+                            <p class="help-block">每人每天可参与次数，最小值为1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="anchor">
+                    <h5>奖项设置</h5>
+                    <hr>
+                </div>
+                <div class="col-sm-12" id="prizeContent">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                        	<th class="text-center">AB券</th>
+                            <th class="text-center">奖品名称</th>
+                            <th class="text-center">奖品总数量</th>
+                            <!--<th class="text-center">中奖率下限值</th>
+                            <th class="text-center">中奖率上限值</th>-->
+                            <th class="text-center">奖品描述</th>
+                            <th class="text-center">奖品类型</th>
+                            <!--<th class="text-center">操作</th>-->
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                        	<td>
+                        		<input type="hidden" class="form-control" name="prize_param3" value="">
+                        		<input class="btn btn-default" type="button" disabled="disabled" value="A券">
+                        	</td>
+                            <td class="text-center">
+                                <input type="text" class="form-control" name="prize_name">
+                            </td>
+                            <td class="text-center">
+                                <input type="text" class="form-control" name="prize_totalNumber">
+                            </td>
+                            <td class="text-center" style="display: none;">
+                                <input type="text" class="form-control" name="prize_lowerLimit" value="0">
+                            </td>
+                            <td class="text-center" style="display: none;">
+                                <input type="text" class="form-control" name="prize_upperLimit" value="1000">
+                            </td>
+                            <td class="text-center">
+                                <input type="text" class="form-control" name="prize_description">
+                            </td>
+                            <td class="text-center">
+                                <select class="form-control" name="prize_type">
+                                    <option value="1" selected="selected">普通奖品</option>
+                                    <option value="2">积分奖品</option>
+                                    <option value="3">优惠券奖品</option>
+                                    <option value="4">派币奖品</option>
+                                </select>
+                            </td>
+                            <!--<td class="text-center">
+                                <button type="button" class="btn btn-info" name="add_prize">添加</button>
+                            </td>-->
+                        </tr>
+                        <tr>
+                        	<td>
+                        		<input type="hidden" class="form-control" name="prize_param3" value="HELP_COUPON">
+                        		<input class="btn btn-default" type="button" disabled="disabled" value="B券">
+                        	</td>
+                            <td class="text-center">
+                                <input type="text" class="form-control" name="prize_name">
+                            </td>
+                            <td class="text-center">
+                                <input type="text" class="form-control" name="prize_totalNumber">
+                            </td>
+                            <td class="text-center" style="display: none;">
+                                <input type="text" class="form-control" name="prize_lowerLimit" value="2000">
+                            </td>
+                            <td class="text-center" style="display: none;">
+                                <input type="text" class="form-control" name="prize_upperLimit" value="3000">
+                            </td>
+                            <td class="text-center">
+                                <input type="text" class="form-control" name="prize_description">
+                            </td>
+                            <td class="text-center">
+                                <select class="form-control" name="prize_type">
+                                    <option value="1" selected="selected">普通奖品</option>
+                                    <option value="2">积分奖品</option>
+                                    <option value="3">优惠券奖品</option>
+                                    <option value="4">派币奖品</option>
+                                </select>
+                            </td>
+                            <!--<td class="text-center">
+                                <button type="button" class="btn btn-info" name="add_prize">添加</button>
+                            </td>-->
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-2 col-sm-offset-1">
+                            <a href="javascript:void(0);" class="btn btn-success btn-sm" id="submitBtn" role="button" onclick="return false;">确定</a>
+                        </div>
+                        <div class="col-sm-2">
+                            <a href="javascript:void(0);" class="btn btn-success btn-sm" id="cancelBtn" role="button" onclick="return false;">取消</a>
+                        </div>
+                    </div>
+                </div>
+
+			</form>
+		</div>
+	</div>
+	<script>
+	var bannerArry=[];
+	for(i=0;i<modifyParamsArray.length;i++){
+		if(modifyParamsArray[i].name.indexOf('param_banner_')!=-1){
+			bannerArry.push({"name":modifyParamsArray[i].name,"value":modifyParamsArray[i].value});
+		};
+	}
+	var banner_html='<div><div class="form-group banner">'+
+						'<label class="col-sm-2 control-label">轮播图</label>'+
+						'<div class="col-sm-6">'+
+							'<input name="param_banner_0" type="file" class="form-control">'+
+						'</div>'+
+						'<div class="col-sm-2">'+
+							'<button type="button" class="btn btn-info" name="add_banner">添加</button>'+
+						'</div>'+
+					'</div></div>';
+	$("#bannerImg").delegate("[name='add_banner']","click",function(){
+		$(this).attr("name","del_banner");
+		$(this).html("删除");
+		$(this).parent().parent().parent().after(banner_html);
+		initFileUpload();
+		bannerNumber();
+	});
+	for(i=1;i<bannerArry.length;i++){
+		$("[name='add_banner']").click();
+	}
+	for(i=0;i<bannerArry.length;i++){
+		$("[name='"+bannerArry[i].name+"']").val(bannerArry[i].value);
+	}
+	$("#bannerImg").delegate("[name='del_banner']","click",function(){
+		$(this).parent().parent().remove();
+		bannerNumber();
+	});
+	function bannerNumber(){
+		$("#bannerImg .banner").each(function(index){
+			$(this).find('label').html("轮播图"+(index+1));
+			$(this).find("input[name^='param_banner']").attr("name","param_banner_"+index);
+		})
+	}
+	</script>
+</body>
+</html>

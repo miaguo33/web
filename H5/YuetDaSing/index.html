@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta content="telephone=no" name="format-detection" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>YuetDaSing</title>
+		<link rel="stylesheet" href="static/css/style.css">
+		<link rel="stylesheet" href="static/css/animate.css">
+		<link rel="stylesheet" href="static/css/query.css">
+	</head>
+
+	<body>
+		<div class="page scroll">
+		</div>
+		<div class="loader1">
+			<img src="http://7xs6g8.com1.z0.glb.clouddn.com/YuetDaSin/static/image/loadings.gif">
+			<p id="loadingTips" style="display: none">玩命加载中，请耐心等待
+				<br/>或者刷新试试～</p>
+		</div>
+	</body>
+	<script src="sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+	<script src="sea-modules/seajs/seajs/2.2.0/seajs-text.js"></script>
+	<script>
+		// Set configuration
+		seajs.config({
+			base: "./sea-modules/",
+			alias: {
+				"jquery": "jquery/jquery/1.10.1/jquery.js",
+				"easing": "jquery/easing/1.3.0/easing.js",
+				"store_": "store.min.js",
+				"jweixin": "jweixin-1.0.0.js",
+				"quickSand": "jquery.quicksand.js"
+			}
+		});
+		// For development
+		seajs.use("./static/js/main");
+	</script>
+
+</html>
