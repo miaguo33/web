@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>企业账户</title>
+
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+		<link href="../../css/animate.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<link href="../../css/company.css" rel="stylesheet">
+
+	</head>
+
+	<body class="">
+		<div id="wrapper">
+			<div class="header">
+				<img class="logo" src="../../img/logo.png" />
+				<h3 class="header-describe">欢迎登录职信网平台</h3>
+				<div class="dropdown action">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+					</a>
+					<ul class="dropdown-menu animated fadeInLeft m-t-xs">
+						<li class="arrow"><img src="../../img/whitearrow.png" /></li>
+						<li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="divider"></li>
+						<li class="recharge">
+							<button>立即充值</button>
+						</li>
+						<li class="logout">退出登录</li>
+					</ul>
+				</div>
+				<div class="avart">
+					<img src="../../img/avart.jpg" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="sidebar-collapse">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+						</li>
+						<li class="active">
+							<a href="../index/enterprise_index.html"><i class="iconfont icon-shouye"></i> <span class="nav-label">首页</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">职业背景认证</span></a>
+						</li>
+						<li>
+							<a href="../apply-authen/apply-authen-list.html"><i class="iconfont icon-renzheng1"></i> <span class="nav-label">申请背景认证</span></a>
+						</li>
+						<li>
+							<a href="../authen/authen-list.html"><i class="iconfont icon-shouquan"></i> <span class="nav-label">进行背景认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+						</li>
+						<li>
+							<a href="../card-authen/authen-list.html"><i class="iconfont icon-mingpian"></i> <span class="nav-label">电子名片认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">企业中心</span></a>
+						</li>
+						<li>
+							<a href="../account/account.html"><i class="iconfont icon-kuajingzhifuiconqiyezhanghu"></i> <span class="nav-label">企业账户</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-xingren"></i> <span class="nav-label">杏仁账户</span></a>
+						</li>
+						<li>
+							<a href="../setting/setting.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span class="nav-label">账户设置</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-yijianfankui"></i> <span class="nav-label">意见反馈</span></a>
+						</li>
+					</ul>
+					<div class="rn">
+						Copyright ©2017 沪ICP备<br/>17015994号
+					</div>
+				</div>
+			</nav>
+
+			<div id="page-wrapper" class="gray-bg">
+				<div class="wrapper wrapper-content animated fadeInRightBig">
+					<div class="row animated fadeInRightBig">
+						<div class="col-lg-12">
+							<div class="ibox float-e-margins">
+								<div class="ibox-title">
+									<h5>企业账户</h5>
+									<div class="clearfix"></div>
+								</div>
+								<div class="ibox-content count">
+									<div class="border-top">
+										<div class="row count-value">
+											<div class="col-lg-4 current-balance">
+												<span><i class="iconfont icon-zhanghuyue"></i>服务费余额：</span>
+												<span class="text-danger">30000<span class="balance-spot">.00</span></span>
+											</div>
+											<div class="col-lg-4 locked-balance">
+												<span><i class="iconfont icon-qiapiansuoding"></i>冻结服务费：</span>
+												<span class="locked-value">300.00<i class="iconfont icon-shiyongbangzhu" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-html="true"></i></span>
+												<span class="text-danger invisible">占位对齐</span>
+											</div>
+											<div class="col-lg-4">
+												<button type="button" class="btn btn-w-m btn-danger" data-toggle="modal" data-target="#recharge">充值</button>
+											</div>
+										</div>
+									</div>
+									<div class="tabs-container border-top">
+										<ul class="nav nav-tabs">
+											<li class="active">
+												<a data-toggle="tab" href="#tab-1">获取明细</a>
+											</li>
+											<li class="">
+												<a data-toggle="tab" href="#tab-2">消耗明细</a>
+											</li>
+										</ul>
+										<div class="tab-content">
+											<div id="tab-1" class="tab-pane active">
+												<div class="panel-body">
+													<table class="table table-striped no-header">
+														<tbody>
+															<tr>
+																<td>充值送杏仁</td>
+																<td>充值30000元</td>
+																<td width="110">
+																	<button type="button" class="btn btn-outline btn-danger btn-sm" data-toggle="modal" data-target="#invoice">开发票</button>
+																</td>
+															</tr>
+															<tr>
+																<td>充值送杏仁</td>
+																<td>充值30000元</td>
+																<td width="110">
+																	<button type="button" class="btn btn-outline btn-sm" disabled="disabled">已开发票</button>
+																</td>
+															</tr>
+															<tr>
+																<td>充值送杏仁</td>
+																<td>充值30000元</td>
+																<td width="110">
+																	+200
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											<div id="tab-2" class="tab-pane">
+												<div class="panel-body">
+													<div class="panel-body">
+														<table class="table table-striped no-header">
+															<tbody>
+																<tr>
+																	<td>充值送杏仁</td>
+																	<td>充值30000元</td>
+																	<td width="110">
+																		<button type="button" class="btn btn-outline btn-danger btn-sm">开发票</button>
+																	</td>
+																</tr>
+																<tr>
+																	<td>充值送杏仁</td>
+																	<td>充值30000元</td>
+																	<td width="110">
+																		<button type="button" class="btn btn-outline btn-sm" disabled="disabled">已开发票</button>
+																	</td>
+																</tr>
+																<tr>
+																	<td>充值送杏仁</td>
+																	<td>充值30000元</td>
+																	<td width="110">
+																		+200
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								
+									<div class="modal fade" id="recharge" tabindex="-1" role="dialog" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+													<h4 class="modal-title">服务费充值</h4>
+												</div>
+												<div class="modal-body">
+													<div class="red-triangle-frame">
+														<label>
+															<h2>3000元</h2>
+															<h5>赠送150杏仁</h5>
+															<input type="radio" name="recharge" value="" >
+															<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+														</label>
+														<label>
+															<h2>6000元</h2>
+															<h5>赠送500杏仁</h5>
+															<input type="radio" name="recharge" value="">
+															<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+														</label>
+														<label>
+															<h2>10000元</h2>
+															<h5>赠送1000杏仁</h5>
+															<input type="radio" name="recharge" value="">
+															<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+														</label>
+														<label>
+															<h2>30000元</h2>
+															<h5>赠送5000杏仁</h5>
+															<input type="radio" name="recharge" value="">
+															<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+														</label>
+														<label>
+															<h2>50000元</h2>
+															<h5>赠送10000杏仁</h5>
+															<input type="radio" name="recharge" value="">
+															<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+														</label>
+														<label>
+															<h2>100000元</h2>
+															<h5>赠送50000杏仁</h5>
+															<input type="radio" name="recharge" value="">
+															<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+														</label>
+													</div>
+													<div class="text-center">
+														<button type="button" class="btn btn-w-m btn-danger btn-lg m-t-lg">确认购买</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								
+									<div class="modal fade" id="invoice" tabindex="-1" role="dialog" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+													<h4 class="modal-title">添加HR</h4>
+												</div>
+												<div class="modal-body">
+													<form method="get" class="form-horizontal">
+														<div class="form-group">
+															<label class="col-sm-12 control-label text-only text-danger">* 请核对/填写以下信息，提交后，我们的客户代表会及时和您联系！</label>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-12 control-label text-only">发票抬头：<span>上海火星网络科技有限公司</span></label>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-12 control-label text-only">统一社会信用代码：<span>12324342351531</span></label>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-2 control-label"><span>联系人</span>:</label>
+															<div class="col-sm-4"><input type="text" class="form-control" placeholder="请输入姓名"></div>
+															<label class="col-sm-2 control-label"><span>联系电话</span>:</label>
+															<div class="col-sm-4"><input type="text" class="form-control" placeholder="请输入姓名"></div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-2 control-label"><span>邮寄地址</span>:</label>
+															<div class="col-sm-10"><input type="text" class="form-control" placeholder="请输入手机号"></div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-2 control-label"><span>备注</span>:</label>
+															<div class="col-sm-10"><input type="text" class="form-control" placeholder="请输入身份证号"></div>
+														</div>
+														<div class="form-group text-center">
+															<button type="button" class="btn btn-w-m btn-danger btn-lg">确认</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mainly scripts -->
+		<script src="../../js/jquery-2.1.1.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom and plugin javascript -->
+		<script src="../../js/inspinia.js"></script>
+		<script src="../../js/plugins/pace/pace.min.js"></script>
+		
+		<script src="../../js/tools.js"></script>
+		<script>
+			$(document).ready(function() { 
+				tools.centerModals();
+				var dataContent = '<h5 clas="blocked-rule-info">冻结服务费的简单介绍和服务费使用规则</h5>'+
+							'<table class="table table-bordered blocked-rule no-margins">'+
+								'<thead>'+
+									'<tr>'+
+										'<th>项目</th>'+
+										'<th>扣除服务费</th>'+
+										'<th>说明</th>'+
+									'</tr>'+
+								'</thead>'+
+								'<tbody>'+
+									'<tr>'+
+										'<td>申请简历认证</td>'+
+										'<td>2元/人次</td>'+
+										'<td width="370">查看职信报告基础版/深度版会减免2元<br/>免费赠送学历认证（国内2001年以后的个人高等教育学历）</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td>实名认证</td>'+
+										'<td>2元/人次</td>'+
+										'<td>必选项。任何认证必须先进行个人实名</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td>个人工商查询</td>'+
+										'<td>15元/人次</td>'+
+										'<td>企业法定代表人信息，企业股东信息等</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td>职业资格</td>'+
+										'<td>10元/人次</td>'+
+										'<td>人力资源和社会保障部认可职业技能的证书（不含法律类、财经类、医学类）</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td>不良信息查询</td>'+
+										'<td>15元/人次</td>'+
+										'<td>前科、在逃、吸毒、涉毒</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td>职信报告-基础版</td>'+
+										'<td>60元/份</td>'+
+										'<td>查看时扣除58元（2元已在申请简历认证时扣除）<br/>内容包括：公司、部门、岗位、入离职时间、工作类型、学历等</td>'+
+									'</tr>'+
+									'<tr>'+
+										'<td>职信报告-深度版</td>'+
+										'<td>320元/份</td>'+
+										'<td>查看时扣除318元（2元已在申请简历认证时扣除）<br/>内容包括但不限于：基础版内容+离职原因、离职纠纷、竞业、团队、上级信息、绩效、职责、职业风格、获奖情况、综合能力等纬度（具体以个人提供的信息为准）</td>'+
+									'</tr>'+
+								'</tbody>'+
+							'</table>'
+				$(".icon-shiyongbangzhu").attr("data-content",dataContent);
+			}); 
+		</script>
+	</body>
+
+</html>

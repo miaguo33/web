@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>支付</title>
+
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+		<link href="../../css/animate.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<link href="../../css/company.css" rel="stylesheet">
+
+	</head>
+
+	<body class="">
+
+		<div id="wrapper">
+			<div class="header">
+				<img class="logo" src="../../img/logo.png" />
+				<h3 class="header-describe">欢迎登录职信网平台</h3>
+				<div class="dropdown action">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+					</a>
+					<ul class="dropdown-menu animated fadeInLeft m-t-xs">
+						<li class="arrow"><img src="../../img/whitearrow.png" /></li>
+						<li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="divider"></li>
+						<li class="recharge">
+							<button>立即充值</button>
+						</li>
+						<li class="logout">退出登录</li>
+					</ul>
+				</div>
+				<div class="avart">
+					<img src="../../img/avart.jpg" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="sidebar-collapse">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+						</li>
+						<li class="active">
+							<a href="../index/enterprise_index.html"><i class="iconfont icon-shouye"></i> <span class="nav-label">首页</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">职业背景认证</span></a>
+						</li>
+						<li>
+							<a href="../apply-authen/apply-authen-list.html"><i class="iconfont icon-renzheng1"></i> <span class="nav-label">申请背景认证</span></a>
+						</li>
+						<li>
+							<a href="../authen/authen-list.html"><i class="iconfont icon-shouquan"></i> <span class="nav-label">进行背景认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+						</li>
+						<li>
+							<a href="../card-authen/authen-list.html"><i class="iconfont icon-mingpian"></i> <span class="nav-label">电子名片认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">企业中心</span></a>
+						</li>
+						<li>
+							<a href="../account/account.html"><i class="iconfont icon-kuajingzhifuiconqiyezhanghu"></i> <span class="nav-label">企业账户</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-xingren"></i> <span class="nav-label">杏仁账户</span></a>
+						</li>
+						<li>
+							<a href="../setting/setting.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span class="nav-label">账户设置</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-yijianfankui"></i> <span class="nav-label">意见反馈</span></a>
+						</li>
+					</ul>
+					<div class="rn">
+						Copyright ©2017 沪ICP备<br/>17015994号
+					</div>
+				</div>
+			</nav>
+
+			<div id="page-wrapper" class="gray-bg">
+				<div class="wrapper wrapper-content animated fadeInRightBig">
+					<div class="row animated fadeInRightBig">
+						<div class="col-lg-12">
+							<div class="ibox float-e-margins">
+								<div class="ibox-title">
+									<h5>确认订单</h5>
+									<div class="clearfix"></div>
+								</div>
+								<div class="ibox-content">
+									<div class="border-top">
+										<div class="value-count-item m-t-md">
+											<span>订单金额：</span>
+											<span>¥</span>
+											<span class="value">3222</span>
+										</div>
+										<div class="value-count-item">
+											<span>赠送积分：</span>
+											<span>¥</span>
+											<span class="value">300</span>
+										</div>
+										<div class="value-count">
+											<span>实付金额：</span>
+											<span class="text-danger">¥</span>
+											<span class="text-danger value">3000</span>
+										</div>
+										<div class="red-left-title">
+											<span class="pull-left">支付方式选择</span>
+										</div>
+										<div class="red-triangle-frame pay-type m-b m-l-n">
+											<label>
+												<img src="../../img/wechat.jpg" />
+												<input type="radio" name="ability" value="" checked="checked">
+												<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+											</label>
+											<label class="">
+												<img src="../../img/alipay.jpg" />
+												<input type="radio" name="ability" value="">
+												<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+											</label>
+											<label class="">
+												<img src="../../img/unionpay.jpg" />
+												<input type="radio" name="ability" value="">
+												<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+											</label>
+											
+										</div>
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th colspan="2">中国工商银行</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>公司账号</td>
+													<td>6002 1234 1234 1234 775</td>
+												</tr>
+												<tr>
+													<td>开户名</td>
+													<td>上海履途网络科技有限公司</td>
+												</tr>
+												<tr>
+													<td>分行名</td>
+													<td>中国工商银行漕河泾支行</td>
+												</tr>
+											</tbody>
+										</table>
+										<h5 class="text-center text-danger">银行汇款后烦请你发短信 142****2345 通知我们。（由于汇款银行不同，我们确认您的汇款大概需要1-3个工作日）</h5>
+										<div class="text-center">
+											<button type="button" class="btn btn-w-m btn-danger btn-lg m-t-lg" data-toggle="modal" data-target="#pay-success">立即支付</button>
+										</div>
+										<div class="modal fade" id="pay-success" tabindex="-1" role="dialog" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+														<h4 class="modal-title">购买成功</h4>
+													</div>
+													<div class="modal-body">
+														<div class="text-center">
+															<span><i class="iconfont icon-shenqingchenggong"></i></span>
+															<h2>支付成功</h2>
+														</div>
+														<table class="pay-info">
+															<tbody>
+																<tr>
+																	<td>
+																		<div class="inline m-t-sm m-b-sm">
+																			<h4>
+																				<i class="iconfont icon-chongzhi"></i>
+																				<span>本次充值：</span>
+																				<span class="text-danger">¥ 300.00</span>
+																			</h4>
+																			<h4>
+																				<i class="iconfont icon-zhanghuyue"></i>
+																				<span>消耗余额：</span>
+																				<span class="text-danger">¥ 3000.00</span>
+																			</h4>
+																			<h4>
+																				<i class="iconfont icon-xingren"></i>
+																				<span>消耗杏仁：</span>
+																				<span class="text-danger">300</span>
+																			</h4>
+																		</div>
+																		
+																	</td>
+																	<td>
+																		<div class="inline m-t-sm m-b-sm">
+																			<h4>
+																				<i class="iconfont icon-zhanghuyue"></i>
+																				<span>账户余额：</span>
+																				<span class="text-danger">¥ 300.00</span>
+																			</h4>
+																			<h4>
+																				<i class="iconfont icon-xingren"></i>
+																				<span>赠送杏仁：</span>
+																				<span class="text-danger"> 300</span>
+																			</h4>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+														<div class="text-center m-b-sm">
+															<button type="button" class="btn btn-w-m btn-danger btn-lg m-b-lg">确定</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mainly scripts -->
+		<script src="../../js/jquery-2.1.1.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom and plugin javascript -->
+		<script src="../../js/inspinia.js"></script>
+		<script src="../../js/plugins/pace/pace.min.js"></script>
+
+		<script src="../../js/tools.js"></script>
+		<script>
+			$(document).ready(function() {
+				tools.redTriangleFrame();
+			});
+		</script>
+	</body>
+
+</html>

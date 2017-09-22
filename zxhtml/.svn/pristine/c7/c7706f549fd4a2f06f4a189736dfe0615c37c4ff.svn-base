@@ -1,0 +1,101 @@
+.content>.information>.edit{
+    border-bottom:0;
+}
+.content>.information>.edit>span:nth-of-type(1){
+    display: flex;
+    align-items: center;
+    margin-left:-20px;
+}
+.information>.edit>span>i{
+    display: block;
+    width:4px;
+    height:14px;
+    background: #e60012;
+    margin-right:10px;
+}
+#card{
+    border:0;
+    background:#fff;
+}
+.content>ul{
+    justify-content: center;
+}
+#card>form>.forms>.form-group{
+    position: relative;
+}
+#card>form>.forms>.form-group>.portrait{
+    width:140px;
+    height:140px;
+    border-radius: 50%;
+    background: #ccc;
+    position: absolute;
+    left:0;right:0;margin:auto;
+    background-size:cover ;
+    background-position: center center;
+}
+#card>form>.forms>.form-group>.label{
+    width:140px;
+    height:30px;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 5px;
+    background: #e60012;
+    color: #fff;
+    position: absolute;
+    left:0;right:0;margin:auto;
+    top:155px;
+    z-index: 200;
+    font-size:14px;
+}
+.information .contents>.list{
+    height:570px;
+    box-sizing: border-box;
+    padding-right:5px;
+
+}
+.information .contents>.list>ul{
+    border:1px solid #ccc;
+    width:100%;
+    height:100%;
+    overflow-y: scroll;
+    padding:32px 22px;
+    border-radius: 6px;
+}
+.information .contents>.list>ul>li{
+    float: left;
+    width:104px;
+    height:156px;
+    margin-right:25px;
+    cursor: pointer;
+}
+.information .contents>.list>ul>li:nth-of-type(3)~li{
+    margin-top:20px;
+}
+.information .contents>.list>ul>li>img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+.information .contents>.list>ul>li:nth-of-type(3n+0){
+    margin-right:0;
+}
+.information .contents>.show{
+    height:570px;
+    display: flex;
+}
+.information .contents>.show>.phone{
+    width:276px;
+    height:100%;
+    background: url("../img/lbs-shouji.png") no-repeat;
+    background-position: center center;
+    background-size:cover;
+    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.information .contents>.show>.phone>img{
+    display: block;
+    width:240px;
+    height:432px;
+}

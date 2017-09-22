@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>发票</title>
+
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+		<link href="../../css/animate.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<link href="../../css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+		<link href="../../css/company.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../css/cs-select.css" />
+	</head>
+
+	<body class="">
+		<div id="wrapper">
+			<div class="header">
+				<img class="logo" src="../../img/logo.png" />
+				<h3 class="header-describe">欢迎登录职信网平台</h3>
+				<div class="dropdown action">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+					</a>
+					<ul class="dropdown-menu animated fadeInLeft m-t-xs">
+						<li class="arrow"><img src="../../img/whitearrow.png" /></li>
+						<li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="divider"></li>
+						<li class="recharge">
+							<button>立即充值</button>
+						</li>
+						<li class="logout">退出登录</li>
+					</ul>
+				</div>
+				<div class="avart">
+					<img src="../../img/avart.jpg" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="sidebar-collapse">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+						</li>
+						<li class="active">
+							<a href="javascript:void(0)"><i class="iconfont icon-shouye"></i> <span class="nav-label">首页</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">职信认证</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-renzheng1"></i> <span class="nav-label">申请背景认证</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-shouquan"></i> <span class="nav-label">授权</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-mingpian"></i> <span class="nav-label">我的电子名片</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-tongxunlu"></i> <span class="nav-label">名片通讯录</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">个人中心</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-xingren"></i> <span class="nav-label">杏仁</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-zhanghaoshezhi"></i> <span class="nav-label">帐号设置</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-Fill"></i> <span class="nav-label">意见反馈</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-shiyongbangzhu"></i> <span class="nav-label">使用帮助</span></a>
+						</li>
+					</ul>
+					<div class="rn">
+						Copyright ©2017 沪ICP备<br/>17015994号
+					</div>
+				</div>
+			</nav>
+			<div id="page-wrapper" class="gray-bg">
+				<div class="wrapper wrapper-content animated fadeInRightBig">
+					<div class="row animated fadeInRightBig">
+						<div class="col-lg-12">
+							<div class="ibox float-e-margins">
+								<div class="ibox-content">
+									<div class="tabs-container">
+										<ul class="nav nav-tabs new-tabs">
+											<li class="active">
+												<a data-toggle="tab" href="#tab-1">索要发票</a>
+											</li>
+											<li class="">
+												<a data-toggle="tab" href="#tab-2">发票列表</a>
+											</li>
+											<li class="">
+												<a data-toggle="tab" href="#tab-3">发票信息</a>
+											</li>
+											<li class="">
+												<a data-toggle="tab" href="#tab-4">寄送地址</a>
+											</li>
+										</ul>
+										<div class="tab-content border-top">
+											<div id="tab-1" class="tab-pane active">
+												<div class="panel-body ask-for-invoice">
+													<div class="step1" style="display: none;">
+														<ul class="step-arrow m-t m-b-sm">
+															<li>
+																<h4>2、确定发票信息和地址</h4>
+															</li>
+															<li class="active">
+																<h4>1、开票订单、月结算选择</h4>
+															</li>
+														</ul>
+														<div class="gray-bg warning-info m-b-sm">
+															<label><span>温馨提示 :</span></label>
+															<ul>
+																<li>1、月付费结算单的可开票金额为当月实际结算金额。</li>
+																<li>2、本月产生的后付费业务结算单开具在下个月二号以后才可以索取发票。</li>
+																<li>3、发票基于订单、月结算单开具（单人订单、月结算单不可拆分开票）。</li>
+																<li>4、自2017.07.01起，申请普通发票需填写税号信息，否则将无法应税使用，请及时维护您的税号信息。</li>
+																<li>5、您设置的企业类发票抬头，将锁定为您资金体现的户名。</li>
+															</ul>
+														</div>
+														<div class="gray-bg">
+															<div class="red-left-title">
+																<span class="pull-left">发票列表</span>
+															</div>
+														</div>
+														<div class="row m-t">
+															<div class="col-lg-6  m-b">
+																<div class="input-group input-daterange">
+																	<span class="input-group-addon">订单成功时间 :&nbsp;&nbsp;</span>
+																	<input type="text" class="form-control form-control-sm" name="start" />
+																	<span class="input-group-addon">&nbsp;&nbsp;至&nbsp;&nbsp;</span>
+																	<input type="text" class="form-control form-control-sm" name="end" />
+																</div>
+															</div>
+															<div class="col-lg-6 m-b">
+																<div class="input-group">
+																	<span class="input-group-addon">可开票金额 :&nbsp;&nbsp;</span>
+																	<input type="text" class="form-control form-control-sm" />
+																	<span class="input-group-addon">&nbsp;&nbsp;至&nbsp;&nbsp;</span>
+																	<input type="text" class="form-control form-control-sm" />
+																	<span class="input-group-addon">
+																		<button class="btn btn-w-m btn-danger m-l-lg">搜索</button>
+																	</span>
+																</div>
+															</div>
+														</div>
+														<div class="gray-bg invoice-count">
+															<div class="pull-left">
+																<h3><span>已选总金额 :</span><span class="text-danger">￥0.00</span></h3>
+																<h5>(可开票总金额 : ¥1000.0)</h5>
+															</div>
+															<div class="pull-right m-l-lg">
+																<button class="btn btn-outline btn-danger btn-sm">索取发票</button>
+															</div>
+															<div class="pull-right">
+																<h3><span>待开票金额 ：</span><span class="text-danger">￥0.00</span></h3>
+																<h5>(待开票金额=已选金额：¥ 0.00-欠票金额：¥ 0.00)</h5>
+															</div>
+														</div>
+														<table class="table table-striped table-sm m-t-md">
+															<thead>
+																<tr>
+																	<th width="30"></th>
+																	<th>订单编号</th>
+																	<th>产品名称</th>
+																	<th>订单实付金额</th>
+																	<th>支付时间</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>
+																		<div class="checkbox checkbox-danger">
+																			<input name="" type="checkbox">
+																			<label for=""></label>
+																		</div>
+																	</td>
+																	<td>20170705232</td>
+																	<td>认证服务费</td>
+																	<td>¥ 330.00</td>
+																	<td>2017-09-10</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="checkbox checkbox-danger">
+																			<input name="" type="checkbox">
+																			<label for=""></label>
+																		</div>
+																	</td>
+																	<td>20170705232</td>
+																	<td>认证服务费</td>
+																	<td>¥ 330.00</td>
+																	<td>2017-09-10</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+
+													<div class="step2">
+														<ul class="step-arrow m-t m-b-sm">
+															<li  class="active">
+																<h4>2、确定发票信息和地址</h4>
+															</li>
+															<li class="visited">
+																<h4>1、开票订单、月结算选择</h4>
+															</li>
+														</ul>
+														<div class="invoice-list">
+															<div class="red-left-title red-left-title-lg">
+																<span class="pull-left">您选取了 <span class="text-danger">2</span>条单据开具发票&nbsp;&nbsp;<span>(若选中多条订单，订单金额将合并开具在一张票据中)</span></span>
+															</div>
+															<ul class="m-t-lg">
+																<li class="text-center">
+																	<div class="row">
+																		<div class="col-lg-4"><span>发票抬头：</span><span>上海旅途网络科技有限公司</span></div>
+																		<div class="col-lg-4"><span>开具类型：</span><span>企业</span></div>
+																		<div class="col-lg-4"><span>发票类型：</span><span>普通增值税发票</span></div>
+																	</div>
+																</li>
+																<li class="text-center">
+																	<div class="row">
+																		<div class="col-lg-4"><span>发票抬头：</span><span>上海旅途网络科技有限公司</span></div>
+																		<div class="col-lg-4"><span>开具类型：</span><span>企业</span></div>
+																		<div class="col-lg-4"><span>发票类型：</span><span>普通增值税发票</span></div>
+																	</div>
+																</li>
+															</ul>
+															<div class="invoice-allcount m-t-lg">
+																<span class="pull-right">开票金额合计：<span class="text-danger">¥ 3000.00</span></span>
+															</div>
+														</div>
+														<div class="red-left-title">
+															<span class="pull-left">寄送地址<span>（将以快递（免费）方式寄送给你）</span></span>
+														</div>
+														<table class="table table-striped table-sm m-t-md">
+															<thead>
+																<tr>
+																	<th width="30"></th>
+																	<th>收件人姓名</th>
+																	<th>电话号码</th>
+																	<th>地址</th>
+																	<th>邮编</th>
+																	<th width="112">操作</th>
+																	<th width="140"></th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>
+																		<div class="checkbox checkbox-danger">
+																			<input name="" type="checkbox">
+																			<label for=""></label>
+																		</div>
+																	</td>
+																	<td>刘能</td>
+																	<td>12313124141</td>
+																	<td>上海市徐汇区钦州北路1199弄87号楼R07室</td>
+																	<td>20000</td>
+																	<td>
+																		<button class="btn btn-link text-danger btn-sm" disabled="disabled">默认地址</button>
+																	</td>
+																	<td>
+																		<div class="btngroup">
+																			<button class="btn btn-link text-danger btn-sm border-right" data-toggle="modal" data-target="#address">修改</button>
+																			<button class="btn btn-link text-danger btn-sm">删除</button>
+																		</div>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<div class="checkbox checkbox-danger">
+																			<input name="" type="checkbox">
+																			<label for=""></label>
+																		</div>
+																	</td>
+																	<td>刘能</td>
+																	<td>12313124141</td>
+																	<td>上海市徐汇区钦州北路1199弄87号楼R07室</td>
+																	<td>20000</td>
+																	<td>
+																		<button class="btn btn-link text-danger btn-sm">设为默认地址</button>
+																	</td>
+																	<td>
+																		<div class="btngroup">
+																			<button class="btn btn-link text-danger btn-sm border-right" data-toggle="modal" data-target="#address">修改</button>
+																			<button class="btn btn-link text-danger btn-sm">删除</button>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+														<div>
+															<button class="btn btn-link text-danger btn-lg add-address" data-toggle="modal" data-target="#address"><span>+</span>新增地址&nbsp;&nbsp;&nbsp;&nbsp;<span>(最多保存5个地址)</span></button>
+														</div>
+													</div>
+
+												</div>
+											</div>
+											<div id="tab-2" class="tab-pane">
+												<div class="panel-body invoice-list">
+													<div class="red-left-title">
+														<span class="pull-left">发票列表</span>
+													</div>
+													<div class="row m-b-xs">
+														<div class="col-lg-6">
+															<div class="form-group">
+																<div class="input-group input-daterange">
+																	<span class="input-group-addon">发生时间 :&nbsp;&nbsp;</span>
+																	<input type="text" class="form-control form-control-sm" name="start" />
+																	<span class="input-group-addon">&nbsp;&nbsp;至&nbsp;&nbsp;</span>
+																	<input type="text" class="form-control form-control-sm" name="end" />
+																</div>
+															</div>
+														</div>
+														<div class="col-lg-6">
+															<div class="form-group">
+																<div class="input-group">
+																	<span class="input-group-addon">订单号 :&nbsp;&nbsp;</span>
+																	<input type="text" class="form-control form-control-sm" name="" />
+																	<span class="input-group-addon">
+								                                    	<button class="btn btn-w-m btn-danger m-l-lg">搜索</button>
+								                                    </span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<table class="table table-striped">
+														<thead>
+															<tr>
+																<th>发票金额</th>
+																<th>发生时间</th>
+																<th>发票抬头</th>
+																<th>状态</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>¥ 330.00</td>
+																<td>2017-09-04 11:30:24</td>
+																<td>上海履途网络科技有限公司</td>
+																<td>已开发票</td>
+															</tr>
+															<tr>
+																<td>¥ 330.00</td>
+																<td>2017-09-04 11:30:24</td>
+																<td>上海履途网络科技有限公司</td>
+																<td>已开发票</td>
+															</tr>
+															<tr>
+																<td>¥ 330.00</td>
+																<td>2017-09-04 11:30:24</td>
+																<td>上海履途网络科技有限公司</td>
+																<td>已开发票</td>
+															</tr>
+														</tbody>
+													</table>
+
+												</div>
+											</div>
+											<div id="tab-3" class="tab-pane">
+												<div class="panel-body invoice-info">
+													<div class="red-left-title">
+														<span class="pull-left">发票信息</span>
+													</div>
+													<ul>
+														<li>
+															<div class="col-sm-5">发票抬头：</div>
+															<div class="col-sm-7">上海履途网络科技有限公司</div>
+														</li>
+														<li>
+															<div class="col-sm-5">开具类型：</div>
+															<div class="col-sm-7">企业</div>
+														</li>
+														<li>
+															<div class="col-sm-5">发票类型：</div>
+															<div class="col-sm-7">增值税普通发票</div>
+														</li>
+														<li>
+															<div class="col-sm-5">税务登记证号：</div>
+															<div class="col-sm-7">M232M23232309234</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div id="tab-4" class="tab-pane">
+												<div class="panel-body send-address">
+													<div class="red-left-title">
+														<span class="pull-left">寄送地址</span>
+													</div>
+													<table class="table table-striped">
+														<thead>
+															<tr>
+																<th>收件人姓名</th>
+																<th>电话号码</th>
+																<th>地址</th>
+																<th>邮编</th>
+																<th width="112">操作</th>
+																<th width="140"></th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>刘能</td>
+																<td>12313124141</td>
+																<td>上海市徐汇区钦州北路1199弄87号楼R07室</td>
+																<td>20000</td>
+																<td>
+																	<button class="btn btn-link text-danger btn-sm" disabled="disabled">默认地址</button>
+																</td>
+																<td>
+																	<div class="btngroup">
+																		<button class="btn btn-link text-danger btn-sm border-right" data-toggle="modal" data-target="#address">修改</button>
+																		<button class="btn btn-link text-danger btn-sm">删除</button>
+																	</div>
+																</td>
+															</tr>
+															<tr>
+																<td>刘能</td>
+																<td>12313124141</td>
+																<td>上海市徐汇区钦州北路1199弄87号楼R07室</td>
+																<td>20000</td>
+																<td>
+																	<button class="btn btn-link text-danger btn-sm">设为默认地址</button>
+																</td>
+																<td>
+																	<div class="btngroup">
+																		<button class="btn btn-link text-danger btn-sm border-right" data-toggle="modal" data-target="#address">修改</button>
+																		<button class="btn btn-link text-danger btn-sm">删除</button>
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+													<div>
+														<button class="btn btn-link text-danger btn-lg add-address" data-toggle="modal" data-target="#address"><span>+</span>新增地址&nbsp;&nbsp;&nbsp;&nbsp;<span>(最多保存5个地址)</span></button>
+													</div>
+
+													<!--新增修改用同一个模态框-->
+													<div class="modal fade" id="address" tabindex="-1" role="dialog" aria-hidden="true">
+														<div class="modal-dialog modal-lg">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+																	<h4>新增收货地址</h4>
+																</div>
+																<div class="modal-body">
+																	<form method="get" class="form-horizontal">
+																		<div class="form-group">
+																			<label class="col-sm-3 control-label control-label-sm"><span class="text-danger">*&nbsp;&nbsp;</span>收件人姓名：</label>
+																			<div class="col-sm-5"><input type="text" class="form-control form-control-sm" placeholder="请输入收件人姓名"></div>
+																		</div>
+																		<div class="form-group">
+																			<label class="col-sm-3 control-label control-label-sm"><span class="text-danger">*&nbsp;&nbsp;</span>所在地区：</label>
+																			<div class="col-sm-3">
+																				<select class="form-control form-control-sm cs-select cs-skin-border" name="">
+																					<option value="" disabled selected>请选择</option>
+																					<option value="1">地区1</option>
+																					<option value="2">地区2</option>
+																					<option value="3">地区3</option>
+																					<option value="4">地区4</option>
+																					<option value="4">地区4</option>
+																					<option value="4">地区4</option>
+																					<option value="4">地区4</option>
+																				</select>
+																			</div>
+																			<div class="col-sm-3">
+																				<select class="form-control form-control-sm cs-select cs-skin-border" name="">
+																					<option value="" disabled selected>请选择</option>
+																					<option value="1">地区1</option>
+																					<option value="2">地区2</option>
+																					<option value="3">地区3</option>
+																					<option value="4">地区4</option>
+																				</select>
+																			</div>
+																			<div class="col-sm-3">
+																				<select class="form-control form-control-sm cs-select cs-skin-border" name="">
+																					<option value="" disabled>请选择</option>
+																					<option value="1" selected>地区1</option>
+																					<option value="2">地区2</option>
+																					<option value="3">地区3</option>
+																					<option value="4">地区4</option>
+																				</select>
+																			</div>
+																		</div>
+																		<div class="form-group">
+																			<label class="col-sm-3 control-label control-label control-label-sm"><span class="text-danger">*&nbsp;&nbsp;</span>街道地址：</label>
+																			<div class="col-sm-9"><input type="text" class="form-control form-control-sm" placeholder="请输入详细地址"></div>
+																		</div>
+																		<div class="form-group">
+																			<label class="col-sm-3 control-label control-label control-label-sm"><span class="text-danger">*&nbsp;&nbsp;</span>邮件编码：</label>
+																			<div class="col-sm-5"><input type="text" class="form-control form-control-sm" placeholder="请输入邮政编码"></div>
+																		</div>
+																		<div class="form-group">
+																			<label class="col-sm-3 control-label control-label control-label-sm"><span class="text-danger">*&nbsp;&nbsp;</span>手机号：</label>
+																			<div class="col-sm-5"><input type="text" class="form-control form-control-sm" placeholder="请输入手机号"></div>
+																		</div>
+																		<div class="form-group m-t-n-md">
+																			<label class="col-sm-3 control-label control-label control-label-sm"><span class="text-danger"></label>
+																			<div class="col-sm-5">
+																				<div class="checkbox checkbox-danger">
+																					<input id="default" name="" type="checkbox">
+																					<label for="default">设为默认</label>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="form-group btngroup text-center m-b-sm">
+																			<button type="button" class="btn btn-w-m btn-default btn-lg  m-t-xl">确定</button>
+																			<button type="button" class="btn btn-w-m btn-danger btn-lg m-l-md  m-t-xl">确定</button>
+																		</div>
+																	</form>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mainly scripts -->
+		<script src="../../js/jquery-2.1.1.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom and plugin javascript -->
+		<script src="../../js/inspinia.js"></script>
+		<script src="../../js/plugins/pace/pace.min.js"></script>
+		<!--下拉框-->
+		<script src="../../js/classie.js"></script>
+		<script src="../../js/selectFx.js"></script>
+
+		<script src="../../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+		<script src="../../js/plugins/datapicker/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+
+		<script src="../../js/tools.js"></script>
+		<script>
+			$(document).ready(function() {
+				[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function(el) {
+					new SelectFx(el);
+				});
+
+				$(".input-daterange").datepicker({
+					keyboardNavigation: false,
+					forceParse: false,
+					autoclose: true,
+					format: "yyyy-mm-dd",
+					orientation: "top left",
+					language: "zh-CN",
+					startView: 2,
+					minViewMode: 0,
+				});
+			});
+		</script>
+	</body>
+
+</html>

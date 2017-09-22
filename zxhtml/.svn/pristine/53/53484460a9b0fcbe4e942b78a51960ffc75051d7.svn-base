@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>账户设置</title>
+
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+		<link href="../../css/animate.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<link href="../../css/company.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/alpha-box.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/alpha.css" />
+		<script type="text/javascript">
+			// 是否在数组内
+			function in_array(needle, haystack) {
+				if(typeof needle == 'string' || typeof needle == 'number') {
+					for(var i in haystack) {
+						if(haystack[i] == needle) {
+							return true;
+						}
+					}
+				}
+				return false;
+			}
+		</script>
+	</head>
+
+	<body class="">
+
+		<div id="wrapper">
+			<div class="header">
+				<img class="logo" src="../../img/logo.png" />
+				<h3 class="header-describe">欢迎登录职信网平台</h3>
+				<div class="dropdown action">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+					</a>
+					<ul class="dropdown-menu animated fadeInLeft m-t-xs">
+						<li class="arrow"><img src="../../img/whitearrow.png" /></li>
+						<li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="divider"></li>
+						<li class="recharge">
+							<button>立即充值</button>
+						</li>
+						<li class="logout">退出登录</li>
+					</ul>
+				</div>
+				<div class="avart">
+					<img src="../../img/avart.jpg" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="sidebar-collapse">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+						</li>
+						<li class="active">
+							<a href="javascript:void(0)"><i class="iconfont icon-shouye"></i> <span class="nav-label">首页</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">职信认证</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-renzheng1"></i> <span class="nav-label">申请背景认证</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-shouquan"></i> <span class="nav-label">授权</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-mingpian"></i> <span class="nav-label">我的电子名片</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-tongxunlu"></i> <span class="nav-label">名片通讯录</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">个人中心</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-xingren"></i> <span class="nav-label">杏仁</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-zhanghaoshezhi"></i> <span class="nav-label">帐号设置</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-Fill"></i> <span class="nav-label">意见反馈</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-shiyongbangzhu"></i> <span class="nav-label">使用帮助</span></a>
+						</li>
+					</ul>
+					<div class="rn">
+						Copyright ©2017 沪ICP备<br/>17015994号
+					</div>
+				</div>
+			</nav>
+
+			<div id="page-wrapper" class="gray-bg">
+				<div class="wrapper wrapper-content animated fadeInRightBig">
+					<div class="row animated fadeInRightBig">
+						<div class="col-lg-12">
+							<div class="ibox float-e-margins">
+								<div class="ibox-content count">
+									<div class="tabs-container ">
+										<ul class="nav nav-tabs new-tabs">
+											<li class="active">
+												<a data-toggle="tab" href="#tab-1">企业信息</a>
+											</li>
+											<li class="">
+												<a data-toggle="tab" href="#tab-2">修改密码</a>
+											</li>
+											<li class="">
+												<a data-toggle="tab" href="#tab-3">修改联系人</a>
+											</li>
+											<li class="">
+												<a data-toggle="tab" href="#tab-4">修改企业名称</a>
+											</li>
+										</ul>
+										<div class="tab-content border-top">
+											<div id="tab-1" class="tab-pane active">
+												<div class="panel-body company-info">
+													<form class="yyzz form-horizontal">
+														<div class="row">
+															<div class="col-lg-6">
+																<div class="form-group">
+																	<label class="col-sm-3 control-label"><span>营业执照:</span></label>
+																	<div class="col-sm-9">
+																		<img src="../../img/yyzz.jpg" />
+																	</div>
+																</div>
+															</div>
+															<div class="col-lg-6 company-detailinfo">
+																<div class="form-group">
+																	<label class="col-sm-3 control-label"><span>信用代码:</span></label>
+																	<div class="col-sm-9">
+																		12312412341241
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label class="col-sm-3 control-label"><span>企业名称:</span></label>
+																	<div class="col-sm-9">
+																		上海火星网络科技有限公司
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label class="col-sm-3 control-label"><span>联系人姓名:</span></label>
+																	<div class="col-sm-9">
+																		王小二
+																	</div>
+																</div>
+																<div class="form-group">
+																	<label class="col-sm-3 control-label"><span>联系人手机:</span></label>
+																	<div class="col-sm-9">
+																		14223456789
+																	</div>
+																</div>
+															</div>
+														</div>
+													</form>
+													<form method="get" class="form-horizontal">
+														<div class="row">
+															<div class=" col-lg-6">
+																<div class="input-group m-b-lg">
+																	<span class="input-group-addon"><span>企业性质</span> :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+																	<select class="form-control m-b cs-select cs-skin-border" name="account" id="">
+																		<option value="" disabled selected>请选择您的企业性质</option>
+																		<option value="1">企业性质1</option>
+																		<option value="2">企业性质2</option>
+																		<option value="3">企业性质3</option>
+																		<option value="4">企业性质4</option>
+																	</select>
+																</div>
+															</div>
+															<div class=" col-lg-6">
+																<div class="input-group m-b-lg">
+																	<span class="input-group-addon"><span>所属行业</span> :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+																	<input id="btn_IndustryID" value="" onclick="IndustrySelect()" type="text" class="form-control">
+																	<input id="IndustryID" name="industry" value="" type="hidden" >
+																</div>
+															</div>
+															<div class=" col-lg-6">
+																<div class="input-group m-b-lg">
+																	<span class="input-group-addon"><span>企业规模</span> :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+																	<select class="form-control m-b cs-select cs-skin-border" name="account" id="">
+																		<option value="" disabled selected>请选择企业规模</option>
+																		<option value="1">企业规模1</option>
+																		<option value="2">企业规模2</option>
+																		<option value="3">企业规模3</option>
+																		<option value="4">企业规模4</option>
+																	</select>
+																</div>
+															</div>
+															<div class=" col-lg-6">
+																<div class="input-group m-b-lg">
+																	<span class="input-group-addon"><span>注册地</span> :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+																	<select class="form-control m-b cs-select cs-skin-border" name="account" id="">
+																		<option value="" disabled selected>请选择注册地</option>
+																		<option value="1">企业规模1</option>
+																		<option value="2">企业规模2</option>
+																		<option value="3">企业规模3</option>
+																		<option value="4">企业规模4</option>
+																	</select>
+																</div>
+															</div>
+															<div class=" col-lg-6">
+																<div class="input-group m-b-lg">
+																	<span class="input-group-addon"><span>固定电话</span> :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+																	<input type="text" placeholder="请输入公司电话" class="form-control">
+																</div>
+															</div>
+															<div class=" col-lg-6">
+																<div class="input-group m-b-lg">
+																	<span class="input-group-addon"><span>企业邮箱</span> :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+																	<input type="text" placeholder="请输入企业邮箱" class="form-control">
+																</div>
+															</div>
+															<div class=" col-lg-6">
+																<div class="input-group m-b-lg">
+																	<span class="input-group-addon"><span>企业网址</span> :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+																	<input type="text" placeholder="请输入公司网址" class="form-control">
+																</div>
+															</div>
+															<div class=" col-lg-6">
+																<div class="input-group m-b-lg">
+																	<span class="input-group-addon"><span>详细地址</span> :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+																	<input type="text" placeholder="请输入公司详细地址" class="form-control">
+																</div>
+															</div>
+														</div>
+														<div class="form-group text-center">
+															<h5 class="text-danger m-b-md">全部完成后，奖励100杏仁</h5>
+															<button type="button" class="btn btn-w-m btn-danger">催办</button>
+														</div>
+													</form>
+												</div>
+											</div>
+											<div id="tab-2" class="tab-pane">
+												<div class="panel-body">
+													<div class="panel-body">
+													</div>
+												</div>
+											</div>
+											<div id="tab-3" class="tab-pane">
+												<div class="panel-body">
+													<div class="panel-body">
+													</div>
+												</div>
+											</div>
+											<div id="tab-4" class="tab-pane">
+												<div class="panel-body">
+													<div class="panel-body upload-yyzz">
+														<h4 class="">重新上传营业执照</h4>
+														<div class="upload-btn">
+															<div></div>
+															<div></div>
+														</div>
+														<p class="text-danger">单击区域进行上传(格式：<br/>
+															*.jpeg|*.jpg|*.png|*.gif;最大限制<br/>
+															1M;最佳像素471px*276px)
+														</p>
+														<h3>审核通过后企业名称自动更改，请耐心等待。</h3>
+														<div class="form-group text-center">
+															<button type="button" class="btn btn-w-m btn-danger">完成</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="maskLayer" style="display:none">
+			<iframe id="maskLayer_iframe" frameBorder=0 scrolling=no style="filter:alpha(opacity=50)"></iframe>
+			<div id="alphadiv" style="filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5"></div>
+			<div id="drag2">
+				<h3 id="drag_h"></h3>
+				<div id="drag_con"></div><!-- drag_con end -->
+			</div>
+		</div><!-- maskLayer end -->
+
+		<!-- Mainly scripts -->
+		<script src="../../js/jquery-2.1.1.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom and plugin javascript -->
+		<script src="../../js/inspinia.js"></script>
+		<script src="../../js/plugins/pace/pace.min.js"></script>
+		<!--下拉框-->
+		<script src="../../js/classie.js"></script>
+		<script src="../../js/selectFx.js"></script>
+
+		<script src="../../js/tools.js"></script>
+		<script type="text/javascript" src="../../js/industry_arr.js"></script>
+		<script type="text/javascript" src="../../js/industry_func.js"></script>
+		<script type="text/javascript" src="../../js/drag1.js"></script>
+		<script>
+			$(document).ready(function() {
+				[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function(el) {
+					new SelectFx(el);
+				});
+			});
+		</script>
+	</body>
+
+</html>

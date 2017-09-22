@@ -1,0 +1,381 @@
+#free>.ibox-title{
+    border-bottom:1px solid #ccc;
+    padding-bottom:24px;
+}
+#free .btn-danger{
+    width:80px;
+    margin-right:30px;
+}
+#free .btn-danger:last-of-type{
+    margin-right:0;
+}
+
+#free>.ibox-content{
+    height:auto;
+    padding:30px 60px;
+    background: #fff;
+}
+#free>.ibox-content>.content_box{
+    width:100%;
+    height:100%;
+    background: #f6f6f6;
+    border-radius: 10px;
+    padding:22px;
+}
+#free>.ibox-content>.content_box>img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+#brief{
+    padding:0;
+}
+#brief>.function{
+    margin-top:36px;
+}
+#brief>.function>h5{
+    font-size:16px;
+    color: #989898;
+}
+#brief>.function>p{
+    margin-top:30px;
+    font-size:14px;
+    color: #000;
+}
+#brief>.function:nth-of-type(2){
+    margin-top:100px;
+}
+#my-card>.ibox-content>.top{
+    width:100%;
+    height:1px;
+    background: #ededed;
+}
+#my-card>.ibox-content>p{
+    text-align: center;
+    margin-top:155px;
+}
+#my-card>.ibox-content>.img{
+    width:278px;
+    height:278px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin:0 auto;
+    margin-top:30px;
+    margin-bottom:227px;
+}
+#my-card>.ibox-content>.img>img{
+    display: block;
+    width:208px;
+    height:208px;
+    margin:35px auto;
+}
+.ibox-title h5>span{
+    font-size:14px;
+    color: #999;
+    margin-left:20px;
+}
+#my-card>.ibox-content>.bottom{
+    width:100%;
+    height:auto;
+    margin-top:30px;
+}
+#my-card>.ibox-content>.bottom>.left{
+    height:650px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    border:1px solid #ccc;
+    float: left;
+    padding:0;
+    margin-left:10px;
+}
+#my-card>.ibox-content>.bottom>.left>.search{
+    width:100%;
+    height:49px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}#my-card>.ibox-content>.bottom>.left>.search>.search_box{
+    width:100%;
+    height:100%;
+    outline: none;
+    border:none;
+    padding-left:33px;
+    border-radius: 6px 6px 0 0 ;
+ }
+#my-card>.ibox-content>.bottom>.left>.search>i{
+    font-size:18px;
+    color: #ccc;
+    position: absolute;
+    top:12px;
+    left:10px;
+}
+#my-card>.ibox-content>.bottom>.left>.list{
+    width:auto;
+    height:calc(100% - 50px);
+    overflow-y: scroll;
+}
+
+#my-card>.ibox-content>.bottom>.left>.list>dl{
+    width:auto;
+    height:100%;
+}
+#my-card>.ibox-content>.bottom>.left>.list>dl>dt{
+    width:auto;
+    height:20px;
+    background:  #f6f6f6;
+}
+#my-card>.ibox-content>.bottom>.left>.list>dl>dt>span{
+    margin-left:10px;
+}
+#my-card>.ibox-content>.bottom>.left>.list>dl>dd{
+    width:auto;
+    height:40px;
+    box-sizing: border-box;
+    border-bottom:1px solid #f6f6f6;
+    line-height: 40px;
+    margin-left:20px;
+}
+#my-card>.ibox-content>.bottom>.left>.list>dl>dd>a{
+    color: #000;
+    font-size:12px;
+}
+#my-card>.ibox-content>.bottom>.left>.list>dl>dd>span{
+    margin-left:150px;
+}
+#my-card>.ibox-content>.bottom>.right{
+    width:552px;
+    height:276px;
+    padding:68px 0;
+    display: flex;
+    float: right;
+}
+#my-card>.ibox-content>.bottom>.right>.phone{
+    height:570px;
+    width:276px;
+    background:url("../img/lbs-shouji.png") no-repeat;
+    background-size:cover;
+    background-position: center center;
+}
+#my-card>.ibox-content>.bottom>.right>.phone>.img{
+    width:276px;
+    height:570px;
+}
+#my-card>.ibox-content>.bottom>.right>.Arrow{
+    width:92px;
+    height:1px;
+    margin-top:30px;
+    position: relative;
+}
+#my-card>.ibox-content>.bottom>.right>.Arrow>.box{
+    width:86px;
+    height:1px;
+    background: #828282;
+    float: left;
+}
+#my-card>.ibox-content>.bottom>.right>.Arrow>.arrow-box{
+    height:0;
+    border-left:7px solid #828282;
+    border-top:3.5px solid rgba(0,0,0,0);
+    border-bottom:3.5px solid rgba(0,0,0,0);
+    float: right;
+    position: absolute;
+    top:-3.5px;
+    right:-1px;
+}
+#my-card>.ibox-content>.bottom>.right>.code{
+    width:200px;
+    height:auto;
+    margin-left:10px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>.code-box{
+    width:160px;
+    height:160px;
+    border-radius: 5px;
+    border:1px solid #ccc;
+}
+#my-card>.ibox-content>.bottom>.right>.code>.code-box>img{
+    display: block;
+    width:120px;
+    height:120px;
+    margin:20px auto;
+}
+#my-card>.ibox-content>.bottom>.right>.code>p{
+    margin-top:20px;
+    font-size:12px;
+    color: #000;
+    padding-left:47px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>ul{
+    width:100%;
+    height:auto;
+    margin-top:50px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>ul>li{
+    font-size:14px;
+    overflow: hidden;
+}
+#my-card>.ibox-content>.bottom>.right>.code>ul>li>span{
+    display: block;
+    color: #999;
+    float: left;
+    margin-right:10px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>ul>li>p{
+    color: #000;
+    float: left;
+}
+#my-card>.ibox-content>.bottom>.right>.code>ul>li:nth-of-type(2)>div{
+    float: left;
+}
+#my-card>.ibox-content>.bottom>.right>.code>ul>li:nth-of-type(2){
+    margin-top:20px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>.button{
+    width:200px;
+    height:50px;
+    border-radius: 4px;
+    border:1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+    box-sizing: border-box;
+    color: #e60012;
+    margin-top:50px;
+    cursor: pointer;
+    font-size:16px
+}
+
+::-webkit-scrollbar-track-piece{
+    background: #f6f6f6;
+    -webkit-border-radius: 6px;
+}
+::-webkit-scrollbar{
+    width:10px;
+    height:20px;
+}
+::-webkit-scrollbar-thumb{
+    width:10px;
+    height:20px;
+    border-radius: 6px;
+    background: #ccc;
+}
+.ibox-content>.Advantage{
+    margin-top:30px;
+}
+.ibox-content>.Advantage>.Advantage_box{
+    height:16px;
+    line-height: 16px;
+    overflow: hidden;
+}
+.ibox-content>.Advantage>.Advantage_box>i{
+    display: block;
+    width:4px;
+    height:14px;
+    background: #e60012;
+    float: left;
+    margin-top:1px;
+}
+.ibox-content>.Advantage>.Advantage_box>span{
+    display: block;
+    margin-left:8px;
+    font-size:12px;
+    color: #333;
+    float: left;
+}
+.ibox-content>.Advantage>.Advantage_box:nth-of-type(1)~.Advantage_box{
+    margin-top:22px;
+}
+.ibox-content>.Advantage>p:nth-of-type(1){
+    margin-top:20px;
+}
+.ibox-content>.Advantage>p{
+    font-size:12px;
+    color: #333;
+    margin-top:10px;
+    margin-left:12px;
+}
+
+.ibox-content>.Advantage>.img{
+    width:100%;
+    height:235px;
+    overflow: hidden;
+    margin-top:30px;
+    display: flex;
+    align-items: center;
+    padding:0 70px;
+    justify-content: space-between;
+}
+.ibox-content>.Advantage>.img>img{
+    display: block;
+}
+.ibox-content>.Advantage>.img>img:nth-of-type(1){
+    width:222px;
+    height:160px;
+}
+.ibox-content>.Advantage>.img>img:nth-of-type(3){
+    width:222px;
+    height:190px;
+}
+.ibox-content>.Advantage>.img>img:nth-of-type(5){
+    width:210px;
+    height:210px;
+    margin-top:-80px;
+}
+.ibox-content>.Advantage>.img>.imgs{
+    width:52px;
+    height:40px;
+    margin-top:-40px;
+}
+
+#img>img:nth-of-type(3){
+    width:190px;
+}
+#img>img:nth-of-type(5){
+    width:190px;
+    height:160px;
+    margin-top:0;
+}
+.ibox-content>.Advantage>.span{
+    display: flex;
+    align-items: center;
+    padding:0 80px;
+    justify-content: space-between;
+    margin-top:-50px;
+    text-align: center;
+    color: #b1b0b0;
+}
+.ibox-content>.Advantage>.span>span:nth-of-type(1){
+    margin-left:50px;
+}
+#spans{
+    margin-top:-40px;
+}
+#spans>span:nth-of-type(1){
+    margin-left:20px;
+}
+#spans>span:nth-of-type(2){
+    margin-left:70px;
+}
+.ibox-content>.Advantage>.button{
+    width:200px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 6px;
+    background: #e60012;
+    margin:80px auto;
+    cursor: pointer;
+    font-size:16px;
+    transition: all 0.3s ease;
+}
+.ibox-content>.Advantage>.button>a{
+    color: #fff;
+}
+.ibox-content>.Advantage>.button:hover{
+    background: #c70010;
+}
+.phone{
+    width:276px;height:100%;background: url('../img/lbs-shouji.png') no-repeat;
+    background-position: center center;
+    background-size:cover;
+    margin:0 auto;
+    border-top:1px solid rgba(0,0,0,0);
+}

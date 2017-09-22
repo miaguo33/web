@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>职信网</title>
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+    <link href="../../css/animate.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/curriculum.css">
+</head>
+
+<body class="">
+
+<div id="wrapper">
+    <div class="header">
+        <img class="logo" src="../../img/logo.png"/>
+        <h3 class="header-describe">欢迎登录职信网平台</h3>
+        <div class="dropdown action">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+            </a>
+            <ul class="dropdown-menu animated fadeInLeft m-t-xs">
+                <li class="arrow"><img src="../../img/whitearrow.png"/></li>
+                <li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+                <li class="balance-count">
+                    <span>20000.00￥</span>
+                </li>
+                <li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+                <li class="balance-count">
+                    <span>20000.00￥</span>
+                </li>
+                <li class="divider"></li>
+                <li class="recharge">
+                    <button>立即充值</button>
+                </li>
+                <li class="logout">退出登录</li>
+            </ul>
+        </div>
+        <div class="avart">
+            <img src="../../img/avart.jpg"/>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+                </li>
+                <li>
+                    <a href="../index/person_index.html"><i class="iconfont icon-shouye"></i> <span
+                            class="nav-label">首页</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">职信认证</span></a>
+                </li>
+                <li class="active">
+                    <a href="../curriculum/curriculum.html"><i class="iconfont icon-renzheng1"></i> <span
+                            class="nav-label">申请背景认证</span></a>
+                </li>
+                <li >
+                    <a href="javascript:void(0)"><i class="iconfont icon-shouquan"></i> <span
+                            class="nav-label">授权</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><i class="iconfont icon-mingpian"></i> <span
+                            class="nav-label">我的电子名片</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><i class="iconfont icon-tongxunlu"></i> <span
+                            class="nav-label">名片通讯录</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">个人中心</span></a>
+                </li>
+                <li>
+                    <a href="../Almond/almond.html"><i class="iconfont icon-xingren"></i> <span
+                            class="nav-label">杏仁</span></a>
+                </li>
+                <li>
+                    <a href="../account/account.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span
+                            class="nav-label">帐号设置</span></a>
+                </li>
+                <li>
+                    <a href="../feedback/feedback.html"><i class="iconfont icon-Fill"></i> <span
+                            class="nav-label">意见反馈</span></a>
+                </li>
+            </ul>
+            <div class="rn">
+                Copyright ©2017 沪ICP备<br/>17015994号
+            </div>
+        </div>
+    </nav>
+    <div id="page-wrapper" class="row gray-bg">
+        <div class="wrapper wrapper-content animated fadeInRightBig">
+            <!--申请背景认证-->
+            <div class="content col-lg-12">
+                <!--职业信息-->
+                <div class="information_header col-lg-12">
+                    <div class="information_name">
+                        <span class="active">职业信息</span>
+                        <span>发起认证</span>
+                        <span>授权企业认证</span>
+                        <span>认证完成</span>
+                    </div>
+                    <div class="information_Progress col-lg-12">
+                        <div class="Progress">
+                            <div class="Progress_r active"><span>1</span></div>
+                            <div class="Progress_r"><span>2</span></div>
+                            <div class="Progress_r"><span>3</span></div>
+                            <div class="Progress_r"><span>4</span></div>
+                        </div>
+                        <div id="pro"></div>
+                    </div>
+                </div>
+                <!--个人信息-->
+                <div class="information">
+                    <div class="edit">
+                        <span>个人信息</span>
+                        <span class="btns">编辑</span>
+                    </div>
+                    <div class="information_test">
+                        <ul>
+                            <li>
+                                <div class="li_box"><span>姓名 :</span><span>王小二</span></div>
+                                <div class="li_box"><span>手机 :</span><span>18500000000</span></div>
+                            </li>
+                            <li>
+                                <div class="li_box"><span>国籍 :</span><span>中国</span></div>
+                                <div class="li_box"><span>出生日期 :</span><span>2017年7月7日</span></div>
+                            </li>
+                            <li>
+                                <div class="li_box"><span>省份证 :</span><span>444444444444444444</span></div>
+                                <div class="li_box"><span>性别 :</span><span>男</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row in_personal contents">
+
+                    </div>
+                </div>
+                <!--教育经历-->
+                <div class="information">
+                    <div class="edit">
+                        <span>教育经历</span>
+                        <span class="btns">添加</span>
+                    </div>
+                    <div class="information_test" >
+                        <ul class="education">
+                            <li>
+                                <div class="time">
+                                    <div class="times">
+                                        <span>2015.5</span>-<span>2016.5</span>
+                                    </div>
+                                    <i></i>
+                                    <div class="btn_time">
+                                        <span>编辑</span>
+                                        <span>删除</span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>学校名称 :</span><span>北京清华大学</span></div>
+                                    <div class="li_box"><span>所在专业 :</span><span>计算机专业</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>学历层次 :</span><span>本科</span></div>
+                                    <div class="li_box"><span>学历类别 :</span><span>自考</span></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="time">
+                                    <div class="times">
+                                        <span>2015.5</span>-<span>2016.5</span>
+                                    </div>
+                                    <i></i>
+                                    <div class="btn_time">
+                                        <span>编辑</span>
+                                        <span>删除</span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>学校名称 :</span><span>北京清华大学</span></div>
+                                    <div class="li_box"><span>所在专业 :</span><span>计算机专业</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>学历层次 :</span><span>本科</span></div>
+                                    <div class="li_box"><span>学历类别 :</span><span>自考</span></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row in_personal contents">
+
+                    </div>
+                </div>
+                <!--工作经历-->
+                <div class="information">
+                    <div class="edit">
+                        <span>工作经历</span>
+                        <span class="btns">添加</span>
+                    </div>
+                    <div class="information_test" >
+                        <ul class="education">
+                            <li>
+                                <div class="time">
+                                    <div class="times">
+                                        <span>2015.5</span>-<span>2016.5</span>
+                                    </div>
+                                    <i></i>
+                                    <div class="btn_time">
+                                        <span>编辑</span>
+                                        <span>删除</span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>公司名称 :</span><span>上海途途网路科技有限公司</span></div>
+                                    <div class="li_box"><span>目前运营 :</span><span>正常运营</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>所在行业 :</span><span>互联网</span></div>
+                                    <div class="li_box"><span>公司规模 :</span><span>500~1000人</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>公司性质 :</span><span>民营</span></div>
+                                    <div class="li_box"><span>公司电话 :</span><span>121-453333333</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>所属部门 :</span><span>技术部</span></div>
+                                    <div class="li_box"><span>工作类型 :</span><span>全职</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>职能 :</span><span>人力资源部</span></div>
+                                    <div class="li_box"><span>职位 :</span><span>人事总监</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>年收入 :</span><span>30w</span></div>
+                                    <div class="li_box"><span>工资占比 :</span><span>100%</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>下属人数 :</span><span>0~20人</span></div>
+                                    <div class="li_box"><span>汇报对象职位 :</span><span>CEO</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>汇报对象姓名 :</span><span>刘大大</span></div>
+                                    <div class="li_box"><span>汇报对象手机 :</span><span>10000000000</span></div>
+                                </div>
+
+                                <!--工作职责-->
+                                <div class="Duty">
+                                    <span>工作职责:</span>
+                                    <div class="Duty_content">
+                                        <ul>
+                                            <li>1. 345erfdsfdsfsd我服你时代峻峰华东师范阿斯蒂芬阿斯蒂芬阿斯蒂芬</li>
+                                            <li>2. asdfadsfasf是的范德萨发大师傅大师傅asdf</li>
+                                            <li>3. asdfadsf暗示法撒旦烦死哒发的asfasdf</li>
+                                            <li>4. asdfadsf发的烦死哒发的发asfasdf</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!--绩效/项目-->
+                                <div class="Duty">
+                                    <span>绩效/项目:</span>
+                                    <div class="li lis">
+                                        <div class="li_box">2017年8月~2017年10月</div>
+                                        <div class="li_box"><span>项目负责人 :</span><span>刘大大</span></div>
+                                    </div>
+                                    <div class="Duty_content">
+                                        <ul>
+                                            <li>1. 345erfdsfdsfsd我服你时代峻峰华东师范阿斯蒂芬阿斯蒂芬阿斯蒂芬</li>
+                                            <li>2. asdfadsfasf是的范德萨发大师傅大师傅asdf</li>
+                                            <li>3. asdfadsf暗示法撒旦烦死哒发的asfasdf</li>
+                                            <li>4. asdfadsf发的烦死哒发的发asfasdf</li>
+                                        </ul>
+                                    </div>
+                                    <div class="li">
+                                        <div class="li_box"><span>证明人 :</span><span>刘大大</span></div>
+                                        <div class="li_box"><span>负责人身份 :</span><span>CEO</span></div>
+                                    </div>
+                                </div>
+                                <!--获得奖励情况-->
+                                <div class="Duty">
+                                    <span>获得奖励情况:</span>
+                                    <div class="li lis">
+                                        <div class="li_box">2017年8月~2017年10月</div>
+                                    </div>
+                                    <div class="Duty_content">
+                                        <ul>
+                                            <li>1. 345erfdsfdsfsd我服你时代峻峰华东师范阿斯蒂芬阿斯蒂芬阿斯蒂芬</li>
+                                            <li>2. asdfadsfasf是的范德萨发大师傅大师傅asdf</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row in_personal contents">
+
+                    </div>
+                </div>
+                <!--语言能力-->
+                <div class="information">
+                    <div class="edit">
+                        <span>语言能力</span>
+                        <span class="btns">添加</span>
+                    </div>
+                    <div class="information_test" >
+                        <ul class="education">
+                            <li>
+                                <div class="time">
+                                    <div class="times">
+                                        <span>语种</span>/<span>英语</span>
+                                    </div>
+                                    <i></i>
+                                    <div class="btn_time">
+                                        <span>编辑</span>
+                                        <span>删除</span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>熟练度 :</span><span>精通</span></div>
+                                    <div class="li_box"><span>证书 :</span><span>英语六级</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>证书编码 :</span><span>7778789687687</span></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row in_personal contents">
+
+                    </div>
+                </div>
+                <!--技能职称-->
+                <div class="information">
+                    <div class="edit">
+                        <span>技能职称</span>
+                        <span class="btns">添加</span>
+                    </div>
+                    <div class="information_test" >
+                        <ul class="education">
+                            <li>
+                                <div class="time">
+                                    <div class="times">
+                                        <span>技能类别</span>/<span>前端</span>
+                                    </div>
+                                    <i></i>
+                                    <div class="btn_time">
+                                        <span>编辑</span>
+                                        <span>删除</span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>证书 :</span><span>注册会计师资格证</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>证书编码 :</span><span>7778789687687</span></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row in_personal contents">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../js/inspinia.js"></script>
+<script src="../../js/plugins/pace/pace.min.js"></script>
+
+<script>
+    $(function () {
+        let button=$('.btns');
+        let contents=$('.contents');
+        let information_test=$('.information_test');
+        button.on('click',function(){
+            information_test.css('display','none');
+            contents.css('height','992');
+        })
+    })
+</script>
+</body>
+</html>

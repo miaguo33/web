@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>职信网</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+    <link href="../../css/animate.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/alpha.css">
+    <link rel="stylesheet" href="../../css/curriculum.css">
+    <link rel="stylesheet" href="../../css/card.css">
+</head>
+
+
+<body class="">
+<div id="wrapper">
+    <div class="header">
+        <img class="logo" src="../../img/logo.png"/>
+        <h3 class="header-describe">欢迎登录职信网平台</h3>
+        <div class="dropdown action">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+            </a>
+            <ul class="dropdown-menu animated fadeInLeft m-t-xs">
+                <li class="arrow"><img src="../../img/whitearrow.png"/></li>
+                <li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+                <li class="balance-count">
+                    <span>20000.00￥</span>
+                </li>
+                <li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+                <li class="balance-count">
+                    <span>20000.00￥</span>
+                </li>
+                <li class="divider"></li>
+                <li class="recharge">
+                    <button>立即充值</button>
+                </li>
+                <li class="logout">退出登录</li>
+            </ul>
+        </div>
+        <div class="avart">
+            <img src="../../img/avart.jpg"/>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+                </li>
+                <li>
+                    <a href="../index/person_index.html"><i class="iconfont icon-shouye"></i> <span
+                            class="nav-label">首页</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0);"><span class="nav-label">职信认证</span></a>
+                </li>
+                <li>
+                    <a href="../curriculum/curriculum.html"><i class="iconfont icon-renzheng1"></i> <span
+                            class="nav-label">申请背景认证</span></a>
+                </li>
+                <li>
+                    <a href="../l_authorization/l_authorization.html"><i class="iconfont icon-shouquan"></i> <span
+                            class="nav-label">授权</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+                </li>
+                <li class="active">
+                    <a href="../Business_card/Business_card.html"><i class="iconfont icon-mingpian"></i> <span
+                            class="nav-label">我的电子名片</span></a>
+                </li>
+                <li>
+                    <a href="../Mail_list/Mail_list.html"><i class="iconfont icon-tongxunlu"></i> <span
+                            class="nav-label">名片通讯录</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">个人中心</span></a>
+                </li>
+                <li>
+                    <a href="../almond/almond.html"><i class="iconfont icon-xingren"></i> <span
+                            class="nav-label">杏仁</span></a>
+                </li>
+                <li>
+                    <a href="../Real-name/Real-name_one.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span
+                            class="nav-label">实名认证</span></a>
+                </li>
+                <li>
+                    <a href="../account/account.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span
+                            class="nav-label">帐号设置</span></a>
+                </li>
+                <li>
+                    <a href="../feedback/feedback.html"><i class="iconfont icon-Fill"></i> <span
+                            class="nav-label">意见反馈</span></a>
+                </li>
+            </ul>
+            <div class="rn">
+                Copyright ©2017 沪ICP备<br/>17015994号
+            </div>
+        </div>
+    </nav>
+    <div id="page-wrapper" class="row gray-bg">
+        <div class="wrapper wrapper-content animated fadeInRightBig">
+            <!--申请背景认证-->
+            <div class="content col-lg-12">
+                <!--职业信息-->
+                <div class="information_header col-lg-12">
+                    <div class="information_name">
+                        <span class="active">名片填写</span>
+                        <span>申请名片</span>
+                        <span>认证通过</span>
+                    </div>
+                    <div class="information_Progress col-lg-12">
+                        <div class="Progress">
+                            <div class="Progress_r"></div>
+                            <div class="Progress_r"></div>
+                            <div class="Progress_r"></div>
+                        </div>
+                        <div class="Progress_z">
+                            <div class="Progress_r active">1</div>
+                            <div class="Progress_r">2</div>
+                            <div class="Progress_r">3</div>
+                        </div>
+                        <div id="pro"></div>
+                    </div>
+                </div>
+                <!--个人信息-->
+                <div class="information ">
+                    <div class="edit">
+                        <span style="font-size:14px;"><i></i>完善名片信息</span>
+                    </div>
+                    <div class="row in_personal contents" style="display: block" id="card">
+                        <form role="form" class="col-lg-12">
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6 col-sm-12"><label>公司名称<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入公司名称"></div>
+                                <div class="form-group col-lg-6 col-sm-12">
+                                    <div class="portrait"
+                                         style="background: url('../../img/lbs-touxiang.png') no-repeat"></div>
+                                    <label class="label">修该头像</label>
+                                </div>
+                            </div>
+
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6 col-sm-12"><label>工作类型<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入工作类型">
+                                </div>
+                                <div class="form-group col-lg-6 col-sm-12"></div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6 col-sm-12"><label>部门<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入部门"></div>
+                                <div class="form-group col-lg-6 col-sm-12"><label>岗位<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入岗位">
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6 col-sm-12" id="data_4"><label>入职时间<span>*</span></label>
+                                    <div class="input-group date ">
+                                        <input type="text" value="" class="form-control" placeholder="请选择入职时间">
+                                        <span class="input-group-addon"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6 col-sm-12"><label>邮箱<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入邮箱">
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6 col-sm-12"><label>微信</label>
+                                    <input type="text" class="form-control" placeholder="请输入微信号"></div>
+                                <div class="form-group col-lg-6 col-sm-12"><label>固话</label>
+                                    <input type="text" class="form-control" placeholder="请输入固话">
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6 col-sm-12"><label>传真</label>
+                                    <input type="text" class="form-control" placeholder="请输入传真号"></div>
+                                <div class="form-group col-lg-6 col-sm-12"><label>网址</label>
+                                    <input type="text" class="form-control" placeholder="请输入网址">
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6 col-sm-12"><label>地址</label>
+                                    <input type="text" class="form-control " placeholder="请输入地址"></div>
+                                <div class="form-group col-lg-6 col-sm-12"><label>邮编</label>
+                                    <input type="text" class="form-control" placeholder="请输入邮编号">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--选取名片主题-->
+                <div class="information ">
+                    <div class="edit">
+                        <span style="font-size:14px;"><i></i>选取名片主题</span>
+                    </div>
+                    <div class="row in_personal contents select" style="display: block;padding:0;">
+                        <div class="list col-lg-6 ">
+                            <ul>
+                                <li><img src="../../img/lbs-mn.png" alt=""></li>
+                                <li><img src="../../img/lbs-mm.png" alt=""></li>
+                                <li><img src="../../img/lbs-mn.png" alt=""></li>
+                                <li><img src="../../img/lbs-mn.png" alt=""></li>
+                                <li><img src="../../img/lbs-mn.png" alt=""></li>
+                                <li><img src="../../img/lbs-mn.png" alt=""></li>
+                                <li><img src="../../img/lbs-mn.png" alt=""></li>
+                                <li><img src="../../img/lbs-mn.png" alt=""></li>
+                                <li><img src="../../img/lbs-mn.png" alt=""></li>
+                                <li><img src="../../img/lbs-mn.png" alt=""></li>
+                            </ul>
+                        </div>
+                        <div class="show col-lg-6">
+
+                            <div class="phone">
+
+                                <!--名片模板-->
+                                <div class="img" style=" width:240px; height:433px;display: none;">
+                                    <div class="card_one" style="  width:100%;height:100%;position: relative;border-top:1px solid rgba(0,0,0,0);">
+                                        <img src="../../img/card-beijing.jpg" alt="" style="display: block;width:100%;height:100%;position: absolute;left:0;top:2px;">
+                                        <div class="portrait" style="width:80px;
+                                                 height:80px;
+                                                 border-radius: 50%;
+                                                 position: absolute;
+                                                 background: #9d8e8f;
+                                                 top:58px;
+                                                 left:50px;
+                                                 background-position: center center;
+                                                 background-size:cover;">
+                                            <img src="../../img/touxiang.png" alt="" style="  display: block; width:100%;height:100%;">
+                                        </div>
+                                        <div class="top" style="  margin-top:81px;position: relative;z-index: 10;display: flex;justify-content: flex-end;">
+                                            <div class="right" style="  display: flex;align-items: center; padding-right: 10px;">
+                                                <h3 style=" font-size:14px;margin-right:6px;">五百丁</h3>
+                                                <p style="font-size:12px;color: #6e6c6d;">
+                                                    <span>营销部</span>
+                                                    <br>
+                                                    <span>销售总监</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p style=" font-size:12px;
+                                            text-align: center;
+                                             margin-top:28px;
+                                             position: relative;
+                                             z-index: 10;">上海火星科技有限公司
+                                        </p>
+                                        <ul style=" width:100%;height:auto;position: relative;z-index: 10;padding-left:40px;margin-top:15px;">
+                                            <li style="  font-size:12px;color: #40494b;margin-top:5px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color: #3da87e;">&#xe648;</i>
+                                                <div>
+                                                    <p>手机 :15234562345</p>
+                                                    <p>固话 :021-678766787</p>
+                                                    <p>微信 :hcjkdjnhjs</p>
+                                                </div>
+                                            </li>
+                                            <li style="  font-size:12px;color: #40494b;margin-top:5px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color: #3da87e;">&#xe608;</i>
+                                                <div>
+                                                    <p>邮箱 :23242354325@qq.com</p>
+                                                    <p>网址 :www.baidu.com</p>
+                                                </div>
+                                            </li>
+                                            <li style="  font-size:12px;color: #40494b;margin-top:5px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color: #3da87e;">&#xe624;</i>
+                                                <p>地址 :上海市徐汇</p>
+                                            </li>
+                                        </ul>
+                                        <div class="erweima" style="  position: relative;z-index: 20;text-align: center;height:auto;">
+                                            <img src="../../img/lbs-erweima_03.png" alt="" style=" display: block;width:53px;height:53px; margin:0 auto;">
+                                            <p style="font-size:12px;">扫码辩职位</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="img" style=" width:240px; height:433px;display: none">
+                                    <div class="card_one" style="  width:100%;height:100%;position: relative;border-top:1px solid rgba(0,0,0,0);">
+                                        <img src="../../img/card-beijing1.jpg" alt="" style="display: block;width:100%;height:100%;position: absolute;left:0;top:2px;">
+                                        <div class="portrait" style="width:80px;
+                                                 height:80px;
+                                                 border-radius: 50%;
+                                                 position: absolute;
+                                                 background: #9d8e8f;
+                                                 top:20px;
+                                                 left:20px;
+                                                 background-position: center center;
+                                                 background-size:cover;">
+                                            <img src="../../img/touxiang.png" alt="" style="  display: block; width:100%;height:100%;">
+                                        </div>
+                                        <div class="top" style="  margin-top:115px;position: relative;z-index: 10;display: flex;margin-left:20px;">
+                                            <div class="right" style="  display: flex;align-items: center; padding-right: 10px;color: #fff100">
+                                                <h3 style=" font-size:14px;margin-right:6px;">五百丁</h3>
+                                                <p style="font-size:12px;">
+                                                    <span>营销部</span>
+                                                    <br>
+                                                    <span>销售总监</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <ul style=" width:100%;height:auto;position: relative;z-index: 10;padding-left:40px;margin-top:10px;">
+                                            <li style="  font-size:12px;color: #40494b;margin-top:5px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color:#3f3b3a;">&#xe648;</i>
+                                                <div>
+                                                    <p>手机 :15234562345</p>
+                                                    <p>固话 :021-678766787</p>
+                                                    <p>微信 :hcjkdjnhjs</p>
+                                                </div>
+                                            </li>
+                                            <li style="  font-size:12px;color: #40494b;margin-top:5px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color: #3f3b3a;">&#xe608;</i>
+                                                <div>
+                                                    <p>邮箱 :23242354325@qq.com</p>
+                                                    <p>网址 :www.baidu.com</p>
+                                                </div>
+                                            </li>
+                                            <li style="  font-size:12px;color: #40494b;margin-top:5px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color: #3f3b3a;">&#xe624;</i>
+                                                <p>地址 :上海市徐汇</p>
+                                            </li>
+                                        </ul>
+                                        <div class="erweima" style="  position: relative;z-index: 20;text-align: center;height:auto;">
+                                            <img src="../../img/lbs-erweima_03.png" alt="" style=" display: block;width:53px;height:53px; margin:0 auto;">
+                                            <p style="font-size:12px;color: #3f3b3a">扫码辩职位</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="img" style=" width:240px; height:433px;display: none">
+                                    <div class="card_one" style="  width:100%;height:100%;position: relative;border-top:1px solid rgba(0,0,0,0);">
+                                        <img src="../../img/card-beijing2.jpg" alt="" style="display: block;width:100%;height:100%;position: absolute;left:0;top:2px;">
+                                        <div class="portrait" style="width:80px;
+                                                 height:80px;
+                                                 border-radius: 50%;
+                                                 position: absolute;
+                                                 background: #242425;
+                                                 top:20px;
+                                                 left:0;
+                                                 right:0;
+                                                 margin:auto;
+                                                 background-position: center center;
+                                                 background-size:cover;">
+                                            <img src="../../img/touxiang.png" alt="" style="  display: block; width:100%;height:100%;">
+                                        </div>
+                                        <div class="top" style="  margin-top:104px;position: relative;z-index: 10;display: flex;margin-left:70px;">
+                                            <div class="right" style="  display: flex;align-items: center; padding-right: 10px;color: #fff">
+                                                <h3 style=" font-size:14px;margin-right:6px;">五百丁</h3>
+                                                <p style="font-size:12px;color: #242425">
+                                                    <span>营销部</span>
+                                                    <br>
+                                                    <span>销售总监</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p style=" font-size:12px;
+                                            text-align: center;
+                                             margin-top:10px;
+                                             position: relative;
+                                             color: #fff;
+                                             z-index: 10;">上海火星科技有限公司
+                                        </p>
+                                        <ul style=" width:100%;height:auto;position: relative;z-index: 10;padding-left:40px;margin-top:10px;">
+                                            <li style="  font-size:12px;color: #fff;margin-top:5px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color:#fff;">&#xe648;</i>
+                                                <div>
+                                                    <p>手机 :15234562345</p>
+                                                    <p>固话 :021-678766787</p>
+                                                    <p>微信 :hcjkdjnhjs</p>
+                                                </div>
+                                            </li>
+                                            <li style="  font-size:12px;color: #fff;margin-top:5px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color:#fff;">&#xe608;</i>
+                                                <div>
+                                                    <p>邮箱 :23242354325@qq.com</p>
+                                                    <p>网址 :www.baidu.com</p>
+                                                </div>
+                                            </li>
+                                            <li style="  font-size:12px;color: #fff;margin-top:5px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color: #fff">&#xe624;</i>
+                                                <p>地址 :上海市徐汇</p>
+                                            </li>
+                                        </ul>
+                                        <div class="erweima" style="  position: relative;z-index: 20;text-align: center;height:auto;">
+                                            <img src="../../img/lbs-erweima_03.png" alt="" style=" display: block;width:53px;height:53px; margin:0 auto;">
+                                            <p style="font-size:12px;color: #fff">扫码辩职位</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="img" style=" width:240px; height:433px;display: none">
+                                    <div class="card_one" style="  width:100%;height:100%;position: relative;border-top:1px solid rgba(0,0,0,0);">
+                                        <img src="../../img/card-beijing3.jpg" alt="" style="display: block;width:100%;height:100%;position: absolute;left:0;top:2px;">
+                                        <div class="portrait" style="width:80px;
+                                                 height:80px;
+                                                 border-radius: 50%;
+                                                 position: absolute;
+                                                 background: #242425;
+                                                 top:20px;
+                                                 left:0;
+                                                 right:0;
+                                                 margin:auto;
+                                                 background-position: center center;
+                                                 background-size:cover;">
+                                            <img src="../../img/touxiang.png" alt="" style="  display: block; width:100%;height:100%;">
+                                        </div>
+                                        <p style=" font-size:18px;
+                                            text-align: center;
+                                             margin-top:108px;
+                                             position: relative;
+                                             color:#3f3a3a;
+                                             z-index: 10;">上海火星科技有限公司
+                                        </p>
+                                        <div class="top" style="  margin-top:8px;position: relative;z-index: 10;display: flex;margin-left:70px;">
+                                            <div class="right" style="  display: flex;align-items: center; padding-right: 10px;color: #3f3a3a">
+                                                <h3 style=" font-size:14px;margin-right:6px;">五百丁</h3>
+                                                <p style="font-size:12px;color: #3f3a3a">
+                                                    <span>营销部</span>
+                                                    <br>
+                                                    <span>销售总监</span>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <ul style=" width:100%;height:auto;position: relative;z-index: 10;padding-left:40px;margin-top:10px;">
+                                            <li style="  font-size:12px;color:#3f3a3a;margin-top:3px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color:#3f3a3a;">&#xe648;</i>
+                                                <div>
+                                                    <p>手机 :15234562345</p>
+                                                    <p>固话 :021-678766787</p>
+                                                    <p>微信 :hcjkdjnhjs</p>
+                                                </div>
+                                            </li>
+                                            <li style="  font-size:12px;color: #3f3a3a;margin-top:3px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color:#3f3a3a;">&#xe608;</i>
+                                                <div>
+                                                    <p>邮箱 :23242354325@qq.com</p>
+                                                    <p>网址 :www.baidu.com</p>
+                                                </div>
+                                            </li>
+                                            <li style="  font-size:12px;color: #3f3a3a;margin-top:3px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color:#3f3a3a">&#xe624;</i>
+                                                <p>地址 :上海市徐汇</p>
+                                            </li>
+                                        </ul>
+                                        <div class="erweima" style="  position: relative;z-index: 20;height:auto;">
+                                            <img src="../../img/lbs-erweima_03.png" alt="" style=" display: block;width:53px;height:53px; margin-left:50px;">
+                                            <p style="font-size:12px;color: #3f3a3a;margin-left:45px;">扫码辩职位</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="img" style=" width:240px; height:433px;background: #fff;">
+                                    <div class="card_one" style="  width:100%;height:100%;position: relative;border-top:1px solid rgba(0,0,0,0);">
+                                        <img src="../../img/card1.png" alt="" style="display: block;width:70px;height:100%;position: absolute;left:0;top:2px;">
+                                        <div class="portrait" style="width:80px;
+                                                 height:80px;
+                                                 border-radius: 50%;
+                                                 position: absolute;
+                                                 background: #242425;
+                                                 top:20px;
+                                                 left:0;
+                                                 right:0;
+                                                 margin:auto;
+                                                 background-position: center center;
+                                                 background-size:cover;">
+                                            <img src="../../img/touxiang.png" alt="" style="  display: block; width:100%;height:100%;">
+                                        </div>
+                                        <div class="top" style="  margin-top:108px;position: relative;z-index: 10;display: flex;margin-left:90px;">
+                                            <div class="right" style="  display: flex;align-items: center; padding-right: 10px;color: #db1116">
+                                                <h3 style=" font-size:14px;margin-right:6px;">五百丁</h3>
+                                                <p style="font-size:12px;color: #3f3a3a">
+                                                    <span>营销部</span>
+                                                    <br>
+                                                    <span>销售总监</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p style=" font-size:12px;
+                                             margin-left:80px;
+                                             margin-top:10px;
+                                             position: relative;
+                                             color: #202122;
+                                             z-index: 10;">上海火星科技有限公司
+                                        </p>
+                                        <ul style=" width:100%;height:auto;position: relative;z-index: 10;padding-left:50px;margin-top:15px;">
+                                            <li style="  font-size:12px;color:#3f3a3a;margin-top:3px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color:#3f3a3a;">&#xe648;</i>
+                                                <div>
+                                                    <p>手机 :15234562345</p>
+                                                    <p>固话 :021-678766787</p>
+                                                    <p>微信 :hcjkdjnhjs</p>
+                                                </div>
+                                            </li>
+                                            <li style="  font-size:12px;color: #3f3a3a;margin-top:3px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color:#3f3a3a;">&#xe608;</i>
+                                                <div>
+                                                    <p>邮箱 :23242354325@qq.com</p>
+                                                    <p>网址 :www.baidu.com</p>
+                                                </div>
+                                            </li>
+                                            <li style="  font-size:12px;color: #3f3a3a;margin-top:3px;display: flex;">
+                                                <i class="iconfont" style="margin-right:5px;color:#3f3a3a">&#xe624;</i>
+                                                <p>地址 :上海市徐汇</p>
+                                            </li>
+                                        </ul>
+                                        <div class="erweima" style="  position: relative;z-index: 20;height:auto;text-align: center">
+                                            <img src="../../img/lbs-erweima_03.png" alt="" style=" display: block;width:53px;height:53px; margin:0 auto;">
+                                            <p style="font-size:12px;color: #3f3a3a;">扫码辩职位</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--上传简历、预览、下一步-->
+                <ul>
+                    <li><a href="Business_card_tow.html">上传简历</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Mainly scripts -->
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/inspinia.js"></script>
+<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<!-- Custom and plugin javascript -->
+<script src="../../js/plugins/pace/pace.min.js"></script>
+
+<script type="text/javascript" src="../../js/industry_arr.js"></script>
+<script type="text/javascript" src="../../js/industry_func.js"></script>
+<script type="text/javascript" src="../../js/drag1.js"></script>
+<script src="../../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script src="../../js/plugins/datapicker/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+</body>
+</html>
+<script>
+    $('#data_4 .input-group.date').datepicker({
+        keyboardNavigation: false,
+        forceParse: false,
+        autoclose: true,
+        format: "yyyy-mm",
+        language: "zh-CN",
+        startView: 2,
+        minViewMode: 1,
+    });
+</script>

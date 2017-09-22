@@ -1,0 +1,35 @@
+//模态框居中
+var centerModals = function() {　　
+	$('.modal').each(function(i) {　　　　
+		var $clone = $(this).clone().css('display', 'block').appendTo('body');　　　　
+		var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);　　　　
+		top = top > 0 ? top : 0;　　　　
+		$clone.remove();　　　　
+		$(this).find('.modal-content').css("margin-top", top);　　
+	});
+}();
+
+//红框多选和单选
+var redTriangleFrame = function() {　
+	var redTriangleFrame = $(".red-triangle-frame");
+	redTriangleFrame.each(function(){
+		$(this).find("label input").each(function(){
+			console.log($(this));
+			if($(this).is(':checked')){
+				$(this).parent().addClass("active");
+			}
+		});
+		$(this).find("label input").change(function(){
+			if($(this).is(':checked')){
+				$(this).parent().addClass("active");
+				if($(this).attr("type")=="radio"){
+					$(this).parent().siblings().removeClass("active");
+				}
+			}else{
+				$(this).parent().removeClass("active");
+			}
+		})
+	})
+}();
+$("textarea").attr("onpropertychange","this.style.height=this.scrollHeight + 'px'");
+	$("textarea").attr("oninput","this.style.height=this.scrollHeight + 'px'");

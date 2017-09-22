@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/jPicture.min.css">
+    <link rel="stylesheet" href="css/anmiment.css">
+</head>
+<body>
+<!--头部-->
+<div class="header">
+    <a href="javascript:void(0);" class="a">登录</a>
+    <a href="person/register/register.html">注册</a>
+</div>
+<!--banner-->
+<div class="banner">
+    <div class="banner-box">
+        <div id="imgBox">
+            <div>
+                <div><a href="#"><img class="img1"></a></div>
+                <div><a href="#"><img class="img2"></a></div>
+                <div><a href="#"><img class="img3"></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--职业背景-->
+<div class="section al">
+    <img src="img/beijing2_02.jpg" alt="">
+    <div class="Authentication">
+        <h3 class="wow fadeInUp animated animated">什么是职业背景认证?</h3>
+        <span class="wow fadeInLeft animated animated"></span>
+        <p class="wow fadeInUp animated animated">职业背景认证是由当事人将职业经历中的任职、绩效、离职等信息记录在职信网，并由当事人自行发起确认<br>请求，由其过往企业对记录信息进行核认并背书，最终形成“职信报告”。和传统职业背景调查的口口相传不同，职信<br>报告由企业背书，具备可追溯性，具高度权威性。职信报告可代替简历，让求职脱颖而出！
+        </p>
+        <div class="experience wow fadeInRight animated animated">
+            <a href="javascript:void(0);">立即体验</a>
+        </div>
+    </div>
+</div>
+<!--个人登录-->
+<div class="login">
+    <div class="login-box">
+        <h3>个人账号登录</h3>
+        <div class="switch"><span></span><span class="btns">切换成企业版</span><span></span></div>
+        <div class="login-cont">
+            <label for="">
+                <input type="text" placeholder="请输入手机号码">
+                <input type="text" placeholder="请输入密码">
+                <div class="automatic">
+                    <div class="anto"><input type="checkbox" class="checkbox"><span>自动登录</span></div>
+                    <a href="person/password/password.html">忘记密码?</a></div>
+                <button>登录</button>
+            </label>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="register">
+                <a href="person/register/register.html">还没有账号？立即注册</a>
+            </div>
+            <!--验证-->
+            <span class="Verification active">请输入正确的手机号</span>
+        </div>
+    </div>
+
+    <div class="login-box active">
+        <h3>企业账号登录</h3>
+        <div class="switch"><span></span><span class="btnx">切换成个人版</span><span></span></div>
+        <div class="login-cont">
+            <label for="">
+                <input type="text" placeholder="请输入企业账号">
+                <input type="text" placeholder="请输入密码">
+                <div class="automatic">
+                    <div class="anto"><input type="checkbox" class="checkbox"><span>自动登录</span></div>
+                    <a href="person/password/password.html">忘记密码?</a></div>
+                <button class="modal">登录</button>
+            </label>
+            <div class="img"></div>
+            <div class="img"></div>
+            <div class="register">
+                <a href="person/enterprise/enterprise_reg.html">还没有账号？立即注册</a>
+            </div>
+            <!--验证-->
+            <span class="Verification active">请输入正确的手机号</span>
+        </div>
+    </div>
+
+    <!--模态框-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>修改密码</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="box">
+                                <label>原&nbsp;密&nbsp;码&nbsp;：</label>
+                                <div class="input">
+                                    <input type="password" class="form-control"
+                                           placeholder="请输入原密码" name="old_pwd"></div>
+                            </div>
+                            <div class="box">
+                                <label>新&nbsp;密&nbsp;码&nbsp;：</label>
+                                <div class="input">
+                                    <input type="password" class="form-control"
+                                           placeholder="请输入新密码" name="new_pwd"></div>
+                            </div>
+                          <div class="box">
+                              <label>确认密码：</label>
+                              <div class="input">
+                                  <input type="password" class="form-control"
+                                         placeholder="请输入确认密码" name="confirm_new_pwd"></div>
+                          </div>
+                          </div>
+
+                        <div class="form-group btngroup text-center m-b-sm">
+                            <button type="button" onclick="editPwd()"
+                                    class="btn btn-w-m btn-default btn-lg  m-t-xl">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--认证流程-->
+<div class="process">
+    <div class="process_box">
+        <h3 class="wow fadeInUp animated animated">认证流程</h3>
+        <div class="h3_bottom"></div>
+        <ul>
+            <li><img src="img/yuan_10.png" alt=""></li>
+            <li><img src="img/yuan_18.png" alt=""></li>
+            <li><img src="img/yuan_13.png" alt=""></li>
+            <li><img src="img/yuan_06.png" alt=""></li>
+        </ul>
+        <span class="wow bounceIn animated animated animated" data-wow-delay="0.2s">企业向个人发起 <br> 认证申请</span>
+        <span class="wow bounceIn animated animated animated" data-wow-delay="0.5s">个人授权并上传简历/个人直接 <br> 向公司发起认证申请</span>
+        <span class="wow bounceIn animated animated animated" data-wow-delay="0.8s">过往企业认证</span>
+        <span class="wow bounceIn animated animated animated" data-wow-delay="1.1s">生成职信报告</span>
+    </div>
+</div>
+<!--职信报告-->
+<div class="Letter">
+    <div class="letter_box">
+        <h3 class="wow fadeInUp animated animated">职信报告</h3>
+        <div class="h3_bottom"></div>
+        <div class="wrap" style="width:1200px;height:500px;">
+            <div style="margin:0 auto;" class='poster-main carousel' data-setting='{
+	         "width":1000,
+             "height":500,
+             "posterWidth":370,
+             "posterHeight":500,
+             "verticalAlign":"middle",
+             "autoPlay":true,
+             "speed":1000,
+             "delay":1000,
+             "scale":0.9
+	}'>
+                <div class='poster-btn poster-prev-btn'></div>
+                <ul class='poster-list' id="poster">
+                    <li class="list-item"
+                        style="position:absolute;box-shadow: 0 0 10px 2px rgba(0,0,0,0.2);border:none;"><a href="#"><img src="img/lbs-shengdu.jpg" alt=""></a><img class="sd" src="img/lbs-hong.png"><span>深度版</span>
+                        <div class="yj" style="background: url('img/yejiao.png')"></div>
+                    </li>
+                    <li class="list-item"
+                        style="position:absolute;box-shadow: 0 0 10px 2px rgba(0,0,0,0.2);border:none;"><a href="#"><img
+                            src="img/lbs-jichu.jpg" alt=""></a><img class="sd" src="img/lbs-.png"><span>基础版</span>
+                        <div class="yj" style="background: url('img/yejiao.png')"></div>
+                    </li>
+                    <li class="list-item"
+                        style="position:absolute;box-shadow: 0 0 10px 2px rgba(0,0,0,0.2);border:none;"><a href="#"><img
+                            src="img/lbs-fujia.jpg" alt=""></a><img class="sd" src="img/lbs-cheng.png"><span>附加版</span>
+                        <div class="yj" style="background: url('img/yejiao.png')"></div>
+                    </li>
+                </ul>
+                <div class='poster-btn poster-next-btn'></div>
+            </div>
+            <!--<div class="content">-->
+            <!--<div class="sd" style="background: url('img/shengdu.png') no-repeat"></div>-->
+            <!--<div class="yj" style="background: url('img/yejiao.png')"></div>-->
+            <!--<div class="top">-->
+            <!--<div class="tou" style="background: url('img/touxiang.png') no-repeat"></div>-->
+            <!--<div class="cantive">-->
+            <!--<p>-->
+            <!--<span>Alice</span> <i></i> <span>男</span> <i></i> <span>30岁</span> <i></i> <span>现居上海</span> <i></i> <span>出生日期: 1976/08/12</span> <br>-->
+            <!--<span>身份证号: 320***********123</span> <i></i> <span>联系方式: 15222222222</span>-->
+            <!--</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="bottom">-->
+            <!--<div class="ul">-->
+            <!--<div class="li"><img src="img/tu1.png" alt=""><span>基础版本所有内容</span><i></i><img src="img/dunpai.png" alt=""></div>-->
+            <!--<div class="li"><img src="img/tu2.png" alt=""><span>年收入  annual income </span><i></i><img src="img/dunpai.png" alt=""></div>-->
+            <!--<div class="li"><img src="img/tu3.png" alt=""><span>绩效/项目   performance/ project</span><i></i><img src="img/dunpai.png" alt=""></div>-->
+            <!--<div class="li"><img src="img/tu4.png" alt=""><span>离职原因  Reasons for leaving</span><i></i><img src="img/dunpai.png" alt=""></div>-->
+            <!--<div class="li"><img src="img/tu5.png" alt=""><span>综合能力  Comprehensive capacity</span><i></i><img src="img/dunpai.png" alt=""></div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="experience wow fadeInRight animated animated">
+                <a href="">登录查看模板</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--电子名片-->
+<div class="vcard">
+    <div class="vcard_box">
+        <h3 class="wow fadeInUp animated animated">电子名片</h3>
+        <div class="h3_bottom"></div>
+        <p class="wow fadeInUp animated animated animated">职场交往如何辨别对方的职业身份真实性？电子名片二维码、一扫辩真假！</p>
+        <div class="wrap" style="margin:30px auto;">
+            <div class='poster-main carousel' data-setting='{
+	         "width":910,
+             "height":400,
+             "posterWidth":240,
+             "posterHeight":400,
+             "verticalAlign":"middle",
+             "autoPlay":true,
+             "speed":1000,
+             "delay":1000,
+             "scale":0.9
+	}'>
+                <div class='poster-btn poster-prev-btn'></div>
+                <ul class='poster-list'>
+                    <li class="list-item"><a href="#"><img src="img/lun.jpg" alt=""></a></li>
+                    <li class="list-item"><a href="#"><img src="img/lun.jpg" alt=""></a></li>
+                    <li class="list-item"><a href="#"><img src="img/lun.jpg" alt=""></a></li>
+                    <li class="list-item"><a href="#"><img src="img/lun.jpg" alt=""></a></li>
+                    <li class="list-item"><a href="#"><img src="img/lun.jpg" alt=""></a></li>
+                    <li class="list-item"><a href="#"><img src="img/lun.jpg" alt=""></a></li>
+                </ul>
+                <div class='poster-btn poster-next-btn'></div>
+            </div>
+        </div>
+        <p>数十种名片皮肤任你选择!</p>
+        <div class="experience wow fadeInRight animated animated">
+            <a href="">立即体验</a>
+        </div>
+    </div>
+</div>
+<!--合作伙伴-->
+<div class="cooperation">
+    <div class="cooperation_box">
+        <h3>合作伙伴</h3>
+        <div class="h3_bottom"></div>
+        <div id="pic_list_2" class="scroll_horizontal">
+
+            <div class="box">
+
+                <ul class="list">
+
+                    <li><a href="#"><img src="img/footer_03.png"></a></li>
+
+                    <li><a href="#"><img src="img/footer_06.jpg"></a></li>
+
+                    <li><a href="#"><img src="img/index-me.png"></a></li>
+
+                    <li><a href="#"><img src="img/index-jb.png"></a></li>
+
+                    <li><a href="#"><img src="img/index-pa.png"></a></li>
+
+                    <li><a href="#"><img src="img/footer_03.png"></a></li>
+
+                    <li><a href="#"><img src="img/footer_06.jpg"></a></li>
+
+                    <li><a href="#"><img src="img/index-me.png"></a></li>
+
+                    <li><a href="#"><img src="img/index-jb.png"></a></li>
+
+                    <li><a href="#"><img src="img/index-pa.png"></a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--底部-->
+<div class="footer">
+    <div class="footer_box">
+        <dl>
+            <dt>联系我们</dt>
+            <dd><a href="">联系电话：400-001-3129</a></dd>
+            <dd><a href="">售后服务：hr@hrzhixin.com</a></dd>
+            <dd><a href="">售后服务：hr@hrzhixin.com</a></dd>
+            <dd><a href="">售后服务：hr@hrzhixin.com</a></dd>
+        </dl>
+        <dl>
+            <dt>使用指南</dt>
+            <dd><a href="">认证与注册</a></dd>
+            <dd><a href="">登录与账户</a></dd>
+            <dd><a href="">订单与操作</a></dd>
+            <dd><a href="">支付方式选择</a></dd>
+        </dl>
+        <dl>
+            <dt>使用指南</dt>
+            <dd><a href="">认证与注册</a></dd>
+            <dd><a href="">登录与账户</a></dd>
+            <dd><a href="">订单与操作</a></dd>
+            <dd><a href="">支付方式选择</a></dd>
+        </dl>
+        <div class="code">
+            <div class="code_box"></div>
+            <span>关注微信公众号</span>
+        </div>
+        <p>Copyright ©2017 职信网 沪ICP备17015994号</p>
+    </div>
+</div>
+</body>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/scroll.1.3.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/animent.js"></script>
+<script src="js/jPicture.min.js"></script>
+<script src="js/jquery.cxscroll.min.js"></script>
+<script>
+
+    $('#d_tab29').DB_rotateRollingBanner({
+
+        key:"c37080",
+
+        moveSpeed:200,
+
+        autoRollingTime:5000
+
+    })
+</script>
+<script type="text/javascript" charset="utf-8">
+    new WOW().init();
+    $("#pic_list_2").cxScroll({direction:"left",step:1,time:10000});
+    $(function () {
+        Carousel.init($('.carousel'));
+        //获取登录及切换状态
+        var login = $('.login');
+        var section = $('.section');
+        var a=$('.header .a');
+        a.on('click', function () {
+            login.addClass('al');
+            section.removeClass('al');
+        })
+        $('.Authentication .experience').on('click', function () {
+            login.addClass('al');
+            section.removeClass('al');
+        })
+        jPicture("#imgBox", {
+            type: "slide",
+            autoplay: 5000
+        });
+        var modal=$('.modal');
+        var modal_content=$('.modal-content');
+
+    })
+
+</script>
+</html>

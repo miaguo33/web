@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申请职业背景认证</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+    <link href="../../css/animate.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/company.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/initiate_free.css">
+</head>
+
+<body class="">
+
+<div id="wrapper">
+    <div class="header">
+        <img class="logo" src="../../img/logo.png"/>
+        <h3 class="header-describe">欢迎登录职信网平台</h3>
+        <div class="dropdown action">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+            </a>
+            <ul class="dropdown-menu animated fadeInLeft m-t-xs">
+                <li class="arrow"><img src="../../img/whitearrow.png"/></li>
+                <li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+                <li class="balance-count">
+                    <span>20000.00￥</span>
+                </li>
+                <li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+                <li class="balance-count">
+                    <span>20000.00￥</span>
+                </li>
+                <li class="divider"></li>
+                <li class="recharge">
+                    <button>立即充值</button>
+                </li>
+                <li class="logout">退出登录</li>
+            </ul>
+        </div>
+        <div class="avart">
+            <img src="../../img/avart.jpg"/>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+                </li>
+                <li>
+                    <a href="../index/person_index.html"><i class="iconfont icon-shouye"></i> <span
+                            class="nav-label">首页</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0);"><span class="nav-label">职信认证</span></a>
+                </li>
+                <li>
+                    <a href="../curriculum/curriculum.html"><i class="iconfont icon-renzheng1"></i> <span
+                            class="nav-label">申请背景认证</span></a>
+                </li>
+                <li>
+                    <a href="../l_authorization/l_authorization.html"><i class="iconfont icon-shouquan"></i> <span
+                            class="nav-label">授权</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+                </li>
+                <li>
+                    <a href="../Business_card/Business_card.html"><i class="iconfont icon-mingpian"></i> <span
+                            class="nav-label">我的电子名片</span></a>
+                </li>
+                <li  class="active">
+                    <a href="../Mail_list/Mail_list.html"><i class="iconfont icon-tongxunlu"></i> <span
+                            class="nav-label">名片通讯录</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">个人中心</span></a>
+                </li>
+                <li>
+                    <a href="../almond/almond.html"><i class="iconfont icon-xingren"></i> <span
+                            class="nav-label">杏仁</span></a>
+                </li>
+                <li >
+                    <a href="../Real-name/Real-name_one.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span
+                            class="nav-label">实名认证</span></a>
+                </li>
+                <li>
+                    <a href="../account/account.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span
+                            class="nav-label">帐号设置</span></a>
+                </li>
+                <li>
+                    <a href="../feedback/feedback.html"><i class="iconfont icon-Fill"></i> <span
+                            class="nav-label">意见反馈</span></a>
+                </li>
+            </ul>
+            <div class="rn">
+                Copyright ©2017 沪ICP备<br/>17015994号
+            </div>
+        </div>
+    </nav>
+    <div id="page-wrapper" class="gray-bg">
+        <div class="wrapper wrapper-content animated fadeInRightBig">
+            <div class="row animated fadeInRightBig">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins" id="my-card">
+                        <div class="ibox-title">
+                            <h5>我的电子名片 <span>手机扫描后的名片会记录在名片通讯录中</span></h5>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="ibox-content">
+                            <div class="top"></div>
+                            <div class="bottom row">
+                                <div class="left col-lg-4">
+                                    <div class="search">
+                                        <input type="text" class="search_box">
+                                        <i class="iconfont">&#xe60a;</i>
+                                    </div>
+                                    <div class="list">
+                                        <dl>
+                                            <dt><span>A</span></dt>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dt><span>B</span></dt>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dt><span>C</span></dt>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dt><span>D</span></dt>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                            <dd><a href="">王小二</a><span>总经理</span></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="right col-lg-8">
+                                    <div class="phone">
+                                        <div class="img">
+                                            <div class="phone" style="
+                                             width:276px;height:100%;background: url('../../img/lbs-shouji.png') no-repeat;
+                                             background-position: center center;
+                                             background-size:cover;
+                                             margin:0 auto;
+                                             display: flex;
+                                             justify-content: center;
+                                             align-items: center">
+
+
+                                                <div class="img" style=" width:240px; height:433px; display: none">
+                                                    <div class="card_one" style="  width:100%;height:100%;position: relative;border-top:1px solid rgba(0,0,0,0);">
+                                                        <img src="../../img/card-beijing.jpg" alt="" style="display: block;width:100%;height:100%;position: absolute;left:0;top:2px;">
+                                                        <div class="portrait" style="width:80px;
+                                                 height:80px;
+                                                 border-radius: 50%;
+                                                 position: absolute;
+                                                 background: #9d8e8f;
+                                                 top:58px;
+                                                 left:50px;
+                                                 background-position: center center;
+                                                 background-size:cover;">
+                                                            <img src="../../img/touxiang.png" alt="" style="  display: block; width:100%;height:100%;">
+                                                        </div>
+                                                        <div class="top" style="  margin-top:81px;position: relative;z-index: 10;display: flex;justify-content: flex-end;">
+                                                            <div class="right" style="  display: flex;align-items: center; padding-right: 10px;">
+                                                                <h3 style=" font-size:14px;margin-right:6px;">五百丁</h3>
+                                                                <p style="font-size:12px;color: #6e6c6d;">
+                                                                    <span>营销部</span>
+                                                                    <br>
+                                                                    <span>销售总监</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <p style=" font-size:12px;
+                                            text-align: center;
+                                             margin-top:28px;
+                                             position: relative;
+                                             z-index: 10;">上海火星科技有限公司
+                                                        </p>
+                                                        <ul style=" width:100%;height:auto;position: relative;z-index: 10;padding-left:40px;margin-top:15px;">
+                                                            <li style="  font-size:12px;color: #40494b;margin-top:5px;display: flex;">
+                                                                <i class="iconfont" style="margin-right:5px;color: #3da87e;">&#xe648;</i>
+                                                                <div>
+                                                                    <p>手机 :15234562345</p>
+                                                                    <p>固话 :021-678766787</p>
+                                                                    <p>微信 :hcjkdjnhjs</p>
+                                                                </div>
+                                                            </li>
+                                                            <li style="  font-size:12px;color: #40494b;margin-top:5px;display: flex;">
+                                                                <i class="iconfont" style="margin-right:5px;color: #3da87e;">&#xe608;</i>
+                                                                <div>
+                                                                    <p>邮箱 :23242354325@qq.com</p>
+                                                                    <p>网址 :www.baidu.com</p>
+                                                                </div>
+                                                            </li>
+                                                            <li style="  font-size:12px;color: #40494b;margin-top:5px;display: flex;">
+                                                                <i class="iconfont" style="margin-right:5px;color: #3da87e;">&#xe624;</i>
+                                                                <p>地址 :上海市徐汇</p>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="erweima" style="  position: relative;z-index: 20;text-align: center;height:auto;">
+                                                            <img src="../../img/lbs-erweima_03.png" alt="" style=" display: block;width:53px;height:53px; margin:0 auto;">
+                                                            <p style="font-size:12px;">扫码辩职位</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="img" style=" width:240px; height:433px;background: #fff;border-top:1px solid #ccc;">
+                                                    <div class="card_one" style="  width:100%;height:100%;position: relative;border-top:1px solid rgba(0,0,0,0);">
+                                                        <img src="../../img/card1.png" alt="" style="display: block;width:70px;height:100%;position: absolute;left:0;top:0;">
+                                                        <div class="portrait" style="width:80px;
+                                                 height:80px;
+                                                 border-radius: 50%;
+                                                 position: absolute;
+                                                 background: #242425;
+                                                 top:20px;
+                                                 left:0;
+                                                 right:0;
+                                                 margin:auto;
+                                                 background-position: center center;
+                                                 background-size:cover;">
+                                                            <img src="../../img/touxiang.png" alt="" style="  display: block; width:100%;height:100%;">
+                                                        </div>
+                                                        <div class="top" style="  margin-top:108px;position: relative;z-index: 10;display: flex;margin-left:90px;">
+                                                            <div class="right" style="  display: flex;align-items: center; padding-right: 10px;color: #db1116">
+                                                                <h3 style=" font-size:14px;margin-right:6px;">五百丁</h3>
+                                                                <p style="font-size:12px;color: #3f3a3a">
+                                                                    <span>营销部</span>
+                                                                    <br>
+                                                                    <span>销售总监</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <p style=" font-size:12px;
+                                             margin-left:80px;
+                                             margin-top:10px;
+                                             position: relative;
+                                             color: #202122;
+                                             z-index: 10;">上海火星科技有限公司
+                                                        </p>
+                                                        <ul style=" width:100%;height:auto;position: relative;z-index: 10;padding-left:50px;margin-top:15px;">
+                                                            <li style="  font-size:12px;color:#3f3a3a;margin-top:3px;display: flex;">
+                                                                <i class="iconfont" style="margin-right:5px;color:#3f3a3a;">&#xe648;</i>
+                                                                <div>
+                                                                    <p>手机 :15234562345</p>
+                                                                    <p>固话 :021-678766787</p>
+                                                                    <p>微信 :hcjkdjnhjs</p>
+                                                                </div>
+                                                            </li>
+                                                            <li style="  font-size:12px;color: #3f3a3a;margin-top:3px;display: flex;">
+                                                                <i class="iconfont" style="margin-right:5px;color:#3f3a3a;">&#xe608;</i>
+                                                                <div>
+                                                                    <p>邮箱 :23242354325@qq.com</p>
+                                                                    <p>网址 :www.baidu.com</p>
+                                                                </div>
+                                                            </li>
+                                                            <li style="  font-size:12px;color: #3f3a3a;margin-top:3px;display: flex;">
+                                                                <i class="iconfont" style="margin-right:5px;color:#3f3a3a">&#xe624;</i>
+                                                                <p>地址 :上海市徐汇</p>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="erweima" style="  position: relative;z-index: 20;height:auto;text-align: center">
+                                                            <img src="../../img/lbs-erweima_03.png" alt="" style=" display: block;width:53px;height:53px; margin:0 auto;">
+                                                            <p style="font-size:12px;color: #3f3a3a;">扫码辩职位</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="Arrow">
+                                        <div class="box"></div>
+                                        <div class="arrow-box"></div>
+                                    </div>
+                                    <div class="code">
+                                        <div class="code-box">
+                                            <img src="../../img/lbs-erweima_03.png" alt="">
+                                        </div>
+                                        <p>名片二维码</p>
+                                        <ul>
+                                            <li>
+                                                <span>扫码添加时间:</span>
+                                                <p>2017年7月12日</p>
+                                            </li>
+                                            <li>
+                                                <span>名片更新时间:</span>
+                                                <div>
+                                                    <p>2017年7月8日</p>
+                                                    <p>2017年7月8日</p>
+                                                    <p>2017年7月8日</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="button">
+                                            删除此名片
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Mainly scripts -->
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="../../js/inspinia.js"></script>
+    <script src="../../js/plugins/pace/pace.min.js"></script>
+    <script src="../../js/tools.js"></script>
+
+
+</body>
+</html>

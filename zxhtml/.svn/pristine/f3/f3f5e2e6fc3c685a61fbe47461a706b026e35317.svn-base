@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>员工职业背景认证</title>
+
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+		<link href="../../css/animate.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<link href="../../css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<link href="../../css/company.css" rel="stylesheet">
+
+	</head>
+
+	<body class="">
+
+		<div id="wrapper">
+			<div class="header">
+				<img class="logo" src="../../img/logo.png" />
+				<h3 class="header-describe">欢迎登录职信网平台</h3>
+				<div class="dropdown action">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+					</a>
+					<ul class="dropdown-menu animated fadeInLeft m-t-xs">
+						<li class="arrow"><img src="../../img/whitearrow.png" /></li>
+						<li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="divider"></li>
+						<li class="recharge">
+							<button>立即充值</button>
+						</li>
+						<li class="logout">退出登录</li>
+					</ul>
+				</div>
+				<div class="avart">
+					<img src="../../img/avart.jpg" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="sidebar-collapse">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+						</li>
+						<li class="active">
+							<a href="javascript:void(0)"><i class="iconfont icon-shouye"></i> <span class="nav-label">首页</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">职信认证</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-renzheng1"></i> <span class="nav-label">申请背景认证</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-shouquan"></i> <span class="nav-label">授权</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-mingpian"></i> <span class="nav-label">我的电子名片</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-tongxunlu"></i> <span class="nav-label">名片通讯录</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">个人中心</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-xingren"></i> <span class="nav-label">杏仁</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-zhanghaoshezhi"></i> <span class="nav-label">帐号设置</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-Fill"></i> <span class="nav-label">意见反馈</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-shiyongbangzhu"></i> <span class="nav-label">使用帮助</span></a>
+						</li>
+					</ul>
+					<div class="rn">
+						Copyright ©2017 沪ICP备<br/>17015994号
+					</div>
+				</div>
+			</nav>
+
+			<div id="page-wrapper" class="gray-bg">
+				<div class="wrapper wrapper-content animated fadeInRightBig">
+					<div class="row animated fadeInRightBig">
+						<div class="col-lg-12">
+							<div class="ibox float-e-margins">
+								<div class="ibox-title">
+									<h5>员工职业背景认证</h5>
+									<div class="clearfix"></div>
+								</div>
+								<div class="ibox-content authen-action">
+									<div class="border-top">
+										<table class="table table-moreinfo no-header border-bottom">
+											<tbody>
+												<tr>
+													<td>部门</td>
+													<td>产品部</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="department" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="department" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="department" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>岗位</td>
+													<td>产品负责人</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="post" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="post" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="post" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>入职时间</td>
+													<td>1993年3月12日</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="start_time" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="start_time" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="start_time" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>离职时间</td>
+													<td>1998年5月12日</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="end_time" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="end_time" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="end_time" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>工作类型</td>
+													<td>全职</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="work_type" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="work_type" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="work_type" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>直接上级职位</td>
+													<td>CEO</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leader_position" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leader_position" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="leader_position" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>直接上级姓名</td>
+													<td>王小二</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leader" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leader" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="leader" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>离职纠纷</td>
+													<td>有</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leave_dispute" value="5">无</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leave_dispute" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="leave_dispute" value="6">有</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>竞业禁止协议</td>
+													<td>未签订协议</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="non_competition" value="6">未签订协议</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="non_competition" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="non_competition" value="9">有效期至</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>有无重大违纪</td>
+													<td>有</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="breach_principle" value="5">无</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="breach_principle" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="breach_principle" value="6">有</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+										<div class="m-t-lg m-b-lg">
+											<button type="button" class="btn btn-w-m btn-danger m-t-md m-b-sm" data-toggle="modal" data-target="#transmit">转发下发信息给相关人员</button>
+										</div>
+
+										<table class="table table-moreinfo no-header border-bottom">
+											<tbody>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">职责</label>
+														</div>
+													</td>
+													<td>负责项目掌控和对接</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="duty" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="duty" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="duty" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">年收入</label>
+														</div>
+													</td>
+													<td>300万以上</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="year_income" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="year_income" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="year_income" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<!--转发成功改变tr，要把下面more-evaluate的一起带上，这个列表里的所有tr都是两个一组-->
+												<tr class="transmited">
+													<td>
+														年收入
+													</td>
+													<td>300万以上</td>
+													<td width="346">
+														已转发
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">下属团队人数</label>
+														</div>
+													</td>
+													<td>300</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="team_count" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="team_count" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="team_count" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">离职原因</label>
+														</div>
+													</td>
+													<td>300</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leave_reason" value="7">主动离职</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leave_reason" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="leave_reason" value="8">协商离职</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">是否愿意再次录用该员工</label>
+														</div>
+													</td>
+													<td>看</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="re_employ" value="5">是</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="re_employ" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="re_employ" value="6">否</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">获奖情况</label>
+														</div>
+													</td>
+													<td>最佳员工</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="prize" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="prize" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="prize" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">获奖时间</label>
+														</div>
+													</td>
+													<td>2013年3月20日</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="prize_time" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="prize_time" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="prize_time" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">绩效/项目</label>
+														</div>
+													</td>
+													<td>好项目</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="project" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="project" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="project" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">周期</label>
+														</div>
+													</td>
+													<td>2013年12月10日-2017年08月15日</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="project_time" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="project_time" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="project_time" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">角色</label>
+														</div>
+													</td>
+													<td>负责人</td>
+													<td width="346">
+														<div data-toggle="buttons" class="evaluate">
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="project_role" value="2">符合</label>
+															<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="project_role" value="1">不确定</label>
+															<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="project_role" value="4">与实际不符</label>
+														</div>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td>
+														<div class="text-area">
+															<div contenteditable="true"></div>
+															<img src="../../img/whitearrowsmall.png">
+														</div>
+
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">职业风格倾向</label>
+														</div>
+													</td>
+													<td></td>
+													<td width="346">
+														<button class="btn btn-sm btn-danger btn-w-m" data-toggle="modal" data-target="#profession-style">选择</button>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>
+														<div class="checkbox checkbox-danger">
+															<input name="" type="checkbox">
+															<label for="">综合能力</label>
+														</div>
+													</td>
+													<td></td>
+													<td width="346">
+														<button class="btn btn-sm btn-danger btn-w-m" data-toggle="modal" data-target="#performance">选择</button>
+													</td>
+												</tr>
+												<tr class="more-evaluate">
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="modal fade" id="profession-style" tabindex="-1" role="dialog" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+														<h4 class="modal-title">职业风格倾向</h4>
+													</div>
+													<div class="modal-body">
+														<p class="tips text-danger">提示：至少选择一项，最多选择6项；若没有任何一项符合，请选择“没有合适的”</p>
+														<div class="red-triangle-frame item-sm">
+															<label class="">
+																直接了当
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																热情奔放
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																细致完备
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																有始有终
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																雷厉风行
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																深具影响
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																深思熟虑
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																乐于跟随
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																理性客观
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																乐观开朗
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																内敛敏感
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																忠诚可靠
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																勇于挑战
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																善于社交
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																有条不絮
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																含蓄稳重
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																竞争意识
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																充满自信
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																善于分析
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																注重合作
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																喜欢决策
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																优雅大方
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																要求严格
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																和蔼可亲
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label class="no-fit">
+																没有合适的
+																<input type="checkbox" name="professional_style" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+
+														</div>
+														<div class="text-center">
+															<button type="button" class="btn btn-w-m btn-danger btn-lg m-t-lg m-b-xs">确定</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="modal fade" id="performance" tabindex="-1" role="dialog" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+														<h4 class="modal-title">行为表现</h4>
+													</div>
+													<div class="modal-body">
+														<p class="tips text-danger">提示：请选择符合该员工的综合行为表现，可多选</p>
+														<div class="red-triangle-frame item-sm" data-type="checkbox">
+															<label>
+																充满激情
+																<input type="checkbox" checked="checked" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																明知超出了自身能力范围，却硬撑着去做
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																越挫越勇
+																<input type="checkbox" checked="checked" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																善于总结、分析
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																能及时关注下属的自我发展需要
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																知人善用
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																只要费用能报销，缺啥买啥
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																追求完美，达不到预期，难以宽恕自己
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																在公司规定范围内，能花多少就花多少
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																工作界限清晰，只做分内工作
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																只管今日事，明日的事到时再说
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																经常思考未来的趋势和格局
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																注重投入的产出比、性价比
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																明知超出了自身能力范围，却硬撑着去做
+																<input type="checkbox" name="ability" value="">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+														</div>
+														<div class="text-center">
+															<button type="button" class="btn btn-w-m btn-danger btn-lg m-t-lg m-b-xs">确定</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="modal fade" id="transmit" tabindex="-1" role="dialog" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content tabs-container">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+														<ul class="nav nav-tabs modal-title">
+															<li class="active">
+																<a data-toggle="tab" href="#tab-1">转发到邮箱</a>
+															</li>
+															<li class="">
+																<a data-toggle="tab" href="#tab-2">转发到手机短信</a>
+															</li>
+															<li class="">
+																<a data-toggle="tab" href="#tab-3">复制链接</a>
+															</li>
+														</ul>
+														<!--<h4 class="">行为表现</h4>-->
+													</div>
+													<div class="modal-body">
+														<div class="tab-content">
+															<div id="tab-1" class="tab-pane active">
+																<div class="panel-body">
+																	<div class="input-group m-b-sm">
+																		<span class="input-group-addon">填写邮箱号：&nbsp;&nbsp;</span> 
+																		<input type="text" placeholder="请输入邮箱号" class="form-control">
+																	</div>
+																	<div class="text-center">
+																		<button type="button" class="btn btn-w-m btn-default btn-lg m-t-lg">取消</button>
+																		<button type="button" class="btn btn-w-m btn-danger btn-lg m-t-lg m-l">转发</button>
+																	</div>
+																</div>
+															</div>
+															<div id="tab-2" class="tab-pane">
+																<div class="panel-body">
+																	<div class="input-group m-b-sm">
+																		<span class="input-group-addon">填写手机号：&nbsp;&nbsp;</span> 
+																		<input type="text" placeholder="请输入手机号" class="form-control">
+																	</div>
+																	<div class="text-center">
+																		<button type="button" class="btn btn-w-m btn-default btn-lg m-t-lg">取消</button>
+																		<button type="button" class="btn btn-w-m btn-danger btn-lg m-t-lg m-l">转发</button>
+																	</div>
+																</div>
+															</div>
+															<div id="tab-3" class="tab-pane">
+																<div class="panel-body">
+																	<input id="build-link" type="text" placeholder="点击生成链接，转发给相关人员完成认证" class="form-control text-center">
+																	<p class="tips text-danger m-t m-b-sm text-center">点击生成链接后默认为转发此条认证信息</p>
+																	<div class="text-center">
+																		<button type="button" class="btn btn-w-m btn-danger btn-lg" onclick="buildLink(this)">生成链接</button>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mainly scripts -->
+		<script src="../../js/jquery-2.1.1.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom and plugin javascript -->
+		<script src="../../js/inspinia.js"></script>
+		<script src="../../js/plugins/pace/pace.min.js"></script>
+
+		<script src="../../js/tools.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				/*居中模态框*/
+				$('.modal').on('show.bs.modal', centerModals);
+				$(window).on('resize', centerModals);
+
+				$(".view-report").click(function() {
+					$('#report-type').modal('show');
+				});
+
+				$(".evaluate input").change(function() {
+					var moreEvaluateBtn = $(this).closest(".evaluate").find(".bad");
+					var moreEvaluate = $(this).closest("tr").next('.more-evaluate').find(".text-area");
+					console.log(moreEvaluate);
+					if($(moreEvaluateBtn).hasClass("active")) {
+						$(moreEvaluate).slideDown();
+					} else {
+						$(moreEvaluate).slideUp();
+					}
+				});
+			});
+			function buildLink(e){
+				$("#build-link").val('生成的连接XXXXXXXXXX');
+				$(e).html("复制连接");
+			};
+		</script>
+	</body>
+
+</html>

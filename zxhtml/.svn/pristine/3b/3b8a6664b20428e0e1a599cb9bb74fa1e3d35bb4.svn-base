@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>职信网</title>
+
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+		<link href="../../css/animate.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<link href="../../css/company.css" rel="stylesheet">
+
+	</head>
+
+	<body class="">
+
+		<div id="wrapper">
+			<div class="header">
+				<img class="logo" src="../../img/logo.png" />
+				<h3 class="header-describe">欢迎登录职信网平台</h3>
+				<div class="dropdown action">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear"> 
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+					</a>
+					<ul class="dropdown-menu animated fadeInLeft m-t-xs">
+						<li class="arrow"><img src="../../img/whitearrow.png" /></li>
+						<li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="divider"></li>
+						<li class="recharge">
+							<button>立即充值</button>
+						</li>
+						<li class="logout">退出登录</li>
+					</ul>
+				</div>
+				<div class="avart">
+					<img src="../../img/avart.jpg" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="sidebar-collapse">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+						</li>
+						<li class="active">
+							<a href="javascript:void(0)"><i class="iconfont icon-shouye"></i> <span class="nav-label">首页</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">职信认证</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-renzheng1"></i> <span class="nav-label">申请背景认证</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-shouquan"></i> <span class="nav-label">进行背景认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-mingpian"></i> <span class="nav-label">电子名片认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">企业中心</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-kuajingzhifuiconqiyezhanghu"></i> <span class="nav-label">企业账户</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-xingren"></i> <span class="nav-label">杏仁账户</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-zhanghaoshezhi"></i> <span class="nav-label">账户设置</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-yijianfankui"></i> <span class="nav-label">意见反馈</span></a>
+						</li>
+					</ul>
+					<div class="rn">
+						Copyright ©2017 沪ICP备<br/>17015994号
+					</div>
+				</div>
+			</nav>
+
+			<div id="page-wrapper" class="gray-bg">
+				<div class="wrapper wrapper-content animated fadeInRightBig">
+					<div class="row animated fadeInRightBig">
+                		<div class="col-lg-4">
+                			<div class="ibox float-e-margins">
+	                            <div class="ibox-title">
+	                                <h5>向候选人申请职业背景认证</h5>
+	                                <div class="clearfix"></div>
+	                            </div>
+	                            <div class="ibox-content send-apply">
+	                            	<div class="no-content">您还未发起任何职业背景认证申请</div>
+	                            	<div class="is-content" style="display: none;">
+	                            		
+	                            	</div>
+	                            	<div class="text-center btn-active">
+	                            		<button type="button" class="btn btn-w-m btn-danger">立即申请</button>
+	                            	</div>
+	                            </div>
+	                        </div>
+                		</div>
+                		<div class="col-lg-8">
+                			<div class="ibox float-e-margins">
+	                            <div class="ibox-title">
+	                                <a class="label label-white pull-right"><span class="pull-left">授权hr协助认证<br/><span class="underline-s"></span></span><i class="fa fa-caret-right m-l-xs pull-left"></i></a>
+	                                <h5>完成离职/在职 员工背景认证</h5>
+	                                <div class="clearfix"></div>
+	                            </div>
+	                            <div class="ibox-content authen">
+	                            	<div class="no-content" style="display: none;">您还未收到任何认证申请</div>
+	                            	<div class="is-content">
+	                            		<table class="table table-dashed m-b-none">
+				                            <tbody>
+					                            <tr>
+					                                <td>王二</td>
+					                                <td>14232346743</td>
+					                                <td>技术总监</td>
+					                                <td>2017.04.09</td>
+					                                <td>电子名片</td>
+					                                <td width="210">
+					                                	<button type="button" class="btn btn-outline btn-danger">开始认证</button>
+					                                	<button type="button" class="btn btn-link text-danger m-l-sm">屏蔽</button>
+					                                </td>
+					                            </tr>
+					                            <tr>
+					                                <td>王二</td>
+					                                <td>14232346743</td>
+					                                <td>技术总监</td>
+					                                <td>2017.04.09</td>
+					                                <td>背景认证</td>
+					                                <td width="210">
+					                                	<button type="button" class="btn btn-outline btn-danger">开始认证</button>
+					                                	<button type="button" class="btn btn-link text-danger m-l-sm">屏蔽</button>
+					                                </td>
+					                            </tr>
+					                            <tr>
+					                                <td>王二</td>
+					                                <td>14232346743</td>
+					                                <td>技术总监</td>
+					                                <td>2017.04.09</td>
+					                                <td>电子名片</td>
+					                                <td width="210">
+					                                	<button type="button" class="btn btn-outline btn-danger">开始认证</button>
+					                                	<button type="button" class="btn btn-link text-danger m-l-sm">屏蔽</button>
+					                                </td>
+					                            </tr>
+					                            <tr>
+					                                <td>王二</td>
+					                                <td>14232346743</td>
+					                                <td>技术总监</td>
+					                                <td>2017.04.09</td>
+					                                <td>背景认证</td>
+					                                <td width="210">
+					                                	<button type="button" class="btn btn-outline btn-danger">开始认证</button>
+					                                	<button type="button" class="btn btn-link text-danger m-l-sm">屏蔽</button>
+					                                </td>
+					                            </tr>
+					                            <tr>
+					                                <td>王二</td>
+					                                <td>14232346743</td>
+					                                <td>技术总监</td>
+					                                <td>2017.04.09</td>
+					                                <td>电子名片</td>
+					                                <td  width="210">
+					                                	<button type="button" class="btn btn-outline btn-danger">开始认证</button>
+					                                	<button type="button" class="btn btn-link text-danger m-l-sm">屏蔽</button>
+					                                </td>
+					                            </tr>
+					                            <tr>
+					                                <td>王二</td>
+					                                <td>14232346743</td>
+					                                <td>技术总监</td>
+					                                <td>2017.04.09</td>
+					                                <td>背景认证</td>
+					                                <td width="210">
+					                                	<button type="button" class="btn btn-outline btn-danger">开始认证</button>
+					                                	<button type="button" class="btn btn-link text-danger m-l-sm">屏蔽</button>
+					                                </td>
+					                            </tr>
+				                            </tbody>
+				                        </table>
+	                            	</div>
+	                            	<div class="text-center btn-active">
+	                            		<button type="button" class="btn btn-w-m btn-danger">查看详情</button>
+	                            	</div>
+	                            </div>
+	                        </div>
+                		</div>
+                		<div class="col-md-12">
+                			<div class="ibox float-e-margins">
+	                            <div class="ibox-title">
+	                            	<a class="label label-white pull-right"><span class="pull-left">查看更多结果<br/><span class="underline-s"></span></span><i class="fa fa-caret-right m-l-xs pull-left"></i></a>
+	                                <h5>背景认证结果</h5>
+	                                <div class="clearfix"></div>
+	                            </div>
+	                            <div class="ibox-content authen-result">
+	                            	<div class="no-content" style="display: none;">您还未发起任何职业背景认证申请</div>
+	                            	<div class="is-content">
+	                            		<ul>
+	                            			<li>
+	                            				<div class="pull-left">王二</div>
+	                            				<div class="pull-left">14232346743</div>
+	                            				<div class="pull-left">技术总监</div>
+	                            				<div></div>
+	                            				<div class="pull-right">
+	                            					<button type="button" class="btn btn-outline btn-danger">基础版</button>
+	                            					<button type="button" class="btn btn-outline btn-danger m-l-md">深度版</button>
+	                            					<button type="button" class="btn btn-outline btn-danger m-l-md">附加版</button>
+	                            				</div>
+	                            			</li>
+	                            			<li>
+	                            				<div class="pull-left">王二</div>
+	                            				<div class="pull-left">14232346743</div>
+	                            				<div class="pull-left">技术总监</div>
+	                            				<div></div>
+	                            				<div class="pull-right">
+	                            					<button type="button" class="btn btn-outline btn-danger m-l-md">深度版</button>
+	                            					<button type="button" class="btn btn-outline btn-danger m-l-md">附加版</button>
+	                            				</div>
+	                            			</li>
+	                            			<li>
+	                            				<div class="pull-left">王二</div>
+	                            				<div class="pull-left">14232346743</div>
+	                            				<div class="pull-left">技术总监</div>
+	                            				<div></div>
+	                            				<div class="pull-right">
+	                            					<button type="button" class="btn btn-outline btn-danger m-l-md">附加版</button>
+	                            				</div>
+	                            			</li>
+	                            		</ul>
+	                            	</div>
+	                            	<div class="text-center btn-active">
+	                            	</div>
+	                            </div>
+	                        </div>
+                		</div>
+                	</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mainly scripts -->
+		<script src="../../js/jquery-2.1.1.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom and plugin javascript -->
+		<script src="../../js/inspinia.js"></script>
+		<script src="../../js/plugins/pace/pace.min.js"></script>
+		
+	</body>
+
+</html>

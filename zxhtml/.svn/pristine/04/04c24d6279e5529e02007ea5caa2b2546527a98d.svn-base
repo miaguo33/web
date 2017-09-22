@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>批量导入HR</title>
+
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+		<link href="../../css/animate.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<link href="../../css/company.css" rel="stylesheet">
+
+	</head>
+
+	<body class="">
+
+		<div id="wrapper">
+			<div class="header">
+				<img class="logo" src="../../img/logo.png" />
+				<h3 class="header-describe">欢迎登录职信网平台</h3>
+				<div class="dropdown action">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+					</a>
+					<ul class="dropdown-menu animated fadeInLeft m-t-xs">
+						<li class="arrow"><img src="../../img/whitearrow.png" /></li>
+						<li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="divider"></li>
+						<li class="recharge">
+							<button>立即充值</button>
+						</li>
+						<li class="logout">退出登录</li>
+					</ul>
+				</div>
+				<div class="avart">
+					<img src="../../img/avart.jpg" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="sidebar-collapse">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+						</li>
+						<li class="active">
+							<a href="../index/enterprise_index.html"><i class="iconfont icon-shouye"></i> <span class="nav-label">首页</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">职业背景认证</span></a>
+						</li>
+						<li>
+							<a href="../apply-authen/apply-authen-list.html"><i class="iconfont icon-renzheng1"></i> <span class="nav-label">申请背景认证</span></a>
+						</li>
+						<li>
+							<a href="../authen/authen-list.html"><i class="iconfont icon-shouquan"></i> <span class="nav-label">进行背景认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+						</li>
+						<li>
+							<a href="../card-authen/authen-list.html"><i class="iconfont icon-mingpian"></i> <span class="nav-label">电子名片认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">企业中心</span></a>
+						</li>
+						<li>
+							<a href="../account/account.html"><i class="iconfont icon-kuajingzhifuiconqiyezhanghu"></i> <span class="nav-label">企业账户</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-xingren"></i> <span class="nav-label">杏仁账户</span></a>
+						</li>
+						<li>
+							<a href="../setting/setting.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span class="nav-label">账户设置</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-yijianfankui"></i> <span class="nav-label">意见反馈</span></a>
+						</li>
+						<li>
+							<a href="../invoice/invoice.html"><i class="iconfont icon-zhipinhaocai"></i> <span class="nav-label">发票管理</span></a>
+						</li>
+					</ul>
+					<div class="rn">
+						Copyright ©2017 沪ICP备<br/>17015994号
+					</div>
+				</div>
+			</nav>
+
+			<div id="page-wrapper" class="gray-bg">
+				<div class="wrapper wrapper-content animated fadeInRightBig">
+					<div class="row animated fadeInRightBig">
+						<div class="col-lg-12">
+							<div class="ibox float-e-margins">
+								<div class="ibox-title">
+									<h5>授权HR协助企业完成职业背景认证</h5>
+									<div class="clearfix"></div>
+								</div>
+								<div class="ibox-content bath-hr btn-b">
+									<div class="content border-top">
+										<div class="red-left-title">
+											<span class="pull-left">请输入需添加hr信息</span>
+											<a class="pull-right text-success">excel模板下载</a>
+										</div>
+										<div class="m-b-xl m-t-xl">
+											<span class="">请导入需背调人信息 :&nbsp;&nbsp;&nbsp;&nbsp;</span>
+											<div class="a-upload hidden" id="cover">&nbsp;选择文件</div>
+			                                <input type="hidden" id="upload-file-dir-sum" placeholder="请选择需认证人姓名" class="form-control" value="">
+											<span class="btngroup">
+												<button type="button" id="upload-file-dir" class="btn btn-link text-danger btn-lg m-l-md">上传</button>
+												<button type="button" onclick="remove()" class="btn btn-w-m btn-danger btn-lg m-l-md">删除</button>
+												<form class="inline" id='form1' action="/enterprise/certificate-auth-look" method="post">
+				                                    <button type="button" onclick="look()" class="btn btn-w-m btn-danger btn-lg m-l-md">预览</button>
+												    <input type="hidden" id="excel_path" name="excel_path" value="">
+			                                    </form>
+											</span>
+										</div>
+										<div class="value-count">
+											<span>授权服务费：</span>
+											<span class="text-danger">¥</span>
+											<span class="text-danger value">3000</span>
+										</div>
+									</div>
+									<div class="text-center btn-active btngroup m-t-lg">
+										<button type="button" class="btn btn-w-m btn-danger btn-lg">上一步</button>
+										<button type="button" class="btn btn-w-m btn-danger btn-lg m-l-xl">确认添加</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mainly scripts -->
+		<script src="../../js/jquery-2.1.1.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script type="text/javascript" src="../../js/plugins/webUpload/webuploader.js"></script>
+		<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom and plugin javascript -->
+		<script src="../../js/inspinia.js"></script>
+		<script src="../../js/plugins/pace/pace.min.js"></script>
+
+		<script src="../../js/tools.js"></script>
+		<script>
+			$(document).ready(function() {
+				var wrapperHeigh = $('#page-wrapper').height();
+				$(".ibox-content").css("min-height", wrapperHeigh - 140 + "px");
+				$("#upload-file-dir").click(function(){
+					$("#cover input").click();
+				});
+				var uploader = WebUploader.create({
+					auto: true,
+					duplicate: 1,
+					swf: '/plugins/webUpload/Uploader.swf',
+					server: '/enterprise/ajax-upload-file',
+					pick: {
+						id: '#cover',
+						multiple: false
+					},
+					formData: {
+						path: "/excel",
+						type_auth: 'bath_auth'
+					},
+					method: 'post'
+					//        accept: {
+					//            title: 'Images',
+					//            extensions: 'gif,jpg,jpeg,png',
+					//            mimeTypes: 'image/gif,image/jpg,image/jpeg,image/png'
+					//        }
+				});
+
+				uploader.on('uploadSuccess', function(file, response) {
+
+					console.log(file);
+					console.log(response);
+					if(response.state == 'SUCCESS') {
+						$('#upload-file-dir').val(response.real_url);
+						$('#upload-file-dir-sum').val(response.sum);
+						showMsg("共申请" + response.sum + "人次", 'success');
+						/*$('#upload-file-dir').val(response.real_url);
+						$("#upload-file-dir").css("display","block");*/
+					} else {
+						showMsg(response.info, 'error');
+						$('#upload-file-dir-sum').val('');
+					}
+
+				});
+				/*// 文件上传过程中创建进度条实时显示。
+				uploader.on('uploadProgress', function (file, percentage) {
+				    var $li = $('#' + file.id),
+				        $percent = $li.find('.progress .progress-bar');
+
+				    // 避免重复创建
+				    if (!$percent.length) {
+				        $percent = $('<div class="progress progress-striped active">' +
+				            '<div class="progress-bar" role="progressbar" style="width: 0%">' +
+				            '</div>' +
+				            '</div>').appendTo($li).find('.progress-bar');
+				    }
+
+				    $li.find('p.state').text('上传中');
+
+				    $percent.css('width', percentage * 100 + '%');
+				});*/
+				uploader.on("error", function(type) {
+					if(type === "Q_TYPE_DENIED") {
+						$('#upload-file-dir-sum').val('');
+						showMsg('文件格式错误', 'error');
+					}
+					if(type === "F_EXCEED_SIZE") {
+						$('#upload-file-dir-sum').val('');
+						showMsg('文件大小超过限制', 'error');
+					}
+				});
+
+				uploader.on('uploadComplete', function(file) {
+					//$( '#'+file.id ).find('.progress').remove();
+					uploader.reset();
+				});
+
+				function excelImport() {
+					var excelPath = $('#upload-file-dir').val();
+
+					console.log(excelPath);
+					if(excelPath == '') {
+						showMsg('请先上传Excel文件', 'error');
+						return;
+					}
+
+					$.post("/enterprise/excel-import", {
+							type: 'auth',
+							excel_path: excelPath
+						},
+						function(json) {
+							console.log(json);
+							if(json.result) {
+								$('#upload-file-dir').val('');
+								showMsg(json.reason, 'success');
+								location.href = "/enterprise/certificate-auth";
+								//window.location.reload();
+							} else {
+								showMsg(json.reason, 'error');
+							}
+
+						}, 'json');
+				}
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,114 @@
+body{
+	font-family: Adobe Heiti Std -WEBKIT-PICTOGRAPH,"microsoft yahei";
+	font-size: 16px;
+	background: #f6f6f6;
+}
+body,ul,li,h1,h5,p{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right;
+}
+.clearfix{
+	clear: both;
+}
+.bold{
+	font-weight: 600;
+}
+.black-bg{
+	background: #232122;
+}
+.white-bg{
+	background: #ffffff;
+}
+.text-red{
+	color: #E60013;
+}
+.header{
+	width: 100%;
+	position: fixed;
+	box-shadow: 0px 2px 7px 1px rgba(140,140,140,0.35);
+}
+.header .black-bg,.header .white-bg{
+	padding: 20px 0;
+}
+.header .black-bg li{
+	padding: 0 30px;
+	font-size: 12px;
+	color: #999999;
+	line-height: 12px;
+}
+.header .black-bg li:nth-child(2){
+	border-right: 2px solid #E60013;
+}
+.header li .bold{
+	color: #FFFFFF;
+}
+
+.header .white-bg img{
+	height: 40px;
+	border-right: 1px solid #cccccc;
+}
+.header .white-bg h1{
+	margin-left: 15px;
+	font-size: 24px;
+	line-height: 40px;
+	color: #5d5956;
+}
+.content{
+	background: #f6f6f6;
+	padding: 132px 30px 30px;
+}
+.content .detail-info{
+	padding: 0 50px;
+	color: #666666;
+}
+.content .detail-info ul{
+	margin: 30px 0 20px 0;
+	line-height: 32px;
+}
+.content .detail-info .pull-right{
+	margin-top: 84px;
+}
+.content .detail-info .pull-right .text-red{
+	font-size: 32px;
+}
+.content .white-bg{
+	text-align: center;
+	border-top:5px solid #c1c1c1 ;
+	padding: 90px 0;
+}
+.content .white-bg h5{
+	color: #666666;
+	line-height: 32px;
+}
+.content .white-bg h1{
+	font-size: 30px;
+	margin-bottom: 25px;
+}
+.content .QRcode{
+	width: 230px;
+	margin: 0 auto;
+	border: 1px solid #cccccc;
+}
+.content .QRcode img{
+	display: block;
+	width: 100%;
+}
+.content .QRcode .QRcode-info{
+	padding: 15px 0px 20px 30px;
+}
+.content .QRcode .QRcode-info img{
+	width: 40px;
+	margin: 5px 15px 0 0;
+}
+.content .QRcode .QRcode-info .pull-left{
+	text-align: left;
+	color: #666666;
+	line-height: 24px;
+}

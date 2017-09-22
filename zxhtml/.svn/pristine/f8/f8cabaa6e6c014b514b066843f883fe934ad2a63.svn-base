@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>查看链接</title>
+
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+		<link href="../../css/animate.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<link href="../../css/company.css" rel="stylesheet">
+
+	</head>
+
+	<body class="">
+		<div class="header transmit-link">
+			<div class="main-width">
+				<img class="pull-left" src="../../img/logo.png" />
+				<a class="pull-right">返回首页</a>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="content transmit-link main-width">
+			<div class="transmit-link-title">
+				<img class="avart" src="../../img/avart.jpg" />
+				<ul class="transmit-link-personinfo">
+					<li>姓名：王小二</li>
+					<li>国籍：中国</li>
+					<li>身份证：323423424242342323</li>
+				</ul>
+				<ul class="transmit-link-personinfo">
+					<li>手机：15279082134</li>
+					<li>出生日期：1988年4月21号</li>
+					<li>性别：女</li>
+				</ul>
+			</div>
+			<div class="border-top border-bottom m-b-xl">
+				<table class="table table-moreinfo no-header no-margins">
+					<tbody>
+						<!--如果不是需要操作的信息，在tr上加disabled-->
+						<tr class="disabled">
+							<td>部门</td>
+							<td>产品部</td>
+							<td width="346">
+								<div data-toggle="buttons" class="evaluate">
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="department" value="2">符合</label>
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="department" value="1">不确定</label>
+									<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="department" value="4">与实际不符</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="more-evaluate">
+							<td></td>
+							<td></td>
+							<td>
+								<div class="text-area">
+									<div contenteditable="true"></div>
+									<img src="../../img/whitearrowsmall.png">
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td>岗位</td>
+							<td>产品负责人</td>
+							<td width="346">
+								<div data-toggle="buttons" class="evaluate">
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="post" value="2">符合</label>
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="post" value="1">不确定</label>
+									<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="post" value="4">与实际不符</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="more-evaluate">
+							<td></td>
+							<td></td>
+							<td>
+								<div class="text-area">
+									<div contenteditable="true"></div>
+									<img src="../../img/whitearrowsmall.png">
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td>入职时间</td>
+							<td>1993年3月12日</td>
+							<td width="346">
+								<div data-toggle="buttons" class="evaluate">
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="start_time" value="2">符合</label>
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="start_time" value="1">不确定</label>
+									<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="start_time" value="4">与实际不符</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="more-evaluate">
+							<td></td>
+							<td></td>
+							<td>
+								<div class="text-area">
+									<div contenteditable="true"></div>
+									<img src="../../img/whitearrowsmall.png">
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td>离职时间</td>
+							<td>1998年5月12日</td>
+							<td width="346">
+								<div data-toggle="buttons" class="evaluate">
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="end_time" value="2">符合</label>
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="end_time" value="1">不确定</label>
+									<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="end_time" value="4">与实际不符</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="more-evaluate">
+							<td></td>
+							<td></td>
+							<td>
+								<div class="text-area">
+									<div contenteditable="true"></div>
+									<img src="../../img/whitearrowsmall.png">
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td>工作类型</td>
+							<td>全职</td>
+							<td width="346">
+								<div data-toggle="buttons" class="evaluate">
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="work_type" value="2">符合</label>
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="work_type" value="1">不确定</label>
+									<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="work_type" value="4">与实际不符</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="more-evaluate">
+							<td></td>
+							<td></td>
+							<td>
+								<div class="text-area">
+									<div contenteditable="true"></div>
+									<img src="../../img/whitearrowsmall.png">
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td>直接上级职位</td>
+							<td>CEO</td>
+							<td width="346">
+								<div data-toggle="buttons" class="evaluate">
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leader_position" value="2">符合</label>
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leader_position" value="1">不确定</label>
+									<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="leader_position" value="4">与实际不符</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="more-evaluate">
+							<td></td>
+							<td></td>
+							<td>
+								<div class="text-area">
+									<div contenteditable="true"></div>
+									<img src="../../img/whitearrowsmall.png">
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td>直接上级姓名</td>
+							<td>王小二</td>
+							<td width="346">
+								<div data-toggle="buttons" class="evaluate">
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leader" value="2">符合</label>
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leader" value="1">不确定</label>
+									<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="leader" value="4">与实际不符</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="more-evaluate">
+							<td></td>
+							<td></td>
+							<td>
+								<div class="text-area">
+									<div contenteditable="true"></div>
+									<img src="../../img/whitearrowsmall.png">
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td>离职纠纷</td>
+							<td>有</td>
+							<td width="346">
+								<div data-toggle="buttons" class="evaluate">
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leave_dispute" value="5">无</label>
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="leave_dispute" value="1">不确定</label>
+									<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="leave_dispute" value="6">有</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="more-evaluate">
+							<td></td>
+							<td></td>
+							<td>
+								<div class="text-area">
+									<div contenteditable="true"></div>
+									<img src="../../img/whitearrowsmall.png">
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td>竞业禁止协议</td>
+							<td>未签订协议</td>
+							<td width="346">
+								<div data-toggle="buttons" class="evaluate">
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="non_competition" value="6">未签订协议</label>
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="non_competition" value="1">不确定</label>
+									<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="non_competition" value="9">有效期至</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="more-evaluate">
+							<td></td>
+							<td></td>
+							<td>
+								<div class="text-area">
+									<div contenteditable="true"></div>
+									<img src="../../img/whitearrowsmall.png">
+								</div>
+
+							</td>
+						</tr>
+						<tr>
+							<td>有无重大违纪</td>
+							<td>有</td>
+							<td width="346">
+								<div data-toggle="buttons" class="evaluate">
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="breach_principle" value="5">无</label>
+									<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="breach_principle" value="1">不确定</label>
+									<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="breach_principle" value="6">有</label>
+								</div>
+							</td>
+						</tr>
+						<tr class="more-evaluate">
+							<td></td>
+							<td></td>
+							<td>
+								<div class="text-area">
+									<div contenteditable="true"></div>
+									<img src="../../img/whitearrowsmall.png">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+			<div class="text-center">
+				<button type="button" class="btn btn-w-m btn-danger btn-lg  m-t-xl">保存</button>
+				<button type="button" class="btn btn-w-m btn-danger btn-lg  m-t-xl m-l-lg">完成</button>
+			</div>
+		</div>
+
+		<!-- Mainly scripts -->
+		<script src="../../js/jquery-2.1.1.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom and plugin javascript -->
+		<!--<script src="../../js/plugins/pace/pace.min.js"></script>-->
+
+		<script src="../../js/tools.js"></script>
+
+		<script>
+			$(document).ready(function() {});
+		</script>
+	</body>
+
+</html>

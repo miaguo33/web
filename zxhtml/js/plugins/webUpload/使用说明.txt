@@ -1,0 +1,158 @@
+须jquery1.5以上版本
+/Third/webUpload/webuploader.css
+/Third/webUpload/webuploader.js
+官网API：http://fex.baidu.com/webuploader/doc/index.html
+注意：此文件夹需要有写权限
+
+html生成商城按钮(id可以更具参数修改)
+<div id="filePicker2"></div>
+
+
+
+
+// 初始化Web Uploader
+var uploader2 = WebUploader.create({
+
+	// 选完文件后，是否自动上传。
+	auto: true,
+	duplicate:1,
+	// swf文件路径
+	
+	//swf: BASE_URL + '/static/js/Uploader.swf',
+	swf:'__JS__/Uploader.swf',
+	// 文件接收服务端。
+	server: '/Third/webUpload/fileupload.php',
+	
+
+	// 选择文件的按钮。可选。
+	// 内部根据当前运行是创建，可能是input元素，也可能是flash.
+	pick: {
+		id:'#filePicker2',
+		multiple:true
+	},
+	// 只允许选择图片文件。
+	accept: {
+		title: 'Images',
+		extensions: 'gif,jpg,jpeg,bmp,png',
+		mimeTypes: 'image/*'
+	}
+});
+
+
+// 当有文件添加进来的时候
+uploader2.on( 'fileQueued', function( file ) {
+    /*
+	var $list  = $("#thumb_list2");
+	var thumbnailWidth = 150;
+	var thumbnailHeight = 150;
+	var $li = $('<div id="' + file.id + '" class="file-item thumbnail">' + '<img>'+'</div>'),
+        $img = $li.find('img');
+
+    // $list为容器jQuery实例
+    $list.append( $li );
+	//$list.html($li)
+    // 创建缩略图
+    // 如果为非图片文件，可以不用调用此方法。
+    // thumbnailWidth x thumbnailHeight 为 100 x 100
+    uploader2.makeThumb( file, function( error, src ) {
+        if ( error ) {
+            $img.replaceWith('<span>不能预览</span>');
+            return;
+        }
+
+        $img.attr( 'src', src );
+    }, thumbnailWidth, thumbnailHeight );
+	*/
+});
+
+
+// 文件上传过程中创建进度条实时显示。
+uploader2.on( 'uploadProgress', function( file, percentage ) {
+    var $li = $( '#'+file.id ),
+        $percent = $li.find('.progress span');
+
+    // 避免重复创建
+    if ( !$percent.length ) {
+        $percent = $('<p class="progress"><span></span></p>')
+                .appendTo( $li )
+                .find('span');
+    }
+
+    $percent.css( 'width', percentage * 100 + '%' );
+});
+
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+uploader2.on( 'uploadSuccess', function( file ) {
+	$( '#'+file.id ).addClass('upload-state-done');
+});
+
+// 文件上传失败，显示上传出错。
+uploader2.on( 'uploadError', function( file ) {
+    var $li = $( '#'+file.id ),
+        $error = $li.find('div.error');
+
+    // 避免重复创建
+    if ( !$error.length ) {
+        $error = $('<div class="error"></div>').appendTo( $li );
+    }
+
+    $error.text('上传失败');
+});
+
+// 完成上传完了，成功或者失败，先删除进度条。
+uploader2.on( 'uploadComplete', function( file ) {
+    $( '#'+file.id ).find('.progress').remove();
+});
+
+uploader2.on( 'uploadAccept', function( file, response ) {
+	$("#hidden").append('<input type="hidden" name="gallery[]" value="'+response._raw+'" />');
+	
+	var $list  = $("#thumb_list2");
+	var thumbnailWidth = 150;
+	var thumbnailHeight = 150;
+	var $li = $('<div data-val="' + response._raw + '" data-id="0" class="file-item thumbnail">' + '<img src="'+'http://www.pccb.com'+response._raw+'">'+'<span onclick="delImg(this)">X</span></div>'),
+    $img = $li.find('img');
+
+    // $list为容器jQuery实例
+    $list.append( $li );
+	//alert(response._raw);
+    //$("#Gif_img").val(response._raw);
+	//alert(response._raw )
+});
+
+
+function delImg(obj){
+	var path = $(obj).parent().data("val");
+	var img_id = $(obj).parent().data("id");
+	//$.get("/Third/webUpload/fileupload.php",{ajax:1,path:path});
+	$.get("{:U('goods/delGallery')}",{img_id:img_id});
+	$(obj).parent().fadeOut();
+	$("input[name='gallery[]']").each(function(){
+		if($(this).val()==path){
+			$(this).remove();
+		}
+	});
+}
+
+
+function addSpec(obj)
+  {
+      var newtb = $(obj).parent().parent().clone();
+	
+	  var html = newtb.html();
+	  
+	  html = html.replace(/(.*)(addSpec)(.*)(\[)(\+)/i, "$1removeSpec$3$4-");
+	  html = html.replace(/readOnly([^\s|>]*)/i, '');
+	  //alert(html);
+	  newtb.html(html);
+	  newtb.insertAfter($(obj).parent().parent());
+	  
+      //cell1.innerHTML = src.childNodes[0].innerHTML.replace(/(.*)(addSpec)(.*)(\[)(\+)/i, "$1removeSpec$3$4-");
+      //cell2.innerHTML = src.childNodes[1].innerHTML.replace(/readOnly([^\s|>]*)/i, '');
+  }
+
+
+  function removeSpec(obj)
+  {
+      $(obj).parent().parent().remove();
+  }

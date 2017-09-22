@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>企业注册</title>
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/anmiment.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/register.css">
+</head>
+<body>
+<!--头部-->
+<header>
+    <div class="header">
+        <a href="../../index.html">返回首页</a>
+    </div>
+</header>
+<!--个人注册-->
+<div class=" register">
+    <div class="information_header">
+        <div class="information_name">
+            <span class="active">注册信息</span>
+            <span>信息审核</span>
+            <span>注册成功</span>
+        </div>
+        <div class="information_Progress">
+            <div class="Progress">
+                <div class="Progress_r"></div>
+                <div class="Progress_r"></div>
+                <div class="Progress_r"></div>
+            </div>
+            <div class="Progress_z">
+                <div class="Progress_r active">1</div>
+                <div class="Progress_r active">2</div>
+                <div class="Progress_r">3</div>
+            </div>
+            <div id="pro" style="width:45%"></div>
+        </div>
+    </div>
+    <form class="form-horizontal">
+        <div class="register_ok" style="background: rgba(0,0,0,0)">
+            <div class="box">
+                <img src="../../img/lbs-cg.png" alt="">
+                <p>申请成功, 请耐心等待。。。</p>
+                <div class="time">
+                    <span>3</span>秒后自动登录</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--底部-->
+<div class="footer">
+    <div class="footer_box">
+        <dl>
+            <dt>联系我们</dt>
+            <dd><a href="">联系电话：400-001-3129</a></dd>
+            <dd><a href="">售后服务：hr@hrzhixin.com</a></dd>
+            <dd><a href="">售后服务：hr@hrzhixin.com</a></dd>
+            <dd><a href="">售后服务：hr@hrzhixin.com</a></dd>
+        </dl>
+        <dl>
+            <dt>使用指南</dt>
+            <dd><a href="">认证与注册</a></dd>
+            <dd><a href="">登录与账户</a></dd>
+            <dd><a href="">订单与操作</a></dd>
+            <dd><a href="">支付方式选择</a></dd>
+        </dl>
+        <dl>
+            <dt>使用指南</dt>
+            <dd><a href="">认证与注册</a></dd>
+            <dd><a href="">登录与账户</a></dd>
+            <dd><a href="">订单与操作</a></dd>
+            <dd><a href="">支付方式选择</a></dd>
+        </dl>
+        <div class="code">
+            <div class="code_box"></div>
+            <span>关注微信公众号</span>
+        </div>
+        <p>Copyright ©2017 职信网 沪ICP备17015994号</p>
+    </div>
+</div>
+</body>
+</html>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script>
+    $(function () {
+        //点击获取验证码
+        let btn=$('#btn');
+        let btns=$('#btns');
+        btn.on('click',function () {
+            $(this).removeClass('active');
+            btns.addClass('active');
+
+        })
+    })
+</script>

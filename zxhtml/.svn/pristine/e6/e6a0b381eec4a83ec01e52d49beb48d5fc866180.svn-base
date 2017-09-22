@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>电子名片认证</title>
+
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+		<link href="../../css/animate.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<link href="../../css/company.css" rel="stylesheet">
+
+	</head>
+
+	<body class="">
+
+		<div id="wrapper">
+			<div class="header">
+				<img class="logo" src="../../img/logo.png" />
+				<h3 class="header-describe">欢迎登录职信网平台</h3>
+				<div class="dropdown action">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+					</a>
+					<ul class="dropdown-menu animated fadeInLeft m-t-xs">
+						<li class="arrow"><img src="../../img/whitearrow.png" /></li>
+						<li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="divider"></li>
+						<li class="recharge">
+							<button>立即充值</button>
+						</li>
+						<li class="logout">退出登录</li>
+					</ul>
+				</div>
+				<div class="avart">
+					<img src="../../img/avart.jpg" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="sidebar-collapse">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+						</li>
+						<li class="active">
+							<a href="javascript:void(0)"><i class="iconfont icon-shouye"></i> <span class="nav-label">首页</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">职信认证</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-renzheng1"></i> <span class="nav-label">申请背景认证</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-shouquan"></i> <span class="nav-label">授权</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-mingpian"></i> <span class="nav-label">我的电子名片</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-tongxunlu"></i> <span class="nav-label">名片通讯录</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">个人中心</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-xingren"></i> <span class="nav-label">杏仁</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-zhanghaoshezhi"></i> <span class="nav-label">帐号设置</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-Fill"></i> <span class="nav-label">意见反馈</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-shiyongbangzhu"></i> <span class="nav-label">使用帮助</span></a>
+						</li>
+					</ul>
+					<div class="rn">
+						Copyright ©2017 沪ICP备<br/>17015994号
+					</div>
+				</div>
+			</nav>
+
+			<div id="page-wrapper" class="gray-bg">
+				<div class="wrapper wrapper-content animated fadeInRightBig">
+					<div class="row animated fadeInRightBig">
+						<div class="col-lg-12">
+							<div class="ibox float-e-margins">
+								<div class="ibox-title">
+									<h5>在职员工电子名片认证</h5>
+									<div class="clearfix"></div>
+								</div>
+								<div class="ibox-content">
+									<div class="border-top">
+										<div class="red-left-title">
+											<span class="pull-left">为王小二进行电子简历认证</span>
+										</div>
+									</div>
+									<table class="table table-moreinfo no-header no-margins">
+										<tbody>
+											<tr>
+												<td>部门</td>
+												<td>产品部</td>
+												<td width="346">
+													<div data-toggle="buttons" class="evaluate">
+														<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="department" value="2">符合</label>
+														<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="department" value="1">不确定</label>
+														<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="department" value="4">与实际不符</label>
+													</div>
+												</td>
+											</tr>
+											<tr class="more-evaluate">
+												<td></td>
+												<td></td>
+												<td>
+													<div class="text-area">
+														<div contenteditable="true"></div>
+														<img src="../../img/whitearrowsmall.png">
+													</div>
+
+												</td>
+											</tr>
+											<tr>
+												<td>岗位</td>
+												<td>产品负责人</td>
+												<td width="346">
+													<div data-toggle="buttons" class="evaluate">
+														<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="post" value="2">符合</label>
+														<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="post" value="1">不确定</label>
+														<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="post" value="4">与实际不符</label>
+													</div>
+												</td>
+											</tr>
+											<tr class="more-evaluate">
+												<td></td>
+												<td></td>
+												<td>
+													<div class="text-area">
+														<div contenteditable="true"></div>
+														<img src="../../img/whitearrowsmall.png">
+													</div>
+
+												</td>
+											</tr>
+											<tr>
+												<td>入职时间</td>
+												<td>1993年3月12日</td>
+												<td width="346">
+													<div data-toggle="buttons" class="evaluate">
+														<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="start_time" value="2">符合</label>
+														<label class="btn btn-sm btn-danger btn-outline m-r-md"> <input type="radio" name="start_time" value="1">不确定</label>
+														<label class="btn btn-sm btn-danger btn-outline bad"> <input type="radio" name="start_time" value="4">与实际不符</label>
+													</div>
+												</td>
+											</tr>
+											<tr class="more-evaluate">
+												<td></td>
+												<td></td>
+												<td>
+													<div class="text-area">
+														<div contenteditable="true"></div>
+														<img src="../../img/whitearrowsmall.png">
+													</div>
+
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mainly scripts -->
+		<script src="../../js/jquery-2.1.1.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom and plugin javascript -->
+		<script src="../../js/inspinia.js"></script>
+		<script src="../../js/plugins/pace/pace.min.js"></script>
+
+		<script src="../../js/tools.js"></script>
+		<script>
+			$(document).ready(function() {});
+		</script>
+	</body>
+
+</html>

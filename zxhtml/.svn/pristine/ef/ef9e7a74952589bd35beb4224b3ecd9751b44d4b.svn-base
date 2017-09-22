@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>员工职业背景认证</title>
+
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+		<link href="../../css/animate.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<link href="../../css/company.css" rel="stylesheet">
+
+	</head>
+
+	<body class="">
+
+		<div id="wrapper">
+			<div class="header">
+				<img class="logo" src="../../img/logo.png" />
+				<h3 class="header-describe">欢迎登录职信网平台</h3>
+				<div class="dropdown action">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+					</a>
+					<ul class="dropdown-menu animated fadeInLeft m-t-xs">
+						<li class="arrow"><img src="../../img/whitearrow.png" /></li>
+						<li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="divider"></li>
+						<li class="recharge">
+							<button>立即充值</button>
+						</li>
+						<li class="logout">退出登录</li>
+					</ul>
+				</div>
+				<div class="avart">
+					<img src="../../img/avart.jpg" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="sidebar-collapse">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+						</li>
+						<li class="active">
+							<a href="../index/enterprise_index.html"><i class="iconfont icon-shouye"></i> <span class="nav-label">首页</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">职业背景认证</span></a>
+						</li>
+						<li>
+							<a href="../apply-authen/apply-authen-list.html"><i class="iconfont icon-renzheng1"></i> <span class="nav-label">申请背景认证</span></a>
+						</li>
+						<li>
+							<a href="../authen/authen-list.html"><i class="iconfont icon-shouquan"></i> <span class="nav-label">进行背景认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+						</li>
+						<li>
+							<a href="../card-authen/authen-list.html"><i class="iconfont icon-mingpian"></i> <span class="nav-label">电子名片认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">企业中心</span></a>
+						</li>
+						<li>
+							<a href="../account/account.html"><i class="iconfont icon-kuajingzhifuiconqiyezhanghu"></i> <span class="nav-label">企业账户</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-xingren"></i> <span class="nav-label">杏仁账户</span></a>
+						</li>
+						<li>
+							<a href="../setting/setting.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span class="nav-label">账户设置</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-yijianfankui"></i> <span class="nav-label">意见反馈</span></a>
+						</li>
+					</ul>
+					<div class="rn">
+						Copyright ©2017 沪ICP备<br/>17015994号
+					</div>
+				</div>
+			</nav>
+
+			<div id="page-wrapper" class="gray-bg">
+				<div class="wrapper wrapper-content animated fadeInRightBig">
+					<div class="row animated fadeInRightBig">
+						<div class="col-lg-12">
+							<div class="ibox float-e-margins">
+								<div class="ibox-title">
+									<h5>员工职业背景认证</h5>
+									<div class="clearfix"></div>
+								</div>
+								<div class="ibox-content hr-list">
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>姓名</th>
+												<th>手机号</th>
+												<th>职位</th>
+												<th>发起时间</th>
+												<th>失效时间</th>
+												<th width="110">操作</th>
+												<th width="110"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>王小二</td>
+												<td>18832342323</td>
+												<td>PHP工程师</td>
+												<td>2017-08-12</td>
+												<td>2017-10-12</td>
+												<td>
+													<button type="button" class="btn btn-outline btn-danger btn-sm">开始认证</button>
+												</td>
+												<td>
+													<button type="button" class="btn btn-link text-danger btn-sm">屏蔽</button>
+												</td>
+											</tr>
+											<tr>
+												<td>王小二</td>
+												<td>18832342323</td>
+												<td>PHP工程师</td>
+												<td>2017-08-12</td>
+												<td>2017-10-12</td>
+												<td>
+													<button type="button" class="btn btn-outline btn-danger btn-sm">已完成</button>
+												</td>
+												<td>
+													<button type="button" class="btn btn-link text-danger btn-sm">取消</button>
+												</td>
+											</tr>
+											<tr>
+												<td>王小二</td>
+												<td>18832342323</td>
+												<td>PHP工程师</td>
+												<td>2017-08-12</td>
+												<td>2017-10-12</td>
+												<td>
+													<button type="button" class="btn btn-outline btn-danger btn-sm" disabled="disabled">已过期</button>
+												</td>
+												<td>
+													<button type="button" class="btn btn-link text-danger btn-sm">取消</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mainly scripts -->
+		<script src="../../js/jquery-2.1.1.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom and plugin javascript -->
+		<script src="../../js/inspinia.js"></script>
+		<script src="../../js/plugins/pace/pace.min.js"></script>
+
+		<script src="../../js/tools.js"></script>
+
+		<script>
+			$(document).ready(function() {});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,218 @@
+<body class="bg-common">
+
+
+	<div class="main-home top-common">
+		<div class="w1180">
+			<div class="g-container mt10">
+                                        <div class="ct-tit mt10">
+						<span class="ico-ct-tit ico-ct-tit01"></span>完善我的简历：个人工作经历
+						<a href="javascript:;" class="ico-slide"></a>
+					</div>
+					<div class="ct-border mt10">
+						<!-- 信息填写 -->
+						<form class="report-form job-form">
+
+				<div class="g-r-ct">
+                                    <!--个人信息-->
+ <!--  <form id="form1" class="report-form job-form" action="/prof/baseinfo-submit" method="post">
+<input type="submit" value="提交">-->
+<!--                                    <div class="info">-->
+<!--                                        姓名:</br>-->
+<!--                                        手机:--><?//=$this->userInfo['telephone'];?><!--</br>-->
+<!--                                        国籍:--><?//=$countrys_name;?><!--</br>-->
+<!--                                        出生日期:--><?//=$this->userInfo['birthday'];?><!--</br>-->
+<!--                                        证件类型:--><?//=$this->CommonHelper()->cardType($this->userInfo['card_type']) ?><!--</br>-->
+<!--                                        证件号:--><?//=$this->userInfo['card_no'];?><!--</br>-->
+<!--                                        性别:<span id="sex_lable">--><?//=$this->CommonHelper()->sex($this->baseInfo['sex']) ?><!--</span></br>-->
+<!--                                        开始工作年份:<span id="start_work_lable">--><?//=$this->baseInfo['start_work'];?><!--</span></br>-->
+<!--                                        政治面貌:<span id="political_lable">--><?//=$this->CommonHelper()->political($this->baseInfo['political']) ?><!--</span></br>-->
+<!--                                        婚姻状况:<span id="marital_lable">--><?//=$this->CommonHelper()->marital($this->baseInfo['marital']) ?><!--</span></br>-->
+<!--                                        户籍:</br>-->
+<!--                                        居住地</br>-->
+<!--                                        邮箱:<span id="email_lable">--><?//=$this->baseInfo['email'];?><!--</span>-->
+<!--                                    </div>-->
+<!--                                    <a style="color:red;" id="info_edit" href="javascript:info_edit()">编辑</a> </br>-->
+<!--                                        <form id="info_box" class="report-form job-form" style="display: none">-->
+<!--                                            性别:<select id="sex" name="sex" class="i-sel"><option value="1" --><?php //if($this->baseInfo['sex'] == '1'):echo 'selected';endif;?><!-->男</option><option value="2" --><?php //if($this->baseInfo['sex'] == '2'):echo 'selected';endif;?><!-->女</option></select></br>-->
+<!--                                            开始工作年份:<input readonly="readonly" id="start_work" name="start_work" type="text" class="i-txt" onclick="layui.laydate({elem: this, istime: false, format: 'YYYY-MM-DD',max: laydate.now()})" value="--><?//=$this->baseInfo['start_work'];?><!--"></br>-->
+<!--                                            政治面貌:<select id="political" name="political" class="i-sel">-->
+<!--                                                              <option value="1" --><?php //if($this->baseInfo['political'] == '1'):echo 'selected';endif;?><!-->群众</option>-->
+<!--                                                              <option value="2" --><?php //if($this->baseInfo['political'] == '2'):echo 'selected';endif;?><!-->中共党员</option>-->
+<!--                                                              <option value="3" --><?php //if($this->baseInfo['political'] == '3'):echo 'selected';endif;?><!-->团员</option>-->
+<!--                                                              <option value="4" --><?php //if($this->baseInfo['political'] == '4'):echo 'selected';endif;?><!-->民主党派</option>-->
+<!--                                                              <option value="5" --><?php //if($this->baseInfo['political'] == '5'):echo 'selected';endif;?><!-->无党派人士</option>-->
+<!--                                                              </select></br>-->
+<!--                                            婚姻状况:<select id="marital" name="marital" class="i-sel">-->
+<!--                                                              <option value="1" --><?php //if($this->baseInfo['marital'] == '1'):echo 'selected';endif;?><!-->未婚</option>-->
+<!--                                                              <option value="2" --><?php //if($this->baseInfo['marital'] == '2'):echo 'selected';endif;?><!-->已婚</option>-->
+<!---->
+<!--                                                              </select></br>-->
+<!--                                            户籍:</br>-->
+<!--                                            居住地</br>-->
+<!--                                            邮箱:<input id="email" name="email"  type="text" class="i-txt inputElem" value="--><?//=$this->baseInfo['email'];?><!--">-->
+<!--                                            <a style="color:red;" href="javascript:vitae_updata()">提交</a>-->
+<!--                                            <a style="color:red;" id="vitae_reset">取消</a>-->
+<!--                                      </form>-->
+<!--                                    <!--个人信息end-->-->
+<!--                                    完善我的简历：个人教育经历<span style="color:red;">（最多填写两段教育经历）</span>-->
+<!--                                     <a id="add_vitae" style="color:red">添加</a>-->
+<!--                                    <div id="add_vitae_text" style="display:none">-->
+<!--                                                                        学历层次:-->
+<!--                                                                        <select id="edu_level">-->
+<!--                                                                            <option value="">请选择</option>-->
+<!--                                                                            <option value="1">专科</option>-->
+<!--                                                                            <option value="2">本科</option>-->
+<!--                                                                            <option value="3">硕士</option>-->
+<!--                                                                            <option value="4">博士</option>-->
+<!--                                                                        </select></br>-->
+<!--                                                                        学历类别:-->
+<!--                                                                        <select id="edu_type">-->
+<!--                                                                            <option value="">请选择</option>-->
+<!--                                                                            <option value="1">统招</option>-->
+<!--                                                                            <option value="2">研究生</option>-->
+<!--                                                                            <option value="3">成人</option>-->
+<!--                                                                            <option value="4">自考</option>-->
+<!--                                                                            <option value="5">网络教育</option>-->
+<!--                                                                            <option value="6">开放教育</option>-->
+<!--                                                                        </select></br>-->
+<!--                                                                        入学年份:<input id="inyear"  type="text" value=""></br>-->
+<!--                                                                        毕业年份:<input id="endyear" type="text" value=""></br>-->
+<!--                                                                        学校:<input id="school"  type="text" maxlength="50" value=""></br>-->
+<!--                                                                        专业:<inpu  id="btn_MajorID_2" type="text"  value=""  /></br>-->
+<!--                                                                        <a style="color:red;"  href="javascript:vitaeEduSubmit();">提交</a>-->
+<!--                                                                        <a style="color:red;"  id="vitaeEdusReset">取消</a>-->
+<!--                                                                    </div>-->
+<!--                                                <div class="ct-border mt10" id="edu_list">-->
+<!--						<!-- 信息填写 -->-->
+<!--							--><?php //if(count($this->vitaeEdus) > 0):?>
+<!--                                                            --><?php //foreach ($this->vitaeEdus as $k=>$v):?>
+<!--                                                                    <div id="vitaeEdus_--><?//=$v['id']?><!--">-->
+<!--                                                                            学历层次:<span id="edu_level_lable--><?//=$v['id']?><!--">--><?//=$this->CommonHelper()->eduLevel($v['edu_level']) ?><!--</span></br>-->
+<!--                                                                            学历类型:<span id="edu_type_lable--><?//=$v['id']?><!--">--><?//=$this->CommonHelper()->eduType($v['edu_type']) ?><!--</span></br>-->
+<!--                                                                            入学年份:<span id="inyear_lable--><?//=$v['id']?><!--">--><?//=$v['inyear']?><!--</span></br>-->
+<!--                                                                            毕业年份:<span id="endyear_lable--><?//=$v['id']?><!--">--><?//=$v['endyear']?><!--</span></br>-->
+<!--                                                                            学校:  <span id="school_lable--><?//=$v['id']?><!--">  --><?//=$v['school'] ?><!--</span></br>-->
+<!--                                                                            专业:   <span id="specialities_lable--><?//=$v['id']?><!--">  --><?php ////=$v['specialities']?><!--</span></br>-->
+<!--                                                                            <a href="javascript:del_vitae('--><?//=$v['id']?><!--','edu');" style="color:red">删除</a>-->
+<!--                                                                            <a href="javascript:vitae_edu_edit('--><?//=$v['id']?><!--');" style="color:red">编辑</a>-->
+<!--                                                                    </div>-->
+<!--                                                <div id="edu_list--><?//=$v['id'] ?><!--" style="display:none">-->
+<!--                                                        <input  type="hidden" id="id--><?//=$v['id'] ?><!--"  value="--><?//=$v['id'] ?><!--">-->
+<!--                                                        学历层次:-->
+<!--                                                        <select id="edu_level--><?//=$v['id'] ?><!--">-->
+<!--                                                            <option value="">请选择</option>-->
+<!--                                                            <option value="1" --><?php //echo $v['edu_level']=='1'? 'selected' : '' ;?><!-->专科</option>-->
+<!--                                                            <option value="2" --><?php //echo $v['edu_level']=='2'? 'selected' : '' ;?><!-->本科</option>-->
+<!--                                                            <option value="3" --><?php //echo $v['edu_level']=='3'? 'selected' : '' ;?><!-->硕士</option>-->
+<!--                                                            <option value="4" --><?php //echo $v['edu_level']=='4'? 'selected' : '' ;?><!-->博士</option>-->
+<!--							</select></br>-->
+<!--                                                        学历类别:-->
+<!--                                                        <select id="edu_type--><?//=$v['id'] ?><!--">-->
+<!--                                                            <option value="">请选择</option>-->
+<!--                                                            <option value="1" --><?php //echo $v['edu_type']=='1'? 'selected' : '' ;?><!-->统招</option>-->
+<!--                                                            <option value="2" --><?php //echo $v['edu_type']=='2'? 'selected' : '' ;?><!-->研究生</option>-->
+<!--                                                            <option value="3" --><?php //echo $v['edu_type']=='3'? 'selected' : '' ;?><!-->成人</option>-->
+<!--                                                            <option value="4" --><?php //echo $v['edu_type']=='4'? 'selected' : '' ;?><!-->自考</option>-->
+<!--                                                            <option value="5" --><?php //echo $v['edu_type']=='5'? 'selected' : '' ;?><!-->网络教育</option>-->
+<!--                                                            <option value="6" --><?php //echo $v['edu_type']=='6'? 'selected' : '' ;?><!-->开放教育</option>-->
+<!--							</select></br>-->
+<!--                                                        入学年份:<input id="inyear--><?//=$v['id'] ?><!--"  type="text" value="--><?//=$v['inyear'] ?><!--"></br>-->
+<!--                                                        毕业年份:<input id="endyear--><?//=$v['id'] ?><!--" type="text" value="--><?//=$v['endyear'] ?><!--"></br>-->
+<!--                                                        学校:<input id="school--><?//=$v['id'] ?><!--"  type="text" maxlength="50" value="--><?//=$v['school'] ?><!--"></br>-->
+<!--                                                        专业:<inpu  id="btn_MajorID_2"--><?//=$v['id'] ?><!-- type="text"  value=""  /></br>-->
+<!--                                                        <a style="color:red;"  href="javascript:vitaeEduSubmit('--><?//=$v['id']?><!--');">提交</a>-->
+<!--                                                        <a style="color:red;" href="javascript:add_reset('--><?//=$v['id']?><!--','edu_list');">取消</a>-->
+<!--                                                    </div>   -->
+<!--                                                        --><?php //endforeach;?>
+<!--                                                        --><?php //endif;?>
+<!--					</div>-->
+<!---->
+<!--					-->
+<!--					<div class="ct-tit mt10">-->
+<!--						<span class="ico-ct-tit ico-ct-tit01"></span>完善我的简历：语言-->
+<!--						<a href="javascript:;" class="ico-slide"></a>-->
+<!--					</div>-->
+<!--					<div class="ct-border mt10">-->
+<!--						<!-- 信息填写 -->-->
+<!--                                                <a  id="language_add" style="color:red">添加</a>-->
+<!--                                                    <div id="vitae-language-add" style="display:none">-->
+<!--                                                        语种：   <input type="text"  id="language_id"  value=""></br>-->
+<!--                                                        掌握程度:<input type="text"  id="degrees"  value=""></br>-->
+<!--                                                        获得证书:<input type="text"  id="language_certificate_id"  value=""></br>-->
+<!--                                                        证书编号:<input type="text"  id="certificate_no" value=""></br>-->
+<!--                                                        类型:<input id="type" type="text" value="1"></br>-->
+<!--                                                        <a href="javascript:languageAdd();" style="color:red">提交</a></br>-->
+<!--                                                    </div>-->
+<!--                                                <div id="language_sum">-->
+<!--                                                --><?php //if(count($this->vitaeLanguages) > 0):?>
+<!--                                                --><?php //foreach ($this->vitaeLanguages as $k=>$v):?>
+<!--                                                        <div id="vitaeLanguage--><?//=$v['id'] ?><!--">-->
+<!--                                                           语   种:<span id="language_id_lable--><?//=$v['id'] ?><!--">--><?//=$v['language_id'] ?><!--</span></br>-->
+<!--                                                           掌握程度:<span id="degrees_lable--><?//=$v['id'] ?><!--">--><?//=$v['degrees'] ?><!--</span></br>-->
+<!--                                                           获得证书:<span id="language_certificate_id_lable--><?//=$v['id'] ?><!--">--><?//=$v['language_certificate_id'] ?><!--</span></br>-->
+<!--                                                           证书编号:<span id="certificate_no_lable--><?//=$v['id'] ?><!--">--><?//=$v['certificate_no'] ?><!--</span></br>-->
+<!--                                                           类    型:<span id="type_lable--><?//=$v['id'] ?><!--">--><?//=$v['type'] ?><!--</span></br>-->
+<!--                                                                <a href="javascript:del_vitae('--><?//=$v['id']?><!--','language');" style="color:red">删除</a>-->
+<!--                                                                <a href="javascript:vitae_language_edit('--><?//=$v['id']?><!--');" style="color:red">编辑</a></br>-->
+<!--                                                        </div> -->
+<!--                                                        <div id="language_list--><?//=$v['id'] ?><!--" style="display:none">-->
+<!--                                                           <input type="hidden" id="id--><?//=$v['id'] ?><!--" value="--><?//=$v['id'] ?><!--">-->
+<!--                                                           语   种：<input type="text" id="language_id--><?//=$v['id'] ?><!--"  value="--><?//=$v['language_id'] ?><!--"></br>-->
+<!--                                                           掌握程度:<input type="text" id="degrees--><?//=$v['id'] ?><!--"  value="--><?//=$v['degrees'] ?><!--"></br>-->
+<!--                                                           获得证书:<input type="text" id="language_certificate_id--><?//=$v['id'] ?><!--"  value="--><?//=$v['language_certificate_id'] ?><!--"></br>-->
+<!--                                                           证书编号:<input type="text" id="certificate_no--><?//=$v['id'] ?><!--"  value="--><?//=$v['certificate_no'] ?><!--"></br>-->
+<!--                                                           类    型:<input id="type--><?//=$v['id'] ?><!--" type="text" value="--><?//=$v['type'] ?><!--"></br>-->
+<!--                                                           <a href="javascript:languageAdd(--><?//=$v['id'] ?><!--);" style="color:red">修改</a>-->
+<!--                                                           <a href="javascript:add_reset('--><?//=$v['id']?><!--','language_list');" style="color:red">取消</a></br>-->
+<!--                                                        </div>-->
+<!--                                                 --><?php //endforeach;?>
+<!--                                                   -->
+<!--					       --><?php //endif;?>
+<!--                                                     </div>-->
+<!--					</div>-->
+<!---->
+<!--					<div class="ct-tit mt10">-->
+<!--						<span class="ico-ct-tit ico-ct-tit01"></span>完善我的简历：技能职称-->
+<!--						<a href="javascript:;" class="ico-slide"></a>-->
+<!--					</div>-->
+<!--					<div class="ct-border mt10">-->
+<!--						<!-- 信息填写 -->-->
+<!--                                                <a id="skill_add" href="javascript:skill_add('skill_add','vitae-skill-add')" style="color:red">添加</a>-->
+<!--                                                <div id="vitae-skill-add" style="display:none">-->
+<!--                                                    类别：<input type="text" id="skill_id" value=""></br>-->
+<!--                                                    技能/职称：<input type="text" id="skill_certificate_id"  value=""></br>-->
+<!--                                                    证书编号：<input type="text"  id="skill_certificate_no"  value=""></br>-->
+<!--                                                    类别:<input type="text"  id="type"  value="1" readonly></br>-->
+<!--                                                    <a href="javascript:skillAdd();" class="btn-del" style="color:red">提交</a>-->
+<!--                                                    <a href="javascript:skill_add('vitae-skill-add','skill_add')" class="btn-edit" style="color:red">取消</a>-->
+<!--                                                </div>-->
+<!--                                                <div id="skill_sum">-->
+<!--							--><?php //if(count($this->vitaeSkills) > 0):?>
+<!--                                                            --><?php //foreach ($this->vitaeSkills as $k=>$v):?>
+<!--                                                                <div id="vitaeSkill--><?//=$v['id'] ?><!--">-->
+<!--                                                                    类别：<span id="skill_id_lable--><?//=$v['id'] ?><!--">--><?//=$v['skill_id'] ?><!--</span></br>-->
+<!--                                                                    技能/职称：<span id="skill_certificate_id_lable--><?//=$v['id'] ?><!--">--><?//=$v['skill_certificate_id']?><!--</span></br>-->
+<!--                                                                    证书编号：<span id="skill_certificate_no_lable--><?//=$v['id'] ?><!--">--><?//=$v['certificate_no'] ?><!--</span></br>-->
+<!--                                                                    类别:<span id="type_lable--><?//=$v['id'] ?><!--">--><?//=$v['type'] ?><!--</span></br>-->
+<!--                                                                    <a href="javascript:del_vitae('--><?//=$v['id']?><!--','skill');" style="color:red">删除</a>-->
+<!--                                                                    <a href="javascript:vitae_skill_edit(--><?//=$v['id']?><!--)" style="color:red">编辑</a>-->
+<!--                                                                </div>-->
+<!--                                                    <div id="skill_list--><?//=$v['id'] ?><!--" style="display:none">-->
+<!--                                                                    <input type="hidden" id="id--><?//=$v['id'] ?><!--" value="--><?//=$v['id'] ?><!--">-->
+<!--                                                                    类别：<input type="text" id="skill_id--><?//=$v['id'] ?><!--"  value="--><?//=$v['skill_id'] ?><!--"></br>-->
+<!--                                                                    技能/职称：<input type="text" id="skill_certificate_id--><?//=$v['id'] ?><!--"  value="--><?//=$v['skill_certificate_id']?><!--"></br>-->
+<!--                                                                    证书编号：<input type="text" id="skill_certificate_no--><?//=$v['id'] ?><!--"  value="--><?//=$v['certificate_no'] ?><!--"></br>-->
+<!--                                                                    类别:<input type="text"  id="type--><?//=$v['id'] ?><!--"  value="1"></br>-->
+<!--                                                                    <a href="javascript:skillAdd('--><?//=$v['id']?><!--');" style="color:red">修改</a>-->
+<!--                                                                    <a href="javascript:add_reset('--><?//=$v['id']?><!--','skill_list')" style="color:red">取消</a>-->
+<!--                                                                </div>-->
+<!--                                                            --><?php //endforeach;?>
+<!--							--><?php //endif;?>
+<!--                                                </div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--footer-->
+

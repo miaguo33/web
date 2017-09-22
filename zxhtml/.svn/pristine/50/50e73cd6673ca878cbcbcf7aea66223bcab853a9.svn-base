@@ -1,0 +1,286 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    box-sizing: border-box;
+}
+body {
+    background: #f6f6f6;
+    position: relative;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+header>.header>a{
+    text-decoration: none;
+}
+.register {
+    width: 1200px;
+    height: auto;
+    margin: 30px auto;
+    box-sizing: border-box;
+    padding-top: 65px;
+    text-align: center;
+    background: #fff;
+}
+
+.register > .register_header {
+    width: 100%;
+    height: 57px;
+    font-size: 24px;
+    color: #000;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.register > .form-horizontal {
+    width: 596px;
+    padding: 0;
+    margin:0 auto;
+}
+
+.register > .form-horizontal > .form-group {
+    line-height: 50px;
+    margin-top: 30px;
+}
+
+.register > .form-horizontal > .form-group .checkbox {
+    width: 500px;
+}
+
+.register > .form-horizontal > .form-group .checkbox > label {
+    display: flex;
+    align-items: center;
+}
+
+.register > .form-horizontal > .form-group .checkbox > label > span {
+    color: #e42513;
+}
+
+.register > .form-horizontal > .form-group .checkbox > label > [type=checkbox] {
+    width: 15px;
+    height: 15px;
+    border-radius: 0;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.register > .form-horizontal > .form-group .form-control {
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    padding-left: 30px;
+}
+
+.register > .form-horizontal > .form-group [type=submit] {
+    width: 300px;
+    height: 50px;
+    border-radius: 6px;
+    background: #e32613;
+    outline: none;
+    border: none;
+    margin-bottom: 84px;
+    color: #fff;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+.register > .form-horizontal > .form-group [type=submit]:hover{
+    background: #c70010;
+}
+.register > .form-horizontal > .form-group .span {
+    height: 50px;
+    border-radius: 6px;
+    background: #e70014;
+    margin-left: 22px;
+    color: #fff;
+    font-size: 14px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display:none;
+}
+.register > .form-horizontal > .form-group i{
+    font-style: normal;
+}
+.register > .form-horizontal > .form-group .span.active{
+    display: block;
+}
+.register_ok{
+    width:100%;
+    height:calc(100% - 80px - 280px);
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all 0.3s ease;
+}
+.register_ok>.box{
+    width:680px;
+    height:510px;
+    border-radius: 10px;
+    background: #fff;
+    margin:100px 0 ;
+    position: relative;
+}
+.register_ok>.box>img{
+    display: block;
+    width:178px;
+    height:178px;
+    position: absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    top:95px;
+}
+.register_ok>.box>p{
+    text-align: center;
+    font-size:22px;
+    color: #000;
+    margin-top:350px;
+}
+.register_ok>.box>.time{
+    text-align: center;
+    margin-top:30px;
+    font-size:12px;
+    color: #000;
+    font-weight: 700;
+}
+.register_ok>.box>.time>a{
+    color: #e60013;
+    text-decoration: none;
+}
+.form-group{
+    position: relative;
+}
+.form-group>.immediately{
+    position: absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    top:60px;
+    font-size:12px;
+    font-weight: bold;
+}
+.form-group>.immediately>a{
+    color: #e42012;
+    text-decoration: none;
+    margin-left:5px;
+}
+
+.information_header{
+    width:960px;
+    height:90px;
+    padding:0;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+    margin:0 auto;
+}
+.information_header>.information_name{
+    font-size:24px;
+    color: #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+.information_header>.information_name>span.active{
+    font-weight: bold;
+    color: #333;
+}
+.information_header>.information_Progress{
+    height:36px;
+    padding:0 32px;
+    margin-top: 30px;
+    position: relative;
+}
+.information_header>.information_Progress>.Progress{
+    height:10px;
+    background: #ddd;
+    display: flex;
+    justify-content: space-between;
+    margin:0 auto;
+    border-radius: 5px;
+}
+.information_header>.information_Progress>.Progress_z{
+    height:10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top:-10px;
+    padding: 3px;
+}
+.information_header>.information_Progress>.Progress_z>.Progress_r{
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin-top: -13px;
+    z-index: 100;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+}
+.information_header>.information_Progress>.Progress_z>.Progress_r.active{
+    background: #ee2a3a ;
+}
+
+#pro{
+    width:10%;
+    height:6px;
+    background: #ee2a3a ;
+    position: absolute;
+    top:2px;
+    left:38px;
+    z-index: 3;
+}
+.information_header>.information_Progress>.Progress>.Progress_r {
+    width: 36px;
+    height: 36px;
+    background: #ddd;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin-top: -13px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size:12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:3px solid #ddd;
+}
+
+
+.information{
+    width:100%;
+    height:auto;
+    margin-top:60px;
+}
+
+#file>.file{
+    width:180px;height:180px;margin:0;padding:0;margin-left:15px;margin-top:20px;
+    box-sizing: border-box;
+    border: 2px dashed #ccc;
+    float: left;
+}
+#file>.file>img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+#file>.spans{
+    display: flex;
+    align-items: center;
+    width:180px;height:180px;
+    float: left;
+    text-align: center;
+    margin-top:20px;
+    line-height: 25px;
+    font-size:12px;color: #e70014;
+    font-weight: bold;
+    margin-left:20px;
+}

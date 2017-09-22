@@ -1,0 +1,242 @@
+#free>.ibox-title{
+    border-bottom:1px solid #ccc;
+    padding-bottom:24px;
+}
+#free .btn-danger{
+    width:80px;
+    margin-right:30px;
+}
+#free .btn-danger:last-of-type{
+    margin-right:0;
+}
+
+#free>.ibox-content{
+    height:auto;
+    padding:30px 60px;
+    background: #fff;
+}
+#free>.ibox-content>.content_box{
+    width:100%;
+    height:100%;
+    background: #f6f6f6;
+    border-radius: 10px;
+    padding:22px;
+}
+#free>.ibox-content>.content_box>img{
+    display: block;
+    width:100%;
+    height:100%;
+}
+#brief{
+    padding:0;
+}
+#brief>.function{
+    margin-top:36px;
+}
+#brief>.function>h5{
+    font-size:16px;
+    color: #989898;
+}
+#brief>.function>p{
+    margin-top:30px;
+    font-size:14px;
+    color: #000;
+}
+#brief>.function:nth-of-type(2){
+    margin-top:100px;
+}
+#my-card>.ibox-content>.top{
+    width:100%;
+    height:1px;
+    background: #ededed;
+}
+#my-card>.ibox-content>p{
+    text-align: center;
+    margin-top:155px;
+}
+#my-card>.ibox-content>.img{
+    width:278px;
+    height:278px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto;
+    margin-top:30px;
+    margin-bottom:227px;
+}
+#my-card>.ibox-content>.img>img{
+    display: block;
+    width:208px;
+    height:208px;
+}
+.ibox-title h5>span{
+    font-size:14px;
+    color: #999;
+    margin-left:20px;
+}
+#my-card>.ibox-content>.bottom{
+    width:100%;
+    height:auto;
+    margin-top:30px;
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+}
+#my-card>.ibox-content>.bottom>.left{
+    /*width:320px;*/
+    height:650px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    border:1px solid #ccc;
+    float: left;
+    padding:0;
+    margin-left:10px;
+}
+#my-card>.ibox-content>.bottom>.left>.search{
+    width:100%;
+    height:49px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}#my-card>.ibox-content>.bottom>.left>.search>.search_box{
+    width:100%;
+    height:100%;
+    outline: none;
+    border:none;
+    padding-left:33px;
+    border-radius: 6px 6px 0 0 ;
+ }
+#my-card>.ibox-content>.bottom>.left>.search>i{
+    font-size:18px;
+    color: #ccc;
+    position: absolute;
+    top:12px;
+    left:10px;
+}
+#my-card>.ibox-content>.bottom>.left>.list{
+    width:auto;
+    height:calc(100% - 50px);
+    overflow-y: scroll;
+}
+
+#my-card>.ibox-content>.bottom>.left>.list>dl{
+    width:auto;
+    height:100%;
+}
+#my-card>.ibox-content>.bottom>.left>.list>dl>dt{
+    width:auto;
+    height:20px;
+    background:  #f6f6f6;
+}
+#my-card>.ibox-content>.bottom>.left>.list>dl>dt>span{
+    margin-left:10px;
+}
+#my-card>.ibox-content>.bottom>.left>.list>dl>dd{
+    width:auto;
+    height:40px;
+    box-sizing: border-box;
+    border-bottom:1px solid #f6f6f6;
+    line-height: 40px;
+    margin-left:20px;
+}
+#my-card>.ibox-content>.bottom>.left>.list>dl>dd>a{
+    color: #000;
+    font-size:12px;
+}
+#my-card>.ibox-content>.bottom>.left>.list>dl>dd>span{
+    margin-left:150px;
+}
+#my-card>.ibox-content>.bottom>.right{
+    width:552px;
+    padding:68px 0;
+    display: flex;
+    float: right;
+}
+#my-card>.ibox-content>.bottom>.right>.phone{
+    width:250px;height:521px;
+    background:url("../img/lbs-shouji.png") no-repeat;
+    background-size:cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#my-card>.ibox-content>.bottom>.right>.phone>.img{
+    width:217px;
+    height:389px;
+}
+#my-card>.ibox-content>.bottom>.right>.Arrow{
+    width:92px;
+    height:1px;
+    display: flex;
+    align-items: center;
+    margin-top:30px;
+}
+#my-card>.ibox-content>.bottom>.right>.Arrow>.box{
+    width:86px;
+    height:1px;
+    background: #828282;
+}
+#my-card>.ibox-content>.bottom>.right>.Arrow>.arrow-box{
+    height:0;
+    border-left:7px solid #828282;
+    border-top:3.5px solid rgba(0,0,0,0);
+    border-bottom:3.5px solid rgba(0,0,0,0);
+}
+#my-card>.ibox-content>.bottom>.right>.code{
+    width:200px;
+    height:auto;
+    margin-left:10px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>.code-box{
+    width:160px;
+    height:160px;
+    border-radius: 5px;
+    border:1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#my-card>.ibox-content>.bottom>.right>.code>.code-box>img{
+    display: block;
+    width:120px;
+    height:120px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>p{
+    margin-top:20px;
+    font-size:12px;
+    color: #000;
+    padding-left:47px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>ul{
+    width:100%;
+    height:auto;
+    margin-top:50px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>ul>li{
+    display: flex;
+    font-size:14px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>ul>li>span{
+    color: #999;
+    margin-right:10px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>ul>li p{
+    color: #000;
+}
+#my-card>.ibox-content>.bottom>.right>.code>ul>li:nth-of-type(2){
+    margin-top:20px;
+}
+#my-card>.ibox-content>.bottom>.right>.code>.button{
+    width:200px;
+    height:50px;
+    border-radius: 4px;
+    border:1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+    box-sizing: border-box;
+    color: #e60012;
+    margin-top:50px;
+    cursor: pointer;
+    font-size:16px
+}

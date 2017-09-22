@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>单人申请</title>
+
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+		<link href="../../css/animate.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<link href="../../css/company.css" rel="stylesheet">
+
+	</head>
+
+	<body class="">
+
+		<div id="wrapper">
+			<div class="header">
+				<img class="logo" src="../../img/logo.png" />
+				<h3 class="header-describe">欢迎登录职信网平台</h3>
+				<div class="dropdown action">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+					</a>
+					<ul class="dropdown-menu animated fadeInLeft m-t-xs">
+						<li class="arrow"><img src="../../img/whitearrow.png" /></li>
+						<li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+						<li class="balance-count">
+							<span>20000.00￥</span>
+						</li>
+						<li class="divider"></li>
+						<li class="recharge">
+							<button>立即充值</button>
+						</li>
+						<li class="logout">退出登录</li>
+					</ul>
+				</div>
+				<div class="avart">
+					<img src="../../img/avart.jpg" />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="sidebar-collapse">
+					<ul class="nav metismenu" id="side-menu">
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+						</li>
+						<li class="active">
+							<a href="../index/enterprise_index.html"><i class="iconfont icon-shouye"></i> <span class="nav-label">首页</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">职业背景认证</span></a>
+						</li>
+						<li>
+							<a href="../apply-authen/apply-authen-list.html"><i class="iconfont icon-renzheng1"></i> <span class="nav-label">申请背景认证</span></a>
+						</li>
+						<li>
+							<a href="../authen/authen-list.html"><i class="iconfont icon-shouquan"></i> <span class="nav-label">进行背景认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+						</li>
+						<li>
+							<a href="../card-authen/authen-list.html"><i class="iconfont icon-mingpian"></i> <span class="nav-label">电子名片认证</span></a>
+						</li>
+						<li class="nav-title">
+							<a href="javascript:void(0)"><span class="nav-label">企业中心</span></a>
+						</li>
+						<li>
+							<a href="../account/account.html"><i class="iconfont icon-kuajingzhifuiconqiyezhanghu"></i> <span class="nav-label">企业账户</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-xingren"></i> <span class="nav-label">杏仁账户</span></a>
+						</li>
+						<li>
+							<a href="../setting/setting.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span class="nav-label">账户设置</span></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="iconfont icon-yijianfankui"></i> <span class="nav-label">意见反馈</span></a>
+						</li>
+						<li>
+							<a href="../invoice/invoice.html"><i class="iconfont icon-zhipinhaocai"></i> <span class="nav-label">发票管理</span></a>
+						</li>
+					</ul>
+					<div class="rn">
+						Copyright ©2017 沪ICP备<br/>17015994号
+					</div>
+				</div>
+			</nav>
+
+			<div id="page-wrapper" class="gray-bg">
+				<div class="wrapper wrapper-content animated fadeInRightBig">
+					<div class="row animated fadeInRightBig">
+						<div class="col-lg-12">
+							<div class="ibox float-e-margins">
+								<div class="ibox-title">
+									<h5>向候选人申请职业背景认证</h5>
+									<div class="clearfix"></div>
+								</div>
+								<div class="ibox-content hr-list">
+									<div class="border-top">
+										<div class="red-left-title">
+											<span class="pull-left">请输入需认证人信息</span>
+											<a class="pull-right text-success">excel模板下载</a>
+										</div>
+										<div class="input-group m-b-md">
+											<span class="input-group-addon">请导入需背调人信息 :&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+											<input type="text" placeholder="请导入需背调人信息" class="form-control">
+											<span class="input-group-addon">
+												<button type="button" class="btn btn-w-m btn-danger btn-lg m-l-md">删除</button>
+												<button type="button" class="btn btn-w-m btn-danger btn-lg m-l-md">预览</button>
+											</span> 
+										</div>
+										<div class="red-left-title">
+											<span class="pull-left">请选择需认证项目</span>
+										</div>
+										<div class="row" id="authen-project">
+											<div class="col-lg-4">
+												<div class="project-left">
+													<div class="red-triangle-frame" data-type="checkbox">
+														<label>
+															<h2>简历认证</h2>
+															<p>30项纬度、赠送学历认证（1-3天）</p>
+															<h4><span class="text-danger">2元</span>/次</h4>
+															<input type="checkbox" value="" name="">
+															<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-8">
+												<div class="project-right">
+													<div class="red-triangle-frame" data-type="checkbox">
+														<label>
+															<h2>实名认证（必选）</h2>
+															<p>30项纬度（1-5天）</p>
+															<h4><span class="text-danger">2元</span>/次</h4>
+															<input type="checkbox" value="" name="">
+															<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+														</label>
+														<label>
+															<h2>个人工商</h2>
+															<p>法人、股东、高管信息</p>
+															<h4><span class="text-danger">15元</span>/次</h4>
+															<input type="checkbox" value="" name="">
+															<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+														</label>
+														<label>
+															<h2>不良信息</h2>
+															<p>前科、在逃、吸毒、涉毒</p>
+															<h4><span class="text-danger">15元</span>/次</h4>
+															<input type="checkbox" value="" name="">
+															<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+														</label>
+														<label>
+															<h2>职业资格</h2>
+															<p>人力资源和社会保障部门认可职业资格<br>证书（不含法律类、财经类、医学类）</p>
+															<h4><span class="text-danger">10元</span>/次</h4>
+															<input type="checkbox" value="" name="">
+															<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+														</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="value-count m-t-xl">
+											<span>消费服务费：</span>
+											<span class="text-danger">¥</span>
+											<span class="text-danger value">3000</span>
+										</div>
+										<div class="value-count">
+											<span>认证人数：</span>
+											<span class="text-danger"></span>
+											<span class="text-danger value">1</span>
+										</div>
+										<div class="value-count">
+											<span>冻结服务费：</span>
+											<span class="text-danger">¥</span>
+											<span class="text-danger value bold">3000</span>
+											<span class="add-info">（附加版费用暂时冻结，待背调人成功授权后扣除）</span>
+										</div>
+										<div class="text-center m-t-lg m-b-md">
+											<button type="button" class="btn btn-w-m btn-danger btn-lg m-t-lg m-b-lg" data-toggle="modal" data-target="#recharge">发起申请</button>
+										</div>
+										<div class="modal fade" id="recharge" tabindex="-1" role="dialog" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+														<h4 class="modal-title">余额不足,请立即充值</h4>
+													</div>
+													<div class="modal-body">
+														<div class="m-l m-r m-t">
+															<div class="balance m-b">
+																<span>您的余额：</span>
+																<span class="value">¥3.00</span>
+															</div>
+															<div class="value-count m-b">
+																<span>本次服务需支付：</span>
+																<span class="text-danger">¥</span>
+																<span class="text-danger value">3000</span>
+															</div>
+															<div class="border-top">
+																<div class="red-left-title">
+																	<span class="pull-left">请输入需认证人信息</span>
+																</div>
+															</div>
+														</div>
+														<div class="red-triangle-frame m-t-n">
+															<label>
+																<h2>3000元</h2>
+																<h5>赠送150杏仁</h5>
+																<input type="radio" value="" name="recharge">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																<h2>6000元</h2>
+																<h5>赠送500杏仁</h5>
+																<input type="radio" value="" name="recharge">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																<h2>10000元</h2>
+																<h5>赠送1000杏仁</h5>
+																<input type="radio" value="" name="recharge">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																<h2>30000元</h2>
+																<h5>赠送5000杏仁</h5>
+																<input type="radio" value="" name="recharge">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																<h2>50000元</h2>
+																<h5>赠送10000杏仁</h5>
+																<input type="radio" value="" name="recharge">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+															<label>
+																<h2>100000元</h2>
+																<h5>赠送50000杏仁</h5>
+																<input type="radio" value="" name="recharge">
+																<div class="triangle"><i class="iconfont icon-duigou"></i></div>
+															</label>
+														</div>
+														
+														<div class="text-center m-t-xs m-b-xs">
+															<button type="button" class="btn btn-w-m btn-danger btn-lg m-t-md m-b-md">确认充值</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mainly scripts -->
+		<script src="../../js/jquery-2.1.1.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+		<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Custom and plugin javascript -->
+		<script src="../../js/inspinia.js"></script>
+		<script src="../../js/plugins/pace/pace.min.js"></script>
+
+		<script src="../../js/tools.js"></script>
+
+		<script>
+			$(document).ready(function() {
+				tools.centerModals();
+				tools.redTriangleFrame();
+
+				/*两个项目选择对齐*/
+				var projectLeft = $(".project-left").height();
+				var projectRight = $(".project-right").height();
+				if(projectLeft > projectRight) {
+					$(".project-right").css("min-height", projectLeft + "px");
+				} else if(projectLeft < projectRight) {
+					$(".project-left").css("min-height", projectRight + "px");
+				}
+				$(".view-report").click(function() {
+					$('#report-type').modal('show');
+				});
+			});
+		</script>
+	</body>
+
+</html>

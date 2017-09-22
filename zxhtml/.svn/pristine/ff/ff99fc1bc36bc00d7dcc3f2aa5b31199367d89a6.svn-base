@@ -1,0 +1,667 @@
+.row{
+    margin:0;
+    padding:0;
+}
+.col-lg-12,.col-lg-6,.col-lg-4,.col-lg-2{
+    margin:0;
+    padding:0;
+}
+
+.content{
+    height:auto;
+    background: #fff;
+    margin-bottom: 30px;
+    padding:60px 100px;
+    box-sizing: border-box;
+}
+.content>.information_header{
+    height:177px;
+    padding:0;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+.content>.information_header>.information_name{
+    font-size:24px;
+    color: #ddd;
+    text-align: justify;
+}
+.content>.information_header>.information_name:after{
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+.content>.information_header>.information_name>span{
+    display: inline-block;
+}
+.content>.information_header>.information_name>span:last-of-type{
+    margin-right:0;
+}
+.content>.information_header>.information_name>span.active{
+    font-weight: bold;
+    color: #333;
+}
+.content>.information_header>.information_Progress{
+    height:36px;
+    padding:0 32px;
+    margin-top: 30px;
+    position: relative;
+}
+.content>.information_header>.information_Progress>.Progress{
+    height:10px;
+    background: #ddd;
+    margin:0 auto;
+    border-radius: 5px;
+    text-align: justify;
+}
+.content>.information_header>.information_Progress>.Progress:after{
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+.content>.information_header>.information_Progress>.Progress_z{
+    height:10px;
+    margin-top:-17px;
+    padding: 3px;
+    text-align: justify;
+}
+.content>.information_header>.information_Progress>.Progress_z:after{
+    content: '';
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+.content>.information_header>.information_Progress>.Progress_z>.Progress_r{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin-top: -15px;
+    z-index: 100;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    position: relative;
+}
+.content>.information_header>.information_Progress>.Progress_z>.Progress_r.active{
+    background: #ee2a3a ;
+}
+.content>.information_header>.information_Progress>.Progress_z>.Progress_r:nth-of-type(2){
+    margin-left:-18px;
+}
+#pro{
+    width:10%;
+    height:6px;
+    background: #ee2a3a ;
+    position: absolute;
+    top:2px;
+    left:38px;
+    z-index: 3;
+}
+.content>.information_header>.information_Progress>.Progress>.Progress_r {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background: #ddd;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin-top: -13px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size:12px;
+    border:3px solid #ddd;
+}
+
+.content>.information_header>.information_Progress>.Progress>.Progress_r:nth-of-type(2){
+    margin-left:-18px;
+}
+.content>.information{
+    width:100%;
+    height:auto;
+    margin-top:60px;
+}
+.content>.information>.edit{
+    width:100%;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+}
+.content>.information>.edit>span>i{
+    display: inline-block;
+    font-style: normal;
+    color: #ef2a3b;
+    font-size:12px;
+    margin-left:20px;
+    margin-top:3px;
+}
+.content>.information>.edit>span:nth-of-type(1){
+    font-size:20px;
+    font-weight: bold;
+}
+.content>.information>.edit>span:nth-of-type(2){
+    display: block;
+    cursor: pointer;
+    width:60px;
+    height:30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size:12px;
+    background:#ee2a3a ;
+    border-radius: 3px;
+    float: right;
+}
+
+/*个人信息测试*/
+.content>.information>.information_test{
+    width:100%;
+    height:auto;
+}
+.content>.information>.information_test>ul{
+    width:100%;
+    height:100%;
+}
+.content>.information>.information_test>ul>li{
+    margin-top: 30px;
+    overflow: hidden;
+}
+.content>.information>.information_test>ul>li>.li_box{
+    width:50%;
+    float: left;
+}
+/*.content>.information>.information_test>ul>li>.li_box>span{*/
+    /*display: block;*/
+/*}*/
+.content>.information>.information_test>ul>li>.li_box>span:nth-of-type(2){
+    margin-left: 10px;
+}
+.content>.information>.in_personal{
+    width:100%;
+    height:auto;
+    background: #f6f6f6;
+    transition: all 0.5s ease;
+    border:1px solid #ddd;
+    padding:32px;
+    display: none;
+}
+/*选择工作年份日期*/
+
+#jcDate{
+    width:100%;
+    height:242px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+
+/*完善个人信息*/
+.in_personal>span{
+    color: #666;
+    font-size:12px;
+}
+
+.in_personal>form>.forms{
+    padding:0 70px;
+    margin-top:20px
+}
+
+/*获奖情况*/
+.in_personal>form>.Winning{
+    width:100%;
+    height:auto;
+    margin-bottom:30px;
+    padding:0 70px;
+}
+
+.in_personal>form>.Winning>.hj>.forms{
+    display: flex;
+}
+.in_personal>form>.Winning>.hj>.forms>.form-group{
+    margin-top:20px;
+}
+.in_personal>form .forms>span{
+    position: absolute;
+    bottom:-30px;
+    right:70px;
+    color: #ccc;
+    font-size:12px;
+}
+.in_personal>form .hj>.forms>span{
+    right:0;
+}
+.in_personal>form .hj>.forms:nth-of-type(1){
+    margin-top:0;
+    margin-bottom:20px;
+}
+
+.in_personal>form>.Winning>.hj>.forms>.form-group.text{
+    padding-right:0;
+}
+.in_personal>form .forms>span>i{
+    font-style: normal;
+}
+
+.in_personal>form .insert{
+    width:100%;
+    height:auto;
+    margin-top:60px;
+}
+.in_personal>form .insert>span{
+    display: block;
+    font-size:12px;
+    color: #666;
+    float: left;
+}
+.in_personal>form .insert>span:nth-of-type(2){
+    float: right;
+}
+.in_personal>form .insert>i{
+    width:calc(100% - 125px);
+    display: block;
+    border:1px dashed #ccc ;
+    margin:0 10px;
+    margin-top:10px;
+    float: left;
+}
+.input-group-addon {
+    border: 0;
+    padding: 0;
+    width:0;
+}
+.in_personal>form .forms>.form-group>.input-group{
+    width:100%;
+    height:40px;
+    border-radius: 6px;
+    margin-top:10px;
+}
+.in_personal>form .forms>.form-group>.input-group>input{
+    width:100%;
+    height:40px;
+    border-radius: 6px;
+    padding-left:30px;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.1);
+    border:1px solid #ccc;
+    font-size:12px;
+}
+.in_personal>form .forms:nth-of-type(1){
+    margin-top:40px;
+}
+
+.in_personal>form .forms>.form-group:nth-of-type(1){
+    padding-right:48px;
+}
+.in_personal>form>.forms>.form-group.text{
+    padding-right:0;
+}
+.in_personal>form .forms>.form-group:nth-of-type(2){
+    padding-left:48px;
+}
+.in_personal>form .forms>.text{
+    margin-right:0;
+    margin-top:40px;
+}
+
+.in_personal>form .forms>.form-group>.form-control{
+    height:40px;border:1px solid #ccc;
+    border-radius: 6px;
+    margin-top:10px;
+    background: #fff;
+    font-size:12px;
+    padding-left:30px;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.1);
+}
+.in_personal>form .forms>.form-group>.form-control.text{
+    height:116px;
+    padding:18px 32px;
+    resize: none;
+}
+.in_personal>form .forms>.form-group>.span{
+    height:40px;
+    border:1px solid #ccc;
+    border-radius: 6px;
+    margin-top:10px;
+    background: #f6f6f6;
+    padding-left:30px;
+    line-height: 28px;
+}
+.in_personal>form .forms>.form-group.texts{
+    margin-right:0;
+    padding-right:0;
+}
+.in_personal>form .forms>.form-group>.time{
+    height:50px;
+    margin-top:5px;
+    display: flex;
+    align-items: center;
+}
+.in_personal>form .forms>.form-group>.time>.form-control{
+    padding-left:30px;
+}
+.in_personal>form .forms>.form-group>.time>span{
+    margin:42px;
+}
+.in_personal>form .forms>.form-group>label>span{
+    display: inline-block;
+    color: red;
+    margin-left:12px;
+}
+.in_personal .btnx{
+    width:100%;
+    height:auto;
+    padding:0 127px;
+    margin-bottom:48px;
+    padding-top:80px;
+    overflow: hidden;
+}
+.in_personal .btnx>.btnx-box{
+    width:200px;
+    height:40px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    background: #e70014;
+    cursor: pointer;
+    color: #fff;
+    transition:all 0.3s ease;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.1);
+    font-size:14px;
+    float: right;
+}
+.in_personal .btnx>.btnx-box:hover{
+    background:#c70010 ;
+}
+.in_personal .btnx>.btnx-box:nth-of-type(1){
+    background: #ccc;
+    float: left;
+}
+
+
+
+
+
+/*教育经历*/
+.content>.information>.information_test>.education>li{
+    display: block;
+}
+.content>.information>.information_test>.education>li>.time{
+    width:100%;
+    font-size:14px;
+    color: #656565;
+    overflow: hidden;
+}
+.content>.information>.information_test>.education>li>.time>.times{
+    width:auto;
+    float: left;
+}
+.content>.information>.information_test>.education>li>.time>i{
+    display: block;
+    width:calc(100% - 120px - 90px);
+    border-top:1px dotted #ddd;
+    margin-top:10px;
+    margin-left:10px;
+    float: left;
+}
+.content>.information>.information_test>.education>li>.time>.btn_time{
+    width:90px;
+    float: right;
+}
+.content>.information>.information_test>.education>li>.time>.btn_time>span{
+    cursor: pointer;
+}
+.content>.information>.information_test>.education>li>.time>.btn_time>span:nth-of-type(1){
+    margin-right:22px;
+}
+.content>.information>.information_test>.education>li .li{
+    margin-top: 30px;
+    overflow: hidden;
+}
+.content>.information>.information_test>.education>li .li>.li_box{
+    width:50%;
+    float: left;
+}
+.content>.information>.information_test>.education>li .li>.li_box>span:nth-of-type(2){
+    margin-left:10px;
+}
+.content>.information>.information_test>.education>li .lis{
+    color: #000;
+    font-weight: bold;
+    margin-top:20px;
+}
+.content>.information>.information_test>.education>li>.Duty{
+    width:100%;
+    margin-top:30px;
+}
+.content>.information>.information_test>.education>li>.Duty>.Duty_content{
+    margin-top:10px;
+}
+.content>.information>.information_test>.education>li>.Duty>.Duty_content>ul{
+    width:100%;
+}
+.content>.information>.information_test>.education>li>.Duty>.Duty_content>ul>li{
+    margin-top:10px;
+}
+.content>ul{
+    width:100%;
+    height:auto;
+    margin-top:80px;
+    box-sizing: border-box;
+    padding:0 68px;
+    overflow: hidden;
+    margin-bottom:100px;
+}
+.content>ul>li{
+    width:200px;
+    background: #e70014;
+    height:40px;
+    border-radius: 6px;
+    font-size:14px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+    margin:0 auto;
+    float: left;
+    margin-right:60px;
+}
+.content>ul>li:last-of-type{
+    margin-right:0;
+}
+.content>ul>li>a{
+    display: block;
+    width:100%;
+    height:100%;
+    color: #fff;
+}
+.content>ul>li:hover{
+    background: #c70017;
+}
+.content>ul>li.preview{
+    background: #ccc;
+    color: #fff;
+}
+
+.content>.no_authentication{
+    margin-top:60px;
+}
+.content>.no_authentication>label>input{
+    width:12px;
+    height:12px;
+    border:1px solid #ccc;
+    margin-right:5px;
+    margin-top:5px;
+}
+/*发起个人认证*/
+.content>ul.initiate{
+    width:90%;
+    padding:0 100px;
+}
+.content>ul.Reminders>li{
+    width:200px;
+    position: absolute;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+.content>ul.initiate>li:nth-of-type(2){
+    float: right;
+}
+#init>.contents{
+    display: block;background: rgba(0,0,0,0);border:0;padding:0;
+}
+#init>.edit{
+    border-bottom:0;
+    padding-bottom:0;
+}
+#init>.contents>form>.insert>span{
+    font-size:14px;
+    color: #000;
+    float: left;
+}
+#init>.contents>form>.insert>span:nth-of-type(2){
+    float: right;
+}
+#init>.contents>form>.insert>span.iconfont{
+    color: #e70014;
+}
+#init>.contents>form>.insert:nth-of-type(1)~.insert{
+    margin-top:30px;
+}
+#init>.contents>form>.insert:nth-of-type(1)~.insert.problem{
+    margin-top:40px;
+}
+
+#init>.contents>form>.insert.problem>i{
+    width:calc(100% - 500px)
+}{
+
+}
+#init>.contents>form>.insert>span>.form-control{
+    width:320px;height:40px;
+    border-radius: 5px;
+}
+#init>.contents>form>.forms{
+    padding:0;
+}
+#init>.contents>form>.forms>.form-group{
+    margin:0;
+}
+#init>.contents>form>.forms>.form-group>.form-control{
+    width:80%;
+    height:40px;
+    padding:6px 20px;
+}
+
+/*个人信息确认*/
+#init.initiate>.edit{
+    border-bottom:1px solid #ccc;
+    padding-bottom:30px;
+}
+#init.initiate>.contents{
+    height:auto;
+    padding-top:80px;
+}
+#init>.contents>form>.insert>.span{
+    width:320px;
+    margin-top:-18px;
+}
+.contents>form>.problem>.form-group>.combo-select>.combo-input{
+    height:40px;
+}
+#init.initiate>.contents>.Real_name{
+    width:350px;
+    height:360px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    position: relative;
+    box-sizing: border-box;
+    padding:70px 50px;
+}
+#init.initiate>.contents>.Real_name>ul{
+    width:100%;
+    height:100%;
+}
+#init.initiate>.contents>.Real_name>ul>li{
+    font-size:12px;
+    color: #666;
+}
+#init.initiate>.contents>.Real_name>ul>li:nth-of-type(1)~li{
+    margin-top:30px;
+}
+#init.initiate>.contents>.Real_name>img{
+    position: absolute;
+    left:0;
+    top:0;
+    display: block;
+    width:100px;
+    height:100px;
+}
+#init.initiate>.contents>.Arrow{
+    line-height: 360px;
+    text-align: center;
+}
+
+.forms>.text>label{
+    width:100%;display: flex;justify-content: space-between;
+}
+
+.forms>.text>label>i{
+    font-style: normal;
+    cursor: pointer;
+}
+
+
+.floor-nav{
+    position: fixed;
+    bottom:50px;
+    right:50px;
+    width:42px;
+    height:0;
+    transition: all 0.6s ease;
+    overflow: hidden;
+    z-index: 100;
+}
+.floor-nav.active{
+    height:250px;
+}
+.floor-nav>span{
+    display: block;
+    width:40px;
+    height:40px;
+    background: #999;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding-top:2px;
+}
+.floor-nav>span>img{
+    display: block;
+    margin:3px auto;
+}
+.scroll-navs{
+    flex-wrap: wrap;
+}
+.floor-nav>span:hover{
+    background: #e60012;
+}
+.floor-nav>span.active{
+    background: #e70014;
+}
+/*.floor-nav>.scroll-nav.active{*/
+    /*background: #e70014;*/
+/*}*/
+.floor-nav>span:nth-of-type(1)~span{
+    margin-top:2px;
+}

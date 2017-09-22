@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>职信网</title>
+
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+    <link href="../../css/animate.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/account.css">
+</head>
+
+<body class="">
+
+<div id="wrapper">
+    <div class="header">
+        <img class="logo" src="../../img/logo.png"/>
+        <h3 class="header-describe">欢迎登录职信网平台</h3>
+        <div class="dropdown action">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+            </a>
+            <ul class="dropdown-menu animated fadeInLeft m-t-xs">
+                <li class="arrow"><img src="../../img/whitearrow.png"/></li>
+                <li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+                <li class="balance-count">
+                    <span>20000.00￥</span>
+                </li>
+                <li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+                <li class="balance-count">
+                    <span>20000.00￥</span>
+                </li>
+                <li class="divider"></li>
+                <li class="recharge">
+                    <button>立即充值</button>
+                </li>
+                <li class="logout">退出登录</li>
+            </ul>
+        </div>
+        <div class="avart">
+            <img src="../../img/avart.jpg"/>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+                </li>
+                <li>
+                    <a href="../index/person_index.html"><i class="iconfont icon-shouye"></i> <span class="nav-label">首页</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">职信认证</span></a>
+                </li>
+                <li>
+                    <a href="../curriculum/curriculum.html"><i class="iconfont icon-renzheng1"></i> <span
+                            class="nav-label">申请背景认证</span></a>
+                </li>
+                <li>
+                    <a href="../l_authorization/l_authorization.html"><i class="iconfont icon-shouquan"></i> <span
+                            class="nav-label">授权</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><i class="iconfont icon-mingpian"></i> <span
+                            class="nav-label">我的电子名片</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><i class="iconfont icon-tongxunlu"></i> <span
+                            class="nav-label">名片通讯录</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">个人中心</span></a>
+                </li>
+                <li >
+                    <a href="../almond/almond.html"><i class="iconfont icon-xingren"></i> <span class="nav-label">杏仁</span></a>
+                </li>
+                <li>
+                    <a href="../account/account.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span class="nav-label">帐号设置</span></a>
+                </li>
+                <li class="active">
+                    <a href="../feedback/feedback.html"><i class="iconfont icon-Fill"></i> <span class="nav-label">意见反馈</span></a>
+                </li>
+            </ul>
+            <div class="rn">
+                Copyright ©2017 沪ICP备<br/>17015994号
+            </div>
+        </div>
+    </nav>
+    <!--意见反馈-->
+    <div id="page-wrapper" class="row gray-bg">
+        <div class="wrapper wrapper-content animated fadeInRightBig">
+            <div class="col-lg-12" >
+                <div class="content col-lg-12 active">
+                    <!--意见反馈切换-->
+                    <ul id="ull" class="col-md-12" style="transition:0.01s ">
+                        <li class="active">意见反馈</li>
+                        <li>举报申述</li>
+                    </ul>
+                    <!--意见反馈-->
+                    <div class="xuanzhe active col-lg-12 col-md-12 feedback">
+                        <ul class="col-md-12">
+                            <li class="active">关于网站</li>
+                            <li>关于服务</li>
+                            <li>关于支付</li>
+                            <li>关于服务</li>
+                            <li>关于企业</li>
+                        </ul>
+                        <div class="textarea col-md-12 col-sm-12">
+                            <ol>
+                                <li class="active"><textarea name="" id="" cols="30" rows="10"></textarea><img src="../../img/lbs-shangjiao_03.png" alt=""></li>
+                                <li><textarea name="" id="" cols="30" rows="10"></textarea><img src="../../img/lbs-shangjiao_03.png" alt=""></li>
+                                <li><textarea name="" id="" cols="30" rows="10"></textarea><img src="../../img/lbs-shangjiao_03.png" alt=""></li>
+                                <li><textarea name="" id="" cols="30" rows="10"></textarea><img src="../../img/lbs-shangjiao_03.png" alt=""></li>
+                                <li><textarea name="" id="" cols="30" rows="10"></textarea><img src="../../img/lbs-shangjiao_03.png" alt=""></li>
+                            </ol>
+                            <span><span>0</span>/300</span>
+                        </div>
+                        <span class="span-feedback hovers" style="height:50px;font-size:14px;color: #fff;margin-top:110px;">确定</span>
+                    </div>
+                    <!--举报申述-->
+                    <div class="xuanzhe feedback">
+                        <form class="form-horizontal form-tow" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-1 spans ">举报对象 :</div>
+                                <div class="col-sm-6 form-group-box">
+                                    <input type="text" class="form-control password" id="" placeholder="公司个人名称, 个人信息和电话">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-1 spans ">事件简介 :</div>
+                                <div class="col-sm-6 form-group-box" >
+                                    <input type="text" class="form-control password" id="" placeholder="请输入手机号码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-1 spans ">事件详情 :</div>
+                                <textarea name="" id="" cols="30" rows="10" class="col-md-12  col-sm-12"  ></textarea>
+                            </div>
+                        </form>
+                        <span class="span-feedback hovers" style="height:50px;font-size:14px;color: #fff;margin-top:190px;">确定</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="../../js/jquery-2.1.1.js"></script>
+<script>
+    $(function () {
+        var xuanzhe=$('.xuanzhe');
+        var almond=$('#ull>li');
+        almond.on('click',function () {
+            almond.removeClass('active');
+            xuanzhe.removeClass('active');
+            almond.eq($(this).index()).addClass('active');
+            xuanzhe.eq($(this).index()).addClass('active');
+        })
+        //意见反馈选项卡
+        let feed_li=$('.feedback li');
+        let feed_ol_li=$('.textarea li ');
+       feed_li.on('click',function () {
+           feed_li.removeClass('active');
+           feed_ol_li.removeClass('active');
+           feed_li.eq($(this).index()).addClass('active');
+           feed_ol_li.eq($(this).index()).addClass('active');
+       })
+    })
+</script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../js/inspinia.js"></script>
+<script src="../../js/plugins/pace/pace.min.js"></script>
+</body>
+</html>

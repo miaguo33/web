@@ -1,0 +1,135 @@
+var tools = (function() {
+
+	var object = {};
+
+	//  模态框居中
+	object.centerModals = function() {　　
+		$('.modal').each(function(i) {　　　　
+			var $clone = $(this).clone().css('display', 'block').appendTo('body');　　　　
+			var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);　　　　
+			top = top > 0 ? top : 0;　　　　
+			$clone.remove();　　　　
+			$(this).find('.modal-content').css("margin-top", top);
+		});
+	}
+
+	//  红框多选和单选
+	object.redTriangleFrame = function() {　
+		var redTriangleFrame = $(".red-triangle-frame");
+		redTriangleFrame.each(function() {
+			$(this).find("label input").each(function() {
+				if($(this).is(':checked')) {
+					$(this).parent().addClass("active");
+				}
+			});
+			$(this).find("label input").change(function() {
+				if($(this).is(':checked')) {
+					$(this).parent().addClass("active");
+					if($(this).attr("type") == "radio") {
+						$(this).parent().siblings().removeClass("active");
+					}
+				} else {
+					$(this).parent().removeClass("active");
+				}
+			})
+		})
+	}
+	
+	
+	//  textarea框随内容展开
+	object.textArea = function() {
+		$("textarea").each(function() {
+			$(this).on("propertychange", function() {
+				var height = this.scrollHeight;
+				$(this).css("height", height + 'px');
+			});
+			$("textarea").on("input", function() {
+				var height = this.scrollHeight;
+				$(this).css("height", height + 'px');
+			});
+		});
+	}
+	
+	//  不符合时填写更多信息
+	object.moreEvaluate = function(e) {
+		var moreEvaluateBtn = $(e).parent();
+		var moreEvaluate = $(moreEvaluateBtn).closest("tr").next('.more-evaluate').find(".action");
+		if($(moreEvaluateBtn).hasClass("bad")){
+			$(moreEvaluate).slideDown();
+		}else{
+			$(moreEvaluate).slideUp();
+		}
+	}
+	
+	//	认证评价
+	object.evaluate = function() {
+		$(".evaluate input").each(function() {
+			if($(this).is(':checked')) {
+				$(this).parent().addClass("active");
+				object.moreEvaluate($(this));
+			}
+			$(this).change(function(){
+				object.moreEvaluate($(this));
+			})
+		});
+	}
+	
+	//	弹窗提示
+	object.prop= function( type , msg , title , action ){
+		switch( type ){
+            case 'success':
+                var html = '<div class="modal fade prop" id="prop-success" tabindex="-1" role="dialog" aria-hidden="true">';
+					html +='	<div class="modal-dialog">';
+					html +='		<div class="modal-content">';
+					html +='			<div class="modal-header">';
+					html +='				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
+					html +='				<h4>'+title+'</h4>';
+					html +='			</div>';
+					html +='			<div class="modal-body">';
+					html +='				<div class="success">';
+					html +='					<span><i class="iconfont icon-shenqingchenggong"></i></span>';
+					html +='					<p class="m-t-sm">'+msg+'</p>';
+					html +=action;
+					html +='				</div>';
+					html +='			</div>';
+					html +='		</div>';
+					html +='	</div>';
+					html +='</div>';
+				$("body").append(html);
+				object.centerModals();
+				$('#prop-success').modal('show');
+				$('#prop-success').on('hidden.bs.modal', function () {
+				  	$('#prop-success').remove();
+				});
+                break;
+            case 'info':
+                 var html = '<div class="modal fade prop" id="prop-info" tabindex="-1" role="dialog" aria-hidden="true">';
+					html +='	<div class="modal-dialog">';
+					html +='		<div class="modal-content">';
+					html +='			<div class="modal-header">';
+					html +='				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
+					html +='				<h4>新增收货地址</h4>';
+					html +='			</div>';
+					html +='			<div class="modal-body">';
+					html +='				<div class="info">';
+					html +='					<p class="m-t-xl">确定提交？提交后不可修改！</p>';
+					html +=action;
+					html +='				</div>';
+					html +='			</div>';
+					html +='		</div>';
+					html +='	</div>';
+					html +='</div>';
+				$("body").append(html);
+				object.centerModals();
+				$('#prop-info').modal('show');
+				$('#prop-info').on('hidden.bs.modal', function () {
+				  	$('#prop-info').remove();
+				});
+                break;
+        }
+	}
+	
+
+	return object;
+})();
+

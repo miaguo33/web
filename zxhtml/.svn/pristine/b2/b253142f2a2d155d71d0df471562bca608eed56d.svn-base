@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>职信网</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../iconfont/iconfont.css">
+    <link href="../../css/animate.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/combo.select.css">
+    <link href="../../css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/curriculum.css">
+    <link rel="stylesheet" href="../../css/alpha.css">
+</head>
+
+
+<body class="">
+<div id="wrapper">
+    <div class="header">
+        <img class="logo" src="../../img/logo.png"/>
+        <h3 class="header-describe">欢迎登录职信网平台</h3>
+        <div class="dropdown action">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">
+						<span class="clear">
+                	<span class="block">欢迎你，王小二 <b class="caret"></b></span>
+						</span>
+            </a>
+            <ul class="dropdown-menu animated fadeInLeft m-t-xs">
+                <li class="arrow"><img src="../../img/whitearrow.png"/></li>
+                <li class="balance"><i class="iconfont icon-zhanghuyue-copy"></i>账户余额：</li>
+                <li class="balance-count">
+                    <span>20000.00￥</span>
+                </li>
+                <li class="balance"><i class="iconfont icon-xingren"></i>杏仁余额：</li>
+                <li class="balance-count">
+                    <span>20000.00￥</span>
+                </li>
+                <li class="divider"></li>
+                <li class="recharge">
+                    <button>立即充值</button>
+                </li>
+                <li class="logout">退出登录</li>
+            </ul>
+        </div>
+        <div class="avart">
+            <img src="../../img/avart.jpg"/>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">首页</span></a>
+                </li>
+                <li>
+                    <a href="../index/person_index.html"><i class="iconfont icon-shouye"></i> <span
+                            class="nav-label">首页</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0);"><span class="nav-label">职信认证</span></a>
+                </li>
+                <li  class="active">
+                    <a href="../curriculum/curriculum.html"><i class="iconfont icon-renzheng1"></i> <span
+                            class="nav-label">申请背景认证</span></a>
+                </li>
+                <li>
+                    <a href="../l_authorization/l_authorization.html"><i class="iconfont icon-shouquan"></i> <span
+                            class="nav-label">授权</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">电子名片</span></a>
+                </li>
+                <li >
+                    <a href="../Business_card/Business_card.html"><i class="iconfont icon-mingpian"></i> <span
+                            class="nav-label">我的电子名片</span></a>
+                </li>
+                <li  >
+                    <a href="../Mail_list/Mail_list.html"><i class="iconfont icon-tongxunlu"></i> <span
+                            class="nav-label">名片通讯录</span></a>
+                </li>
+                <li class="nav-title">
+                    <a href="javascript:void(0)"><span class="nav-label">个人中心</span></a>
+                </li>
+                <li>
+                    <a href="../almond/almond.html"><i class="iconfont icon-xingren"></i> <span
+                            class="nav-label">杏仁</span></a>
+                </li>
+                <li >
+                    <a href="../Real-name/Real-name_one.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span
+                            class="nav-label">实名认证</span></a>
+                </li>
+                <li>
+                    <a href="../account/account.html"><i class="iconfont icon-zhanghaoshezhi"></i> <span
+                            class="nav-label">帐号设置</span></a>
+                </li>
+                <li>
+                    <a href="../feedback/feedback.html"><i class="iconfont icon-Fill"></i> <span
+                            class="nav-label">意见反馈</span></a>
+                </li>
+            </ul>
+            <div class="rn">
+                Copyright ©2017 沪ICP备<br/>17015994号
+            </div>
+        </div>
+    </nav>
+    <div id="page-wrapper" class="row gray-bg">
+        <div class="wrapper wrapper-content animated fadeInRightBig">
+            <!--申请背景认证-->
+            <div class="content col-lg-12">
+                <!--职业信息-->
+                <div class="information_header col-lg-12">
+                    <div class="information_name">
+                        <span class="active">职业信息</span>
+                        <span>发起认证</span>
+                        <span>授权企业认证</span>
+                        <span>认证完成</span>
+                    </div>
+                    <div class="information_Progress col-lg-12">
+                        <div class="Progress">
+                            <div class="Progress_r"></div>
+                            <div class="Progress_r"></div>
+                            <div class="Progress_r"></div>
+                            <div class="Progress_r"></div>
+                        </div>
+                        <div class="Progress_z">
+                            <div class="Progress_r active">1</div>
+                            <div class="Progress_r">2</div>
+                            <div class="Progress_r">3</div>
+                            <div class="Progress_r">4</div>
+                        </div>
+                        <div id="pro"></div>
+                    </div>
+                </div>
+                <!--个人信息-->
+                <div class="information scroll-floor ">
+                    <div class="edit">
+                        <span>个人信息</span>
+                        <span class="btns">编辑</span>
+                    </div>
+                    <div class="information_test">
+                        <ul>
+                            <li>
+                                <div class="li_box"><span>姓名 :</span><span>王小二</span></div>
+                                <div class="li_box"><span>手机 :</span><span>18500000000</span></div>
+                            </li>
+                            <li>
+                                <div class="li_box"><span>国籍 :</span><span>中国</span></div>
+                                <div class="li_box"><span>出生日期 :</span><span>2017年7月7日</span></div>
+                            </li>
+                            <li>
+                                <div class="li_box"><span>省份证 :</span><span>444444444444444444</span></div>
+                                <div class="li_box"><span>性别 :</span><span>男</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row in_personal contents">
+                        <span>完善个人信息</span>
+                        <form role="form" class="col-lg-12">
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6 col-sm-12"><label>姓名</label>
+                                    <span class="form-control span ">刘大大</span></div>
+                                <div class="form-group col-lg-6 col-sm-12"><label>手机</label>
+                                    <span class="form-control span ">18888888888</span>
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>国籍</label> <span
+                                        class="form-control span">中国</span></div>
+                                <div class="form-group col-lg-6"><label>出生日期</label> <span class="form-control span">1922年98月2日</span>
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>证件类型</label> <span
+                                        class="form-control span">身份证</span></div>
+                                <div class="form-group col-lg-6"><label>证件号</label> <span class="form-control span">999999999999999999999999</span>
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>性别 <span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6" id="data_4"><label>开始工作年份 <span>*</span></label>
+                                    <div class="input-group date ">
+                                        <input type="text" value="" class="form-control" placeholder="请选择开始工作年份">
+                                        <span class="input-group-addon"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>政治面貌 <span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">月份</option>
+                                        <option value="一月">一月</option>
+                                        <option value="二月">二月</option>
+                                        <option value="三月">三月</option>
+                                        <option value="四月">四月</option>
+                                        <option value="五月">五月</option>
+                                        <option value="六月">六月</option>
+                                        <option value="七月">七月</option>
+                                        <option value="八月">八月</option>
+                                        <option value="九月">九月</option>
+                                        <option value="十月">十月</option>
+                                        <option value="十一月">十一月</option>
+                                        <option value="十二月">十二月</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6"><label>婚姻状况 <span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>户籍 <span>*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group col-lg-6"><label>现居地 <span>*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="forms col-lg-12  last-child">
+                                <div class="form-group col-lg-6"><label>邮箱 <span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入您的邮箱">
+                                </div>
+                                <div class="form-group col-lg-6"></div>
+                            </div>
+                            <div class="btnx">
+                                <div class="btnx-box no">取消</div>
+                                <div class="btnx-box yes">保存</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--教育经历-->
+                <div class="information scroll-floor">
+                    <div class="edit">
+                        <span>教育经历</span>
+                        <span class="btns">添加</span>
+                    </div>
+                    <div class="information_test">
+                        <ul class="education">
+                            <li>
+                                <div class="time">
+                                    <div class="times">
+                                        <span>2015.5</span>-<span>2016.5</span>
+                                    </div>
+                                    <i></i>
+                                    <div class="btn_time">
+                                        <span>编辑</span>
+                                        <span>删除</span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>学校名称 :</span><span>北京清华大学</span></div>
+                                    <div class="li_box"><span>所在专业 :</span><span>计算机专业</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>学历层次 :</span><span>本科</span></div>
+                                    <div class="li_box"><span>学历类别 :</span><span>自考</span></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="time">
+                                    <div class="times">
+                                        <span>2015.5</span>-<span>2016.5</span>
+                                    </div>
+                                    <i></i>
+                                    <div class="btn_time">
+                                        <span>编辑</span>
+                                        <span>删除</span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>学校名称 :</span><span>北京清华大学</span></div>
+                                    <div class="li_box"><span>所在专业 :</span><span>计算机专业</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>学历层次 :</span><span>本科</span></div>
+                                    <div class="li_box"><span>学历类别 :</span><span>自考</span></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row in_personal contents">
+                        <span>添加教育经历</span>
+                        <form role="form" class="col-lg-12">
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>学校名称<span>*</span> </label>
+                                    <input type="text" class="form-control" placeholder="请输入您的学校名称">
+                                </div>
+                                <div class="form-group col-lg-6"><label>所在专业<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入您的学校名称">
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>学历层次<span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6 "><label>学历类别<span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12 last-child " id="data_5">
+                                <div class="form-group col-lg-12 texts "><label>时间轴<span>*</span></label>
+                                    <div class="input-daterange input-group time" id="datepicker">
+                                        <input type="text" style="padding:0;" class="input-sm form-control col-lg-6"
+                                               placeholder="请选择开始时间" name="start"/>
+                                        <span>至</span>
+                                        <input type="text" style="padding:0;" class="input-sm form-control col-lg-6"
+                                               placeholder="请选择结束时间" name="end"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btnx">
+                                <div class="btnx-box no">取消</div>
+                                <div class="btnx-box yes">保存</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--工作经历-->
+                <div class="information scroll-floor">
+                    <div class="edit">
+                        <span>工作经历</span>
+                        <span class="btns">添加</span>
+                    </div>
+                    <div class="information_test">
+                        <ul class="education">
+                            <li>
+                                <div class="time">
+                                    <div class="times">
+                                        <span>2015.5</span>-<span>2016.5</span>
+                                    </div>
+                                    <i></i>
+                                    <div class="btn_time">
+                                        <span>编辑</span>
+                                        <span>删除</span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>公司名称 :</span><span>上海途途网路科技有限公司</span></div>
+                                    <div class="li_box"><span>目前运营 :</span><span>正常运营</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>所在行业 :</span><span>互联网</span></div>
+                                    <div class="li_box"><span>公司规模 :</span><span>500~1000人</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>公司性质 :</span><span>民营</span></div>
+                                    <div class="li_box"><span>公司电话 :</span><span>121-453333333</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>所属部门 :</span><span>技术部</span></div>
+                                    <div class="li_box"><span>工作类型 :</span><span>全职</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>职能 :</span><span>人力资源部</span></div>
+                                    <div class="li_box"><span>职位 :</span><span>人事总监</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>年收入 :</span><span>30w</span></div>
+                                    <div class="li_box"><span>工资占比 :</span><span>100%</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>下属人数 :</span><span>0~20人</span></div>
+                                    <div class="li_box"><span>汇报对象职位 :</span><span>CEO</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>汇报对象姓名 :</span><span>刘大大</span></div>
+                                    <div class="li_box"><span>汇报对象手机 :</span><span>10000000000</span></div>
+                                </div>
+
+                                <!--工作职责-->
+                                <div class="Duty">
+                                    <span>工作职责:</span>
+                                    <div class="Duty_content">
+                                        <ul>
+                                            <li>1. 345erfdsfdsfsd我服你时代峻峰华东师范阿斯蒂芬阿斯蒂芬阿斯蒂芬</li>
+                                            <li>2. asdfadsfasf是的范德萨发大师傅大师傅asdf</li>
+                                            <li>3. asdfadsf暗示法撒旦烦死哒发的asfasdf</li>
+                                            <li>4. asdfadsf发的烦死哒发的发asfasdf</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!--绩效/项目-->
+                                <div class="Duty">
+                                    <span>绩效/项目:</span>
+                                    <div class="li lis">
+                                        <div class="li_box">2017年8月~2017年10月</div>
+                                        <div class="li_box"><span>项目负责人 :</span><span>刘大大</span></div>
+                                    </div>
+                                    <div class="Duty_content">
+                                        <ul>
+                                            <li>1. 345erfdsfdsfsd我服你时代峻峰华东师范阿斯蒂芬阿斯蒂芬阿斯蒂芬</li>
+                                            <li>2. asdfadsfasf是的范德萨发大师傅大师傅asdf</li>
+                                            <li>3. asdfadsf暗示法撒旦烦死哒发的asfasdf</li>
+                                            <li>4. asdfadsf发的烦死哒发的发asfasdf</li>
+                                        </ul>
+                                    </div>
+                                    <div class="li">
+                                        <div class="li_box"><span>证明人 :</span><span>刘大大</span></div>
+                                        <div class="li_box"><span>负责人身份 :</span><span>CEO</span></div>
+                                    </div>
+                                </div>
+                                <!--获得奖励情况-->
+                                <div class="Duty">
+                                    <span>获得奖励情况:</span>
+                                    <div class="li lis">
+                                        <div class="li_box">2017年8月~2017年10月</div>
+                                    </div>
+                                    <div class="Duty_content">
+                                        <ul>
+                                            <li>1. 345erfdsfdsfsd我服你时代峻峰华东师范阿斯蒂芬阿斯蒂芬阿斯蒂芬</li>
+                                            <li>2. asdfadsfasf是的范德萨发大师傅大师傅asdf</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row in_personal contents">
+                        <span>添加工作经历</span>
+                        <form role="form" class=" col-lg-12">
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>公司名称<span>*</span> </label>
+                                    <input type="text" class="form-control" placeholder="请输入公司名称">
+                                </div>
+                                <div class="form-group col-lg-6"><label>目前经营状况<span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6 "><label>所在行业<span>*</span></label>
+                                    <div class="form-control input-group m-b-lg "
+                                         style="padding:0;margin:0;margin-top:20px;border:0;box-shadow: 0 0 0 0 rgba(0,0,0,0)">
+                                        <input id="btn_IndustryID" value="" onclick="IndustrySelect()" type="text"
+                                               class="form-control" placeholder="请选择行业">
+                                        <input id="IndustryID" name="industry" value="" type="hidden">
+                                    </div>
+                                    <div id="maskLayer" style="display:none">
+                                        <div id="drag2">
+                                            <h3 id="drag_h"></h3>
+                                            <div id="drag_con"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6 "><label>公司规模<span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>公司性质<span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6 "><label>公司电话<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="包括区号、电话、分机号,以'-'隔开">
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>所属部门<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入所属部门">
+                                </div>
+                                <div class="form-group col-lg-6 "><label>工作类型<span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>职能<span>*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group col-lg-6 "><label>职位<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="如人力资源总监">
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12 " id="data_6">
+                                <div class="form-group col-lg-12 texts "><label>在职时间<span>*</span></label>
+                                    <div class="input-daterange input-group time">
+                                        <input type="text" style="padding:0;" class="input-sm form-control col-lg-6"
+                                               placeholder="请选择开始时间" name="start"/>
+                                        <span>至</span>
+                                        <input type="text" style="padding:0;" class="input-sm form-control col-lg-6"
+                                               placeholder="请选择结束时间" name="end"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>年收入<span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6 "><label>工资占比<span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>下属人数<span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6 "><label>汇报对象职位<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入汇报对象职位">
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>汇报对象姓名<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入汇报对象姓名">
+                                </div>
+                                <div class="form-group col-lg-6 "><label>汇报对象手机<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入汇报对象手机">
+                                </div>
+                            </div>
+                            <!--添加工作职责-->
+                            <div class="insert col-lg-12">
+                                <span>添加工作职责</span><i></i><span>添加</span>
+                            </div>
+                            <div class="forms col-lg-12 ">
+                                <div class="form-group col-lg-12  text"><label ><i>工作职责</i><i>删除</i></label>
+                                    <textarea class="form-control text" rows="3" placeholder="请输入工作职责"></textarea>
+                                </div>
+                                <span><i>0</i>/200</span>
+                            </div>
+                            <div class="forms col-lg-12 ">
+                                <div class="form-group col-lg-12 text"><label ><i>工作职责</i><i>删除</i></label>
+                                    <textarea class="form-control text" rows="3" placeholder="请输入工作职责"></textarea>
+                                </div>
+                                <span><i>0</i>/200</span>
+                            </div>
+                            <!--添加项目、效绩-->
+                            <div class="insert col-lg-12">
+                                <span>添加项目/效绩</span><i></i><span>添加</span>
+                            </div>
+                            <!--添加项目、效绩-->
+                            <div class="row Winning">
+                                <div class="hj col-lg-12">
+                                    <div class="forms col-lg-12 ">
+                                        <div class="form-group col-lg-12  text"><label ><i>工作职责</i><i>删除</i></label>
+                                            <textarea class="form-control text" rows="3" placeholder="请输入项目/效绩描述"></textarea>
+                                        </div>
+                                        <span><i>0</i>/200</span>
+                                    </div>
+                                    <!--项目效绩时间-->
+                                    <div class="forms col-lg-12 " id="data_7">
+                                        <div class="form-group col-lg-12 texts "><label>项目/效绩时间<span>*</span></label>
+                                            <div class="input-daterange input-group time">
+                                                <input type="text" style="padding:0;" class="input-sm form-control col-lg-6"
+                                                       placeholder="请选择开始时间" name="start"/>
+                                                <span>至</span>
+                                                <input type="text" style="padding:0;" class="input-sm form-control col-lg-6"
+                                                       placeholder="请选择结束时间" name="end"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="forms col-lg-12">
+                                        <div class="form-group col-lg-6"><label>项目/效绩参与身份<span>*</span></label>
+                                            <select class="form-control">
+                                                <option value="">性别</option>
+                                                <option value="1">男</option>
+                                                <option value="2">女</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-lg-6"></div>
+                                    </div>
+
+                                    <!--证明人、证明人身份-->
+                                    <div class="forms col-lg-12">
+                                        <div class="form-group col-lg-6"><label>证明人<span>*</span></label>
+                                            <input type="text" class="form-control" placeholder="请输入证明人">
+                                        </div>
+                                        <div class="form-group col-lg-6"><label>证明人身份<span>*</span></label>
+                                            <input type="text" class="form-control" placeholder="输入证明人身份">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!--添加获奖情况-->
+                            <div class="insert col-lg-12">
+                                <span>添加获奖情况</span><i></i><span>添加</span>
+                            </div>
+                            <div class="row Winning ">
+                                <div class="hj col-lg-12">
+                                    <div class="forms col-lg-12 ">
+                                        <div class="form-group col-lg-12  text"><label ><i>获奖情况描述</i><i>删除</i></label>
+                                            <textarea class="form-control text" rows="3" placeholder="请输入获奖情况描述"></textarea>
+                                        </div>
+                                        <span><i>0</i>/200</span>
+                                    </div>
+                                    <!--获奖时间-->
+                                    <div class="forms col-lg-12">
+                                        <div class="form-group col-lg-6" id="data_8"><label >获奖时间</label>
+                                            <div class="input-group date">
+                                                <input type="text" value="" class="form-control" placeholder="请选择获奖时间">
+                                                <span class="input-group-addon"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-6"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btnx">
+                                <div class="btnx-box no">取消</div>
+                                <div class="btnx-box yes">保存</div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <!--语言能力-->
+                <div class="information scroll-floor">
+                    <div class="edit">
+                        <span>语言能力</span>
+                        <span class="btns">添加</span>
+                    </div>
+                    <div class="information_test">
+                        <ul class="education">
+                            <li>
+                                <div class="time">
+                                    <div class="times">
+                                        <span>语种</span>/<span>英语</span>
+                                    </div>
+                                    <i></i>
+                                    <div class="btn_time">
+                                        <span>编辑</span>
+                                        <span>删除</span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>熟练度 :</span><span>精通</span></div>
+                                    <div class="li_box"><span>证书 :</span><span>英语六级</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>证书编码 :</span><span>7778789687687</span></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row in_personal contents">
+                        <span>添加语言能力</span>
+                        <form role="form" class="col-lg-12">
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6"><label>语种选择<span>*</span> </label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6"><label>掌握程度<span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12 last-child">
+                                <div class="form-group col-lg-6"><label>获得证书<span>*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group col-lg-6 "><label>证书编码<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="输入证书编码">
+                                </div>
+                            </div>
+                            <div class="btnx">
+                                <div class="btnx-box no">取消</div>
+                                <div class="btnx-box yes">保存</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--技能职称-->
+                <div class="information scroll-floor">
+                    <div class="edit">
+                        <span>技能职称</span>
+                        <span class="btns">添加</span>
+                    </div>
+                    <div class="information_test">
+                        <ul class="education">
+                            <li>
+                                <div class="time">
+                                    <div class="times">
+                                        <span>技能类别</span>/<span>前端</span>
+                                    </div>
+                                    <i></i>
+                                    <div class="btn_time">
+                                        <span>编辑</span>
+                                        <span>删除</span>
+                                    </div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>证书 :</span><span>注册会计师资格证</span></div>
+                                </div>
+                                <div class="li">
+                                    <div class="li_box"><span>证书编码 :</span><span>7778789687687</span></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row in_personal contents">
+                        <span>添加技能职称</span>
+                        <form role="form" class="col-lg-12">
+                            <div class="forms col-lg-12">
+                                <div class="form-group col-lg-6 "><label>技能类别<span>*</span> </label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6"><label>获得证书<span>*</span></label>
+                                    <select class="form-control">
+                                        <option value="">性别</option>
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="forms col-lg-12 ">
+                                <div class="form-group col-lg-6"><label>证书名称<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入所获证书名称">
+                                </div>
+                                <div class="form-group col-lg-6 "><label>证书编码<span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="请输入所获证书编码">
+                                </div>
+                            </div>
+                            <div class="btnx">
+                                <div class="btnx-box no">取消</div>
+                                <div class="btnx-box yes">保存</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--上传简历、预览、下一步-->
+                <ul>
+                    <li>上传简历</li>
+                    <li class="preview">预览</li>
+                    <li><a href="../initiate_authentication/initiate_authentication.html">下一步</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="floor-nav">
+    <span class="scroll-nav ">个人<br>信息</span>
+    <span class="scroll-nav">教育<br>经历</span>
+    <span class="scroll-nav">工作<br>经历</span>
+    <span class="scroll-nav">语言<br>能力</span>
+    <span class="scroll-nav">技能<br>职称</span>
+    <span class="scroll-navs"><img src="../../img/lbs-nba.png" alt=""><span>顶部</span></span>
+</nav>
+
+<!-- Mainly scripts -->
+<script src="../../js/jquery-2.1.1.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/inspinia.js"></script>
+<script src="../../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<!--下拉-->
+<script src="../../js/jquery.combo.select.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="../../js/plugins/pace/pace.min.js"></script>
+
+<script type="text/javascript" src="../../js/industry_arr.js"></script>
+<script type="text/javascript" src="../../js/industry_func.js"></script>
+<script type="text/javascript" src="../../js/drag1.js"></script>
+
+<script src="../../js/plugins/datapicker/bootstrap-datepicker.js"></script>
+<script src="../../js/plugins/datapicker/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+<script src="../../js/jquery.scroll.floor.js"></script>
+<script>
+    // 是否在数组内
+    function in_array(needle, haystack) {
+        if (typeof needle == 'string' || typeof needle == 'number') {
+            for (var i in haystack) {
+                if (haystack[i] == needle) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    $(function() {
+        $('select').comboSelect();
+    });
+
+
+</script>
+
+<script type="text/javascript">
+    scrollFloor({
+        floorClass : '.scroll-floor',       //楼层盒子class;默认为'.scroll-floor'
+        navClass : '.scroll-nav',           //导航盒子class;默认为'.scroll-nav'
+        activeClass : 'active',             //导航高亮class;默认为'active'
+        delayTime:100,                      //点击导航，滚动条滑动到该位置的时间间隔;默认为200
+        activeTop:200,                      //楼层到窗口的某个位置时，导航高亮（设置该位置）;默认为100
+        scrollTop:0                         //点击导航，楼层滑动到窗口的某位置;默认为100
+    });
+</script>
+
+<script>
+    $(function () {
+
+        //点击编辑或者添加所触发的效果
+        let information = $('.information');
+        information.on('click', '.btns', function () {
+            //获取当前元素里的展示列表
+            let infromation_test = $(this).parents('.information').find('.information_test');
+            //获取当前元素里的编辑列表
+            let contents = $(this).parents('.information').find('.contents');
+            $(this).css('display', 'none');
+            infromation_test.css('display', 'none');
+            contents.css('display', 'block');
+        })
+        //点击编辑里保存所触发的效果
+        let contents = $('.information>.contents');
+        //点击编辑里确认的时候触发的事件
+        contents.on('click', '.btnx>.yes', function () {
+            //获取当前编辑列表元素
+            let contents = $(this).parents('.contents');
+            //获取当前父级元素的展示列表
+            let information = $(this).parents('.information').find('.information_test');
+            let btns = $(this).parents('.information').find('.btns');
+            btns.css('display', 'block');
+            contents.css('display', 'none');
+            information.css('display', 'block');
+        })
+        //点击编辑里取消的时候触发的事件
+        contents.on('click', '.btnx>.no', function () {
+            //获取当前编辑列表元素
+            let contents = $(this).parents('.contents');
+            //获取当前父级元素的展示列表
+            let information = $(this).parents('.information').find('.information_test');
+            let btns = $(this).parents('.information').find('.btns');
+            btns.css('display', 'block');
+            contents.css('display', 'none');
+            information.css('display', 'block');
+        })
+    })
+    $(document).ready(function () {
+        $('#data_4 .input-group.date').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            format: "yyyy-mm",
+            language: "zh-CN",
+            startView: 2,
+            minViewMode: 1,
+        });
+        $('#data_4 .input-group.date').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            format: "yyyy-mm",
+            language: "zh-CN",
+            startView: 2,
+            minViewMode: 1,
+        });
+        $('#data_5 .input-daterange').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            format: "yyyy-mm",
+            language: "zh-CN",
+            startView: 2,
+            minViewMode: 1,
+        });
+        $('#data_6 .input-daterange').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            format: "yyyy-mm",
+            language: "zh-CN",
+            startView: 2,
+            minViewMode: 1,
+        });
+        $('#data_7 .input-daterange').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            format: "yyyy-mm",
+            language: "zh-CN",
+            startView: 2,
+            minViewMode: 1,
+        });
+        $('#data_8 .input-group.date').datepicker({
+            keyboardNavigation: false,
+            forceParse: false,
+            autoclose: true,
+            format: "yyyy-mm",
+            language: "zh-CN",
+            startView: 2,
+            minViewMode: 1,
+        });
+    });
+</script>
+</body>
+</html>
